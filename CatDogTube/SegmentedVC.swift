@@ -30,7 +30,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
 //        segmentedControl.sectionImages = segments.map{$0.iconImage()}
         segmentedControl.sectionTitles = ["Cats", "Dogs"]
         segmentedControl.type = HMSegmentedControlTypeText
-        segmentedControl.backgroundColor = UIColor.yellowColor()
+        segmentedControl.backgroundColor = UIColor.greenColor()
         segmentedControl.frame = CGRectMake(0, 0, contentWidth(), self.headerView.frame.size.height)
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
         segmentedControl.selectionIndicatorColor = UIColor.orangeColor()
@@ -52,7 +52,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private func setupSubViews() {
         let vc1 = UIViewController()
-        vc1.view.backgroundColor = UIColor.greenColor()
+        vc1.view.backgroundColor = UIColor.blueColor()
         self.addChildViewController(vc1)
         vc1.didMoveToParentViewController(self)
         vc1.view.frame = CGRectMake(0, 0, contentWidth(), contentHeight())
