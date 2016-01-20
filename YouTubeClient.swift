@@ -10,17 +10,17 @@ import UIKit
 
 class YouTubeClient: NSObject {
 
-    let videoId: String = "PqJNc9KVIZE"
-    let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
-    var searchWord = ""
+    private let searchBaseUrl = "https://www.googleapis.com/youtube/v3/search?key=%@&q=%@&part=snippet&maxResults=10&order=viewCount&type=video&videoDefinition=high&videoDuration=short&publishedAfter=2015-01-01T00:00:00Z"
+    
+    private let videoId: String = "PqJNc9KVIZE"
+    private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
     var title: String = String()
     var creator: String = String()
     var imageUrl: String = String()
     
 
     func getItem(searchWord:String) {
-        self.searchWord = searchWord
-        let searchUrl = "https://www.googleapis.com/youtube/v3/search?key=\(self.myKey)&q=\(self.searchWord)&part=snippet&maxResults=10&order=viewCount&type=video&videoDefinition=high&videoDuration=short&publishedAfter=2015-01-01T00:00:00Z"
+        let searchUrl = String(format: searchBaseUrl, arguments: [myKey, searchWord])
         let requestUrl: NSURL? = NSURL(string: searchUrl)
         
         if let url = requestUrl {
