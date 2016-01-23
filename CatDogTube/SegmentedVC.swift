@@ -22,6 +22,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         dispatch_once(&token) {
             self.setupViews()
         }
+        let client = YouTubeClient()
+        client.getItem("CuteCat")
     }
     
     private func setupViews() {
