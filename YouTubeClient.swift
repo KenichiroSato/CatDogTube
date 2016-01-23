@@ -43,16 +43,22 @@ class YouTubeClient: NSObject {
     private func parseResponse(data: NSData) {
         let json = JSON(data: data)
         
+        var videos:[Video] = []
+        
         for (_, subJson):(String, JSON) in json["items"] {
             let snippet = subJson["snippet"]
-            let title = snippet["title"].string
-            print(title)
-            let url = snippet["thumbnails"]["high"]["url"].string
-            print(url)
-            let videoId = subJson["id"]["videoId"].string
-            print(videoId)
+            
+            if let videoId = subJson["id"]["videoId"].string,
+                let title = snippet["title"].string,
+                let urlString = snippet["thumbnails"]["high"]["url"].string,
+                let url = NSURL(string: urlString){
+                    let video = Video(id: videoId, title: title, url: url)
+                    videos.append(video)
+            }
         }
         
-        print(json)
+        videos.forEach({
+            print($0.description)
+        })
     }
 }
