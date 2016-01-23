@@ -42,41 +42,17 @@ class YouTubeClient: NSObject {
     
     private func parseResponse(data: NSData) {
         let json = JSON(data: data)
+        
+        for (_, subJson):(String, JSON) in json["items"] {
+            let snippet = subJson["snippet"]
+            let title = snippet["title"].string
+            print(title)
+            let url = snippet["thumbnails"]["high"]["url"].string
+            print(url)
+            let videoId = subJson["id"]["videoId"].string
+            print(videoId)
+        }
+        
         print(json)
     }
-    
-    /*
-    func setYouTubeVideoInformation() {
-            var apiUrl: String = "https://www.googleapis.com/youtube/v3/videos?id=\(self.videoId)&key=\(self.myKey)&fields=items(id,snippet(channelTitle,title,thumbnails),statistics)&part=snippet,contentDetails,statistics"
-            
-            // create request object
-            var requestUrl: NSURL = NSURL(string: apiUrl)!
-            var request: NSURLRequest = NSURLRequest(URL: requestUrl)
-            
-            // request to api
-        var data: NSData = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
-        
-        
-            // read json response
-            let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary
-            let itemsArray: NSArray = json.objectForKey("items") as NSArray
-            let items: NSDictionary = itemsArray[0] as NSDictionary
-            let snippet: NSDictionary = items.objectForKey("snippet") as NSDictionary
-            
-            // title
-            let title: NSString = snippet.objectForKey("title") as NSString
-            self.title = title
-            
-            // channel title
-            let channelTitle: NSString = snippet.objectForKey("channelTitle") as NSString
-            self.creator = channelTitle
-            
-            // thumbnail image
-            let thumbnails: NSDictionary = snippet.objectForKey("thumbnails") as NSDictionary
-            let resolution: NSDictionary = thumbnails.objectForKey("high") as NSDictionary
-            let imageUrl: NSString = resolution.objectForKey("url") as NSString
-            
-            self.imageUrl = imageUrl
-    }
-*/
 }
