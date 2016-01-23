@@ -12,44 +12,36 @@ class YouTubeClient: NSObject {
 
     private let searchBaseUrl = "https://www.googleapis.com/youtube/v3/search?key=%@&q=%@&part=snippet&maxResults=10&order=viewCount&type=video&videoDefinition=high&videoDuration=short&publishedAfter=2015-01-01T00:00:00Z"
     
-    private let videoId: String = "PqJNc9KVIZE"
     private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
     var title: String = String()
     var creator: String = String()
     var imageUrl: String = String()
-    
 
     func getItem(searchWord:String) {
-        let searchUrl = String(format: searchBaseUrl, arguments: [myKey, searchWord])
-        let requestUrl: NSURL? = NSURL(string: searchUrl)
+        let searchUrlString = String(format: searchBaseUrl, arguments: [myKey, searchWord])
+        guard let requestUrl = NSURL(string: searchUrlString) else {return}
         
-        if let url = requestUrl {
-            performGetRequest(url, completion: {(data, code, error) in
-                print(code)
-                do {
-                    let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! Dictionary<NSObject, AnyObject>
+        performGetRequest(requestUrl, completion: {(data, response, error) in
+            guard let code = (response as? NSHTTPURLResponse)?.statusCode else {return}
+            guard let nonNilData = data else {return}
+            
+            print(code)
+            do {
+                if let resultsDict = try NSJSONSerialization.JSONObjectWithData(nonNilData,
+                    options: NSJSONReadingOptions.MutableContainers) as? Dictionary<NSObject, AnyObject> {
                     print(resultsDict)
-                } catch {}
-
-                
-            })
-        }
+                }
+            } catch {}
+            
+        })
     }
     
-    private func performGetRequest(targetURL: NSURL, completion: (data: NSData?, HTTPStatusCode: Int, error: NSError?) -> Void) {
+    private func performGetRequest(targetURL: NSURL, completion: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
         let request = NSMutableURLRequest(URL: targetURL)
         request.HTTPMethod = "GET"
-        
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        
         let session = NSURLSession(configuration: sessionConfiguration)
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completion(data: data, HTTPStatusCode: (response as! NSHTTPURLResponse).statusCode, error: error)
-            })
-        })
-        
+        let task = session.dataTaskWithRequest(request, completionHandler:completion)
         task.resume()
     }
     
