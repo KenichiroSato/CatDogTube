@@ -14,9 +14,6 @@ class YouTubeClient: NSObject {
     private let searchBaseUrl = "https://www.googleapis.com/youtube/v3/search?key=%@&q=%@&part=snippet&maxResults=10&order=viewCount&type=video&videoDefinition=high&videoDuration=short&publishedAfter=2015-01-01T00:00:00Z"
     
     private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
-    var title: String = String()
-    var creator: String = String()
-    var imageUrl: String = String()
 
     func getItem(searchWord:String) {
         let searchUrlString = String(format: searchBaseUrl, arguments: [myKey, searchWord])
