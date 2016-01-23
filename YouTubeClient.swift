@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class YouTubeClient: NSObject {
 
@@ -26,13 +27,7 @@ class YouTubeClient: NSObject {
             guard let nonNilData = data else {return}
             
             print(code)
-            do {
-                if let resultsDict = try NSJSONSerialization.JSONObjectWithData(nonNilData,
-                    options: NSJSONReadingOptions.MutableContainers) as? Dictionary<NSObject, AnyObject> {
-                    print(resultsDict)
-                }
-            } catch {}
-            
+            self.parseResponse(nonNilData)
         })
     }
     
@@ -43,6 +38,11 @@ class YouTubeClient: NSObject {
         let session = NSURLSession(configuration: sessionConfiguration)
         let task = session.dataTaskWithRequest(request, completionHandler:completion)
         task.resume()
+    }
+    
+    private func parseResponse(data: NSData) {
+        let json = JSON(data: data)
+        print(json)
     }
     
     /*
