@@ -15,7 +15,7 @@ class YouTubeClient: NSObject {
     
     private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
 
-    func getItem(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {
+    func getVideos(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {
         guard let encodedString = searchWord.urlEncodes() where !searchWord.isEmpty else {
             completionHandler(videos: nil)
             return

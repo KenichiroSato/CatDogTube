@@ -23,7 +23,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
             self.setupViews()
         }
         let client = YouTubeClient()
-        client.getItem("cute kitten", completionHandler: { videos in
+        client.getVideos("cute kitten", completionHandler: { videos in
             guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
                 print("error")
                 return
