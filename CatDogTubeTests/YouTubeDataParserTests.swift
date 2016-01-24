@@ -30,17 +30,19 @@ class YouTubeDataParserTests: XCTestCase {
         super.tearDown()
     }
 
-    func testPiyo() {
-        let res = YouTubeDataParser.parseTest(testData)
-        XCTAssertEqual(res, "CAoQAA")
+    func testVideo() {
+        let videos = YouTubeDataParser.parseResponse(testData)
+        let video = videos[0]
+        
+        XCTAssertEqual(video.title, "Three Little Kittens")
+        XCTAssertEqual(video.videoId, "k6X2wJ6L0SY")
+        XCTAssertEqual(video.imageUrl.description, "https://i.ytimg.com/vi/k6X2wJ6L0SY/hqdefault.jpg")
     }
     
     func testCount() {
         let videos = YouTubeDataParser.parseResponse(testData)
         
         XCTAssertEqual(videos.count, 10)
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
 }
