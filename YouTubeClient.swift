@@ -15,16 +15,26 @@ class YouTubeClient: NSObject {
     
     private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
 
-    func getItem(searchWord:String) {
-        let searchUrlString = String(format: searchBaseUrl, arguments: [myKey, searchWord])
-        guard let requestUrl = NSURL(string: searchUrlString) else {return}
+    func getItem(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {
+        guard let encodedString = searchWord.urlEncodes() where !searchWord.isEmpty else {
+            completionHandler(videos: nil)
+            return
+        }
+        let searchUrlString = String(format: searchBaseUrl, arguments: [myKey, encodedString])
+        guard let requestUrl = NSURL(string: searchUrlString) else {
+            completionHandler(videos: nil)
+            return
+        }
         
         performGetRequest(requestUrl, completion: {(data, response, error) in
-            guard let code = (response as? NSHTTPURLResponse)?.statusCode else {return}
-            guard let nonNilData = data else {return}
-            
+            guard let code = (response as? NSHTTPURLResponse)?.statusCode where code == 200,
+                let nonNilData = data else {
+                    completionHandler(videos: nil)
+                    return
+            }
             print(code)
-            self.parseResponse(nonNilData)
+            let videos = self.parseResponse(nonNilData)
+            completionHandler(videos: videos)
         })
     }
     
@@ -37,7 +47,7 @@ class YouTubeClient: NSObject {
         task.resume()
     }
     
-    private func parseResponse(data: NSData) {
+    private func parseResponse(data: NSData) -> [Video] {
         let json = JSON(data: data)
         
         var videos:[Video] = []
@@ -53,9 +63,6 @@ class YouTubeClient: NSObject {
                     videos.append(video)
             }
         }
-        
-        videos.forEach({
-            print($0.description)
-        })
+        return videos
     }
 }
