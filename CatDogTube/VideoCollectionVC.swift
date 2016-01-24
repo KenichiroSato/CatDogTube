@@ -10,9 +10,13 @@ import UIKit
 
 class VideoCollectionVC: UIViewController, UICollectionViewDelegateFlowLayout, VideoLoadDelegate {
     
+    static let IDENTIFIER = "VideoCollectionVC"
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let dataSource: VideoCollectionDataSource
+    
+    var searchWord:String = ""
     
     required init?(coder aDecoder: NSCoder) {
         dataSource = VideoCollectionDataSource()
@@ -24,7 +28,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegateFlowLayout, V
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         dataSource.loadDelegate = self
-        dataSource.loadVideos()
+        dataSource.loadVideos(searchWord)
     }
     
     // MARK - UICollectionViewDelegateFlowLayout

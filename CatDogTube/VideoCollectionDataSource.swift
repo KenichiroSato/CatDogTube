@@ -22,9 +22,9 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
   
     var loadDelegate: VideoLoadDelegate?
     
-    func loadVideos() {
+    func loadVideos(searchWord:String) {
         let client = YouTubeClient()
-        client.getVideos("cute kitten", completionHandler: { videos in
+        client.getVideos(searchWord, completionHandler: { videos in
             guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
                 self.loadDelegate?.onLoadFail()
                 return
