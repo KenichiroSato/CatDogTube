@@ -31,7 +31,6 @@ class YouTubeClient: NSObject {
                     completionHandler(videos: nil)
                     return
             }
-            print(code)
             let videos = YouTubeDataParser.parseResponse(nonNilData)
             completionHandler(videos: videos)
         })

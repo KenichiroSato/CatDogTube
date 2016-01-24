@@ -30,4 +30,9 @@ class YouTubeDataParser: UIImageView {
         return videos
     }
 
+    static func parseTest(data: NSData) -> String? {
+        let json = JSON(data: data)
+        let piyo = json["nextPageToken"].string
+        return piyo
+    }
 }
