@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class YouTubeClient: NSObject {
 
@@ -33,7 +32,7 @@ class YouTubeClient: NSObject {
                     return
             }
             print(code)
-            let videos = self.parseResponse(nonNilData)
+            let videos = YouTubeDataParser.parseResponse(nonNilData)
             completionHandler(videos: videos)
         })
     }
@@ -47,22 +46,4 @@ class YouTubeClient: NSObject {
         task.resume()
     }
     
-    private func parseResponse(data: NSData) -> [Video] {
-        let json = JSON(data: data)
-        
-        var videos:[Video] = []
-        
-        for (_, subJson):(String, JSON) in json["items"] {
-            let snippet = subJson["snippet"]
-            
-            if let videoId = subJson["id"]["videoId"].string,
-                let title = snippet["title"].string,
-                let urlString = snippet["thumbnails"]["high"]["url"].string,
-                let url = NSURL(string: urlString){
-                    let video = Video(id: videoId, title: title, url: url)
-                    videos.append(video)
-            }
-        }
-        return videos
-    }
 }
