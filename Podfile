@@ -4,6 +4,7 @@ xcodeproj './CatDogTube.xcodeproj'
 
 pod 'HMSegmentedControl'
 pod 'SDWebImage', '~>3.7'
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
 post_install do | installer |
   require 'fileutils'

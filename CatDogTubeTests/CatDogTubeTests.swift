@@ -2,7 +2,7 @@
 //  CatDogTubeTests.swift
 //  CatDogTubeTests
 //
-//  Created by 佐藤健一朗 on 2016/01/17.
+//  Created by Kenichiro Sato on 2016/01/17.
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
