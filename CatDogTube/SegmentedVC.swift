@@ -22,14 +22,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         dispatch_once(&token) {
             self.setupViews()
         }
-        let client = YouTubeClient()
-        client.getVideos("cute kitten", completionHandler: { videos in
-            guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
-                print("error")
-                return
-            }
-            nonNilVideos.forEach({print($0.description)})
-        })
     }
     
     private func setupViews() {
@@ -59,13 +51,13 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupSubViews() {
-        let vc1 = UIViewController()
-        vc1.view.backgroundColor = UIColor.blueColor()
-        self.addChildViewController(vc1)
-        vc1.didMoveToParentViewController(self)
-        vc1.view.frame = CGRectMake(0, 0, contentWidth(), contentHeight())
-        if let view = vc1.view {
-            contentView.addSubview(view)
+        if let vc1  = self.storyboard?.instantiateViewControllerWithIdentifier("VideoCollectionVC") as? VideoCollectionVC {
+            self.addChildViewController(vc1)
+            vc1.didMoveToParentViewController(self)
+            vc1.view.frame = CGRectMake(0, 0, contentWidth(), contentHeight())
+            if let view = vc1.view {
+                contentView.addSubview(view)
+            }
         }
         
         let vc2 = UIViewController()
