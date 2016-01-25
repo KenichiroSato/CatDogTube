@@ -11,6 +11,8 @@ import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
+    private let searchWords = ["cute kitten", "cute puppy"]
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
     
@@ -22,14 +24,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         dispatch_once(&token) {
             self.setupViews()
         }
-        let client = YouTubeClient()
-        client.getVideos("cute kitten", completionHandler: { videos in
-            guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
-                print("error")
-                return
-            }
-            nonNilVideos.forEach({print($0.description)})
-        })
     }
     
     private func setupViews() {
@@ -38,7 +32,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
 //        segmentedControl.sectionImages = segments.map{$0.iconImage()}
         segmentedControl.sectionTitles = ["Cats", "Dogs"]
         segmentedControl.type = HMSegmentedControlTypeText
-        segmentedControl.backgroundColor = UIColor.greenColor()
+        segmentedControl.backgroundColor = UIColor.redColor()
         segmentedControl.frame = CGRectMake(0, 0, contentWidth(), self.headerView.frame.size.height)
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
         segmentedControl.selectionIndicatorColor = UIColor.orangeColor()
@@ -47,7 +41,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         segmentedControl.indexChangeBlock = {
             [unowned self] (index: Int) in
             let move = self.contentWidth() * CGFloat(index);
-            self.contentView.scrollRectToVisible(CGRectMake(move , 0, self.contentWidth(), self.contentHeight()), animated: true)
+            self.contentView.scrollRectToVisible(
+                CGRectMake(move , 0, self.contentWidth(), self.contentHeight()), animated: true)
         }
         headerView.addSubview(segmentedControl)
         
@@ -59,22 +54,17 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupSubViews() {
-        let vc1 = UIViewController()
-        vc1.view.backgroundColor = UIColor.blueColor()
-        self.addChildViewController(vc1)
-        vc1.didMoveToParentViewController(self)
-        vc1.view.frame = CGRectMake(0, 0, contentWidth(), contentHeight())
-        if let view = vc1.view {
-            contentView.addSubview(view)
-        }
-        
-        let vc2 = UIViewController()
-        vc2.view.backgroundColor = UIColor.redColor()
-        self.addChildViewController(vc2)
-        vc2.didMoveToParentViewController(self)
-        vc2.view.frame = CGRectMake(contentWidth(), 0, contentWidth(), contentHeight())
-        if let view = vc2.view {
-            contentView.addSubview(view)
+        for (index, word) in searchWords.enumerate() {
+            guard let vc = self.storyboard?.instantiateViewControllerWithIdentifier(
+                VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC else {return}
+            
+            vc.searchWord = word
+            self.addChildViewController(vc)
+            vc.didMoveToParentViewController(self)
+            vc.view.frame = CGRectMake(CGFloat(index) * contentWidth(), 0, contentWidth(), contentHeight())
+            if let view = vc.view {
+                contentView.addSubview(view)
+            }
         }
     }
     

@@ -12,6 +12,9 @@
 		590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83591C5463BB000C6179 /* YouTubeDataParser.swift */; };
 		590A835C1C5469EA000C6179 /* YouTubeDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */; };
 		590A835E1C546A16000C6179 /* searchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 590A835D1C546A16000C6179 /* searchResponse.json */; };
+		590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A835F1C54ED8E000C6179 /* VideoCollectionVC.swift */; };
+		590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */; };
+		590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83641C54F6BE000C6179 /* VideoCell.swift */; };
 		59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */; };
 		59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */; };
 		59A88ABF1C4B1BAD00D40B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A88ABD1C4B1BAD00D40B23 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		590A83591C5463BB000C6179 /* YouTubeDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParser.swift; sourceTree = "<group>"; };
 		590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParserTests.swift; sourceTree = "<group>"; };
 		590A835D1C546A16000C6179 /* searchResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchResponse.json; sourceTree = "<group>"; };
+		590A835F1C54ED8E000C6179 /* VideoCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionVC.swift; sourceTree = "<group>"; };
+		590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionDataSource.swift; sourceTree = "<group>"; };
+		590A83641C54F6BE000C6179 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		59A88AB61C4B1BAD00D40B23 /* CatDogTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatDogTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedVC.swift; sourceTree = "<group>"; };
@@ -119,6 +125,16 @@
 			name = YouTube;
 			sourceTree = "<group>";
 		};
+		590A83611C54F4A4000C6179 /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				590A835F1C54ED8E000C6179 /* VideoCollectionVC.swift */,
+				590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */,
+				590A83641C54F6BE000C6179 /* VideoCell.swift */,
+			);
+			name = collection;
+			sourceTree = "<group>";
+		};
 		59A88AAD1C4B1BAD00D40B23 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +160,7 @@
 		59A88AB81C4B1BAD00D40B23 /* CatDogTube */ = {
 			isa = PBXGroup;
 			children = (
+				590A83611C54F4A4000C6179 /* collection */,
 				590A83581C546397000C6179 /* YouTube */,
 				590A83551C5390A8000C6179 /* extension */,
 				590A83531C532858000C6179 /* Video.swift */,
@@ -384,7 +401,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
+				590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */,
+				590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
