@@ -35,6 +35,11 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
         })
     }
     
+    func video(index:Int) -> Video? {
+        guard 0 < index && index < videos.count else { return nil }
+        return videos[index]
+    }
+    
     // MARK: UICollectionViewDataSource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
