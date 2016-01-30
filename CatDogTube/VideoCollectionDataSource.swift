@@ -36,7 +36,7 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func video(index:Int) -> Video? {
-        guard 0 < index && index < videos.count else { return nil }
+        guard 0 <= index && index < videos.count else { return nil }
         return videos[index]
     }
     

@@ -44,6 +44,10 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
         }
     }
     
+    @IBAction func onBackPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion:nil)
+    }
+    
     /*
     // MARK: - Navigation
 

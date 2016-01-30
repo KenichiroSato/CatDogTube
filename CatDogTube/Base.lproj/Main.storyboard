@@ -147,10 +147,25 @@
                                     <constraint firstAttribute="width" secondItem="PVw-s2-giF" secondAttribute="height" multiplier="16:9" id="8kR-Ok-O4j"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfA-Qn-lWX">
+                                <rect key="frame" x="10" y="551" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="DpJ-Rk-RaB"/>
+                                    <constraint firstAttribute="width" constant="35" id="tEL-6M-T4r"/>
+                                </constraints>
+                                <state key="normal" image="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBackPressed:" destination="g8A-0f-0to" eventType="touchUpInside" id="vtK-Bf-uig"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PVw-s2-giF" secondAttribute="trailing" id="0vH-Ig-CWj"/>
+                            <constraint firstItem="IfA-Qn-lWX" firstAttribute="leading" secondItem="OnJ-cq-f8t" secondAttribute="leadingMargin" id="W8b-Zo-c8F"/>
+                            <constraint firstItem="LbL-9V-9CY" firstAttribute="top" secondItem="IfA-Qn-lWX" secondAttribute="bottom" constant="10" id="nCc-pR-TnP"/>
                             <constraint firstItem="PVw-s2-giF" firstAttribute="leading" secondItem="OnJ-cq-f8t" secondAttribute="leading" constant="-20" id="zEW-WX-1ra"/>
                         </constraints>
                     </view>
@@ -163,4 +178,7 @@
             <point key="canvasLocation" x="1796" y="-325"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="136" height="121"/>
+    </resources>
 </document>
