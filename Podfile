@@ -5,6 +5,7 @@ xcodeproj './CatDogTube.xcodeproj'
 pod 'HMSegmentedControl'
 pod 'SDWebImage', '~>3.7'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'youtube-ios-player-helper', '0.1.4'
 
 post_install do | installer |
   require 'fileutils'
