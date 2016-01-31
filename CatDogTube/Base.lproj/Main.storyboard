@@ -79,25 +79,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8H-YJ-PcI" customClass="YTPlayerView">
-                                                    <rect key="frame" x="8" y="8" width="556" height="201"/>
+                                                    <rect key="frame" x="8" y="8" width="556" height="194"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ8-pS-vWm">
-                                                    <rect key="frame" x="8" y="217" width="556" height="43"/>
-                                                    <color key="backgroundColor" red="0.90980229000000001" green="1" blue="0.23877882780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ8-pS-vWm">
+                                                    <rect key="frame" x="8" y="210" width="556" height="50"/>
+                                                    <color key="backgroundColor" red="1" green="0.73398928040944811" blue="0.71510585845785901" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" notEnabled="YES"/>
                                                     </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="zhu-GQ-JEM"/>
+                                                        <constraint firstAttribute="height" constant="50" id="zhu-GQ-JEM"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="1" green="0.91338512646914516" blue="0.94633682069865344" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="w8H-YJ-PcI" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="topMargin" id="6ar-Tp-A1j"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ZZ8-pS-vWm" secondAttribute="trailing" id="B00-E4-aVU"/>
