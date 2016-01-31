@@ -12,8 +12,6 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     static let IDENTIFIER = "VideoCollectionVC"
     
-    private let YOUTUVE_SCHEME = "http://www.youtube.com/watch?v="
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let dataSource: VideoCollectionDataSource
@@ -33,21 +31,16 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         dataSource.loadVideos(searchWord)
     }
     
-    private func openYouTubeApp(videoId:String) -> Bool {
-        if let url = NSURL(string: YOUTUVE_SCHEME  + videoId) {
-            return UIApplication.sharedApplication().openURL(url)
-        } else {
-            return false
-        }
-    }
     
-    // MARK - UICollectionViewDelegate
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.row
-        guard 0 <= index && index < dataSource.videos.count else {return}
-        
-        let videoId = dataSource.videos[index].videoId
-        openYouTubeApp(videoId)
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == SegueIdentifier.SHOW_PLAYER) {
+            if let selectedIndexPath = self.collectionView?.indexPathsForSelectedItems(),
+                let nextVC = segue.destinationViewController as? PlayerVC {
+                let index = selectedIndexPath[0].item
+                nextVC.video = dataSource.video(index)
+            }
+        }
     }
     
     // MARK - UICollectionViewDelegateFlowLayout

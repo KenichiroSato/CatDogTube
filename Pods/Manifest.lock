@@ -4,11 +4,13 @@ PODS:
     - SDWebImage/Core (= 3.7.4)
   - SDWebImage/Core (3.7.4)
   - SwiftyJSON (2.3.2)
+  - youtube-ios-player-helper (0.1.4)
 
 DEPENDENCIES:
   - HMSegmentedControl
   - SDWebImage (~> 3.7)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - youtube-ios-player-helper (= 0.1.4)
 
 EXTERNAL SOURCES:
   SwiftyJSON:
@@ -23,5 +25,6 @@ SPEC CHECKSUMS:
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  youtube-ios-player-helper: 84b1485ebb4b7c6b619c6e05edcb55186723a7c6
 
 COCOAPODS: 0.39.0
