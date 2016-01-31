@@ -82,35 +82,31 @@
                                                     <rect key="frame" x="8" y="8" width="556" height="194"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ8-pS-vWm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="UFH-F3-UpB">
                                                     <rect key="frame" x="8" y="210" width="556" height="50"/>
-                                                    <color key="backgroundColor" red="1" green="0.73398928040944811" blue="0.71510585845785901" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <accessibility key="accessibilityConfiguration">
-                                                        <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="zhu-GQ-JEM"/>
+                                                        <constraint firstAttribute="height" constant="50" id="aHI-et-ZgN"/>
                                                     </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.91338512646914516" blue="0.94633682069865344" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="w8H-YJ-PcI" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="topMargin" id="6ar-Tp-A1j"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="ZZ8-pS-vWm" secondAttribute="trailing" id="B00-E4-aVU"/>
-                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="bottom" secondItem="Xkh-Mb-8Y7" secondAttribute="bottomMargin" id="Bve-mZ-xq1"/>
-                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="bdQ-cg-P01"/>
-                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="top" secondItem="w8H-YJ-PcI" secondAttribute="bottom" constant="8" id="g8t-pQ-c3o"/>
+                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="trailing" secondItem="Xkh-Mb-8Y7" secondAttribute="trailingMargin" id="DmS-5z-PwV"/>
+                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="RmX-Sf-cTS"/>
+                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="top" secondItem="w8H-YJ-PcI" secondAttribute="bottom" constant="8" id="h4D-m4-5b9"/>
                                             <constraint firstItem="w8H-YJ-PcI" firstAttribute="trailing" secondItem="Xkh-Mb-8Y7" secondAttribute="trailingMargin" id="lAB-LY-362"/>
                                             <constraint firstItem="w8H-YJ-PcI" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="lhO-Au-VsY"/>
+                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="bottom" secondItem="Xkh-Mb-8Y7" secondAttribute="bottomMargin" id="qoW-V0-gHJ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="playerView" destination="w8H-YJ-PcI" id="XA2-i8-WnN"/>
-                                            <outlet property="titleView" destination="ZZ8-pS-vWm" id="NJI-2w-CJv"/>
+                                            <outlet property="title" destination="UFH-F3-UpB" id="WxH-Rp-JPs"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

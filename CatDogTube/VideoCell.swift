@@ -11,7 +11,7 @@ import youtube_ios_player_helper
 
 class VideoCell: UICollectionViewCell {
     
-    @IBOutlet weak var titleView: UITextView!
+    @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var playerView: YTPlayerView!
     

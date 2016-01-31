@@ -56,7 +56,7 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
                 as! VideoCell
             
             let video = videos[indexPath.row]
-            cell.titleView.text = video.title
+            cell.title.text = video.title
             cell.playerView.loadWithVideoId(video.videoId, playerVars:["playsinline":1])
             
             return cell
