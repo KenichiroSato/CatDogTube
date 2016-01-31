@@ -66,25 +66,29 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-Vo-uN4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E3x-V9-oo5">
-                                    <size key="itemSize" width="572" height="122"/>
+                                    <size key="itemSize" width="572" height="268"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCell" id="Xkh-Mb-8Y7" customClass="VideoCell" customModule="CatDogTube" customModuleProvider="target">
-                                        <rect key="frame" x="14" y="0.0" width="572" height="122"/>
+                                        <rect key="frame" x="14" y="0.0" width="572" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="572" height="122"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="572" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wU7-xS-r8N">
-                                                    <rect key="frame" x="8" y="8" width="556" height="106"/>
-                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8H-YJ-PcI" customClass="YTPlayerView">
+                                                    <rect key="frame" x="8" y="8" width="556" height="201"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ8-pS-vWm">
-                                                    <rect key="frame" x="18" y="61" width="536" height="43"/>
+                                                    <rect key="frame" x="8" y="217" width="556" height="43"/>
                                                     <color key="backgroundColor" red="0.90980229000000001" green="1" blue="0.23877882780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="zhu-GQ-JEM"/>
                                                     </constraints>
@@ -96,16 +100,16 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="ZZ8-pS-vWm" secondAttribute="bottom" constant="10" id="Ayb-FS-drQ"/>
-                                            <constraint firstItem="wU7-xS-r8N" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="topMargin" id="LHf-CE-mfY"/>
-                                            <constraint firstItem="wU7-xS-r8N" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="T0R-P2-t5l"/>
-                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" constant="10" id="YlF-77-cKd"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="wU7-xS-r8N" secondAttribute="bottom" id="art-gq-HBG"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="ZZ8-pS-vWm" secondAttribute="trailing" constant="10" id="dvi-TA-lQu"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="wU7-xS-r8N" secondAttribute="trailing" id="glz-0j-gui"/>
+                                            <constraint firstItem="w8H-YJ-PcI" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="topMargin" id="6ar-Tp-A1j"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ZZ8-pS-vWm" secondAttribute="trailing" id="B00-E4-aVU"/>
+                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="bottom" secondItem="Xkh-Mb-8Y7" secondAttribute="bottomMargin" id="Bve-mZ-xq1"/>
+                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="bdQ-cg-P01"/>
+                                            <constraint firstItem="ZZ8-pS-vWm" firstAttribute="top" secondItem="w8H-YJ-PcI" secondAttribute="bottom" constant="8" id="g8t-pQ-c3o"/>
+                                            <constraint firstItem="w8H-YJ-PcI" firstAttribute="trailing" secondItem="Xkh-Mb-8Y7" secondAttribute="trailingMargin" id="lAB-LY-362"/>
+                                            <constraint firstItem="w8H-YJ-PcI" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="lhO-Au-VsY"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="wU7-xS-r8N" id="efw-RM-AKK"/>
+                                            <outlet property="playerView" destination="w8H-YJ-PcI" id="XA2-i8-WnN"/>
                                             <outlet property="titleView" destination="ZZ8-pS-vWm" id="NJI-2w-CJv"/>
                                             <segue destination="g8A-0f-0to" kind="show" identifier="showPlayer" id="3iU-j4-pNe"/>
                                         </connections>
