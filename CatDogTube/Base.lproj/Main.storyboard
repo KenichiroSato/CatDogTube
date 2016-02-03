@@ -30,6 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="topMargin" constant="20" id="21c-Ig-S1P"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="width" secondItem="VtE-5W-9Qs" secondAttribute="width" id="BJa-6r-8QD"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="JCx-kb-atd"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="top" secondItem="F7f-Bg-wYY" secondAttribute="bottom" id="Rz6-jm-6Ck"/>
@@ -39,6 +40,11 @@
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="top" id="lTZ-pv-Zfi"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="tKw-Cg-9be"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="21c-Ig-S1P"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bgP-6t-udI"/>
                     <connections>
