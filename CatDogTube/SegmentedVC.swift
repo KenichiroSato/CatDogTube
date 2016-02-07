@@ -26,6 +26,23 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
+        updateFrames(size)
+    }
+    
+    private func updateFrames(newSize: CGSize) {
+        contentView.frame = CGRectMake(0, 0, newSize.width,
+            newSize.height - self.headerView.frame.size.height)
+        contentView.contentSize =
+            CGSizeMake(contentWidth() * CGFloat(searchWords.count), contentHeight())
+        segmentedControl.frame = CGRectMake(0, 0, contentWidth(),
+            self.headerView.frame.size.height)
+        for (index,view) in contentView.subviews.enumerate() {
+            view.frame = CGRectMake(CGFloat(index) * contentWidth(), 0, contentWidth(), contentHeight())
+        }
+    }
+    
     private func setupViews() {
         setupSubViews()
         
