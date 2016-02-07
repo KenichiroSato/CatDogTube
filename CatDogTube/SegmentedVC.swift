@@ -40,8 +40,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
             CGSizeMake(contentView.width() * CGFloat(searchWords.count), contentView.height())
         segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
             self.headerView.frame.size.height)
-        for (index,view) in contentView.subviews.enumerate() {
-            view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0, contentView.width(), contentView.height())
+        for (index, childVC) in self.childViewControllers.enumerate() {
+            if let vc = childVC as? VideoCollectionVC {
+                vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0, contentView.width(), contentView.height())
+                vc.invalidateLayout()
+            }
         }
         contentView.moveToIndex(index)
     }
