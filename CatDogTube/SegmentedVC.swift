@@ -11,7 +11,7 @@ import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
-    private let searchWords = ["cute kiten", "cute puppy", "かわいい 子猫", "かわいい　子犬"]
+    private let searchWords = ["cute kitten", "cute puppy", "かわいい 子猫", "かわいい　子犬"]
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
