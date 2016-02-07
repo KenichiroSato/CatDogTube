@@ -26,6 +26,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    //handle screen rotation
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
         updateFrames(size)
