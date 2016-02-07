@@ -11,7 +11,7 @@ import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
-    private let searchWords = ["cute kitten", "cute puppy"]
+    private let searchWords = ["cute kitten", "cute puppy", "かわいい 子猫", "かわいい　子犬"]
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -30,7 +30,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         setupSubViews()
         
 //        segmentedControl.sectionImages = segments.map{$0.iconImage()}
-        segmentedControl.sectionTitles = ["Cats", "Dogs"]
+        segmentedControl.sectionTitles = ["Cats", "Dogs", "子猫", "子犬"]
         segmentedControl.type = HMSegmentedControlTypeText
         segmentedControl.backgroundColor = UIColor.redColor()
         segmentedControl.frame = CGRectMake(0, 0, contentWidth(), self.headerView.frame.size.height)
@@ -48,7 +48,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         
         contentView.delegate = self
         contentView.contentSize =
-            CGSizeMake(contentWidth() * CGFloat(2), contentHeight())
+            CGSizeMake(contentWidth() * CGFloat(searchWords.count), contentHeight())
         contentView.delaysContentTouches = false
         
     }

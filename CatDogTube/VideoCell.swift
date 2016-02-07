@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class VideoCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var title: UILabel!
     
-    @IBOutlet weak var titleView: UITextView!
+    @IBOutlet weak var playerView: YTPlayerView!
     
 }

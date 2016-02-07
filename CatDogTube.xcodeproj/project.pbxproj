@@ -15,7 +15,6 @@
 		590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A835F1C54ED8E000C6179 /* VideoCollectionVC.swift */; };
 		590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */; };
 		590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83641C54F6BE000C6179 /* VideoCell.swift */; };
-		590A83681C5C9A3F000C6179 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83671C5C9A3F000C6179 /* PlayerVC.swift */; };
 		590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */; };
 		59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */; };
 		59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */; };
@@ -55,7 +54,6 @@
 		590A835F1C54ED8E000C6179 /* VideoCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionVC.swift; sourceTree = "<group>"; };
 		590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionDataSource.swift; sourceTree = "<group>"; };
 		590A83641C54F6BE000C6179 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
-		590A83671C5C9A3F000C6179 /* PlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 		59A88AB61C4B1BAD00D40B23 /* CatDogTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatDogTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,14 +137,6 @@
 			name = collection;
 			sourceTree = "<group>";
 		};
-		590A83661C5C9A1E000C6179 /* player */ = {
-			isa = PBXGroup;
-			children = (
-				590A83671C5C9A3F000C6179 /* PlayerVC.swift */,
-			);
-			name = player;
-			sourceTree = "<group>";
-		};
 		590A83691C5C9E31000C6179 /* constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				590A83691C5C9E31000C6179 /* constants */,
-				590A83661C5C9A1E000C6179 /* player */,
 				590A83611C54F4A4000C6179 /* collection */,
 				590A83581C546397000C6179 /* YouTube */,
 				590A83551C5390A8000C6179 /* extension */,
@@ -433,7 +422,6 @@
 				59F3DDDF1C4B92E100906365 /* YouTubeClient.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
-				590A83681C5C9A3F000C6179 /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

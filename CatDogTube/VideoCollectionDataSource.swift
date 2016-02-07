@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import youtube_ios_player_helper
 
 protocol VideoLoadDelegate {
     func onLoadSuccess()
@@ -55,9 +56,9 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
                 as! VideoCell
             
             let video = videos[indexPath.row]
-            cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed)
-            cell.titleView.text = video.title
-            
+            cell.title.text = video.title
+            //playsinline:0 starts video in fullscreen
+            cell.playerView.loadWithVideoId(video.videoId, playerVars:["playsinline":0])
             return cell
     }
 }
