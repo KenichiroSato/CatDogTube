@@ -31,11 +31,15 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         dataSource.loadVideos(searchWord)
     }
     
+    func invalidateLayout() {
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     // MARK - UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            let width = UIScreen.mainScreen().bounds.width
-            return CGSizeMake(width, 400)
+            let width = self.view.frame.width
+            return CGSizeMake(width, 300)
     }
 
     // MARK: PhotosLoadDelegate
