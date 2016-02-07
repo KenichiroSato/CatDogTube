@@ -32,6 +32,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     private func updateFrames(newSize: CGSize) {
+        let index = currentIndex()
         contentView.frame = CGRectMake(0, 0, newSize.width,
             newSize.height - self.headerView.frame.size.height)
         contentView.contentSize =
@@ -41,6 +42,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         for (index,view) in contentView.subviews.enumerate() {
             view.frame = CGRectMake(CGFloat(index) * contentWidth(), 0, contentWidth(), contentHeight())
         }
+        moveToIndex(index)
     }
     
     private func setupViews() {
@@ -91,6 +93,18 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private func contentHeight() -> CGFloat {
         return contentView.frame.size.height
+    }
+
+    private func currentIndex() -> Int {
+        let offsetX = contentView.contentOffset.x
+        let index = offsetX/contentWidth()
+        return Int(index)
+    }
+    
+    private func moveToIndex(index:Int) {
+        let move = self.contentWidth() * CGFloat(index);
+        self.contentView.scrollRectToVisible(
+            CGRectMake(move , 0, self.contentWidth(), self.contentHeight()), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
