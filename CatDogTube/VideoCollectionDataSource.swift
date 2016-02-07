@@ -57,8 +57,8 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
             
             let video = videos[indexPath.row]
             cell.title.text = video.title
-            cell.playerView.loadWithVideoId(video.videoId, playerVars:["playsinline":1])
-            
+            //playsinline:0 starts video in fullscreen
+            cell.playerView.loadWithVideoId(video.videoId, playerVars:["playsinline":0])
             return cell
     }
 }
