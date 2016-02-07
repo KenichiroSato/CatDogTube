@@ -39,7 +39,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             let width = self.view.frame.width
-            return CGSizeMake(width, 400)
+            return CGSizeMake(width, 300)
     }
 
     // MARK: PhotosLoadDelegate
