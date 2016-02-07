@@ -32,17 +32,17 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     private func updateFrames(newSize: CGSize) {
-        let index = currentIndex()
+        let index = contentView.currentIndex()
         contentView.frame = CGRectMake(0, 0, newSize.width,
             newSize.height - self.headerView.frame.size.height)
         contentView.contentSize =
-            CGSizeMake(contentWidth() * CGFloat(searchWords.count), contentHeight())
-        segmentedControl.frame = CGRectMake(0, 0, contentWidth(),
+            CGSizeMake(contentView.width() * CGFloat(searchWords.count), contentView.height())
+        segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
             self.headerView.frame.size.height)
         for (index,view) in contentView.subviews.enumerate() {
-            view.frame = CGRectMake(CGFloat(index) * contentWidth(), 0, contentWidth(), contentHeight())
+            view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0, contentView.width(), contentView.height())
         }
-        moveToIndex(index)
+        contentView.moveToIndex(index)
     }
     
     private func setupViews() {
@@ -52,22 +52,21 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         segmentedControl.sectionTitles = ["Cats", "Dogs", "子猫", "子犬"]
         segmentedControl.type = HMSegmentedControlTypeText
         segmentedControl.backgroundColor = UIColor.redColor()
-        segmentedControl.frame = CGRectMake(0, 0, contentWidth(), self.headerView.frame.size.height)
+        segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
+            self.headerView.frame.size.height)
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
         segmentedControl.selectionIndicatorColor = UIColor.orangeColor()
         segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleBox;
         segmentedControl.indexChangeBlock = {
             [unowned self] (index: Int) in
-            let move = self.contentWidth() * CGFloat(index);
-            self.contentView.scrollRectToVisible(
-                CGRectMake(move , 0, self.contentWidth(), self.contentHeight()), animated: true)
+            self.contentView.moveToIndex(index)
         }
         headerView.addSubview(segmentedControl)
         
         contentView.delegate = self
         contentView.contentSize =
-            CGSizeMake(contentWidth() * CGFloat(searchWords.count), contentHeight())
+            CGSizeMake(contentView.width() * CGFloat(searchWords.count), contentView.height())
         contentView.delaysContentTouches = false
         
     }
@@ -80,31 +79,12 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
             vc.searchWord = word
             self.addChildViewController(vc)
             vc.didMoveToParentViewController(self)
-            vc.view.frame = CGRectMake(CGFloat(index) * contentWidth(), 0, contentWidth(), contentHeight())
+            vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0,
+                contentView.width(), contentView.height())
             if let view = vc.view {
                 contentView.addSubview(view)
             }
         }
-    }
-    
-    private func contentWidth() -> CGFloat {
-        return contentView.frame.size.width
-    }
-    
-    private func contentHeight() -> CGFloat {
-        return contentView.frame.size.height
-    }
-
-    private func currentIndex() -> Int {
-        let offsetX = contentView.contentOffset.x
-        let index = offsetX/contentWidth()
-        return Int(index)
-    }
-    
-    private func moveToIndex(index:Int) {
-        let move = self.contentWidth() * CGFloat(index);
-        self.contentView.scrollRectToVisible(
-            CGRectMake(move , 0, self.contentWidth(), self.contentHeight()), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
