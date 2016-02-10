@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -112,6 +113,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="sWD-VY-qia" id="JUj-nO-fIG"/>
                                             <outlet property="title" destination="UFH-F3-UpB" id="WxH-Rp-JPs"/>
+                                            <segue destination="YV1-6I-o3S" kind="presentation" identifier="showPlayer" id="tAe-aZ-DBb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -131,6 +133,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mab-Be-U6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1082" y="-325"/>
+        </scene>
+        <!--PlayerVC-->
+        <scene sceneID="fIx-zX-kRM">
+            <objects>
+                <viewController id="YV1-6I-o3S" customClass="PlayerVC" customModule="CatDogTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Of0-Ti-iW3"/>
+                        <viewControllerLayoutGuide type="bottom" id="UuO-dg-mh1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z88-UN-5c0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
+                                <rect key="frame" x="20" y="259" width="560" height="81"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8jR-EF-QVJ" secondAttribute="height" multiplier="16:9" id="Ju8-ag-ukz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8jR-EF-QVJ" firstAttribute="centerY" secondItem="Z88-UN-5c0" secondAttribute="centerY" id="BL0-4j-C6c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8jR-EF-QVJ" secondAttribute="trailing" id="J9T-Wk-RUN"/>
+                            <constraint firstItem="8jR-EF-QVJ" firstAttribute="leading" secondItem="Z88-UN-5c0" secondAttribute="leadingMargin" id="NDj-uu-QOl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="8jR-EF-QVJ" id="vFu-gl-kLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ip-Ov-UsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789" y="-325"/>
         </scene>
     </scenes>
 </document>

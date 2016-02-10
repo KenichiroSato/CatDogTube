@@ -10,4 +10,6 @@ import Foundation
 
 class SegueIdentifier {
     
+    static let SHOW_PLAYER = "showPlayer"
+
 }
