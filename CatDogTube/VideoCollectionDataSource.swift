@@ -59,6 +59,7 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
             cell.title.text = video.title
             //playsinline:0 starts video in fullscreen
             cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed)
+            cell.setGradientLayer()
             return cell
     }
 }
