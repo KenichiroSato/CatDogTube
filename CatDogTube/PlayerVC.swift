@@ -39,7 +39,7 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     // return false if failed
     private func loadVideo() -> Bool {
         guard let nonNilVideo = video else { return false }
-        return playerView.loadWithVideoId(nonNilVideo.videoId, playerVars:  ["playsinline":0])
+        return playerView.loadWithVideoId(nonNilVideo.videoId, playerVars:  ["playsinline":1])
     }
     
     override func didReceiveMemoryWarning() {
