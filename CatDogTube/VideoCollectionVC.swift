@@ -35,6 +35,18 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == SegueIdentifier.SHOW_PLAYER) {
+            if let selectedIndexPath = self.collectionView?.indexPathsForSelectedItems(),
+                let nextVC = segue.destinationViewController as? PlayerVC {
+                    let index = selectedIndexPath[0].item
+                    nextVC.video = dataSource.video(index)
+            }
+        }
+    }
+    
     // MARK - UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

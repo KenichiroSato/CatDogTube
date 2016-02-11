@@ -84,35 +84,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="572" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8H-YJ-PcI" customClass="YTPlayerView">
-                                                    <rect key="frame" x="8" y="8" width="556" height="194"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="UFH-F3-UpB">
                                                     <rect key="frame" x="8" y="210" width="556" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="aHI-et-ZgN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWD-VY-qia">
+                                                    <rect key="frame" x="8" y="8" width="556" height="202"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.91338512646914516" blue="0.94633682069865344" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="w8H-YJ-PcI" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="topMargin" id="6ar-Tp-A1j"/>
+                                            <constraint firstItem="sWD-VY-qia" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="8zQ-IL-gur"/>
                                             <constraint firstItem="UFH-F3-UpB" firstAttribute="trailing" secondItem="Xkh-Mb-8Y7" secondAttribute="trailingMargin" id="DmS-5z-PwV"/>
+                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="top" secondItem="sWD-VY-qia" secondAttribute="bottom" id="G5Y-Xr-GI3"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="sWD-VY-qia" secondAttribute="trailing" id="KsJ-c2-NIG"/>
+                                            <constraint firstItem="sWD-VY-qia" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="topMargin" id="Oli-xG-Z5Y"/>
                                             <constraint firstItem="UFH-F3-UpB" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="RmX-Sf-cTS"/>
-                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="top" secondItem="w8H-YJ-PcI" secondAttribute="bottom" constant="8" id="h4D-m4-5b9"/>
-                                            <constraint firstItem="w8H-YJ-PcI" firstAttribute="trailing" secondItem="Xkh-Mb-8Y7" secondAttribute="trailingMargin" id="lAB-LY-362"/>
-                                            <constraint firstItem="w8H-YJ-PcI" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="lhO-Au-VsY"/>
                                             <constraint firstItem="UFH-F3-UpB" firstAttribute="bottom" secondItem="Xkh-Mb-8Y7" secondAttribute="bottomMargin" id="qoW-V0-gHJ"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="playerView" destination="w8H-YJ-PcI" id="XA2-i8-WnN"/>
+                                            <outlet property="imageView" destination="sWD-VY-qia" id="JUj-nO-fIG"/>
                                             <outlet property="title" destination="UFH-F3-UpB" id="WxH-Rp-JPs"/>
+                                            <segue destination="YV1-6I-o3S" kind="presentation" identifier="showPlayer" id="tAe-aZ-DBb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -132,6 +132,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mab-Be-U6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1082" y="-325"/>
+        </scene>
+        <!--PlayerVC-->
+        <scene sceneID="fIx-zX-kRM">
+            <objects>
+                <viewController id="YV1-6I-o3S" customClass="PlayerVC" customModule="CatDogTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Of0-Ti-iW3"/>
+                        <viewControllerLayoutGuide type="bottom" id="UuO-dg-mh1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z88-UN-5c0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-Qf-zDC">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oga-XK-adB">
+                                <rect key="frame" x="20" y="560" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="onBackPressed:" destination="YV1-6I-o3S" eventType="touchUpInside" id="BfI-OB-0FC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8jR-EF-QVJ" firstAttribute="centerY" secondItem="Z88-UN-5c0" secondAttribute="centerY" id="BL0-4j-C6c"/>
+                            <constraint firstAttribute="trailing" secondItem="8jR-EF-QVJ" secondAttribute="trailing" id="J9T-Wk-RUN"/>
+                            <constraint firstItem="UuO-dg-mh1" firstAttribute="top" secondItem="oga-XK-adB" secondAttribute="bottom" constant="10" id="L4t-2x-WFa"/>
+                            <constraint firstItem="oga-XK-adB" firstAttribute="leading" secondItem="Z88-UN-5c0" secondAttribute="leadingMargin" id="Lam-uP-slB"/>
+                            <constraint firstItem="8jR-EF-QVJ" firstAttribute="leading" secondItem="Z88-UN-5c0" secondAttribute="leading" id="NDj-uu-QOl"/>
+                            <constraint firstItem="tKJ-Qf-zDC" firstAttribute="centerX" secondItem="Z88-UN-5c0" secondAttribute="centerX" id="d66-dD-hjU"/>
+                            <constraint firstItem="8jR-EF-QVJ" firstAttribute="top" secondItem="Of0-Ti-iW3" secondAttribute="bottom" id="iAr-6Y-0Wf"/>
+                            <constraint firstItem="tKJ-Qf-zDC" firstAttribute="centerY" secondItem="Z88-UN-5c0" secondAttribute="centerY" id="nO2-bB-FH9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="tKJ-Qf-zDC" id="dJT-t4-1Ii"/>
+                        <outlet property="playerView" destination="8jR-EF-QVJ" id="vFu-gl-kLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ip-Ov-UsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="-305"/>
         </scene>
     </scenes>
 </document>
