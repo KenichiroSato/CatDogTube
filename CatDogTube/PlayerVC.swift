@@ -31,6 +31,10 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
         activityIndicator.hidden = true
     }
     
+    @IBAction func onBackPressed(sender: AnyObject) {
+        dismissModally()
+    }
+    
     private func hidePlayer() {
         playerView.hidden = true
         activityIndicator.hidden = false
@@ -58,28 +62,14 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     
     func playerView(playerView: YTPlayerView!, didChangeToState state: YTPlayerState) {
         switch state {
-        case .Playing:
+        case .Playing,
+             .Unstarted: //If app cannot play the video, status becomes .Unstarted
             showPlayer()
         case .Ended:
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            dismissModally()
         default:
             break
         }
     }
-    
-    /*
-    func playerViewDidBecomeReady(playerView: YTPlayerView!) {
-        
-    }*/
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }
