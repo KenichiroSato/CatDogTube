@@ -13,15 +13,27 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     
     @IBOutlet weak var playerView: YTPlayerView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var video:Video?
     private var isLoaded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView.delegate = self
-        playerView.hidden = true
+        hidePlayer()
         
         isLoaded = loadVideo()
+    }
+    
+    private func showPlayer() {
+        playerView.hidden = false
+        activityIndicator.hidden = true
+    }
+    
+    private func hidePlayer() {
+        playerView.hidden = true
+        activityIndicator.hidden = false
     }
     
     // return false if failed
@@ -47,9 +59,8 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     func playerView(playerView: YTPlayerView!, didChangeToState state: YTPlayerState) {
         switch state {
         case .Playing:
-            playerView.hidden = false
+            showPlayer()
         case .Ended:
-            playerView.hidden = true
             self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         default:
             break
