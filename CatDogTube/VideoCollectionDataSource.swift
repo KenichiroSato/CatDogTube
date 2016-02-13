@@ -32,7 +32,6 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
             }
             self.videos = nonNilVideos
             self.loadDelegate?.onLoadSuccess()
-            nonNilVideos.forEach({print($0.description)})
         })
     }
     
@@ -59,6 +58,7 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
             cell.title.text = video.title
             //playsinline:0 starts video in fullscreen
             cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed)
+            //cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed, completed: { (_, _, _, _ )in cell.setGradientLayer()})
             cell.setGradientLayer()
             return cell
     }
