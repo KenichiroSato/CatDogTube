@@ -51,7 +51,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             let width = self.view.frame.width
-            let height = width * 9 / 16
+            let height = width * VideoCell.aspectRatio
             return CGSizeMake(width, height)
     }
 

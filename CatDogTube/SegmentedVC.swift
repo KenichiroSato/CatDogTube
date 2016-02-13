@@ -59,7 +59,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
             self.headerView.frame.size.height)
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
-        segmentedControl.selectionIndicatorColor = UIColor.orangeColor()
+        segmentedControl.selectionIndicatorColor = UIColor.whiteColor()
         segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleBox;
         segmentedControl.indexChangeBlock = {

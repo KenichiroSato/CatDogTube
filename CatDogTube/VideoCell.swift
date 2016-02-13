@@ -34,4 +34,15 @@ class VideoCell: UICollectionViewCell {
         }
         gradientLayer.frame = self.bounds
     }
+    
+    class var aspectRatio : CGFloat {
+        get {
+            if (UIDevice.currentDevice().orientation.isPortrait) {
+                return 9 / 16
+            } else {
+                return 6 / 16
+            }
+        }
+    }
+    
 }
