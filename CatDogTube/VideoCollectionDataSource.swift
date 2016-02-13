@@ -56,10 +56,14 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
             
             let video = videos[indexPath.row]
             cell.title.text = video.title
-            //playsinline:0 starts video in fullscreen
-            cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed)
-            //cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed, completed: { (_, _, _, _ )in cell.setGradientLayer()})
-            cell.setGradientLayer()
+            cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed, completed: {_,_, cacheType,_ in
+                if (cacheType == .None) { // downloaded from Internet
+                    // add GradianeLayer to image and store the image to cache
+                    cell.imageView.addGradientLayer()
+                    SDImageCache.sharedImageCache()
+                        .storeImage(cell.imageView.image, forKey: String(video.imageUrl))
+                }
+            })
             return cell
     }
 }
