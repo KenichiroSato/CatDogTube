@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYP-WH-ano">
-                                <rect key="frame" x="0.0" y="550" width="580" height="50"/>
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="29c-y8-rp5"/>
                                 </constraints>
@@ -28,23 +28,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="topMargin" constant="20" id="21c-Ig-S1P"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="width" secondItem="VtE-5W-9Qs" secondAttribute="width" id="BJa-6r-8QD"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="JCx-kb-atd"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="top" secondItem="F7f-Bg-wYY" secondAttribute="bottom" id="Rz6-jm-6Ck"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CYP-WH-ano" secondAttribute="trailing" id="YoW-rF-ixe"/>
+                            <constraint firstAttribute="trailing" secondItem="CYP-WH-ano" secondAttribute="trailing" id="YoW-rF-ixe"/>
                             <constraint firstAttribute="trailing" secondItem="F7f-Bg-wYY" secondAttribute="trailing" id="ciU-ez-U7h"/>
                             <constraint firstItem="uhD-hD-rh6" firstAttribute="top" secondItem="CYP-WH-ano" secondAttribute="bottom" id="dmp-x7-e8B"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="top" id="lTZ-pv-Zfi"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="tKw-Cg-9be"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="21c-Ig-S1P"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bgP-6t-udI"/>
                     <connections>
@@ -96,7 +89,7 @@
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                             </subviews>
@@ -122,7 +115,7 @@
                             </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Sho-Vo-uN4" firstAttribute="top" secondItem="Rnb-79-Dww" secondAttribute="topMargin" id="5Px-vE-jyI"/>
+                            <constraint firstItem="Sho-Vo-uN4" firstAttribute="top" secondItem="Rnb-79-Dww" secondAttribute="top" id="5Px-vE-jyI"/>
                             <constraint firstItem="clT-tv-eGx" firstAttribute="top" secondItem="Sho-Vo-uN4" secondAttribute="bottom" id="pUc-vb-Vbx"/>
                             <constraint firstAttribute="trailing" secondItem="Sho-Vo-uN4" secondAttribute="trailing" id="rhj-ta-wWo"/>
                             <constraint firstItem="Sho-Vo-uN4" firstAttribute="leading" secondItem="Rnb-79-Dww" secondAttribute="leading" id="uAa-9x-b7m"/>
