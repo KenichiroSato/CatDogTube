@@ -14,4 +14,15 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    class var aspectRatio : CGFloat {
+        get {
+            if (UIDevice.currentDevice().orientation.isLandscape) {
+                return 6 / 16
+            } else {
+                return 9 / 16
+            }
+        }
+    }
+    
 }
