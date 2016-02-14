@@ -20,6 +20,7 @@
 		590DAECE1C7027F2002281B4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAECD1C7027F2002281B4 /* Text.swift */; };
 		590DAED31C702B70002281B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 590DAED51C702B70002281B4 /* Localizable.strings */; };
 		590DAEDA1C702C8D002281B4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59A88AC51C4B1BAD00D40B23 /* Info.plist */; };
+		590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDB1C70464B002281B4 /* UIImage+extension.swift */; };
 		5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */; };
 		5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0791C6C1D22006762CE /* UIViewController+extension.swift */; };
 		5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */; };
@@ -66,6 +67,7 @@
 		590DAECD1C7027F2002281B4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		590DAED41C702B70002281B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAED91C702C8D002281B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		590DAEDB1C70464B002281B4 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		5990C0791C6C1D22006762CE /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */,
 				5990C0791C6C1D22006762CE /* UIViewController+extension.swift */,
 				5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */,
+				590DAEDB1C70464B002281B4 /* UIImage+extension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */,
 				5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */,
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
