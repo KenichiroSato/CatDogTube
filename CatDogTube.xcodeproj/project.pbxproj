@@ -17,6 +17,7 @@
 		590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */; };
 		590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83641C54F6BE000C6179 /* VideoCell.swift */; };
 		590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */; };
+		590DAECE1C7027F2002281B4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAECD1C7027F2002281B4 /* Text.swift */; };
 		5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */; };
 		5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0791C6C1D22006762CE /* UIViewController+extension.swift */; };
 		5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */; };
@@ -60,6 +61,7 @@
 		590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionDataSource.swift; sourceTree = "<group>"; };
 		590A83641C54F6BE000C6179 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
+		590DAECD1C7027F2002281B4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		5990C0791C6C1D22006762CE /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */,
+				590DAECD1C7027F2002281B4 /* Text.swift */,
 			);
 			name = constants;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */,
+				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
 				5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */,
