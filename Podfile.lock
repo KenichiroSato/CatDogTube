@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.6.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.5)
   - HMSegmentedControl (1.5.2)
   - SDWebImage (3.7.4):
     - SDWebImage/Core (= 3.7.4)
@@ -7,6 +10,8 @@ PODS:
   - youtube-ios-player-helper (0.1.4)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - HMSegmentedControl
   - SDWebImage (~> 3.7)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -22,6 +27,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
+  Fabric: 338ffd3c2afcab120638907b4251189de9ad17b3
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
