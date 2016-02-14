@@ -11,7 +11,11 @@ import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
-    private let searchWords = [Text.SEARCH_WORD_CAT, Text.SEARCH_WORD_DOG]
+    // add SegmentedItem here to increase Tab items
+    private let segmentedItems = [
+        SegmentedItem(searchWord: Text.SEARCH_WORD_CAT, iconName: "cat"),
+        SegmentedItem(searchWord: Text.SEARCH_WORD_DOG, iconName: "dog")
+    ]
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -37,7 +41,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         contentView.frame = CGRectMake(0, 0, newSize.width,
             newSize.height - self.headerView.frame.size.height)
         contentView.contentSize =
-            CGSizeMake(contentView.width() * CGFloat(searchWords.count), contentView.height())
+            CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
             self.headerView.frame.size.height)
         for (index, childVC) in self.childViewControllers.enumerate() {
@@ -52,10 +56,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     private func setupViews() {
         setupSubViews()
         
-        segmentedControl.sectionImages = [
-        UIImage.named("cat", size: CGSizeMake(50, 50))!,
-            UIImage.named("dog", size: CGSizeMake(50, 50))!
-        ]
+        segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
         segmentedControl.type = HMSegmentedControlTypeImages
         segmentedControl.backgroundColor = UIColor.redColor()
         segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
@@ -72,17 +73,17 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         
         contentView.delegate = self
         contentView.contentSize =
-            CGSizeMake(contentView.width() * CGFloat(searchWords.count), contentView.height())
+            CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         contentView.delaysContentTouches = false
         
     }
     
     private func setupSubViews() {
-        for (index, word) in searchWords.enumerate() {
+        for (index, item) in segmentedItems.enumerate() {
             guard let vc = self.storyboard?.instantiateViewControllerWithIdentifier(
                 VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC else {return}
             
-            vc.searchWord = word
+            vc.searchWord = item.searchWord
             self.addChildViewController(vc)
             vc.didMoveToParentViewController(self)
             vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0,
