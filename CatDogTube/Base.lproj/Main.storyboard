@@ -18,33 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7f-Bg-wYY">
+                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYP-WH-ano">
-                                <rect key="frame" x="0.0" y="550" width="580" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="29c-y8-rp5"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7f-Bg-wYY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="topMargin" constant="20" id="21c-Ig-S1P"/>
+                            <constraint firstAttribute="trailing" secondItem="CYP-WH-ano" secondAttribute="trailing" id="0K2-mw-udz"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="width" secondItem="VtE-5W-9Qs" secondAttribute="width" id="BJa-6r-8QD"/>
-                            <constraint firstItem="CYP-WH-ano" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="JCx-kb-atd"/>
-                            <constraint firstItem="CYP-WH-ano" firstAttribute="top" secondItem="F7f-Bg-wYY" secondAttribute="bottom" id="Rz6-jm-6Ck"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CYP-WH-ano" secondAttribute="trailing" id="YoW-rF-ixe"/>
+                            <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="CYP-WH-ano" secondAttribute="bottom" id="CxN-vo-xKY"/>
+                            <constraint firstItem="CYP-WH-ano" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="topMargin" id="Qrh-YE-pA0"/>
+                            <constraint firstItem="CYP-WH-ano" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="Zx5-5F-kFI"/>
                             <constraint firstAttribute="trailing" secondItem="F7f-Bg-wYY" secondAttribute="trailing" id="ciU-ez-U7h"/>
-                            <constraint firstItem="uhD-hD-rh6" firstAttribute="top" secondItem="CYP-WH-ano" secondAttribute="bottom" id="dmp-x7-e8B"/>
-                            <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="top" id="lTZ-pv-Zfi"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="tKw-Cg-9be"/>
+                            <constraint firstItem="uhD-hD-rh6" firstAttribute="top" secondItem="F7f-Bg-wYY" secondAttribute="bottom" id="zKG-Qo-ALV"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="21c-Ig-S1P"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bgP-6t-udI"/>
                     <connections>
@@ -54,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ImW-ko-rHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="-335"/>
+            <point key="canvasLocation" x="301" y="-335"/>
         </scene>
         <!--Video CollectionVC-->
         <scene sceneID="ArT-Fy-e7P">
@@ -148,8 +142,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-Qf-zDC">
