@@ -10,7 +10,7 @@ import UIKit
 
 class SegmentedItem : NSObject {
 
-    private let ICON_SIZE : CGFloat = 50.0
+    private let ICON_SIZE : CGFloat = 45.0
     
     let searchWord:String
     

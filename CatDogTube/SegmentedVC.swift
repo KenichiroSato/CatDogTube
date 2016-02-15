@@ -19,7 +19,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
-    
+
     private let segmentedControl = HMSegmentedControl()
     
     var token: dispatch_once_t = 0
@@ -39,7 +39,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     private func updateFrames(newSize: CGSize) {
         let index = contentView.currentIndex()
         contentView.frame = CGRectMake(0, 0, newSize.width,
-            newSize.height - self.headerView.frame.size.height)
+            newSize.height - self.headerView.frame.size.height - Screen.STATUS_BAR_HEIGHT())
         contentView.contentSize =
             CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
