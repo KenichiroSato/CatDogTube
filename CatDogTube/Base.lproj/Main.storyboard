@@ -21,7 +21,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7f-Bg-wYY">
                                 <rect key="frame" x="0.0" y="70" width="600" height="530"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cB-DX-JL9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQB-9t-wd7" userLabel="shadowView">
+                                <rect key="frame" x="0.0" y="70" width="600" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="QtC-1e-lm8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cB-DX-JL9" userLabel="StatusBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.094808595809999993" blue="0.1386080338" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -38,10 +44,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CYP-WH-ano" secondAttribute="trailing" id="0K2-mw-udz"/>
+                            <constraint firstItem="lQB-9t-wd7" firstAttribute="leading" secondItem="F7f-Bg-wYY" secondAttribute="leading" id="0vj-Au-ICl"/>
                             <constraint firstItem="7cB-DX-JL9" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="6v4-wh-WlY"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="width" secondItem="VtE-5W-9Qs" secondAttribute="width" id="BJa-6r-8QD"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="CYP-WH-ano" secondAttribute="bottom" id="CxN-vo-xKY"/>
                             <constraint firstItem="7cB-DX-JL9" firstAttribute="top" secondItem="VtE-5W-9Qs" secondAttribute="top" id="H4E-oZ-uAu"/>
+                            <constraint firstItem="lQB-9t-wd7" firstAttribute="top" secondItem="F7f-Bg-wYY" secondAttribute="top" id="SgA-fg-6cX"/>
+                            <constraint firstItem="lQB-9t-wd7" firstAttribute="trailing" secondItem="F7f-Bg-wYY" secondAttribute="trailing" id="Y9K-G2-Q8h"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="leading" secondItem="VtE-5W-9Qs" secondAttribute="leading" id="Zx5-5F-kFI"/>
                             <constraint firstAttribute="trailing" secondItem="F7f-Bg-wYY" secondAttribute="trailing" id="ciU-ez-U7h"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="top" secondItem="yDh-gU-CC4" secondAttribute="bottom" id="sDA-zb-dCn"/>
@@ -54,6 +63,7 @@
                     <connections>
                         <outlet property="contentView" destination="F7f-Bg-wYY" id="pQQ-Uk-gMv"/>
                         <outlet property="headerView" destination="CYP-WH-ano" id="RJT-KC-FZk"/>
+                        <outlet property="shadowView" destination="lQB-9t-wd7" id="xzJ-G3-cPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ImW-ko-rHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
