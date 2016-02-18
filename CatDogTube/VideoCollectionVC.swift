@@ -18,6 +18,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     var searchWord:String = ""
     
+    private var refreshControl = UIRefreshControl()
+    
     required init?(coder aDecoder: NSCoder) {
         dataSource = VideoCollectionDataSource()
         super.init(coder: aDecoder)
@@ -29,13 +31,22 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         collectionView.delegate = self
         dataSource.loadDelegate = self
         dataSource.loadVideos(searchWord)
+        
+        refreshControl.addTarget(self, action: Selector("pullToRefresh"),
+            forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.tintColor = UIColor.blackColor()
+        collectionView.addSubview(refreshControl)
+
     }
     
     func invalidateLayout() {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    
+    func pullToRefresh() {
+        dataSource.loadVideos(searchWord)
+    }
+
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == SegueIdentifier.SHOW_PLAYER) {
@@ -58,6 +69,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     // MARK: PhotosLoadDelegate
     func onLoadSuccess() {
         dispatch_async(dispatch_get_main_queue(), {
+            self.refreshControl.endRefreshing()
             self.collectionView.reloadData()
         })
 
