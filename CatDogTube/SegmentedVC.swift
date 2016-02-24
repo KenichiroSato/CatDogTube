@@ -11,6 +11,15 @@ import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
+    private var gradientColors : [CGColor] {
+        get {
+            let darkColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
+            let middleColor = UIColor.blackColor().colorWithAlphaComponent(0.1).CGColor
+            let clearColor = UIColor.clearColor().CGColor
+            return [darkColor, middleColor, clearColor]
+        }
+    }
+
     // add SegmentedItem here to increase Tab items
     private let segmentedItems = [
         SegmentedItem(searchWord: Text.SEARCH_WORD_CAT, iconName: "cat"),
@@ -19,7 +28,9 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
-
+    @IBOutlet weak var shadowView: UIView!
+    private let shadowLayer = CAGradientLayer()
+    
     private let segmentedControl = HMSegmentedControl()
     
     var token: dispatch_once_t = 0
@@ -44,6 +55,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
             CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
             self.headerView.frame.size.height)
+        
+        shadowLayer.frame = CGRectMake(0, 0, contentView.width(), shadowView.frame.height)
         for (index, childVC) in self.childViewControllers.enumerate() {
             if let vc = childVC as? VideoCollectionVC {
                 vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0, contentView.width(), contentView.height())
@@ -55,6 +68,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private func setupViews() {
         setupSubViews()
+        setupShadowView()
         
         segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
         segmentedControl.type = HMSegmentedControlTypeImages
@@ -78,6 +92,12 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         
     }
     
+    private func setupShadowView() {
+        shadowLayer.colors = gradientColors
+        shadowLayer.frame = shadowView.bounds
+        shadowView.layer.insertSublayer(shadowLayer, atIndex: 0)
+    }
+
     private func setupSubViews() {
         for (index, item) in segmentedItems.enumerate() {
             guard let vc = self.storyboard?.instantiateViewControllerWithIdentifier(

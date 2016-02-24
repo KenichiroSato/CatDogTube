@@ -13,7 +13,7 @@ extension UIImageView {
     
     private var gradientColors : [CGColor] {
         get {
-            let darkColor = UIColor.blackColor().colorWithAlphaComponent(0.6).CGColor
+            let darkColor = UIColor.blackColor().colorWithAlphaComponent(0.8).CGColor
             let clearColor = UIColor.clearColor().CGColor
             return [clearColor, clearColor, darkColor]
         }
