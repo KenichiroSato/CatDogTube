@@ -10,7 +10,7 @@ import UIKit
 
 class YouTubeClient: NSObject {
 
-    private let searchBaseUrl = "https://www.googleapis.com/youtube/v3/search?key=%@&q=%@&part=snippet&maxResults=30&order=date&type=video&videoDuration=short"
+    private let searchBaseUrl = "https://www.googleapis.com/youtube/v3/search?key=%@&q=%@&part=snippet&maxResults=30&order=viewCount&type=video&videoDuration=short&publishedBefore=2016-02-01T00:00:00Z&publishedAfter=2016-01-01T00:00:00Z"
     
     private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
 
@@ -26,7 +26,7 @@ class YouTubeClient: NSObject {
         }
         
         performGetRequest(requestUrl, completion: {(data, response, error) in
-            guard let code = (response as? NSHTTPURLResponse)?.statusCode where code == 200,
+            guard let code = (response as? NSHTTPURLResponse)?.statusCode where code == Http.StatusCode.OK.rawValue,
                 let nonNilData = data else {
                     completionHandler(videos: nil)
                     return
@@ -38,7 +38,7 @@ class YouTubeClient: NSObject {
     
     private func performGetRequest(targetURL: NSURL, completion: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
         let request = NSMutableURLRequest(URL: targetURL)
-        request.HTTPMethod = "GET"
+        request.HTTPMethod = Http.Method.GET.rawValue
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         let task = session.dataTaskWithRequest(request, completionHandler:completion)
