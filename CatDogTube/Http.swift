@@ -24,4 +24,19 @@ class Http: NSObject {
         
         case INTERNAL_SERVER_ERROR = 500
     }
+    
+    class func generateRequestURL(baseUrl:String, queries:[String:String]) -> NSURL? {
+        if (queries.count == 0) {
+            return NSURL(string: baseUrl)
+        }
+        var url = baseUrl + "?"
+        for (index, (key, value)) in queries.enumerate() {
+            if let encodedValue = value.urlEncodes() {
+                url += key + "=" + encodedValue
+                if index != queries.count - 1 {url += "&"}
+            }
+        }
+        
+        return NSURL(string: url)
+    }
 }

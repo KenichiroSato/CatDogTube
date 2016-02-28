@@ -10,23 +10,35 @@ import UIKit
 
 class YouTubeClient: NSObject {
 
-    private let searchBaseUrl = "https://www.googleapis.com/youtube/v3/search?key=%@&q=%@&part=snippet&maxResults=30&order=viewCount&type=video&videoDuration=short&publishedBefore=2016-02-01T00:00:00Z&publishedAfter=2016-01-01T00:00:00Z"
+    private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
-    private let myKey = "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0"
-
+    private var searchParams = [
+        "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
+        "part" : "snippet",
+        "type" : "video",
+        "videoDuration" : "short",
+        "maxResults" : "30",
+        "order" : "viewCount",
+        "publishedBefore" : "2013-03-01T00:00:00Z",
+        "publishedAfter" : "2013-02-01T00:00:00Z"
+    ]
+    
     func getVideos(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {
-        guard let encodedString = searchWord.urlEncodes() where !searchWord.isEmpty else {
+
+        guard !searchWord.isEmpty else {
             completionHandler(videos: nil)
             return
         }
-        let searchUrlString = String(format: searchBaseUrl, arguments: [myKey, encodedString])
-        guard let requestUrl = NSURL(string: searchUrlString) else {
+        
+        searchParams["q"] = searchWord
+        guard let requestUrl = Http.generateRequestURL(baseUrl, queries: searchParams) else {
             completionHandler(videos: nil)
             return
         }
         
         performGetRequest(requestUrl, completion: {(data, response, error) in
-            guard let code = (response as? NSHTTPURLResponse)?.statusCode where code == Http.StatusCode.OK.rawValue,
+            guard let code = (response as? NSHTTPURLResponse)?.statusCode
+                where code == Http.StatusCode.OK.rawValue,
                 let nonNilData = data else {
                     completionHandler(videos: nil)
                     return
