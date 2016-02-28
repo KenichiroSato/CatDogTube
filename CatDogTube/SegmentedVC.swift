@@ -35,6 +35,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     var token: dispatch_once_t = 0
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        contentView.scrollsToTop = false
+    }
+    
     override func viewDidAppear(animated: Bool) {
         dispatch_once(&token) {
             self.setupViews()
@@ -89,7 +94,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         contentView.contentSize =
             CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         contentView.delaysContentTouches = false
-        
+        updateScrollsToTop()
     }
     
     private func setupShadowView() {
@@ -114,15 +119,30 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    private func updateScrollsToTop() {
+        for (index, childVC) in self.childViewControllers.enumerate() {
+            if let vc = childVC as? VideoCollectionVC {
+                vc.collectionView.scrollsToTop = (index == contentView.currentIndex())
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //This is called after user manually scrolled
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let pageWidth: CGFloat = self.view.frame.size.width
         let page = contentView.contentOffset.x / pageWidth
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
+        updateScrollsToTop()
+    }
+    
+    //This is called after user tapped Tab area
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        self.updateScrollsToTop()
     }
     
 }
