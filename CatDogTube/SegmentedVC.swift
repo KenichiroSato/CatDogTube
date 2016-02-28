@@ -9,6 +9,10 @@
 import UIKit
 import HMSegmentedControl
 
+protocol SegmentdChildViewDelegate {
+    func onSegmentChanged(isCurrentIndex:Bool)
+}
+
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private var gradientColors : [CGColor] {
@@ -94,7 +98,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         contentView.contentSize =
             CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         contentView.delaysContentTouches = false
-        updateScrollsToTop()
+        notifySegmentChanged()
     }
     
     private func setupShadowView() {
@@ -119,10 +123,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    private func updateScrollsToTop() {
+    private func notifySegmentChanged() {
         for (index, childVC) in self.childViewControllers.enumerate() {
-            if let vc = childVC as? VideoCollectionVC {
-                vc.collectionView.scrollsToTop = (index == contentView.currentIndex())
+            if let vc = childVC as? SegmentdChildViewDelegate {
+                let isCurrentIndex = (index == self.contentView.currentIndex())
+                vc.onSegmentChanged(isCurrentIndex)
             }
         }
     }
@@ -137,12 +142,12 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         let pageWidth: CGFloat = self.view.frame.size.width
         let page = contentView.contentOffset.x / pageWidth
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
-        updateScrollsToTop()
+        notifySegmentChanged()
     }
     
     //This is called after user tapped Tab area
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        self.updateScrollsToTop()
+        notifySegmentChanged()
     }
     
 }
