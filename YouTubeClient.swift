@@ -12,16 +12,28 @@ class YouTubeClient: NSObject {
 
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
-    private var searchParams = [
+    private let initialSearchParams = [
         "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
         "part" : "snippet",
         "type" : "video",
         "videoDuration" : "short",
         "maxResults" : "30",
-        "order" : "viewCount",
-        "publishedBefore" : "2013-03-01T00:00:00Z",
-        "publishedAfter" : "2013-02-01T00:00:00Z"
+        "order" : "viewCount"
     ]
+    
+    private func generateParams(searchWord:String) -> [String:String]{
+        var params = initialSearchParams
+        params["q"] = searchWord
+        
+        let today = DateGenerater.currentDate()
+        let dateGenerator = DateGenerater(currentYear: today.year, minYear: DateGenerater.BOTTOM_YEAR, currentMonth: today.month)
+        let date : (end:String, start:String) = dateGenerator.generateDetaPair()
+        params["publishedBefore"] = date.end
+        params["publishedAfter"] = date.start
+        print("after:" + date.end + " before:" + date.start)
+        
+        return params
+    }
     
     func getVideos(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {
 
@@ -30,7 +42,7 @@ class YouTubeClient: NSObject {
             return
         }
         
-        searchParams["q"] = searchWord
+        let searchParams = generateParams(searchWord)
         guard let requestUrl = Http.generateRequestURL(baseUrl, queries: searchParams) else {
             completionHandler(videos: nil)
             return
