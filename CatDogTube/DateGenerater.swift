@@ -36,6 +36,12 @@ class DateGenerater: NSObject {
         return comp
     }
     
+    /**
+     generate String pair of RFC 3339 formatted date String (end, start).
+     end date does not exceed the currentDate which is given in constructor.
+     start date is 1 month before the end date.
+     - returns: Tuple value of (end, start) date String.
+     */
     func generateDetaPair() -> (String, String) {
         let endTime: (year:Int, month:Int, day:Int) = randomDate()
         let startTime = oneMonthAgo(endTime)
@@ -44,7 +50,11 @@ class DateGenerater: NSObject {
         return (endString, startString)
     }
     
-    //returns String of RFC 3339 formatted date. e.x. "2010-04-01T00:00:00Z"
+    /**
+     Generate RFC 3339 formatted String (e.x. "2010-04-01T00:00:00Z")
+     - parameter date:Tuple value of (year, month, date) which you want to covert to String
+     - returns: String of RFC 3339 formatted date. e.x. "2010-04-01T00:00:00Z"
+     */
     private func generateDateString(date:(year:Int, month:Int, day:Int)) -> String {
         let yearString = String(date.year)
         let monthString = date.month < 10 ? "0" + String(date.month) : String(date.month)
