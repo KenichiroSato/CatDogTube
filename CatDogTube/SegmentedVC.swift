@@ -9,6 +9,10 @@
 import UIKit
 import HMSegmentedControl
 
+protocol SegmentdChildViewDelegate {
+    func onSegmentChanged(isCurrentIndex:Bool)
+}
+
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private var gradientColors : [CGColor] {
@@ -34,6 +38,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     private let segmentedControl = HMSegmentedControl()
     
     var token: dispatch_once_t = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        contentView.scrollsToTop = false
+    }
     
     override func viewDidAppear(animated: Bool) {
         dispatch_once(&token) {
@@ -89,7 +98,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         contentView.contentSize =
             CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
         contentView.delaysContentTouches = false
-        
+        notifySegmentChanged()
     }
     
     private func setupShadowView() {
@@ -114,15 +123,31 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    private func notifySegmentChanged() {
+        for (index, childVC) in self.childViewControllers.enumerate() {
+            if let vc = childVC as? SegmentdChildViewDelegate {
+                let isCurrentIndex = (index == self.contentView.currentIndex())
+                vc.onSegmentChanged(isCurrentIndex)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //This is called after user manually scrolled
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let pageWidth: CGFloat = self.view.frame.size.width
         let page = contentView.contentOffset.x / pageWidth
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
+        notifySegmentChanged()
+    }
+    
+    //This is called after user tapped Tab area
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        notifySegmentChanged()
     }
     
 }

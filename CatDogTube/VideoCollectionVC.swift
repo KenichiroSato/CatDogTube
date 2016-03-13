@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoLoadDelegate {
+class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoLoadDelegate, SegmentdChildViewDelegate {
     
     static let IDENTIFIER = "VideoCollectionVC"
     
@@ -79,4 +79,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         print("onFail")
     }
 
+    // MARK: SegmentdChildViewDelegate
+    func onSegmentChanged(isCurrentIndex: Bool) {
+        collectionView.scrollsToTop = isCurrentIndex
+    }
 }
