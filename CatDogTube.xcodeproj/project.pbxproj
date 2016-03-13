@@ -25,7 +25,6 @@
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
 		59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59774B5B1C82877D00302A65 /* HttpTests.swift */; };
-		598082A91C939F4200233584 /* DateGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598082A81C939F4200233584 /* DateGenerater.swift */; };
 		5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */; };
 		5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0791C6C1D22006762CE /* UIViewController+extension.swift */; };
 		5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */; };
@@ -80,7 +79,6 @@
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		59774B5B1C82877D00302A65 /* HttpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTests.swift; sourceTree = "<group>"; };
-		598082A81C939F4200233584 /* DateGenerater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateGenerater.swift; sourceTree = "<group>"; };
 		5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		5990C0791C6C1D22006762CE /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			children = (
 				59F3DDDE1C4B92E100906365 /* YouTubeClient.swift */,
 				590A83591C5463BB000C6179 /* YouTubeDataParser.swift */,
-				598082A81C939F4200233584 /* DateGenerater.swift */,
 			);
 			name = YouTube;
 			sourceTree = "<group>";
@@ -519,7 +516,6 @@
 				5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */,
 				590DAEDF1C70A8C0002281B4 /* SegmentedItem.swift in Sources */,
 				59F3DDDF1C4B92E100906365 /* YouTubeClient.swift in Sources */,
-				598082A91C939F4200233584 /* DateGenerater.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
 			);
