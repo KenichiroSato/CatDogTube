@@ -12,6 +12,8 @@ class YouTubeClient: NSObject {
 
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
+    private let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
+    
     private let initialSearchParams = [
         "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
         "part" : "snippet",
@@ -24,15 +26,28 @@ class YouTubeClient: NSObject {
     private func generateParams(searchWord:String) -> [String:String]{
         var params = initialSearchParams
         params["q"] = searchWord
-        
-        let today = DateGenerater.currentDate()
-        let dateGenerator = DateGenerater(currentDate: today, minYear: DateGenerater.BOTTOM_YEAR)
-        let date : (end:String, start:String) = dateGenerator.generateDetaPair()
-        params["publishedBefore"] = date.end
-        params["publishedAfter"] = date.start
-        print("after:" + date.end + " before:" + date.start)
+
+        let publishedDate = generatePublishedParam()
+        if let before = publishedDate.before,
+            let after = publishedDate.after{
+            params["publishedBefore"] = before
+            params["publishedAfter"] = after
+            print("before:" + before + " after:" + after)
+        }
         
         return params
+    }
+    
+    private func generatePublishedParam() -> (before:String?, after:String?) {
+        let cal = NSCalendar.currentCalendar()
+        let today = NSDate()
+        guard let minDate = cal.dateWithYear(oldest.year, Month: oldest.month, Day: oldest.day),
+            let publishedBefore = cal.randomDate(today, minDate: minDate),
+            let publishedAfter = cal.oneMonthAgo(publishedBefore)
+        else {
+            return (nil, nil)
+        }
+        return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
     
     func getVideos(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {

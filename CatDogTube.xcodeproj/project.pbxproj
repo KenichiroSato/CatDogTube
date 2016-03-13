@@ -31,6 +31,7 @@
 		5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */; };
 		5995F3961C95453F00F07172 /* NSCalender+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995F3951C95453F00F07172 /* NSCalender+extension.swift */; };
 		5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995F3971C9545F700F07172 /* NSCalendarTests.swift */; };
+		5995F39A1C954EB500F07172 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995F3991C954EB500F07172 /* NSDate+extension.swift */; };
 		59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */; };
 		59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */; };
 		59A88ABF1C4B1BAD00D40B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A88ABD1C4B1BAD00D40B23 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		5995F3951C95453F00F07172 /* NSCalender+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalender+extension.swift"; sourceTree = "<group>"; };
 		5995F3971C9545F700F07172 /* NSCalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCalendarTests.swift; sourceTree = "<group>"; };
+		5995F3991C954EB500F07172 /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
 		59A88AB61C4B1BAD00D40B23 /* CatDogTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatDogTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedVC.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */,
 				590DAEDB1C70464B002281B4 /* UIImage+extension.swift */,
 				5995F3951C95453F00F07172 /* NSCalender+extension.swift */,
+				5995F3991C954EB500F07172 /* NSDate+extension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */,
 				0CD0D5741C6B62E900A24DED /* PlayerVC.swift in Sources */,
 				590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */,
+				5995F39A1C954EB500F07172 /* NSDate+extension.swift in Sources */,
 				590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */,
 				5995F3961C95453F00F07172 /* NSCalender+extension.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
