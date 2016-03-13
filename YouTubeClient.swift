@@ -13,6 +13,7 @@ class YouTubeClient: NSObject {
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
     private let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
+    private let SEARCH_PERIOD_DAYS: UInt = 30
     
     private let initialSearchParams = [
         "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
@@ -41,12 +42,12 @@ class YouTubeClient: NSObject {
     private func generatePublishedParam() -> (before:String?, after:String?) {
         let cal = NSCalendar.currentCalendar()
         let today = NSDate()
-        guard let minDate = cal.dateWithYear(oldest.year, Month: oldest.month, Day: oldest.day),
-            let publishedBefore = cal.randomDate(today, minDate: minDate),
-            let publishedAfter = cal.oneMonthAgo(publishedBefore)
+        guard let minDate = cal.dateWithYear(oldest.year, Month: oldest.month, Day: oldest.day)
         else {
             return (nil, nil)
         }
+        let publishedBefore = cal.randomDate(today, minDate: minDate)
+        let publishedAfter = publishedBefore.daysAgo(SEARCH_PERIOD_DAYS)
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
     

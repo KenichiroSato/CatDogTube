@@ -28,8 +28,8 @@ class NSCalendarTests: XCTestCase {
         let minDate = calendar.dateWithYear(2011, Month: 1, Day: 1)!
         
         for _ in 0...10 {
-            let randomDate = calendar.randomDate(maxDate, minDate: minDate)!
-            let rand = calendar.simpleComponents(randomDate)
+            let randomDate = calendar.randomDate(maxDate, minDate: minDate)
+            let rand = calendar.components(randomDate)
             XCTAssertLessThanOrEqual(rand.year, 2016)
             XCTAssertGreaterThanOrEqual(rand.year, 2011)
         }
@@ -41,8 +41,8 @@ class NSCalendarTests: XCTestCase {
         let minDate = calendar.dateWithYear(2016, Month: 3, Day: 1)!
         
         for _ in 0...10 {
-            let randomDate = calendar.randomDate(maxDate, minDate: minDate)!
-            let rand = calendar.simpleComponents(randomDate)
+            let randomDate = calendar.randomDate(maxDate, minDate: minDate)
+            let rand = calendar.components(randomDate)
             XCTAssertLessThanOrEqual(rand.month, 8)
             XCTAssertGreaterThanOrEqual(rand.month, 3)
         }
@@ -54,8 +54,8 @@ class NSCalendarTests: XCTestCase {
         let minDate = calendar.dateWithYear(2016, Month: 8, Day: 15)!
         
         for _ in 0...10 {
-            let randomDate = calendar.randomDate(maxDate, minDate: minDate)!
-            let rand = calendar.simpleComponents(randomDate)
+            let randomDate = calendar.randomDate(maxDate, minDate: minDate)
+            let rand = calendar.components(randomDate)
             XCTAssertLessThanOrEqual(rand.day, 23)
             XCTAssertGreaterThanOrEqual(rand.day, 15)
         }
@@ -65,24 +65,22 @@ class NSCalendarTests: XCTestCase {
         let calendar = NSCalendar.currentCalendar()
         let date = calendar.dateWithYear(2016, Month: 8, Day: 23)!
         
-        let ago = calendar.oneMonthAgo(date)
-        XCTAssertNotNil(ago)
-        let agoComp = calendar.simpleComponents(ago!)
+        let ago = date.daysAgo(30)
+        let agoComp = calendar.components(ago)
         XCTAssertEqual(agoComp.year, 2016)
         XCTAssertEqual(agoComp.month, 7)
-        XCTAssertEqual(agoComp.day, 23)
+        XCTAssertEqual(agoComp.day, 24)
     }
     
     func testOneMonthAgo2() {
         let calendar = NSCalendar.currentCalendar()
         let date = calendar.dateWithYear(2016, Month: 1, Day: 23)!
         
-        let ago = calendar.oneMonthAgo(date)
-        XCTAssertNotNil(ago)
-        let agoComp = calendar.simpleComponents(ago!)
+        let ago = date.daysAgo(30)
+        let agoComp = calendar.components(ago)
         XCTAssertEqual(agoComp.year, 2015)
         XCTAssertEqual(agoComp.month, 12)
-        XCTAssertEqual(agoComp.day, 23)
+        XCTAssertEqual(agoComp.day, 24)
     }
     
 }
