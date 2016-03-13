@@ -62,13 +62,13 @@ class DateGenerater: NSObject {
         return (year, month, day)
     }
     
-    private func minMaxDesignation(min _min: Int, max _max: Int) -> Int {
-        if _min < _max {
-            let diff = _max - _min + 1
+    private func minMaxDesignation(min min: Int, max: Int) -> Int {
+        if min < max {
+            let diff = max - min + 1
             let random : Int = Int(arc4random_uniform(UInt32(diff)))
-            return random + _min
+            return random + min
         }else {
-            return _max
+            return max
         }
     }
     
