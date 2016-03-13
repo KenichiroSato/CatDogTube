@@ -43,15 +43,23 @@ extension NSCalendar {
     }
     
     /**
-     generate the random date between maxDate and minDate
-     IMPORTANT: this method ignores hour, min, sec information in arguments.
-     - returns: random date between maxDate and minDate
+     generate the date which is 1 month before the argument date.
+     - parameter date: original date. return value is calclated based on this date.
+     - returns: NSdate which is 1 month before the argument
      */
-     /*
-     func oneMonthAgo(date:NSDate) -> NSDate {
-     
+     func oneMonthAgo(date:NSDate) -> NSDate? {
+        let now = self.simpleComponents(date)
+        
+        var year, month : Int
+        if (now.month == 1) {
+            year =  now.year - 1
+            month = 12
+        } else {
+            year = now.year
+            month = now.month - 1
+        }
+        return dateWithYear(year, Month: month, Day: now.day)
      }
-     */
     
     private func minMaxDesignation(min min: Int, max: Int) -> Int {
         if min < max {
