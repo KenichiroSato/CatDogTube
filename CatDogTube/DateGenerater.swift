@@ -11,17 +11,18 @@ import UIKit
 class DateGenerater: NSObject {
 
     static let BOTTOM_YEAR = 2011
+    static let MAXIMUM_DAY = 28 // bacause of February
     
-    private let CURRENT_YEAR : Int
-    private let MIN_YEAR : Int
-    private let CURRENT_MONTH : Int
-    private let CURRENT_DAY : Int
+    private let currentYear : Int
+    private let bottomYear : Int
+    private let currentMonth : Int
+    private let currentDay : Int
     
     init(currentDate:NSDateComponents, minYear:Int) {
-        CURRENT_YEAR = (currentDate.year > minYear) ? currentDate.year : minYear
-        MIN_YEAR = (currentDate.year > minYear) ? minYear : currentDate.year
-        CURRENT_MONTH = currentDate.month
-        CURRENT_DAY = currentDate.day
+        currentYear = (currentDate.year > minYear) ? currentDate.year : minYear
+        bottomYear = (currentDate.year > minYear) ? minYear : currentDate.year
+        currentMonth = currentDate.month
+        currentDay = currentDate.day
         super.init()
     }
     
@@ -52,10 +53,11 @@ class DateGenerater: NSObject {
     }
     
     private func randomDate() -> (year:Int, month:Int, day:Int) {
-        let year = minMaxDesignation(min: MIN_YEAR, max: CURRENT_YEAR)
-        let maxMonth = (year == CURRENT_YEAR) ? CURRENT_MONTH : 12
+        let year = minMaxDesignation(min: bottomYear, max: currentYear)
+        let maxMonth = (year == currentYear) ? currentMonth : 12
         let month = minMaxDesignation(min: 1, max: maxMonth)
-        let maxDay = (year == CURRENT_YEAR && month == CURRENT_MONTH) ? CURRENT_DAY : 28
+        let maxDay = (year == currentYear && month == currentMonth)
+            ? currentDay : DateGenerater.MAXIMUM_DAY
         let day = minMaxDesignation(min: 1, max: maxDay)
         return (year, month, day)
     }
