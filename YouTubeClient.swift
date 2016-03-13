@@ -26,7 +26,7 @@ class YouTubeClient: NSObject {
         params["q"] = searchWord
         
         let today = DateGenerater.currentDate()
-        let dateGenerator = DateGenerater(currentYear: today.year, minYear: DateGenerater.BOTTOM_YEAR, currentMonth: today.month)
+        let dateGenerator = DateGenerater(currentDate: today, minYear: DateGenerater.BOTTOM_YEAR)
         let date : (end:String, start:String) = dateGenerator.generateDetaPair()
         params["publishedBefore"] = date.end
         params["publishedAfter"] = date.start

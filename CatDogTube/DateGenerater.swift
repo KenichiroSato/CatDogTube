@@ -15,11 +15,13 @@ class DateGenerater: NSObject {
     private let CURRENT_YEAR : Int
     private let MIN_YEAR : Int
     private let CURRENT_MONTH : Int
+    private let CURRENT_DAY : Int
     
-    init(currentYear:Int, minYear:Int, currentMonth:Int) {
-        CURRENT_YEAR = (currentYear > minYear) ? currentYear : minYear
-        MIN_YEAR = (currentYear > minYear) ? minYear : currentYear
-        CURRENT_MONTH = (currentMonth < 1) ? 1 : (currentMonth > 12) ? 12 : currentMonth
+    init(currentDate:NSDateComponents, minYear:Int) {
+        CURRENT_YEAR = (currentDate.year > minYear) ? currentDate.year : minYear
+        MIN_YEAR = (currentDate.year > minYear) ? minYear : currentDate.year
+        CURRENT_MONTH = currentDate.month
+        CURRENT_DAY = currentDate.day
         super.init()
     }
     
@@ -34,25 +36,28 @@ class DateGenerater: NSObject {
     }
     
     func generateDetaPair() -> (String, String) {
-        let endTime: (year:Int, month:Int) = randomYearMonth()
-        let startTime = previousYearMonth(endTime.year, month:endTime.month)
-        let endString = generateDateString(endTime.year, month: endTime.month)
-        let startString = generateDateString(startTime.year, month: startTime.month)
+        let endTime: (year:Int, month:Int, day:Int) = randomDate()
+        let startTime = oneMonthAgo(endTime)
+        let endString = generateDateString(endTime)
+        let startString = generateDateString(startTime)
         return (endString, startString)
     }
     
     //returns String of RFC 3339 formatted date. e.x. "2010-04-01T00:00:00Z"
-    private func generateDateString(year:Int, month:Int) -> String {
-        let yearString = String(year)
-        let monthString = month < 10 ? "0" + String(month) : String(month)
-        return yearString + "-" + monthString + "-01T00:00:00Z"
+    private func generateDateString(date:(year:Int, month:Int, day:Int)) -> String {
+        let yearString = String(date.year)
+        let monthString = date.month < 10 ? "0" + String(date.month) : String(date.month)
+        let dayString = date.day < 10 ? "0" + String(date.day) : String(date.day)
+        return yearString + "-" + monthString + "-" + dayString + "T00:00:00Z"
     }
     
-    private func randomYearMonth() -> (year:Int, month:Int) {
+    private func randomDate() -> (year:Int, month:Int, day:Int) {
         let year = minMaxDesignation(min: MIN_YEAR, max: CURRENT_YEAR)
         let maxMonth = (year == CURRENT_YEAR) ? CURRENT_MONTH : 12
         let month = minMaxDesignation(min: 1, max: maxMonth)
-        return (year, month)
+        let maxDay = (year == CURRENT_YEAR && month == CURRENT_MONTH) ? CURRENT_DAY : 28
+        let day = minMaxDesignation(min: 1, max: maxDay)
+        return (year, month, day)
     }
     
     private func minMaxDesignation(min _min: Int, max _max: Int) -> Int {
@@ -65,11 +70,11 @@ class DateGenerater: NSObject {
         }
     }
     
-    private func previousYearMonth(year:Int, month:Int) -> (year:Int, month:Int) {
-        if (month == 1) {
-            return (year - 1, 12)
+    private func oneMonthAgo(date:(year:Int, month:Int, day:Int)) -> (year:Int, month:Int, day:Int) {
+        if (date.month == 1) {
+            return (date.year - 1, 12, date.day)
         } else {
-            return (year, month - 1)
+            return (date.year, date.month - 1, date.day)
         }
     }
     
