@@ -15,12 +15,19 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var youTubeButton: UIButton!
+    
     var video:Video?
     private var isLoaded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView.delegate = self
+        backButton.setTitle(Text.BACK, forState: UIControlState.Normal)
+        youTubeButton.setTitle(Text.OPEN_YOUTUBE, forState: UIControlState.Normal)
+        
         hidePlayer()
         
         isLoaded = loadVideo()
@@ -33,6 +40,12 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     
     @IBAction func onBackPressed(sender: AnyObject) {
         dismissModally()
+    }
+    
+    @IBAction func onYouTubeIconTapped(sender: AnyObject) {
+        if let videoId = video?.videoId {
+            YouTubeLauncher.open(videoId)
+        }
     }
     
     private func hidePlayer() {
