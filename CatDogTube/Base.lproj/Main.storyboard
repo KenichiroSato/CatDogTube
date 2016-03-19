@@ -108,7 +108,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="aHI-et-ZgN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
@@ -178,9 +178,19 @@
                                     <action selector="onBackPressed:" destination="YV1-6I-o3S" eventType="touchUpInside" id="BfI-OB-0FC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-XL-i9g">
+                                <rect key="frame" x="521" y="560" width="59" height="30"/>
+                                <state key="normal" title="YouTube">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onYouTubeIconTapped:" destination="YV1-6I-o3S" eventType="touchUpInside" id="6kA-zB-MNy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="i2W-XL-i9g" secondAttribute="trailing" id="2Q3-1z-Y5A"/>
                             <constraint firstAttribute="trailing" secondItem="8jR-EF-QVJ" secondAttribute="trailing" id="J9T-Wk-RUN"/>
                             <constraint firstItem="oga-XK-adB" firstAttribute="leading" secondItem="Z88-UN-5c0" secondAttribute="leadingMargin" id="Lam-uP-slB"/>
                             <constraint firstItem="8jR-EF-QVJ" firstAttribute="leading" secondItem="Z88-UN-5c0" secondAttribute="leading" id="NDj-uu-QOl"/>
@@ -189,6 +199,7 @@
                             <constraint firstItem="8jR-EF-QVJ" firstAttribute="top" secondItem="Of0-Ti-iW3" secondAttribute="bottom" id="iAr-6Y-0Wf"/>
                             <constraint firstItem="tKJ-Qf-zDC" firstAttribute="centerY" secondItem="Z88-UN-5c0" secondAttribute="centerY" id="nO2-bB-FH9"/>
                             <constraint firstItem="UuO-dg-mh1" firstAttribute="top" secondItem="oga-XK-adB" secondAttribute="bottom" constant="10" id="zO1-AZ-XKP"/>
+                            <constraint firstItem="UuO-dg-mh1" firstAttribute="top" secondItem="i2W-XL-i9g" secondAttribute="bottom" constant="10" id="zOF-aZ-yyK"/>
                         </constraints>
                     </view>
                     <connections>

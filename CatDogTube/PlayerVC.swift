@@ -35,6 +35,12 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
         dismissModally()
     }
     
+    @IBAction func onYouTubeIconTapped(sender: AnyObject) {
+        if let videoId = video?.videoId {
+            YouTubeLauncher.open(videoId)
+        }
+    }
+    
     private func hidePlayer() {
         playerView.hidden = true
         activityIndicator.hidden = false
