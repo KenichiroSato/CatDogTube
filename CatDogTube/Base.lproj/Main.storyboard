@@ -204,7 +204,9 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="tKJ-Qf-zDC" id="dJT-t4-1Ii"/>
+                        <outlet property="backButton" destination="oga-XK-adB" id="Igp-BW-57c"/>
                         <outlet property="playerView" destination="8jR-EF-QVJ" id="vFu-gl-kLd"/>
+                        <outlet property="youTubeButton" destination="i2W-XL-i9g" id="93h-3k-0La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ip-Ov-UsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
