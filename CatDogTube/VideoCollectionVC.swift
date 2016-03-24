@@ -32,7 +32,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         dataSource.loadDelegate = self
         dataSource.loadVideos(searchWord)
         
-        refreshControl.addTarget(self, action: Selector("pullToRefresh"),
+        refreshControl.addTarget(self, action: #selector(VideoCollectionVC.pullToRefresh),
             forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.tintColor = UIColor.blackColor()
         collectionView.addSubview(refreshControl)
