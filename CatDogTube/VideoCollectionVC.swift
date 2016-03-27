@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoLoadDelegate, SegmentdChildViewDelegate {
+class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, LoadVideoDelegate, SegmentdChildViewDelegate {
     
     static let IDENTIFIER = "VideoCollectionVC"
     
@@ -16,7 +16,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     let dataSource: VideoCollectionDataSource
     
-    var searchWord:String = ""
+    var presenter: LoadVideoPresenter?
     
     private var refreshControl = UIRefreshControl()
     
@@ -29,14 +29,14 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         super.viewDidLoad()
         collectionView.dataSource = dataSource
         collectionView.delegate = self
-        dataSource.loadDelegate = self
-        dataSource.loadVideos(searchWord)
-        
+
         refreshControl.addTarget(self, action: #selector(VideoCollectionVC.pullToRefresh),
             forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.tintColor = UIColor.blackColor()
         collectionView.addSubview(refreshControl)
 
+        presenter?.loadVideoDelegate = self
+        presenter?.loadVideo()
     }
     
     func invalidateLayout() {
@@ -44,7 +44,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     }
     
     func pullToRefresh() {
-        dataSource.loadVideos(searchWord)
+        presenter?.loadVideo()
     }
 
     // MARK: - Navigation
@@ -66,13 +66,13 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
             return CGSizeMake(width, height)
     }
 
-    // MARK: PhotosLoadDelegate
-    func onLoadSuccess() {
+    // MARK: LoadVideoDelegate
+    func onLoadSuccess(videos: [Video]) {
+        dataSource.videos = videos
         dispatch_async(dispatch_get_main_queue(), {
             self.refreshControl.endRefreshing()
             self.collectionView.reloadData()
         })
-
     }
     
     func onLoadFail() {

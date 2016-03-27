@@ -8,17 +8,21 @@
 
 import Foundation
 
-class SearchVideoUseCase: NSObject {
+class SearchVideoUseCase: NSObject, LoadVideoUseCase {
 
     private let repository:SearchVideoRepository
     
-    init(repo:SearchVideoRepository) {
+    private let searchWord: String
+    
+    init(word: String, repo:SearchVideoRepository) {
+        searchWord = word
         repository = repo
         super.init()
     }
     
-    func searchVideos(keyword:String, completionHandler: (videos:[Video]?) -> Void) {
-        repository.searchVideos(keyword, completionHandler: {
+    // MARK: - LoadVideoUseCase
+    func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
+        repository.searchVideos(searchWord, completionHandler: {
             videoEntities in
             guard let nonNilVideos = videoEntities  else {
                 completionHandler(videos: nil)

@@ -13,6 +13,9 @@
 		59047C5B1CA7A61B0051C489 /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C5A1CA7A61B0051C489 /* VideoEntity.swift */; };
 		59047C5E1CA7A7910051C489 /* YouTubeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C5D1CA7A7910051C489 /* YouTubeDataStore.swift */; };
 		59047C611CA7AD8A0051C489 /* VideoTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C601CA7AD8A0051C489 /* VideoTranslater.swift */; };
+		59047C651CA7C3EB0051C489 /* SegmentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C641CA7C3EB0051C489 /* SegmentFactory.swift */; };
+		59047C671CA7C4600051C489 /* LoadVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */; };
+		59047C691CA7FCF00051C489 /* LoadVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */; };
 		590A83541C532858000C6179 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83531C532858000C6179 /* Video.swift */; };
 		590A83571C5390C8000C6179 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83561C5390C8000C6179 /* String+extension.swift */; };
 		590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83591C5463BB000C6179 /* YouTubeDataParser.swift */; };
@@ -25,7 +28,7 @@
 		590DAECE1C7027F2002281B4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAECD1C7027F2002281B4 /* Text.swift */; };
 		590DAED31C702B70002281B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 590DAED51C702B70002281B4 /* Localizable.strings */; };
 		590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDB1C70464B002281B4 /* UIImage+extension.swift */; };
-		590DAEDF1C70A8C0002281B4 /* SegmentedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDE1C70A8C0002281B4 /* SegmentedItem.swift */; };
+		590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDE1C70A8C0002281B4 /* Segment.swift */; };
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
 		59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59774B5B1C82877D00302A65 /* HttpTests.swift */; };
@@ -71,6 +74,9 @@
 		59047C5A1CA7A61B0051C489 /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 		59047C5D1CA7A7910051C489 /* YouTubeDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataStore.swift; sourceTree = "<group>"; };
 		59047C601CA7AD8A0051C489 /* VideoTranslater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslater.swift; sourceTree = "<group>"; };
+		59047C641CA7C3EB0051C489 /* SegmentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentFactory.swift; sourceTree = "<group>"; };
+		59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoUseCase.swift; sourceTree = "<group>"; };
+		59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresenter.swift; sourceTree = "<group>"; };
 		590A83531C532858000C6179 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		590A83561C5390C8000C6179 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		590A83591C5463BB000C6179 /* YouTubeDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParser.swift; sourceTree = "<group>"; };
@@ -84,7 +90,7 @@
 		590DAED41C702B70002281B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAED91C702C8D002281B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAEDB1C70464B002281B4 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
-		590DAEDE1C70A8C0002281B4 /* SegmentedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedItem.swift; sourceTree = "<group>"; };
+		590DAEDE1C70A8C0002281B4 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		59774B5B1C82877D00302A65 /* HttpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTests.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 		59047C521CA77F690051C489 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				59047C541CA786AC0051C489 /* SearchVideoUseCase.swift */,
+				59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */,
 			);
 			name = Usecase;
 			sourceTree = "<group>";
@@ -300,7 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */,
-				590DAEDE1C70A8C0002281B4 /* SegmentedItem.swift */,
+				590DAEDE1C70A8C0002281B4 /* Segment.swift */,
+				59047C641CA7C3EB0051C489 /* SegmentFactory.swift */,
 			);
 			name = segmented;
 			sourceTree = "<group>";
@@ -607,11 +616,14 @@
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				596456D91C7E03ED005FA866 /* Http.swift in Sources */,
 				59047C611CA7AD8A0051C489 /* VideoTranslater.swift in Sources */,
+				59047C671CA7C4600051C489 /* LoadVideoUseCase.swift in Sources */,
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
 				596456D51C721437005FA866 /* Screen.swift in Sources */,
+				59047C691CA7FCF00051C489 /* LoadVideoPresenter.swift in Sources */,
 				5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */,
 				0CD0D5741C6B62E900A24DED /* PlayerVC.swift in Sources */,
 				590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */,
+				59047C651CA7C3EB0051C489 /* SegmentFactory.swift in Sources */,
 				5995F39A1C954EB500F07172 /* NSDate+extension.swift in Sources */,
 				590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */,
 				5995F3961C95453F00F07172 /* NSCalender+extension.swift in Sources */,
@@ -620,7 +632,7 @@
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
 				5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */,
-				590DAEDF1C70A8C0002281B4 /* SegmentedItem.swift in Sources */,
+				590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
 				59047C581CA79F300051C489 /* SearchVideoRepository.swift in Sources */,

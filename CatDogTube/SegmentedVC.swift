@@ -24,11 +24,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
 
-    // add SegmentedItem here to increase Tab items
-    private let segmentedItems = [
-        SegmentedItem(searchWord: Text.SEARCH_WORD_CAT, iconName: "cat"),
-        SegmentedItem(searchWord: Text.SEARCH_WORD_DOG, iconName: "dog")
-    ]
+    // add Segment Item in Factory to increase Tab items
+    private let segmentedItems = SegmentFactory.generate()
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -109,10 +106,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
 
     private func setupSubViews() {
         for (index, item) in segmentedItems.enumerate() {
-            guard let vc = self.storyboard?.instantiateViewControllerWithIdentifier(
-                VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC else {return}
             
-            vc.searchWord = item.searchWord
+            let vc = item.viewController
             self.addChildViewController(vc)
             vc.didMoveToParentViewController(self)
             vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0,
