@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Video model which is used Domain layer and Presentation layer 
+ */
 class Video: NSObject {
     
     let videoId:String

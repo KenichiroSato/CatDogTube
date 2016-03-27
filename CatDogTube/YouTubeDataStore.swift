@@ -1,15 +1,15 @@
 //
-//  YouTubeClient.swift
+//  YouTubeDataStore.swift
 //  CatDogTube
 //
-//  Created by Kenichiro Sato on 2016/01/17.
+//  Created by Kenichiro Sato on 2016/03/27.
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
 import Foundation
 
-class YouTubeClient: NSObject {
-
+class YouTubeDataStore: NSObject, SearchVideoRepository {
+    
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
     private let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
@@ -27,7 +27,7 @@ class YouTubeClient: NSObject {
     private func generateParams(searchWord:String) -> [String:String]{
         var params = initialSearchParams
         params["q"] = searchWord
-
+        
         let publishedDate = generatePublishedParam()
         if let before = publishedDate.before,
             let after = publishedDate.after{
@@ -43,16 +43,16 @@ class YouTubeClient: NSObject {
         let cal = NSCalendar.currentCalendar()
         let today = NSDate()
         guard let minDate = cal.dateWithYear(oldest.year, Month: oldest.month, Day: oldest.day)
-        else {
-            return (nil, nil)
+            else {
+                return (nil, nil)
         }
         let publishedBefore = cal.randomDate(today, minDate: minDate)
         let publishedAfter = publishedBefore.daysAgo(SEARCH_PERIOD_DAYS)
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
     
-    func getVideos(searchWord:String, completionHandler: (videos:[Video]?) -> Void) {
-
+    func searchVideos(searchWord:String, completionHandler: (videos:[VideoEntity]?) -> Void){
+        
         guard !searchWord.isEmpty else {
             completionHandler(videos: nil)
             return
