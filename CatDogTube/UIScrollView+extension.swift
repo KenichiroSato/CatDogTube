@@ -6,7 +6,6 @@
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIScrollView {

@@ -136,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0CD0D5731C6B62E900A24DED /* PlayerVC.swift */,
+				5995F39B1C9CD9A200F07172 /* YouTubeLauncher.swift */,
 			);
 			name = player;
 			sourceTree = "<group>";
@@ -147,6 +148,41 @@
 				9B6B89F4AC103CEC6973E31D /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		59047C4D1CA7705A0051C489 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				590A83611C54F4A4000C6179 /* collection */,
+				590DAEDD1C70A8A8002281B4 /* segmented */,
+				0CD0D5721C6B62CA00A24DED /* player */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		59047C4E1CA7708A0051C489 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				59047C4F1CA771080051C489 /* Model */,
+				590A83581C546397000C6179 /* YouTube */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		59047C4F1CA771080051C489 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				590A83531C532858000C6179 /* Video.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		59047C501CA771480051C489 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				596456D71C7E0247005FA866 /* http */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		590A83551C5390A8000C6179 /* extension */ = {
@@ -167,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				59F3DDDE1C4B92E100906365 /* YouTubeClient.swift */,
-				5995F39B1C9CD9A200F07172 /* YouTubeLauncher.swift */,
 				590A83591C5463BB000C6179 /* YouTubeDataParser.swift */,
 			);
 			name = YouTube;
@@ -236,14 +271,11 @@
 		59A88AB81C4B1BAD00D40B23 /* CatDogTube */ = {
 			isa = PBXGroup;
 			children = (
-				596456D71C7E0247005FA866 /* http */,
-				590DAEDD1C70A8A8002281B4 /* segmented */,
-				0CD0D5721C6B62CA00A24DED /* player */,
+				59047C4D1CA7705A0051C489 /* UI */,
+				59047C4E1CA7708A0051C489 /* Domain */,
+				59047C501CA771480051C489 /* Data */,
 				590A83691C5C9E31000C6179 /* constants */,
-				590A83611C54F4A4000C6179 /* collection */,
-				590A83581C546397000C6179 /* YouTube */,
 				590A83551C5390A8000C6179 /* extension */,
-				590A83531C532858000C6179 /* Video.swift */,
 				59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */,
 				59A88ABD1C4B1BAD00D40B23 /* Main.storyboard */,
 				59A88AC01C4B1BAD00D40B23 /* Assets.xcassets */,
