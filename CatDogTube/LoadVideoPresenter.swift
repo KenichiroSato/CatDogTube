@@ -13,6 +13,9 @@ protocol LoadVideoDelegate {
     func onLoadFail()
 }
 
+/**
+ Presenter for Video list UI
+ */
 class LoadVideoPresenter: NSObject {
     
     private let useCase: LoadVideoUseCase
