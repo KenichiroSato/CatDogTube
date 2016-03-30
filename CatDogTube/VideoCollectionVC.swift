@@ -12,6 +12,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     static let IDENTIFIER = "VideoCollectionVC"
     
+    static let test = "TEST"
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let dataSource: VideoCollectionDataSource
