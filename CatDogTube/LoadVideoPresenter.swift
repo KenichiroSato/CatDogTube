@@ -28,6 +28,7 @@ class LoadVideoPresenter: NSObject {
     }
     
     func loadVideo() {
+        var test = 1
         useCase.loadVideos() { videos in
             guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
                 self.loadVideoDelegate?.onLoadFail()
