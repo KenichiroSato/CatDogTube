@@ -14,7 +14,7 @@ protocol LoadVideoDelegate {
 }
 
 /**
- Presenter for Video list UI
+ Presenter for Video list UI.
  */
 class LoadVideoPresenter: NSObject {
     
