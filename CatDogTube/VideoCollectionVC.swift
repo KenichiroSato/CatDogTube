@@ -69,10 +69,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     // MARK: LoadVideoDelegate
     func onLoadSuccess(videos: [Video]) {
         dataSource.videos = videos
-        dispatch_async(dispatch_get_main_queue(), {
-            self.refreshControl.endRefreshing()
-            self.collectionView.reloadData()
-        })
+        self.refreshControl.endRefreshing()
+        self.collectionView.reloadData()
     }
     
     func onLoadFail() {
