@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 Kenichiro Sato. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIImage {

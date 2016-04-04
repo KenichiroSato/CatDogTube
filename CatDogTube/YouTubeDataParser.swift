@@ -6,24 +6,23 @@
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import SwiftyJSON
 
-class YouTubeDataParser: UIImageView {
+class YouTubeDataParser: NSObject {
 
-    static func parseResponse(data: NSData) -> [Video] {
+    static func parseResponse(data: NSData) -> [VideoEntity] {
         let json = JSON(data: data)
         
-        var videos:[Video] = []
+        var videos:[VideoEntity] = []
         
         for (_, subJson):(String, JSON) in json["items"] {
             let snippet = subJson["snippet"]
             
             if let videoId = subJson["id"]["videoId"].string,
                 let title = snippet["title"].string,
-                let urlString = snippet["thumbnails"]["high"]["url"].string,
-                let url = NSURL(string: urlString){
-                    let video = Video(id: videoId, title: title, url: url)
+                let url = snippet["thumbnails"]["high"]["url"].string{
+                    let video = VideoEntity(id: videoId, title: title, url: url)
                     videos.append(video)
             }
         }

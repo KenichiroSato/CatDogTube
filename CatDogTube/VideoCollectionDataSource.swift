@@ -10,31 +10,12 @@ import UIKit
 import SDWebImage
 import youtube_ios_player_helper
 
-protocol VideoLoadDelegate {
-    func onLoadSuccess()
-    func onLoadFail()
-}
-
 class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
 
     private let REUSE_IDENTIFIER = "VideoCell"
 
     var videos: [Video] = []
   
-    var loadDelegate: VideoLoadDelegate?
-    
-    func loadVideos(searchWord:String) {
-        let client = YouTubeClient()
-        client.getVideos(searchWord, completionHandler: { videos in
-            guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
-                self.loadDelegate?.onLoadFail()
-                return
-            }
-            self.videos = nonNilVideos
-            self.loadDelegate?.onLoadSuccess()
-        })
-    }
-    
     func video(index:Int) -> Video? {
         guard 0 <= index && index < videos.count else { return nil }
         return videos[index]

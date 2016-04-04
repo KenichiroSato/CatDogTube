@@ -8,11 +8,9 @@
 
 import UIKit
 
-class SegmentedItem : NSObject {
+class Segment : NSObject {
 
     private let ICON_SIZE : CGFloat = 45.0
-    
-    let searchWord:String
     
     private let iconName:String
     
@@ -21,10 +19,13 @@ class SegmentedItem : NSObject {
             return UIImage.named(iconName, size: CGSizeMake(ICON_SIZE, ICON_SIZE))!
         }
     }
+
+    let viewController: UIViewController
     
-    init(searchWord:String, iconName:String) {
-        self.searchWord = searchWord
+    init(vc:UIViewController, iconName:String) {
+        self.viewController = vc
         self.iconName = iconName
+        super.init()
     }
 
 }

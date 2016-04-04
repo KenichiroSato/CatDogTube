@@ -6,8 +6,11 @@
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
+/**
+ Video model which is used Domain layer and Presentation layer 
+ */
 class Video: NSObject {
     
     let videoId:String
