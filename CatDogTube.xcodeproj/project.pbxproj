@@ -47,6 +47,7 @@
 		59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */; };
 		59A88ADA1C4B1BAD00D40B23 /* CatDogTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */; };
 		59A88AE81C4B2DA000D40B23 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59A88AE71C4B2DA000D40B23 /* Settings.bundle */; };
+		59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */; };
 		DF90F465D9F7EEA463CD3BD1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3C53F122BC3D82F0D236E6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDogTubeUITests.swift; sourceTree = "<group>"; };
 		59A88ADB1C4B1BAD00D40B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A88AE71C4B2DA000D40B23 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslaterTests.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F29EF1A8B4140951437979 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6B89F4AC103CEC6973E31D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
 				5995F3971C9545F700F07172 /* NSCalendarTests.swift */,
 				590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */,
+				59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */,
 				590A835D1C546A16000C6179 /* searchResponse.json */,
 				59A88AD01C4B1BAD00D40B23 /* Info.plist */,
 			);
@@ -644,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				590A835C1C5469EA000C6179 /* YouTubeDataParserTests.swift in Sources */,
+				59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */,
 				59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */,
