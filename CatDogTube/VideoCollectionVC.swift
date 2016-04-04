@@ -8,11 +8,14 @@
 
 import UIKit
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, LoadVideoDelegate, SegmentdChildViewDelegate {
+class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, LoadVideoDelegate,
+    SegmentdChildViewDelegate, TryReloadDelegate {
     
     static let IDENTIFIER = "VideoCollectionVC"
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var tryReloadView: TryReloadView!
     
     let dataSource: VideoCollectionDataSource
     
@@ -35,16 +38,33 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         refreshControl.tintColor = UIColor.blackColor()
         collectionView.addSubview(refreshControl)
 
+        tryReloadView.reloadDelegate = self
+        
         presenter?.loadVideoDelegate = self
-        presenter?.loadVideo()
+        loadVideo(true)
     }
     
     func invalidateLayout() {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func pullToRefresh() {
+    func loadVideo(showFullScreenLoading:Bool) {
+        if (showFullScreenLoading) {
+            tryReloadView.showIndicator()
+        }
         presenter?.loadVideo()
+    }
+
+    func pullToRefresh() {
+        loadVideo(false)
+    }
+    
+    private func showErrorDialog() {
+        let alertController = UIAlertController(title: Text.MSG_FAILED_TO_LOAD,
+                                                message: nil, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: Text.OK, style: .Default, handler:nil)
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
     // MARK: - Navigation
@@ -71,12 +91,22 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         dataSource.videos = videos
         self.refreshControl.endRefreshing()
         self.collectionView.reloadData()
+        tryReloadView.hide()
     }
     
     func onLoadFail() {
-        print("onFail")
+        dataSource.videos = []
+        self.refreshControl.endRefreshing()
+        self.collectionView.reloadData()
+        tryReloadView.showReload()
+        showErrorDialog()
     }
 
+    // MARK: TryReloadDelegate
+    func onTryReload() {
+        loadVideo(true)
+    }
+    
     // MARK: SegmentdChildViewDelegate
     func onSegmentChanged(isCurrentIndex: Bool) {
         collectionView.scrollsToTop = isCurrentIndex
