@@ -9,7 +9,14 @@
 import Foundation
 
 protocol LoadVideoDelegate {
+    /*
+     must be called in main thread
+     */
     func onLoadSuccess(videos: [Video])
+
+    /*
+     must be called in main thread
+     */
     func onLoadFail()
 }
 
@@ -28,12 +35,16 @@ class LoadVideoPresenter: NSObject {
     }
     
     func loadVideo() {
-        useCase.loadVideos() { videos in
-            guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
-                self.loadVideoDelegate?.onLoadFail()
-                return
+        NSThread.dispatchAsyncGlobal(){
+            self.useCase.loadVideos() { videos in
+                NSThread.dispatchAsyncMain() {
+                    guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
+                        self.loadVideoDelegate?.onLoadFail()
+                        return
+                    }
+                    self.loadVideoDelegate?.onLoadSuccess(nonNilVideos)
+                }
             }
-            self.loadVideoDelegate?.onLoadSuccess(nonNilVideos)
         }
     }
 
