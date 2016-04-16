@@ -16,6 +16,7 @@
 		59047C651CA7C3EB0051C489 /* SegmentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C641CA7C3EB0051C489 /* SegmentFactory.swift */; };
 		59047C671CA7C4600051C489 /* LoadVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */; };
 		59047C691CA7FCF00051C489 /* LoadVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */; };
+		590491A71CC1EA3700FEABAD /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491A61CC1EA3700FEABAD /* ContentType.swift */; };
 		590A83541C532858000C6179 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83531C532858000C6179 /* Video.swift */; };
 		590A83571C5390C8000C6179 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83561C5390C8000C6179 /* String+extension.swift */; };
 		590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83591C5463BB000C6179 /* YouTubeDataParser.swift */; };
@@ -81,6 +82,7 @@
 		59047C641CA7C3EB0051C489 /* SegmentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentFactory.swift; sourceTree = "<group>"; };
 		59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoUseCase.swift; sourceTree = "<group>"; };
 		59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresenter.swift; sourceTree = "<group>"; };
+		590491A61CC1EA3700FEABAD /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		590A83531C532858000C6179 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		590A83561C5390C8000C6179 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		590A83591C5463BB000C6179 /* YouTubeDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParser.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				590A83531C532858000C6179 /* Video.swift */,
+				590491A61CC1EA3700FEABAD /* ContentType.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				596456D91C7E03ED005FA866 /* Http.swift in Sources */,
 				59047C611CA7AD8A0051C489 /* VideoTranslater.swift in Sources */,
+				590491A71CC1EA3700FEABAD /* ContentType.swift in Sources */,
 				59047C671CA7C4600051C489 /* LoadVideoUseCase.swift in Sources */,
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
 				596456D51C721437005FA866 /* Screen.swift in Sources */,

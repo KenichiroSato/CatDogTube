@@ -18,12 +18,12 @@ class SegmentFactory: NSObject {
         if let catVc = storyboard.instantiateViewControllerWithIdentifier(
             VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC {
             
-            let catUseCase = SearchVideoUseCase(word: Text.SEARCH_WORD_CAT,
+            let catUseCase = SearchVideoUseCase(content: ContentType.CAT,
                                                 repo: YouTubeDataStore())
             let catPresenter = LoadVideoPresenter(useCase: catUseCase)
             catVc.presenter = catPresenter
             
-            let catSegment = Segment(vc: catVc, iconName: "cat")
+            let catSegment = Segment(vc: catVc, iconName: ContentType.CAT.iconName())
             
             segments.append(catSegment)
         }
@@ -31,12 +31,12 @@ class SegmentFactory: NSObject {
         if let dogVc = storyboard.instantiateViewControllerWithIdentifier(
             VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC {
             
-            let dogUseCase = SearchVideoUseCase(word: Text.SEARCH_WORD_DOG,
+            let dogUseCase = SearchVideoUseCase(content: ContentType.DOG,
                                                 repo: YouTubeDataStore())
             let dogPresenter = LoadVideoPresenter(useCase: dogUseCase)
             dogVc.presenter = dogPresenter
             
-            let dogSegment = Segment(vc: dogVc, iconName: "dog")
+            let dogSegment = Segment(vc: dogVc, iconName: ContentType.DOG.iconName())
             
             segments.append(dogSegment)
         }

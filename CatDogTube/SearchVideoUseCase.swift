@@ -12,17 +12,17 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
 
     private let repository:SearchVideoRepository
     
-    private let searchWord: String
+    private let contentType: ContentType
     
-    init(word: String, repo:SearchVideoRepository) {
-        searchWord = word
+    init(content: ContentType, repo:SearchVideoRepository) {
+        contentType = content
         repository = repo
         super.init()
     }
     
     // MARK: - LoadVideoUseCase
     func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
-        repository.searchVideos(searchWord, completionHandler: {
+        repository.searchVideos(contentType.searchWord(), completionHandler: {
             videoEntities in
             guard let nonNilVideos = videoEntities  else {
                 completionHandler(videos: nil)
