@@ -11,37 +11,22 @@ import UIKit
 class SegmentFactory: NSObject {
     
     class func generate() -> [Segment] {
-        
         var segments: [Segment] = []
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let catVc = storyboard.instantiateViewControllerWithIdentifier(
-            VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC {
-            
-            let catUseCase = SearchVideoUseCase(word: Text.SEARCH_WORD_CAT,
-                                                repo: YouTubeDataStore())
-            let catPresenter = LoadVideoPresenter(useCase: catUseCase)
-            catVc.presenter = catPresenter
-            
-            let catSegment = Segment(vc: catVc, iconName: "cat")
-            
-            segments.append(catSegment)
-        }
-            
-        if let dogVc = storyboard.instantiateViewControllerWithIdentifier(
-            VideoCollectionVC.IDENTIFIER) as? VideoCollectionVC {
-            
-            let dogUseCase = SearchVideoUseCase(word: Text.SEARCH_WORD_DOG,
-                                                repo: YouTubeDataStore())
-            let dogPresenter = LoadVideoPresenter(useCase: dogUseCase)
-            dogVc.presenter = dogPresenter
-            
-            let dogSegment = Segment(vc: dogVc, iconName: "dog")
-            
-            segments.append(dogSegment)
-        }
-        
+        segments.append(segmentWithContentType(ContentType.CAT))
+        segments.append(segmentWithContentType(ContentType.DOG))
         return segments
     }
     
+    private class func segmentWithContentType(contentType:ContentType) -> Segment {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier(
+            VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
+                
+        let useCase = SearchVideoUseCase(content: contentType,
+                                         repo: YouTubeDataStore())
+        let presenter = LoadVideoPresenter(useCase: useCase)
+        vc.presenter = presenter
+        
+        return Segment(vc: vc, iconName: contentType.iconName())
+    }
 }
