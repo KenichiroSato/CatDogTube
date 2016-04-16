@@ -21,7 +21,7 @@ enum ContentType {
         }
     }
     
-    func searchWord() -> String {
+    func keyword() -> String {
         switch self {
         case .CAT:
             return Text.SEARCH_WORD_CAT

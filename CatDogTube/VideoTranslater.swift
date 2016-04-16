@@ -14,15 +14,15 @@ import Foundation
  */
 class  VideoTranslater: NSObject {
     
-    class func translate(videos:[VideoEntity]) -> [Video] {
-        return videos.flatMap({self.translateVideo($0)})
+    class func translate(videos:[VideoEntity], contentType:ContentType) -> [Video] {
+        return videos.flatMap({self.translateVideo($0, contentType: contentType)})
     }
     
-    class private func translateVideo(entity:VideoEntity) -> Video? {
+    class private func translateVideo(entity:VideoEntity, contentType:ContentType) -> Video? {
         guard let url = NSURL(string: entity.imageUrl) else {
             return nil
         }
-        return Video(id: entity.videoId, title:entity.title , url: url)
+        return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
     
 }

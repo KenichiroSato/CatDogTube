@@ -16,15 +16,20 @@ class Video: NSObject {
     let videoId:String
     let title:String
     let imageUrl:NSURL
+    let contentType:ContentType
     
-    init(id:String, title:String, url:NSURL) {
+    init(id:String, title:String, url:NSURL, type:ContentType) {
         self.videoId = id
         self.title = title
         self.imageUrl = url
+        self.contentType = type
     }
 
     override var description: String {
-        get {return (videoId + "\n" + title + "\n" + imageUrl.description + "\n")}
+        get {return (videoId + "\n" +
+            title + "\n" +
+            imageUrl.description + "\n" +
+            contentType.keyword() )}
     }
     
 }

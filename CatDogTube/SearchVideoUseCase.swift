@@ -22,13 +22,13 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     
     // MARK: - LoadVideoUseCase
     func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
-        repository.searchVideos(contentType.searchWord(), completionHandler: {
+        repository.searchVideos(contentType.keyword(), completionHandler: {
             videoEntities in
             guard let nonNilVideos = videoEntities  else {
                 completionHandler(videos: nil)
                 return
             }
-            let videos = VideoTranslater.translate(nonNilVideos)
+            let videos = VideoTranslater.translate(nonNilVideos, contentType: self.contentType)
             completionHandler(videos: videos)
         })
     }
