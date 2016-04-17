@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DummyFavoritesDataStore: NSObject, VideoRepository {
+class DummyFavoritesRepository: NSObject, VideoRepository {
 
     func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
      
