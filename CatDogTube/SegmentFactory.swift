@@ -41,6 +41,5 @@ class SegmentFactory: NSObject {
         vc.presenter = presenter
         
         return Segment(vc: vc, iconName: ContentType.CAT.iconName())
-        
     }
 }
