@@ -10,7 +10,7 @@ import Foundation
 
 protocol FavoritesDataSourceProtocol {
     func loadVideos(completionHandler: (videos:[FavoriteVideo]?) -> Void)
-    func saveVideo(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
+    func saveFavorite(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
 }
 
 class FavoritesRepository: NSObject {
@@ -30,7 +30,7 @@ class FavoritesRepository: NSObject {
     }
     
     func saveFavorite(video:Video) -> Bool {
-        return dataSource.saveVideo(video.videoId, title: video.title, imageUrl:
+        return dataSource.saveFavorite(video.videoId, title: video.title, imageUrl:
             video.imageUrl.absoluteString, contentType: video.contentType.rawValue)
     }
 }

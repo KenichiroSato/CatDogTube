@@ -50,7 +50,7 @@ class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
     /**
      - returns: true when save succeed, false if fail
      */
-    func saveVideo(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool {
+    func saveFavorite(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool {
         guard let entity = NSEntityDescription.entityForName(
             FavoriteVideo.NAME, inManagedObjectContext: moc),
             let video = NSManagedObject(entity: entity, insertIntoManagedObjectContext: moc)
