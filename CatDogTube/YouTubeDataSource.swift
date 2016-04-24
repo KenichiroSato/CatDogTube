@@ -8,7 +8,7 @@
 
 import Foundation
 
-class YouTubeDataSource: NSObject, SearchVideoRepository {
+class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
     
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     

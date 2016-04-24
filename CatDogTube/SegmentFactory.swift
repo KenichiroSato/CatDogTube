@@ -24,7 +24,7 @@ class SegmentFactory: NSObject {
             VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
                 
         let useCase = SearchVideoUseCase(content: contentType,
-                                         repo: YouTubeDataSource())
+                                         repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
