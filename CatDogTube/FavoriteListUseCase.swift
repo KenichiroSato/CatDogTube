@@ -10,24 +10,26 @@ import UIKit
 
 class FavoriteListUseCase: NSObject, LoadVideoUseCase {
 
-    private let repository: FavoritesRepositoryProtocol
+    static func create() -> FavoriteListUseCase {
+        return FavoriteListUseCase(repo: FavoritesRepository(dataSource: FavoritesDatasource()))
+    }
     
-    init(repo:FavoritesRepositoryProtocol) {
+    private let repository: FavoritesRepository
+    
+    init(repo:FavoritesRepository) {
         self.repository = repo
         super.init()
     }
     
     // MARK: - LoadVideoUseCase
     func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
-        repository.loadVideos({ favoriteVideos in
-            let videos = VideoTranslater.translateFavoriteVideos(favoriteVideos)
+        repository.loadVideos() { videos in
             completionHandler(videos: videos)
-        })
+        }
     }
     
     func saveFavorite(video:Video) -> Bool {
-        return repository.saveVideo(video.videoId, title: video.title, imageUrl:
-            video.imageUrl.absoluteString, contentType: video.contentType.rawValue)
+        return repository.saveFavorite(video)
     }
 
 }

@@ -61,7 +61,7 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     }
     
     private func saveFavorite(video:Video) {
-        let useCase = FavoriteListUseCase(repo: FavoritesDatasource())
+        let useCase = FavoriteListUseCase.create()
         useCase.saveFavorite(video)
     }
     

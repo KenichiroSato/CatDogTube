@@ -14,7 +14,7 @@ import CoreData
  https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/InitializingtheCoreDataStack.html
  */
 
-class FavoritesDatasource: NSObject, FavoritesRepositoryProtocol{
+class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
 
     static private let XCDATAMODELD_NAME = "Favorites"
     

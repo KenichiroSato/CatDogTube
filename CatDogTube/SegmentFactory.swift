@@ -36,7 +36,7 @@ class SegmentFactory: NSObject {
         let vc = storyboard.instantiateViewControllerWithIdentifier(
             VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
         
-        let useCase = FavoriteListUseCase(repo: FavoritesDatasource())
+        let useCase = FavoriteListUseCase.create()
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         

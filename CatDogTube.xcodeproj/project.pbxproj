@@ -17,7 +17,7 @@
 		59047C691CA7FCF00051C489 /* LoadVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */; };
 		590491A71CC1EA3700FEABAD /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491A61CC1EA3700FEABAD /* ContentType.swift */; };
 		590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */; };
-		590491AB1CC23EA200FEABAD /* FavoritesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491AA1CC23EA200FEABAD /* FavoritesRepositoryProtocol.swift */; };
+		590491AB1CC23EA200FEABAD /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */; };
 		590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */; };
 		590491B31CCB18E700FEABAD /* FavoritesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491B21CCB18E700FEABAD /* FavoritesDatasource.swift */; };
 		590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 590491C01CCB207200FEABAD /* Favorites.xcdatamodeld */; };
@@ -90,7 +90,7 @@
 		59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresenter.swift; sourceTree = "<group>"; };
 		590491A61CC1EA3700FEABAD /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListUseCase.swift; sourceTree = "<group>"; };
-		590491AA1CC23EA200FEABAD /* FavoritesRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
 		590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyFavoritesRepository.swift; sourceTree = "<group>"; };
 		590491B21CCB18E700FEABAD /* FavoritesDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesDatasource.swift; sourceTree = "<group>"; };
 		590491C11CCB207200FEABAD /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		59047C561CA79EF00051C489 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				590491AA1CC23EA200FEABAD /* FavoritesRepositoryProtocol.swift */,
+				590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */,
 				590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */,
 			);
 			name = Repository;
@@ -675,7 +675,7 @@
 				596456D51C721437005FA866 /* Screen.swift in Sources */,
 				59047C691CA7FCF00051C489 /* LoadVideoPresenter.swift in Sources */,
 				5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */,
-				590491AB1CC23EA200FEABAD /* FavoritesRepositoryProtocol.swift in Sources */,
+				590491AB1CC23EA200FEABAD /* FavoritesRepository.swift in Sources */,
 				0CD0D5741C6B62E900A24DED /* PlayerVC.swift in Sources */,
 				590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */,
 				59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */,
