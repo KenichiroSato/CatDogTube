@@ -202,7 +202,6 @@
 		59047C4E1CA7708A0051C489 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				59047C5F1CA7AD740051C489 /* Translater */,
 				59047C561CA79EF00051C489 /* Repository */,
 				59047C531CA786850051C489 /* Usecase */,
 				59047C4F1CA771080051C489 /* Model */,
@@ -258,6 +257,7 @@
 		59047C561CA79EF00051C489 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				59047C5F1CA7AD740051C489 /* Translater */,
 				590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */,
 				590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */,
 			);
