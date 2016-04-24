@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SearchVideoDataSourceProtocol {
-    func searchVideos(searchWord:String, completionHandler: (videos:[VideoEntity]?) -> Void)
+    func searchVideos(searchWord:String, completionHandler: (videos:[YouTubeVideo]?) -> Void)
 }
 
 class SearchVideoRepository: NSObject {

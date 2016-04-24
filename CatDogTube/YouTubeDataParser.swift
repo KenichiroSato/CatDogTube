@@ -11,10 +11,10 @@ import SwiftyJSON
 
 class YouTubeDataParser: NSObject {
 
-    static func parseResponse(data: NSData) -> [VideoEntity] {
+    static func parseResponse(data: NSData) -> [YouTubeVideo] {
         let json = JSON(data: data)
         
-        var videos:[VideoEntity] = []
+        var videos:[YouTubeVideo] = []
         
         for (_, subJson):(String, JSON) in json["items"] {
             let snippet = subJson["snippet"]
@@ -22,7 +22,7 @@ class YouTubeDataParser: NSObject {
             if let videoId = subJson["id"]["videoId"].string,
                 let title = snippet["title"].string,
                 let url = snippet["thumbnails"]["high"]["url"].string{
-                    let video = VideoEntity(id: videoId, title: title, url: url)
+                    let video = YouTubeVideo(id: videoId, title: title, url: url)
                     videos.append(video)
             }
         }

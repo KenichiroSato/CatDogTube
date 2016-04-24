@@ -1,5 +1,5 @@
 //
-//  VideoEntity.swift
+//  YouTubeVideo.swift
 //  CatDogTube
 //
 //  Created by Kenichiro Sato on 2016/03/27.
@@ -13,7 +13,7 @@ import Foundation
  This must be used only in Data layer and must not be used
  in Domain layer and Presentaton layer.
  */
-class VideoEntity: NSObject {
+class YouTubeVideo: NSObject {
 
     let videoId:String
     let title:String
