@@ -20,6 +20,10 @@
 		590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */; };
 		590491AB1CC23EA200FEABAD /* VideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491AA1CC23EA200FEABAD /* VideoRepository.swift */; };
 		590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */; };
+		590491B31CCB18E700FEABAD /* FavoriteVideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491B21CCB18E700FEABAD /* FavoriteVideoRepository.swift */; };
+		590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 590491C01CCB207200FEABAD /* Favorites.xcdatamodeld */; };
+		590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491C31CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift */; };
+		590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491C41CCB212F00FEABAD /* FavoriteVideo.swift */; };
 		590A83541C532858000C6179 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83531C532858000C6179 /* Video.swift */; };
 		590A83571C5390C8000C6179 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83561C5390C8000C6179 /* String+extension.swift */; };
 		590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83591C5463BB000C6179 /* YouTubeDataParser.swift */; };
@@ -89,6 +93,10 @@
 		590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListUseCase.swift; sourceTree = "<group>"; };
 		590491AA1CC23EA200FEABAD /* VideoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRepository.swift; sourceTree = "<group>"; };
 		590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyFavoritesRepository.swift; sourceTree = "<group>"; };
+		590491B21CCB18E700FEABAD /* FavoriteVideoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVideoRepository.swift; sourceTree = "<group>"; };
+		590491C11CCB207200FEABAD /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
+		590491C31CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteVideo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		590491C41CCB212F00FEABAD /* FavoriteVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVideo.swift; sourceTree = "<group>"; };
 		590A83531C532858000C6179 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		590A83561C5390C8000C6179 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		590A83591C5463BB000C6179 /* YouTubeDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParser.swift; sourceTree = "<group>"; };
@@ -268,7 +276,7 @@
 		59047C5C1CA7A7710051C489 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				590491AC1CC2423600FEABAD /* Favortes */,
+				590491AC1CC2423600FEABAD /* Favorites */,
 				590A83581C546397000C6179 /* YouTube */,
 			);
 			name = DataStore;
@@ -282,12 +290,16 @@
 			name = Translater;
 			sourceTree = "<group>";
 		};
-		590491AC1CC2423600FEABAD /* Favortes */ = {
+		590491AC1CC2423600FEABAD /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
 				590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */,
+				590491B21CCB18E700FEABAD /* FavoriteVideoRepository.swift */,
+				590491C01CCB207200FEABAD /* Favorites.xcdatamodeld */,
+				590491C31CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift */,
+				590491C41CCB212F00FEABAD /* FavoriteVideo.swift */,
 			);
-			name = Favortes;
+			name = Favorites;
 			sourceTree = "<group>";
 		};
 		590A83551C5390A8000C6179 /* extension */ = {
@@ -670,13 +682,17 @@
 				59047C651CA7C3EB0051C489 /* SegmentFactory.swift in Sources */,
 				5995F39A1C954EB500F07172 /* NSDate+extension.swift in Sources */,
 				590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */,
+				590491B31CCB18E700FEABAD /* FavoriteVideoRepository.swift in Sources */,
 				590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */,
 				5995F3961C95453F00F07172 /* NSCalender+extension.swift in Sources */,
+				590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */,
 				5995F39C1C9CD9A200F07172 /* YouTubeLauncher.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
+				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
+				590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */,
 				5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */,
 				590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
@@ -946,6 +962,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		590491C01CCB207200FEABAD /* Favorites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				590491C11CCB207200FEABAD /* Favorites.xcdatamodel */,
+			);
+			currentVersion = 590491C11CCB207200FEABAD /* Favorites.xcdatamodel */;
+			path = Favorites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
 }
