@@ -14,7 +14,7 @@ import CoreData
  https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/InitializingtheCoreDataStack.html
  */
 
-class FavoriteVideoRepository: NSObject, FavoritesRepositoryProtocol{
+class FavoritesDatasource: NSObject, FavoritesRepositoryProtocol{
 
     static private let XCDATAMODELD_NAME = "Favorites"
     
@@ -22,7 +22,8 @@ class FavoriteVideoRepository: NSObject, FavoritesRepositoryProtocol{
     
     override init() {
         // This resource is the same name as your xcdatamodeld contained in your project.
-        guard let modelURL = NSBundle.mainBundle().URLForResource(FavoriteVideoRepository.XCDATAMODELD_NAME, withExtension:"momd") else {
+        guard let modelURL = NSBundle.mainBundle().URLForResource(
+            FavoritesDatasource.XCDATAMODELD_NAME, withExtension:"momd") else {
             fatalError("Error loading model from bundle")
         }
         // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
@@ -38,7 +39,7 @@ class FavoriteVideoRepository: NSObject, FavoritesRepositoryProtocol{
         /* The directory the application uses to store the Core Data store file.
          This code uses a file named "DataModel.sqlite" in the application's documents directory.
          */
-        let storeURL = docURL.URLByAppendingPathComponent(FavoriteVideoRepository.XCDATAMODELD_NAME + ".sqlite")
+        let storeURL = docURL.URLByAppendingPathComponent(FavoritesDatasource.XCDATAMODELD_NAME + ".sqlite")
         do {
             try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
         } catch {
