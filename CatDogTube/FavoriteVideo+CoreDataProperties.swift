@@ -14,9 +14,9 @@ import CoreData
 
 extension FavoriteVideo {
 
-    @NSManaged var imageUrl: String?
-    @NSManaged var title: String?
-    @NSManaged var videoId: String?
+    @NSManaged var imageUrl: String
+    @NSManaged var title: String
+    @NSManaged var videoId: String
     @NSManaged var contentType: Int16
 
 }

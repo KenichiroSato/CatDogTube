@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol VideoRepository {
-    func loadVideos(completionHandler: (videos:[Video]?) -> Void)
+protocol FavoritesRepositoryProtocol {
+    func loadVideos(completionHandler: (videos:[FavoriteVideo]?) -> Void)
 }

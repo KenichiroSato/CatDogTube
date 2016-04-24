@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ContentType {
+enum ContentType : Int16 {
     
     case CAT, DOG
     

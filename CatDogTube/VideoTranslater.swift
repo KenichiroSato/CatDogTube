@@ -25,4 +25,16 @@ class  VideoTranslater: NSObject {
         return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
     
+
+    class func translateFavoriteVideos(videos:[FavoriteVideo]?) -> [Video]? {
+        return videos?.flatMap({self.translateFavoriteVideo($0)})
+    }
+    
+    class private func translateFavoriteVideo(entity:FavoriteVideo) -> Video? {
+        guard let url = NSURL(string: entity.imageUrl),
+            let contentType = ContentType(rawValue: entity.contentType) else {
+            return nil
+        }
+        return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
+    }
 }

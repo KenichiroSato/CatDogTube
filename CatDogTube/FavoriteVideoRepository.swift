@@ -14,11 +14,11 @@ import CoreData
  https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/InitializingtheCoreDataStack.html
  */
 
-class FavoriteVideoRepository: NSObject {
+class FavoriteVideoRepository: NSObject, FavoritesRepositoryProtocol{
 
     static private let XCDATAMODELD_NAME = "Favorites"
     
-    var managedObjectContext: NSManagedObjectContext
+    let moc: NSManagedObjectContext
     
     override init() {
         // This resource is the same name as your xcdatamodeld contained in your project.
@@ -30,8 +30,8 @@ class FavoriteVideoRepository: NSObject {
             fatalError("Error initializing mom from: \(modelURL)")
         }
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
-        managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = psc
+        moc = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        moc.persistentStoreCoordinator = psc
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
             let docURL = urls[urls.endIndex-1]
@@ -47,7 +47,37 @@ class FavoriteVideoRepository: NSObject {
         }
     }
     
-    func saveVideo(video:FavoriteVideo) {
+    /**
+     - returns: true when save succeed, false if fail
+     */
+    func saveVideo(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool {
+        guard let entity = NSEntityDescription.entityForName(
+            FavoriteVideo.NAME, inManagedObjectContext: moc),
+            let video = NSManagedObject(entity: entity, insertIntoManagedObjectContext: moc)
+                as? FavoriteVideo else {
+                    return false
+        }
         
+        video.videoId = videoId
+        video.title = title
+        video.imageUrl = imageUrl
+        video.contentType = contentType
+        
+        do {
+            try moc.save()
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    func loadVideos(completionHandler: (videos:[FavoriteVideo]?) -> Void) {
+        let employeesFetch = NSFetchRequest(entityName: FavoriteVideo.NAME)
+        do {
+             let videos =  try moc.executeFetchRequest(employeesFetch) as? [FavoriteVideo]
+            completionHandler(videos: videos)
+        } catch {
+            completionHandler(videos: nil)
+        }
     }
 }

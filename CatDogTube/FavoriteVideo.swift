@@ -11,7 +11,8 @@ import CoreData
 
 
 class FavoriteVideo: NSManagedObject {
-
+    
+    static let NAME = "FavoriteVideo"
 // Insert code here to add functionality to your managed object subclass
 
 }
