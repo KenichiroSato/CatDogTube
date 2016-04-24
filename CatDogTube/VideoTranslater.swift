@@ -25,7 +25,6 @@ class  VideoTranslater: NSObject {
         return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
     
-
     class func translateFavoriteVideos(videos:[FavoriteVideo]?) -> [Video]? {
         return videos?.flatMap({self.translateFavoriteVideo($0)})
     }

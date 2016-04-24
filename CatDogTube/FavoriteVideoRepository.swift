@@ -32,18 +32,17 @@ class FavoriteVideoRepository: NSObject, FavoritesRepositoryProtocol{
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
         moc = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         moc.persistentStoreCoordinator = psc
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-            let docURL = urls[urls.endIndex-1]
-            /* The directory the application uses to store the Core Data store file.
-             This code uses a file named "DataModel.sqlite" in the application's documents directory.
-             */
-            let storeURL = docURL.URLByAppendingPathComponent(FavoriteVideoRepository.XCDATAMODELD_NAME + ".sqlite")
-            do {
-                try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
-            } catch {
-                fatalError("Error migrating store: \(error)")
-            }
+
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docURL = urls[urls.endIndex-1]
+        /* The directory the application uses to store the Core Data store file.
+         This code uses a file named "DataModel.sqlite" in the application's documents directory.
+         */
+        let storeURL = docURL.URLByAppendingPathComponent(FavoriteVideoRepository.XCDATAMODELD_NAME + ".sqlite")
+        do {
+            try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+        } catch {
+            fatalError("Error migrating store: \(error)")
         }
     }
     

@@ -10,4 +10,5 @@ import Foundation
 
 protocol FavoritesRepositoryProtocol {
     func loadVideos(completionHandler: (videos:[FavoriteVideo]?) -> Void)
+    func saveVideo(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
 }

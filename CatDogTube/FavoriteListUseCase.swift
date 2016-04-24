@@ -24,5 +24,10 @@ class FavoriteListUseCase: NSObject, LoadVideoUseCase {
             completionHandler(videos: videos)
         })
     }
+    
+    func saveFavorite(video:Video) -> Bool {
+        return repository.saveVideo(video.videoId, title: video.title, imageUrl:
+            video.imageUrl.absoluteString, contentType: video.contentType.rawValue)
+    }
 
 }
