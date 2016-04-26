@@ -13,7 +13,7 @@ protocol FavoritesDataSourceProtocol {
     func saveFavorite(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
 }
 
-class FavoritesRepository: NSObject {
+class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
     
     let dataSource : FavoritesDataSourceProtocol
     
@@ -22,7 +22,8 @@ class FavoritesRepository: NSObject {
         super.init()
     }
     
-    func loadVideos(completionHandler: (videos: [Video]?) -> Void) {
+    // MARK: - FavoritesRepositoryProtocol
+    func loadFavorites(completionHandler: (videos: [Video]?) -> Void) {
         dataSource.loadVideos() { favoriteVideos in
             let videos = VideoTranslater.translateFavoriteVideos(favoriteVideos)
             completionHandler(videos: videos)

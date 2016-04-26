@@ -259,6 +259,7 @@
 			children = (
 				59047C5F1CA7AD740051C489 /* Translater */,
 				590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */,
+				590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */,
 				590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */,
 			);
 			name = Repository;
@@ -284,7 +285,6 @@
 		590491AC1CC2423600FEABAD /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */,
 				590491B21CCB18E700FEABAD /* FavoritesDatasource.swift */,
 				590491C01CCB207200FEABAD /* Favorites.xcdatamodeld */,
 				590491C31CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift */,
