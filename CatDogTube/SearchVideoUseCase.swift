@@ -8,13 +8,17 @@
 
 import Foundation
 
+protocol SearchVideoRepositoryProtocol {
+    func searchVideos(keyword:String, contentType: ContentType, completionHandler:(videos:[Video]?) -> Void)
+}
+
 class SearchVideoUseCase: NSObject, LoadVideoUseCase {
 
-    private let repository:SearchVideoRepository
+    private let repository:SearchVideoRepositoryProtocol
     
     private let contentType: ContentType
     
-    init(content: ContentType, repo:SearchVideoRepository) {
+    init(content: ContentType, repo:SearchVideoRepositoryProtocol) {
         contentType = content
         repository = repo
         super.init()

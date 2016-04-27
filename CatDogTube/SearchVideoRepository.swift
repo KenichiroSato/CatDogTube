@@ -12,7 +12,7 @@ protocol SearchVideoDataSourceProtocol {
     func searchVideos(searchWord:String, completionHandler: (videos:[YouTubeVideo]?) -> Void)
 }
 
-class SearchVideoRepository: NSObject {
+class SearchVideoRepository: NSObject, SearchVideoRepositoryProtocol {
 
     let dataSource : SearchVideoDataSourceProtocol
     
