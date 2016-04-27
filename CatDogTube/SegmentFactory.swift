@@ -24,7 +24,7 @@ class SegmentFactory: NSObject {
             VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
                 
         let useCase = SearchVideoUseCase(content: contentType,
-                                         repo: YouTubeRepository())
+                                         repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
@@ -36,7 +36,7 @@ class SegmentFactory: NSObject {
         let vc = storyboard.instantiateViewControllerWithIdentifier(
             VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
         
-        let useCase = FavoriteListUseCase(repo: DummyFavoritesRepository())
+        let useCase = FavoriteListUseCase.create()
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         

@@ -56,7 +56,13 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     // return false if failed
     private func loadVideo() -> Bool {
         guard let nonNilVideo = video else { return false }
+        saveFavorite(nonNilVideo)
         return playerView.loadWithVideoId(nonNilVideo.videoId, playerVars:  ["playsinline":1])
+    }
+    
+    private func saveFavorite(video:Video) {
+        let useCase = FavoriteListUseCase.create()
+        useCase.saveFavorite(video)
     }
     
     override func didReceiveMemoryWarning() {

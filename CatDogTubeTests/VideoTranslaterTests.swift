@@ -12,17 +12,17 @@ import XCTest
 class VideoTranslaterTests: XCTestCase {
 
     private let nonNilVideos = [
-        VideoEntity(id: "id1", title: "title1", url: "https://image1"),
-        VideoEntity(id: "id2", title: "title2", url: "https://image2"),
-        VideoEntity(id: "id3", title: "title3", url: "https://image3"),
-        VideoEntity(id: "id4", title: "title4", url: "https://image4"),
+        YouTubeVideo(id: "id1", title: "title1", url: "https://image1"),
+        YouTubeVideo(id: "id2", title: "title2", url: "https://image2"),
+        YouTubeVideo(id: "id3", title: "title3", url: "https://image3"),
+        YouTubeVideo(id: "id4", title: "title4", url: "https://image4"),
     ]
     
     private let nilVideos = [
-        VideoEntity(id: "id1", title: "title1", url: "https://image1"),
-        VideoEntity(id: "id2", title: "title2", url: "https://image2"),
-        VideoEntity(id: "id3", title: "title3", url: "このVideoEntityは変換できない"),
-        VideoEntity(id: "id4", title: "title4", url: "https://image4"),
+        YouTubeVideo(id: "id1", title: "title1", url: "https://image1"),
+        YouTubeVideo(id: "id2", title: "title2", url: "https://image2"),
+        YouTubeVideo(id: "id3", title: "title3", url: "このYouTubeVideoは変換できない"),
+        YouTubeVideo(id: "id4", title: "title4", url: "https://image4"),
         ]
 
     override func setUp() {

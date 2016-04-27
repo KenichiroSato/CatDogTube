@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DummyFavoritesRepository: NSObject, VideoRepository {
+class DummyFavoritesRepository: NSObject, FavoritesRepositoryProtocol {
 
-    func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
+    func loadFavorites(completionHandler: (videos:[Video]?) -> Void) {
      
         let videos =  [
             Video(id: "k6X2wJ6L0SY", title:"Three Little Kittens" , url: NSURL(string:"https://i.ytimg.com/vi/k6X2wJ6L0SY/hqdefault.jpg")!, type: ContentType.CAT),
@@ -19,5 +19,9 @@ class DummyFavoritesRepository: NSObject, VideoRepository {
             Video(id: "Y0ol5HPlPlA", title:"Cutest Video Ever!" , url: NSURL(string:"https://i.ytimg.com/vi/Y0ol5HPlPlA/hqdefault.jpg")!, type: ContentType.CAT),
                         ]
         completionHandler(videos: videos)
+    }
+    
+    func saveFavorite(video: Video) -> Bool {
+        return true
     }
 }

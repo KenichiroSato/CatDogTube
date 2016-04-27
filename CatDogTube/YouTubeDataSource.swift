@@ -8,7 +8,7 @@
 
 import Foundation
 
-class YouTubeRepository: NSObject, SearchVideoRepository {
+class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
     
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
@@ -51,7 +51,7 @@ class YouTubeRepository: NSObject, SearchVideoRepository {
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
     
-    func searchVideos(searchWord:String, completionHandler: (videos:[VideoEntity]?) -> Void){
+    func searchVideos(searchWord:String, completionHandler: (videos:[YouTubeVideo]?) -> Void){
         
         guard !searchWord.isEmpty else {
             completionHandler(videos: nil)
