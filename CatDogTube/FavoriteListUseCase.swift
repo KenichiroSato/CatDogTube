@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol FavoritesRepositoryProtocol {
     func loadFavorites(completionHandler: (videos:[Video]?) -> Void)

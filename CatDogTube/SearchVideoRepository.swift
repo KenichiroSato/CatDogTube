@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol SearchVideoDataSourceProtocol {
     func searchVideos(searchWord:String, completionHandler: (videos:[YouTubeVideo]?) -> Void)
