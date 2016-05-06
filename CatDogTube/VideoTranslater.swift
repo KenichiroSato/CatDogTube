@@ -14,8 +14,8 @@ import Foundation
  */
 class  VideoTranslater: NSObject {
     
-    class func translate(videos:[YouTubeVideo], contentType:ContentType) -> [Video] {
-        return videos.flatMap({self.translateVideo($0, contentType: contentType)})
+    class func translate(videos:[YouTubeVideo]?, contentType:ContentType) -> [Video]? {
+        return videos?.flatMap({self.translateVideo($0, contentType: contentType)})
     }
     
     class private func translateVideo(entity:YouTubeVideo, contentType:ContentType) -> Video? {

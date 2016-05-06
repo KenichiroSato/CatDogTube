@@ -38,21 +38,21 @@ class VideoTranslaterTests: XCTestCase {
     func testNonNilCase() {
         let videos = VideoTranslater.translate(nonNilVideos, contentType: ContentType.CAT)
         XCTAssertNotNil(videos)
-        XCTAssertEqual(videos.count, 4)
-        XCTAssertEqual(videos[2].videoId, "id3")
-        XCTAssertEqual(videos[2].title, "title3")
-        XCTAssertEqual(videos[2].imageUrl.description, "https://image3")
-        XCTAssertEqual(videos[2].contentType, ContentType.CAT)
+        XCTAssertEqual(videos?.count, 4)
+        XCTAssertEqual(videos?[2].videoId, "id3")
+        XCTAssertEqual(videos?[2].title, "title3")
+        XCTAssertEqual(videos?[2].imageUrl.description, "https://image3")
+        XCTAssertEqual(videos?[2].contentType, ContentType.CAT)
     }
 
     func testNilCase() {
         let videos = VideoTranslater.translate(nilVideos, contentType: ContentType.DOG)
         XCTAssertNotNil(videos)
-        XCTAssertEqual(videos.count, 3)
-        XCTAssertEqual(videos[2].videoId, "id4")
-        XCTAssertEqual(videos[2].title, "title4")
-        XCTAssertEqual(videos[2].imageUrl.description, "https://image4")
-        XCTAssertEqual(videos[2].contentType, ContentType.DOG)
+        XCTAssertEqual(videos?.count, 3)
+        XCTAssertEqual(videos?[2].videoId, "id4")
+        XCTAssertEqual(videos?[2].title, "title4")
+        XCTAssertEqual(videos?[2].imageUrl.description, "https://image4")
+        XCTAssertEqual(videos?[2].contentType, ContentType.DOG)
     }
     
 
