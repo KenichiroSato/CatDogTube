@@ -25,7 +25,7 @@ class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
     // MARK: - FavoritesRepositoryProtocol
     func loadFavorites(completionHandler: (videos: [Video]?) -> Void) {
         dataSource.loadVideos() { favoriteVideos in
-            let videos = VideoTranslater.translateFavoriteVideos(favoriteVideos)
+            let videos = VideoTranslater.translateVideos(favoriteVideos)
             completionHandler(videos: videos)
         }
     }
