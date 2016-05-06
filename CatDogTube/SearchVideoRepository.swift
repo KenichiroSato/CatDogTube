@@ -24,11 +24,7 @@ class SearchVideoRepository: NSObject, SearchVideoRepositoryProtocol {
     func searchVideos(keyword:String, contentType:ContentType,
                       completionHandler: (videos:[Video]?) -> Void) {
         dataSource.searchVideos(keyword, completionHandler:{ videoEntities in
-            guard let nonNilVideos = videoEntities  else {
-                completionHandler(videos: nil)
-                return
-            }
-            let videos = VideoTranslater.translate(nonNilVideos, contentType:contentType)
+            let videos = VideoTranslater.translate(videoEntities, contentType:contentType)
             completionHandler(videos: videos)
         })
     }
