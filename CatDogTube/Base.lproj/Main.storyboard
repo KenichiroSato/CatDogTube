@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjM-Xe-Vb0" userLabel="PlayerView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjM-Xe-Vb0" userLabel="PlayerView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.96132533980000001" blue="0.43159017640000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -37,7 +36,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-XS-GA8" userLabel="ContentsView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-XS-GA8" userLabel="ContentsView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.2203736083" green="0.8246725063" blue="0.34176391169999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -86,6 +85,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="5g0-w5-bpk"/>
+                                <exclude reference="Fvv-DA-j8h"/>
+                                <exclude reference="LVQ-Cl-10h"/>
+                                <exclude reference="nsP-Hd-EXv"/>
+                                <exclude reference="rML-m3-KRK"/>
+                                <exclude reference="vwM-k9-k81"/>
                                 <exclude reference="1PO-Lh-MeH"/>
                                 <exclude reference="44W-8D-mze"/>
                                 <exclude reference="4o5-X6-Lyy"/>
@@ -95,12 +100,6 @@
                                 <exclude reference="gSP-qx-jwb"/>
                                 <exclude reference="mtY-Yi-cSl"/>
                                 <exclude reference="xRE-Ym-yT6"/>
-                                <exclude reference="5g0-w5-bpk"/>
-                                <exclude reference="Fvv-DA-j8h"/>
-                                <exclude reference="LVQ-Cl-10h"/>
-                                <exclude reference="nsP-Hd-EXv"/>
-                                <exclude reference="rML-m3-KRK"/>
-                                <exclude reference="vwM-k9-k81"/>
                                 <exclude reference="27S-fE-5m7"/>
                                 <exclude reference="SxZ-Ui-jyb"/>
                                 <exclude reference="gqR-Ew-vON"/>
@@ -116,23 +115,23 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="7aU-rn-XR2"/>
-                                <include reference="mtY-Yi-cSl"/>
-                                <include reference="xRE-Ym-yT6"/>
                                 <include reference="5g0-w5-bpk"/>
                                 <include reference="Fvv-DA-j8h"/>
                                 <include reference="vwM-k9-k81"/>
+                                <include reference="7aU-rn-XR2"/>
+                                <include reference="mtY-Yi-cSl"/>
+                                <include reference="xRE-Ym-yT6"/>
                                 <include reference="SxZ-Ui-jyb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="44W-8D-mze"/>
-                                <include reference="4o5-X6-Lyy"/>
-                                <include reference="5qe-Fh-lYM"/>
                                 <include reference="LVQ-Cl-10h"/>
                                 <include reference="nsP-Hd-EXv"/>
                                 <include reference="rML-m3-KRK"/>
+                                <include reference="44W-8D-mze"/>
+                                <include reference="4o5-X6-Lyy"/>
+                                <include reference="5qe-Fh-lYM"/>
                                 <include reference="gqR-Ew-vON"/>
                             </mask>
                         </variation>
