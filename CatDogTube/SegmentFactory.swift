@@ -14,7 +14,7 @@ class SegmentFactory: NSObject {
         var segments: [Segment] = []
         segments.append(searchSegment(ContentType.CAT))
         segments.append(searchSegment(ContentType.DOG))
-        segments.append(favoriteSegment())
+        //segments.append(favoriteSegment())
         return segments
     }
     
