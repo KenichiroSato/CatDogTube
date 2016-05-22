@@ -11,6 +11,8 @@ import youtube_ios_player_helper
 
 class PlayerVC: UIViewController, YTPlayerViewDelegate {
     
+    static let ID = "PlayerVC"
+
     @IBOutlet weak var playerView: YTPlayerView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

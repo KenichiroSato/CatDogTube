@@ -11,7 +11,7 @@ import UIKit
 class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, LoadVideoDelegate,
     SegmentdChildViewDelegate, TryReloadDelegate {
     
-    static let IDENTIFIER = "VideoCollectionVC"
+    static let ID = "VideoCollectionVC"
     
     @IBOutlet weak var collectionView: UICollectionView!
     

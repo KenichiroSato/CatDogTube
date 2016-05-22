@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="mLc-5W-13N">
             <objects>
-                <viewController id="76K-0V-vGq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="76K-0V-vGq" customClass="MainVC" customModule="CatDogTube" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bv6-2h-1fy"/>
                         <viewControllerLayoutGuide type="bottom" id="Vqc-b1-B6C"/>
@@ -136,6 +136,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentsView" destination="Hw4-XS-GA8" id="Je1-Am-T6p"/>
+                        <outlet property="playerView" destination="fjM-Xe-Vb0" id="IHW-pW-eLY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Guk-kR-JXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,7 +301,7 @@
         <!--PlayerVC-->
         <scene sceneID="fIx-zX-kRM">
             <objects>
-                <viewController id="YV1-6I-o3S" customClass="PlayerVC" customModule="CatDogTube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerVC" id="YV1-6I-o3S" customClass="PlayerVC" customModule="CatDogTube" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Of0-Ti-iW3"/>
                         <viewControllerLayoutGuide type="bottom" id="UuO-dg-mh1"/>

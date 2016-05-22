@@ -15,6 +15,8 @@ protocol SegmentdChildViewDelegate {
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
+    static let ID = "SegmentedVC"
+
     private var gradientColors : [CGColor] {
         get {
             let darkColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
