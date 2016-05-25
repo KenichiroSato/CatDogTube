@@ -9,7 +9,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-class PlayerVC: UIViewController, YTPlayerViewDelegate {
+class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     
     static let ID = "PlayerVC"
 
@@ -58,20 +58,21 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     // return false if failed
     private func loadVideo() -> Bool {
         guard let nonNilVideo = video else { return false }
-        saveFavorite(nonNilVideo)
         return playerView.loadWithVideoId(nonNilVideo.videoId, playerVars:  ["playsinline":1])
-    }
-    
-    private func saveFavorite(video:Video) {
-        let useCase = FavoriteListUseCase.create()
-        useCase.saveFavorite(video)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // MARK: - PlayVideoDelegate
+    func playVideo(video: Video) -> Bool {
+        self.video = video
+        isLoaded = loadVideo()
+        return isLoaded
+    }
+
     // MARK: - YTPlayerViewDelegate
     func playerViewDidBecomeReady(playerView: YTPlayerView!) {
         if isLoaded {

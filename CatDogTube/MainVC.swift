@@ -18,6 +18,8 @@ class MainVC: UIViewController {
     
     private var token: dispatch_once_t = 0
     
+    private let playVideoPresenter = PlayVideoPresenter()
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         dispatch_once(&token) {
@@ -36,9 +38,11 @@ class MainVC: UIViewController {
         playerView.addSubview(playerVC.view)
         self.addChildViewController(playerVC)
         playerVC.didMoveToParentViewController(self)
+        playVideoPresenter.playVideoDelegate = playerVC
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
         segmentedVC.view.frame = contentsView.bounds
+        segmentedVC.setPlayVideoPresenter(playVideoPresenter)
         contentsView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMoveToParentViewController(self)

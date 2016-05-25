@@ -88,6 +88,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="5g0-w5-bpk"/>
+                                <exclude reference="A1f-sX-euv"/>
+                                <exclude reference="Fvv-DA-j8h"/>
+                                <exclude reference="LVQ-Cl-10h"/>
+                                <exclude reference="nsP-Hd-EXv"/>
+                                <exclude reference="rML-m3-KRK"/>
+                                <exclude reference="vwM-k9-k81"/>
                                 <exclude reference="1PO-Lh-MeH"/>
                                 <exclude reference="44W-8D-mze"/>
                                 <exclude reference="4o5-X6-Lyy"/>
@@ -96,13 +103,6 @@
                                 <exclude reference="gSP-qx-jwb"/>
                                 <exclude reference="mtY-Yi-cSl"/>
                                 <exclude reference="xRE-Ym-yT6"/>
-                                <exclude reference="5g0-w5-bpk"/>
-                                <exclude reference="A1f-sX-euv"/>
-                                <exclude reference="Fvv-DA-j8h"/>
-                                <exclude reference="LVQ-Cl-10h"/>
-                                <exclude reference="nsP-Hd-EXv"/>
-                                <exclude reference="rML-m3-KRK"/>
-                                <exclude reference="vwM-k9-k81"/>
                                 <exclude reference="27S-fE-5m7"/>
                                 <exclude reference="SxZ-Ui-jyb"/>
                                 <exclude reference="gqR-Ew-vON"/>
@@ -118,23 +118,23 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="7aU-rn-XR2"/>
-                                <include reference="mtY-Yi-cSl"/>
-                                <include reference="xRE-Ym-yT6"/>
                                 <include reference="5g0-w5-bpk"/>
                                 <include reference="Fvv-DA-j8h"/>
                                 <include reference="vwM-k9-k81"/>
+                                <include reference="7aU-rn-XR2"/>
+                                <include reference="mtY-Yi-cSl"/>
+                                <include reference="xRE-Ym-yT6"/>
                                 <include reference="SxZ-Ui-jyb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="44W-8D-mze"/>
-                                <include reference="4o5-X6-Lyy"/>
                                 <include reference="A1f-sX-euv"/>
                                 <include reference="LVQ-Cl-10h"/>
                                 <include reference="nsP-Hd-EXv"/>
                                 <include reference="rML-m3-KRK"/>
+                                <include reference="44W-8D-mze"/>
+                                <include reference="4o5-X6-Lyy"/>
                                 <include reference="gqR-Ew-vON"/>
                             </mask>
                         </variation>
@@ -271,7 +271,6 @@
                                         <connections>
                                             <outlet property="imageView" destination="sWD-VY-qia" id="JUj-nO-fIG"/>
                                             <outlet property="title" destination="UFH-F3-UpB" id="WxH-Rp-JPs"/>
-                                            <segue destination="YV1-6I-o3S" kind="presentation" identifier="showPlayer" id="tAe-aZ-DBb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -329,7 +328,7 @@
                                     <action selector="onBackPressed:" destination="YV1-6I-o3S" eventType="touchUpInside" id="BfI-OB-0FC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-XL-i9g">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-XL-i9g">
                                 <rect key="frame" x="521" y="560" width="59" height="30"/>
                                 <state key="normal" title="YouTube">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

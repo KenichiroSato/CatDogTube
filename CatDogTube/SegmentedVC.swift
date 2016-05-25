@@ -129,6 +129,14 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func setPlayVideoPresenter(presenter: PlayVideoPresenter) {
+        segmentedItems.forEach({
+            if let vc = $0.viewController as? VideoCollectionVC {
+                vc.playVideoPresenter = presenter
+            }
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
