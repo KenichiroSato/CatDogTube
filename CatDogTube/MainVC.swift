@@ -18,10 +18,6 @@ class MainVC: UIViewController {
     
     private var token: dispatch_once_t = 0
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         dispatch_once(&token) {
