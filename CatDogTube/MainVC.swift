@@ -2,7 +2,7 @@
 //  MainVC.swift
 //  CatDogTube
 //
-//  Created by 佐藤健一朗 on 2016/05/21.
+//  Created by Kenichiro Sato on 2016/05/21.
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
@@ -20,6 +20,10 @@ class MainVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         dispatch_once(&token) {
             self.setupViews()
         }
@@ -32,17 +36,16 @@ class MainVC: UIViewController {
     
     private func setupViews() {
         let playerVC = UIStoryboard.instantiateVcWithId(PlayerVC.ID) as! PlayerVC
+        playerVC.view.frame = playerView.bounds
+        playerView.addSubview(playerVC.view)
         self.addChildViewController(playerVC)
         playerVC.didMoveToParentViewController(self)
-        //playerVC.view.frame = playerView.frame
-        playerView.addSubview(playerVC.view)
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
+        segmentedVC.view.frame = contentsView.bounds
+        contentsView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMoveToParentViewController(self)
-        //segmentedVC.view.frame = contentsView.frame
-        contentsView.addSubview(segmentedVC.view)
-
     }
     
     /*
