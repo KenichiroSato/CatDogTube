@@ -48,6 +48,24 @@ class MainVC: UIViewController {
         segmentedVC.didMoveToParentViewController(self)
     }
     
+    
+    //handle screen rotation
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        contentsView.hidden = shouldHideContentsView(size)
+        super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
+    }
+    
+    private func shouldHideContentsView(newSize: CGSize) -> Bool {
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
+            return false
+        }
+        if (newSize.height < newSize.width) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

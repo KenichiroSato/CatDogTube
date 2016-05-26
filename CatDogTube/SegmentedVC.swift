@@ -49,31 +49,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    //handle screen rotation
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
-        updateFrames(size)
-    }
-    
-    private func updateFrames(newSize: CGSize) {
-        let index = contentView.currentIndex()
-        contentView.frame = CGRectMake(0, 0, newSize.width,
-            newSize.height - self.headerView.frame.size.height - Screen.STATUS_BAR_HEIGHT())
-        contentView.contentSize =
-            CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
-        segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
-            self.headerView.frame.size.height)
-        
-        shadowLayer.frame = CGRectMake(0, 0, contentView.width(), shadowView.frame.height)
-        for (index, childVC) in self.childViewControllers.enumerate() {
-            if let vc = childVC as? VideoCollectionVC {
-                vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0, contentView.width(), contentView.height())
-                vc.invalidateLayout()
-            }
-        }
-        contentView.moveToIndex(index)
-    }
-    
     private func setupViews() {
         setupSubViews()
         setupShadowView()
