@@ -73,7 +73,7 @@
                             <constraint firstItem="fjM-Xe-Vb0" firstAttribute="leading" secondItem="3T6-qV-MOo" secondAttribute="leading" id="4o5-X6-Lyy"/>
                             <constraint firstItem="Hw4-XS-GA8" firstAttribute="leading" secondItem="3T6-qV-MOo" secondAttribute="leading" id="5g0-w5-bpk"/>
                             <constraint firstItem="fjM-Xe-Vb0" firstAttribute="top" secondItem="3T6-qV-MOo" secondAttribute="topMargin" constant="20" id="7aU-rn-XR2"/>
-                            <constraint firstItem="Hw4-XS-GA8" firstAttribute="leading" secondItem="fjM-Xe-Vb0" secondAttribute="trailing" id="A1f-sX-euv"/>
+                            <constraint firstItem="Hw4-XS-GA8" firstAttribute="leading" secondItem="fjM-Xe-Vb0" secondAttribute="trailing" constant="10" id="A1f-sX-euv"/>
                             <constraint firstAttribute="trailing" secondItem="Hw4-XS-GA8" secondAttribute="trailing" id="Fvv-DA-j8h"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Hw4-XS-GA8" secondAttribute="bottom" id="LVQ-Cl-10h"/>
                             <constraint firstItem="fjM-Xe-Vb0" firstAttribute="top" secondItem="3T6-qV-MOo" secondAttribute="topMargin" constant="20" id="QSV-D3-veI"/>
@@ -312,9 +312,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="530"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="20" width="800" height="750"/>
                                 </variation>
