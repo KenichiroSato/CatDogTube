@@ -43,6 +43,7 @@
 		59751D9C1CF00AF700B704D2 /* UIStoryBoard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9B1CF00AF700B704D2 /* UIStoryBoard+extension.swift */; };
 		59751D9E1CF5E05C00B704D2 /* PlayVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */; };
 		59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */; };
+		59751DA21CF9305300B704D2 /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751DA11CF9305300B704D2 /* UIDevice+extension.swift */; };
 		59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59774B5B1C82877D00302A65 /* HttpTests.swift */; };
 		5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */; };
 		5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0791C6C1D22006762CE /* UIViewController+extension.swift */; };
@@ -121,6 +122,7 @@
 		59751D9B1CF00AF700B704D2 /* UIStoryBoard+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+extension.swift"; sourceTree = "<group>"; };
 		59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenter.swift; sourceTree = "<group>"; };
 		59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenterTests.swift; sourceTree = "<group>"; };
+		59751DA11CF9305300B704D2 /* UIDevice+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		59774B5B1C82877D00302A65 /* HttpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTests.swift; sourceTree = "<group>"; };
 		5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		5990C0791C6C1D22006762CE /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				590A83561C5390C8000C6179 /* String+extension.swift */,
+				59751DA11CF9305300B704D2 /* UIDevice+extension.swift */,
 				5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */,
 				5990C0791C6C1D22006762CE /* UIViewController+extension.swift */,
 				5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */,
@@ -706,6 +709,7 @@
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
 				59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */,
+				59751DA21CF9305300B704D2 /* UIDevice+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,11 @@ class VideoCell: UICollectionViewCell {
     
     class var aspectRatio : CGFloat {
         get {
-            return 7 / 16
+            if (UIDevice.isPad()) {
+                return 9 / 16
+            } else {
+                return 7 / 16
+            }
         }
     }
     
