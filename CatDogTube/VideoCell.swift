@@ -17,11 +17,7 @@ class VideoCell: UICollectionViewCell {
     
     class var aspectRatio : CGFloat {
         get {
-            if (UIDevice.currentDevice().orientation.isLandscape) {
-                return 6 / 16
-            } else {
-                return 9 / 16
-            }
+            return 7 / 16
         }
     }
     

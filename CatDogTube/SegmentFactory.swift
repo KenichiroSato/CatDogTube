@@ -14,15 +14,14 @@ class SegmentFactory: NSObject {
         var segments: [Segment] = []
         segments.append(searchSegment(ContentType.CAT))
         segments.append(searchSegment(ContentType.DOG))
-        segments.append(favoriteSegment())
+        //segments.append(favoriteSegment())
         return segments
     }
     
     private class func searchSegment(contentType:ContentType) -> Segment {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier(
-            VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
-                
+        let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
+            as! VideoCollectionVC
+        
         let useCase = SearchVideoUseCase(content: contentType,
                                          repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
         let presenter = LoadVideoPresenter(useCase: useCase)
@@ -32,9 +31,8 @@ class SegmentFactory: NSObject {
     }
     
     private class func favoriteSegment() -> Segment {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier(
-            VideoCollectionVC.IDENTIFIER) as! VideoCollectionVC
+        let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
+            as! VideoCollectionVC
         
         let useCase = FavoriteListUseCase.create()
         let presenter = LoadVideoPresenter(useCase: useCase)

@@ -19,6 +19,7 @@ extension UIScrollView {
     }
     
     func currentIndex() -> Int {
+        guard width() != 0 else {return 0}
         let offsetX = self.contentOffset.x
         let index = offsetX/width()
         return Int(index)

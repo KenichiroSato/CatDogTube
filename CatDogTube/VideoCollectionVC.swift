@@ -11,7 +11,7 @@ import UIKit
 class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, LoadVideoDelegate,
     SegmentdChildViewDelegate, TryReloadDelegate {
     
-    static let IDENTIFIER = "VideoCollectionVC"
+    static let ID = "VideoCollectionVC"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,6 +20,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     let dataSource: VideoCollectionDataSource
     
     var presenter: LoadVideoPresenter?
+    
+    var playVideoPresenter: PlayVideoPresenter?
     
     private var refreshControl = UIRefreshControl()
     
@@ -66,17 +68,6 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         alertController.addAction(okAction)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == SegueIdentifier.SHOW_PLAYER) {
-            if let selectedIndexPath = self.collectionView?.indexPathsForSelectedItems(),
-                let nextVC = segue.destinationViewController as? PlayerVC {
-                    let index = selectedIndexPath[0].item
-                    nextVC.video = dataSource.video(index)
-            }
-        }
-    }
     
     // MARK - UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
@@ -86,6 +77,12 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
             return CGSizeMake(width, height)
     }
 
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let video = dataSource.video(indexPath.row) {
+            playVideoPresenter?.playVideo(video)
+        }
+    }
+    
     // MARK: LoadVideoDelegate
     func onLoadSuccess(videos: [Video]) {
         dataSource.videos = videos

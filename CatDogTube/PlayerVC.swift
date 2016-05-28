@@ -9,13 +9,13 @@
 import UIKit
 import youtube_ios_player_helper
 
-class PlayerVC: UIViewController, YTPlayerViewDelegate {
+class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     
+    static let ID = "PlayerVC"
+
     @IBOutlet weak var playerView: YTPlayerView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var youTubeButton: UIButton!
     
@@ -25,7 +25,6 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView.delegate = self
-        backButton.setTitle(Text.BACK, forState: UIControlState.Normal)
         youTubeButton.setTitle(Text.OPEN_YOUTUBE, forState: UIControlState.Normal)
         
         hidePlayer()
@@ -36,10 +35,6 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     private func showPlayer() {
         playerView.hidden = false
         activityIndicator.hidden = true
-    }
-    
-    @IBAction func onBackPressed(sender: AnyObject) {
-        dismissModally()
     }
     
     @IBAction func onYouTubeIconTapped(sender: AnyObject) {
@@ -56,20 +51,21 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate {
     // return false if failed
     private func loadVideo() -> Bool {
         guard let nonNilVideo = video else { return false }
-        saveFavorite(nonNilVideo)
         return playerView.loadWithVideoId(nonNilVideo.videoId, playerVars:  ["playsinline":1])
-    }
-    
-    private func saveFavorite(video:Video) {
-        let useCase = FavoriteListUseCase.create()
-        useCase.saveFavorite(video)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // MARK: - PlayVideoDelegate
+    func playVideo(video: Video) -> Bool {
+        self.video = video
+        isLoaded = loadVideo()
+        return isLoaded
+    }
+
     // MARK: - YTPlayerViewDelegate
     func playerViewDidBecomeReady(playerView: YTPlayerView!) {
         if isLoaded {
