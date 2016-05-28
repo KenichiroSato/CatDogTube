@@ -20,7 +20,7 @@ class VideoCell: UICollectionViewCell {
             if (UIDevice.isPad()) {
                 return 9 / 16
             } else {
-                return 7 / 16
+                return 8 / 16
             }
         }
     }
