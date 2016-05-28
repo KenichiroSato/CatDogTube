@@ -16,12 +16,39 @@ protocol PlayVideoDelegate {
     func playVideo(video:Video) -> Bool
 }
 
-class PlayVideoPresenter: NSObject {
+protocol VideoListStatusDelegate {
+    func onListLoadFinished(videos: [Video], isForeground: Bool)
+    
+    func onItemTapped(video: Video)
+}
+
+class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     
     var playVideoDelegate: PlayVideoDelegate?
     
-    func playVideo(video: Video) -> Bool {
-        return playVideoDelegate?.playVideo(video) ?? false
+    private var hasVideoPlayed = false
+    
+    func onItemTapped(video: Video) {
+        playVideo(video)
     }
     
+    func onListLoadFinished(videos: [Video], isForeground: Bool) {
+        guard let video = videos.first else { return }
+        if shouldPlayVideo(hasVideoPlayed, isForeground: isForeground) {
+            playVideo(video)
+        }
+    }
+    
+    func shouldPlayVideo(hasPlayed: Bool, isForeground: Bool) -> Bool {
+        if (!hasPlayed && isForeground) {
+            return true
+        }
+        return false
+    }
+    
+    private func playVideo(video: Video) {
+        hasVideoPlayed = true
+        playVideoDelegate?.playVideo(video)
+    }
+
 }
