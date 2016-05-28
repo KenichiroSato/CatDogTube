@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.96132533980000001" blue="0.43159017640000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fjM-Xe-Vb0" secondAttribute="height" multiplier="16:10" id="Kfl-c9-L7e"/>
+                                    <constraint firstAttribute="width" secondItem="fjM-Xe-Vb0" secondAttribute="height" multiplier="16:9" id="Kfl-c9-L7e"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -34,9 +34,6 @@
                                     <mask key="constraints">
                                         <include reference="Kfl-c9-L7e"/>
                                     </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="499" height="780"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-XS-GA8" userLabel="ContentsView">
@@ -312,46 +309,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jR-EF-QVJ" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="800" height="750"/>
-                                </variation>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-Qf-zDC">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-XL-i9g">
-                                <rect key="frame" x="521" y="560" width="59" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="YouTube">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="736" y="770" width="59" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onYouTubeIconTapped:" destination="YV1-6I-o3S" eventType="touchUpInside" id="6kA-zB-MNy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="i2W-XL-i9g" secondAttribute="trailing" constant="5" id="2Q3-1z-Y5A"/>
                             <constraint firstAttribute="trailing" secondItem="8jR-EF-QVJ" secondAttribute="trailing" id="J9T-Wk-RUN"/>
                             <constraint firstItem="8jR-EF-QVJ" firstAttribute="leading" secondItem="Z88-UN-5c0" secondAttribute="leading" id="NDj-uu-QOl"/>
-                            <constraint firstItem="i2W-XL-i9g" firstAttribute="top" secondItem="8jR-EF-QVJ" secondAttribute="bottom" id="bAq-Jb-fuu"/>
+                            <constraint firstItem="UuO-dg-mh1" firstAttribute="top" secondItem="8jR-EF-QVJ" secondAttribute="bottom" id="X4k-hb-eO2"/>
                             <constraint firstItem="tKJ-Qf-zDC" firstAttribute="centerX" secondItem="Z88-UN-5c0" secondAttribute="centerX" id="d66-dD-hjU"/>
                             <constraint firstItem="8jR-EF-QVJ" firstAttribute="top" secondItem="Of0-Ti-iW3" secondAttribute="bottom" id="iAr-6Y-0Wf"/>
                             <constraint firstItem="tKJ-Qf-zDC" firstAttribute="centerY" secondItem="Z88-UN-5c0" secondAttribute="centerY" id="nO2-bB-FH9"/>
-                            <constraint firstItem="UuO-dg-mh1" firstAttribute="top" secondItem="i2W-XL-i9g" secondAttribute="bottom" id="zOF-aZ-yyK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="tKJ-Qf-zDC" id="dJT-t4-1Ii"/>
                         <outlet property="playerView" destination="8jR-EF-QVJ" id="vFu-gl-kLd"/>
-                        <outlet property="youTubeButton" destination="i2W-XL-i9g" id="93h-3k-0La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ip-Ov-UsG" userLabel="First Responder" sceneMemberID="firstResponder"/>

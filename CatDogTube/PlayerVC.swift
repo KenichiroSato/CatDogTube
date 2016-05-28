@@ -17,15 +17,12 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var youTubeButton: UIButton!
-    
     var video:Video?
     private var isLoaded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView.delegate = self
-        youTubeButton.setTitle(Text.OPEN_YOUTUBE, forState: UIControlState.Normal)
         
         hidePlayer()
         
@@ -35,12 +32,6 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     private func showPlayer() {
         playerView.hidden = false
         activityIndicator.hidden = true
-    }
-    
-    @IBAction func onYouTubeIconTapped(sender: AnyObject) {
-        if let videoId = video?.videoId {
-            YouTubeLauncher.open(videoId)
-        }
     }
     
     private func hidePlayer() {
