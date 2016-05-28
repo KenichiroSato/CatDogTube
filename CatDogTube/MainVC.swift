@@ -56,7 +56,7 @@ class MainVC: UIViewController {
     }
     
     private func shouldHideContentsView(newSize: CGSize) -> Bool {
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
+        if (UIDevice.isPad()) {
             return false
         }
         if (newSize.height < newSize.width) {
