@@ -36,7 +36,7 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
                 as! VideoCell
             
             let video = videos[indexPath.row]
-            cell.title.text = video.title
+            cell.setTitileWithShadow(video.title)
             cell.imageView.sd_setImageWithURL(video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.RetryFailed, completed: {_,_, cacheType,_ in
                 if (cacheType == .None) { // downloaded from Internet
                     // add GradianeLayer to image and store the image to cache

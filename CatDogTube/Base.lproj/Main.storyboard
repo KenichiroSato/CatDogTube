@@ -250,7 +250,7 @@
                                                     <color key="textColor" red="1" green="0.90270417157934424" blue="0.86609940582378986" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.24049084595959591" green="0.18213890549925238" blue="0.033619060360411269" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <size key="shadowOffset" width="1" height="1"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
