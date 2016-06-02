@@ -20,9 +20,20 @@ class VideoCell: UICollectionViewCell {
             if (UIDevice.isPad()) {
                 return 9 / 16
             } else {
-                return 7 / 16
+                return 8 / 16
             }
         }
     }
     
+    func setTitileWithShadow(title:String) {
+        let attrStr = NSMutableAttributedString(string: title)
+        
+        let shadow = NSShadow()
+        shadow.shadowColor = UIColor.blackColor()
+        shadow.shadowBlurRadius = 4.0
+        shadow.shadowOffset = CGSizeMake(1, 1)
+        attrStr.addAttribute(NSShadowAttributeName, value: shadow,
+                             range:NSMakeRange(0, attrStr.length))
+        self.title.attributedText = attrStr
+    }
 }
