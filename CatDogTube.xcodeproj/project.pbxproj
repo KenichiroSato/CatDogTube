@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C31C80D1D01BFC3002379B2 /* RKNetworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C31C80C1D01BFC3002379B2 /* RKNetworkUtility.m */; };
 		0CD0D5741C6B62E900A24DED /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0D5731C6B62E900A24DED /* PlayerVC.swift */; };
 		59047C551CA786AC0051C489 /* SearchVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C541CA786AC0051C489 /* SearchVideoUseCase.swift */; };
 		59047C5B1CA7A61B0051C489 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59047C5A1CA7A61B0051C489 /* YouTubeVideo.swift */; };
@@ -84,6 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C31C80A1D01BFC3002379B2 /* CatDogTube-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CatDogTube-Bridging-Header.h"; sourceTree = "<group>"; };
+		0C31C80B1D01BFC3002379B2 /* RKNetworkUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNetworkUtility.h; sourceTree = "<group>"; };
+		0C31C80C1D01BFC3002379B2 /* RKNetworkUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKNetworkUtility.m; sourceTree = "<group>"; };
 		0CD0D5731C6B62E900A24DED /* PlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		59047C541CA786AC0051C489 /* SearchVideoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVideoUseCase.swift; sourceTree = "<group>"; };
 		59047C5A1CA7A61B0051C489 /* YouTubeVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 		590A83551C5390A8000C6179 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				0C31C80B1D01BFC3002379B2 /* RKNetworkUtility.h */,
+				0C31C80C1D01BFC3002379B2 /* RKNetworkUtility.m */,
 				590A83561C5390C8000C6179 /* String+extension.swift */,
 				59751DA11CF9305300B704D2 /* UIDevice+extension.swift */,
 				5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */,
@@ -315,6 +321,7 @@
 				5995F3991C954EB500F07172 /* NSDate+extension.swift */,
 				59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */,
 				59751D9B1CF00AF700B704D2 /* UIStoryBoard+extension.swift */,
+				0C31C80A1D01BFC3002379B2 /* CatDogTube-Bridging-Header.h */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -516,7 +523,7 @@
 		59A88AAE1C4B1BAD00D40B23 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Kenichiro Sato";
 				TargetAttributes = {
@@ -704,6 +711,7 @@
 				590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
+				0C31C80D1D01BFC3002379B2 /* RKNetworkUtility.m in Sources */,
 				59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */,
 				59751DA21CF9305300B704D2 /* UIDevice+extension.swift in Sources */,
 			);
@@ -862,12 +870,15 @@
 			baseConfigurationReference = 93F29EF1A8B4140951437979 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = CatDogTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.catdogtube.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "CatDogTube/CatDogTube-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -877,11 +888,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CatDogTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.catdogtube.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "CatDogTube/CatDogTube-Bridging-Header.h";
 			};
 			name = Release;
 		};
