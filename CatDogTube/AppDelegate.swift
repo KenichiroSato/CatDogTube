@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Initialize Crashlytics
         Fabric.with([Crashlytics.self])
 
+        let url = NSURL(string: "http://www.yahoo.co.jp")
+        if (RKNetworkIsLocalURL(url)) {
+            print ("yes!!")
+        } else {
+            print ("NO")
+        }
+        
         return true
     }
 
