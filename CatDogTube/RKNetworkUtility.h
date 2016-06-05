@@ -7,6 +7,9 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
+extern
+NSString *checkReachability(NSString *ipAddress);
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 /* Getting Network Information */
@@ -81,6 +84,7 @@ RKNetworkIsLocalURL(NSURL *URL);
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 /* CFNetwork Error */
+
 
 extern NSString * const RKCFStreamErrorDomain;
 extern NSError * RKNetworkGetErrorFromCFStreamError(CFStreamError error);

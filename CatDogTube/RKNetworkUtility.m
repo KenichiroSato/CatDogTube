@@ -22,6 +22,23 @@
 
 #pragma mark - Getting Network Information
 
+
+NSString *checkReachability(NSString *ipAddress)
+{
+    if (!ipAddress) {
+        return @"error";
+    }
+    
+    struct sockaddr_in callAddress;
+    callAddress.sin_len = sizeof(callAddress);
+    callAddress.sin_family = AF_INET;
+    callAddress.sin_port = htons(24);
+    callAddress.sin_addr.s_addr = inet_addr([ipAddress UTF8String]);
+    
+    return @"success";
+}
+
+
 NSString * RKNetworkGetLocalIPAddressString(void)
 {
     uint32_t ip;
