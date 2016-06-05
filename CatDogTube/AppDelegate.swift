@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print ("NO")
         }
         
+        let ipv4 = "192.168.0.1"
+        let addr = checkReachability(ipv4)
+        print(addr)
         return true
     }
 
