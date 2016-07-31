@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HandyExtensions
 
 class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
     
