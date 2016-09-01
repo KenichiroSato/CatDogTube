@@ -1,8 +1,8 @@
 OK,OK,OK
 CANCEL,キャンセル,Cancel
 ,,
-SEARCH_WORD_DOG,かわいい　子犬,cute puppy
-SEARCH_WORD_CAT,かわいい　子猫,cute kitten
+SEARCH_WORD_DOG,子犬,cute puppy
+SEARCH_WORD_CAT,子猫,cute kitten
 ,,
 MSG_FAILED_TO_LOAD,読み込みに失敗しました。,Failed to load.
 ,,
