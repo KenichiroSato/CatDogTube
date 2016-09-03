@@ -28,7 +28,8 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
         repository.searchVideos(contentType.keyword(), contentType: contentType,
                                 completionHandler: { videos in
-            completionHandler(videos: videos)
+            let okVideos = VideoExcluder.excludeInappropriateVideos(videos)
+            completionHandler(videos: okVideos)
         })
     }
 }

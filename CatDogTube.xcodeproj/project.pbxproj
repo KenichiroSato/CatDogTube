@@ -63,6 +63,8 @@
 		59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
+		59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F611D79BBC000548945 /* VideoExcluder.swift */; };
+		59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F631D79C3B700548945 /* VideoExcluderTests.swift */; };
 		DF90F465D9F7EEA463CD3BD1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3C53F122BC3D82F0D236E6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,8 @@
 		59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
+		59B91F611D79BBC000548945 /* VideoExcluder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluder.swift; sourceTree = "<group>"; };
+		59B91F631D79C3B700548945 /* VideoExcluderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluderTests.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F29EF1A8B4140951437979 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6B89F4AC103CEC6973E31D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				59047C541CA786AC0051C489 /* SearchVideoUseCase.swift */,
+				59B91F611D79BBC000548945 /* VideoExcluder.swift */,
 				590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */,
 				59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */,
 			);
@@ -412,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */,
+				59B91F631D79C3B700548945 /* VideoExcluderTests.swift */,
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
 				5995F3971C9545F700F07172 /* NSCalendarTests.swift */,
 				59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */,
@@ -697,6 +703,7 @@
 				590491C81CCCE44500FEABAD /* SearchVideoRepository.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
+				59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
@@ -718,6 +725,7 @@
 				59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */,
+				59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */,
 				59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */,
 				59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */,
 			);
