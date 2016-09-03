@@ -522,7 +522,6 @@
 				TargetAttributes = {
 					59A88AB51C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = H2W9ZJ8C83;
 					};
 					59A88AC91C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
@@ -863,7 +862,6 @@
 			baseConfigurationReference = 93F29EF1A8B4140951437979 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = CatDogTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -878,7 +876,6 @@
 			baseConfigurationReference = 9B6B89F4AC103CEC6973E31D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = CatDogTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
