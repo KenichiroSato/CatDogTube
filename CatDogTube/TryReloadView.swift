@@ -30,7 +30,7 @@ class TryReloadView: UIView {
     }
     
     func customViewCommonInit() {
-        let view: UIView  = NSBundle.mainBundle().loadNibNamed("TryReloadView", owner: self, options: nil).first as! UIView
+        let view: UIView  = NSBundle.mainBundle().loadNibNamed("TryReloadView", owner: self, options: nil)!.first as! UIView
         view.frame = self.bounds
         addSubview(view)
     }

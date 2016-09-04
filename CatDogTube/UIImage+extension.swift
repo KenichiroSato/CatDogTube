@@ -13,11 +13,11 @@ extension UIImage {
     class func named(name:String, size:CGSize) -> UIImage? {
         if let image = UIImage(named: name) {
             UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+            defer { UIGraphicsEndImageContext() }
+            
             let ratio: CGFloat = size.width / image.size.width
             image.drawInRect(CGRectMake(0, 0, size.width, ratio * image.size.height))
-            let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            return newImage
+            return UIGraphicsGetImageFromCurrentImageContext()
         }
         return nil
     }

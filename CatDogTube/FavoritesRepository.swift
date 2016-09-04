@@ -31,7 +31,9 @@ class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
     }
     
     func saveFavorite(video:Video) -> Bool {
+        guard let imageUrlString = video.imageUrl.absoluteString else { return false }
+        
         return dataSource.saveFavorite(video.videoId, title: video.title, imageUrl:
-            video.imageUrl.absoluteString, contentType: video.contentType.rawValue)
+            imageUrlString, contentType: video.contentType.rawValue)
     }
 }
