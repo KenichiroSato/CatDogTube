@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class YouTubeDataParser: NSObject {
 
-    static func parseResponse(data: NSData) -> [YouTubeVideo] {
+    static func parseResponse(_ data: Data) -> [YouTubeVideo] {
         let json = JSON(data: data)
         
         var videos:[YouTubeVideo] = []

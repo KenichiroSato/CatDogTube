@@ -30,32 +30,32 @@ class TryReloadView: UIView {
     }
     
     func customViewCommonInit() {
-        let view: UIView  = NSBundle.mainBundle().loadNibNamed("TryReloadView", owner: self, options: nil)!.first as! UIView
+        let view: UIView  = Bundle.main.loadNibNamed("TryReloadView", owner: self, options: nil)!.first as! UIView
         view.frame = self.bounds
         addSubview(view)
     }
     
-    @IBAction func onTapped(sender: UITapGestureRecognizer) {
+    @IBAction func onTapped(_ sender: UITapGestureRecognizer) {
         if let delegate = reloadDelegate {
             delegate.onTryReload()
         }
     }
     
     func hide() {
-        self.hidden = true
-        reloadImage.hidden = true
-        indicator.hidden = true
+        self.isHidden = true
+        reloadImage.isHidden = true
+        indicator.isHidden = true
     }
     
     func showReload() {
-        self.hidden = false
-        reloadImage.hidden = false
-        indicator.hidden = true
+        self.isHidden = false
+        reloadImage.isHidden = false
+        indicator.isHidden = true
     }
     
     func showIndicator() {
-        self.hidden = false
-        reloadImage.hidden = true
-        indicator.hidden = false
+        self.isHidden = false
+        reloadImage.isHidden = true
+        indicator.isHidden = false
     }
 }

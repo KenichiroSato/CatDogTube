@@ -12,13 +12,13 @@ class SegmentFactory: NSObject {
     
     class func generate() -> [Segment] {
         var segments: [Segment] = []
-        segments.append(searchSegment(ContentType.CAT))
-        segments.append(searchSegment(ContentType.DOG))
+        segments.append(searchSegment(ContentType.cat))
+        segments.append(searchSegment(ContentType.dog))
         //segments.append(favoriteSegment())
         return segments
     }
     
-    private class func searchSegment(contentType:ContentType) -> Segment {
+    fileprivate class func searchSegment(_ contentType:ContentType) -> Segment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
@@ -30,7 +30,7 @@ class SegmentFactory: NSObject {
         return Segment(vc: vc, iconName: contentType.iconName())
     }
     
-    private class func favoriteSegment() -> Segment {
+    fileprivate class func favoriteSegment() -> Segment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
@@ -38,6 +38,6 @@ class SegmentFactory: NSObject {
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
-        return Segment(vc: vc, iconName: ContentType.CAT.iconName())
+        return Segment(vc: vc, iconName: ContentType.cat.iconName())
     }
 }

@@ -9,14 +9,14 @@
 import Foundation
 
 protocol SearchVideoRepositoryProtocol {
-    func searchVideos(keyword:String, contentType: ContentType, completionHandler:(videos:[Video]?) -> Void)
+    func searchVideos(_ keyword:String, contentType: ContentType, completionHandler:(_ videos:[Video]?) -> Void)
 }
 
 class SearchVideoUseCase: NSObject, LoadVideoUseCase {
 
-    private let repository:SearchVideoRepositoryProtocol
+    fileprivate let repository:SearchVideoRepositoryProtocol
     
-    private let contentType: ContentType
+    fileprivate let contentType: ContentType
     
     init(content: ContentType, repo:SearchVideoRepositoryProtocol) {
         contentType = content
@@ -25,7 +25,7 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     }
     
     // MARK: - LoadVideoUseCase
-    func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
+    func loadVideos(_ completionHandler: (_ videos:[Video]?) -> Void) {
         repository.searchVideos(contentType.keyword(), contentType: contentType,
                                 completionHandler: { videos in
             let okVideos = VideoExcluder.excludeInappropriateVideos(videos)

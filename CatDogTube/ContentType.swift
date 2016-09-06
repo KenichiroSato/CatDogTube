@@ -10,22 +10,22 @@ import Foundation
 
 enum ContentType : Int16 {
     
-    case CAT, DOG
+    case cat, dog
     
     func iconName() -> String {
         switch self {
-        case .CAT:
+        case .cat:
             return "cat"
-        case .DOG:
+        case .dog:
             return "dog"
         }
     }
     
     func keyword() -> String {
         switch self {
-        case .CAT:
+        case .cat:
             return Text.SEARCH_WORD_CAT
-        case .DOG:
+        case .dog:
             return Text.SEARCH_WORD_DOG
         }
     }

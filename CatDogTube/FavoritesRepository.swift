@@ -9,8 +9,8 @@
 import Foundation
 
 protocol FavoritesDataSourceProtocol {
-    func loadVideos(completionHandler: (videos:[FavoriteVideo]?) -> Void)
-    func saveFavorite(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
+    func loadVideos(_ completionHandler: (_ videos:[FavoriteVideo]?) -> Void)
+    func saveFavorite(_ videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
 }
 
 class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
@@ -23,14 +23,14 @@ class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
     }
     
     // MARK: - FavoritesRepositoryProtocol
-    func loadFavorites(completionHandler: (videos: [Video]?) -> Void) {
+    func loadFavorites(_ completionHandler: (_ videos: [Video]?) -> Void) {
         dataSource.loadVideos() { favoriteVideos in
             let videos = VideoTranslater.translateVideos(favoriteVideos)
             completionHandler(videos: videos)
         }
     }
     
-    func saveFavorite(video:Video) -> Bool {
+    func saveFavorite(_ video:Video) -> Bool {
         guard let imageUrlString = video.imageUrl.absoluteString else { return false }
         
         return dataSource.saveFavorite(video.videoId, title: video.title, imageUrl:

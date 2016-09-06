@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
   
     func dismissModally() {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 }

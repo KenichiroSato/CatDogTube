@@ -10,12 +10,12 @@ import Foundation
 
 class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
     
-    private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
+    fileprivate let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
-    private let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
-    private let SEARCH_PERIOD_DAYS: UInt = 30
+    fileprivate let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
+    fileprivate let SEARCH_PERIOD_DAYS: UInt = 30
     
-    private let initialSearchParams = [
+    fileprivate let initialSearchParams = [
         "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
         "part" : "snippet",
         "type" : "video",
@@ -24,7 +24,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         "order" : "viewCount"
     ]
     
-    private func generateParams(searchWord:String) -> [String:String]{
+    fileprivate func generateParams(_ searchWord:String) -> [String:String]{
         var params = initialSearchParams
         params["q"] = searchWord
         
@@ -48,9 +48,9 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         return params
     }
     
-    private func generatePublishedParam() -> (before:String?, after:String?) {
-        let cal = NSCalendar.currentCalendar()
-        let today = NSDate()
+    fileprivate func generatePublishedParam() -> (before:String?, after:String?) {
+        let cal = NSCalendar.current
+        let today = Date()
         guard let minDate = cal.dateWithYear(oldest.year, Month: oldest.month, Day: oldest.day)
             else {
                 return (nil, nil)
@@ -60,22 +60,22 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
     
-    func searchVideos(searchWord:String, completionHandler: (videos:[YouTubeVideo]?) -> Void){
+    func searchVideos(_ searchWord:String, completionHandler: @escaping (_ videos:[YouTubeVideo]?) -> Void){
         
         guard !searchWord.isEmpty else {
-            completionHandler(videos: nil)
+            completionHandler(nil)
             return
         }
         
         let searchParams = generateParams(searchWord)
         guard let requestUrl = Http.generateRequestURL(baseUrl, queries: searchParams) else {
-            completionHandler(videos: nil)
+            completionHandler(nil)
             return
         }
         
         performGetRequest(requestUrl, completion: {(data, response, error) in
-            guard let code = (response as? NSHTTPURLResponse)?.statusCode
-                where code == Http.StatusCode.OK.rawValue,
+            guard let code = (response as? HTTPURLResponse)?.statusCode
+                , code == Http.StatusCode.ok.rawValue,
                 let nonNilData = data else {
                     completionHandler(videos: nil)
                     return
@@ -85,12 +85,12 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         })
     }
     
-    private func performGetRequest(targetURL: NSURL, completion: (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void) {
-        let request = NSMutableURLRequest(URL: targetURL)
-        request.HTTPMethod = Http.Method.GET.rawValue
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: sessionConfiguration)
-        let task = session.dataTaskWithRequest(request, completionHandler:completion)
+    fileprivate func performGetRequest(_ targetURL: URL, completion: (_ data: Data?, _ response: URLResponse?, _ error: NSError?) -> Void) {
+        let request = NSMutableURLRequest(url: targetURL)
+        request.httpMethod = Http.Method.GET.rawValue
+        let sessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfiguration)
+        let task = session.dataTask(with: request, completionHandler:completion)
         task.resume()
     }
     

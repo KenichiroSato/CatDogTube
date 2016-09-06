@@ -16,32 +16,32 @@ import CoreData
 
 class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
 
-    static private let XCDATAMODELD_NAME = "Favorites"
+    static fileprivate let XCDATAMODELD_NAME = "Favorites"
     
     let moc: NSManagedObjectContext
     
     override init() {
         // This resource is the same name as your xcdatamodeld contained in your project.
-        guard let modelURL = NSBundle.mainBundle().URLForResource(
-            FavoritesDatasource.XCDATAMODELD_NAME, withExtension:"momd") else {
+        guard let modelURL = Bundle.main.url(
+            forResource: FavoritesDatasource.XCDATAMODELD_NAME, withExtension:"momd") else {
             fatalError("Error loading model from bundle")
         }
         // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
-        guard let mom = NSManagedObjectModel(contentsOfURL: modelURL) else {
+        guard let mom = NSManagedObjectModel(contentsOf: modelURL) else {
             fatalError("Error initializing mom from: \(modelURL)")
         }
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
-        moc = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         moc.persistentStoreCoordinator = psc
 
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docURL = urls[urls.endIndex-1]
         /* The directory the application uses to store the Core Data store file.
          This code uses a file named "DataModel.sqlite" in the application's documents directory.
          */
-        let storeURL = docURL.URLByAppendingPathComponent(FavoritesDatasource.XCDATAMODELD_NAME + ".sqlite")
+        let storeURL = docURL.appendingPathComponent(FavoritesDatasource.XCDATAMODELD_NAME + ".sqlite")
         do {
-            try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+            try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
         } catch {
             fatalError("Error migrating store: \(error)")
         }
@@ -50,10 +50,10 @@ class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
     /**
      - returns: true when save succeed, false if fail
      */
-    func saveFavorite(videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool {
-        guard let entity = NSEntityDescription.entityForName(
-            FavoriteVideo.NAME, inManagedObjectContext: moc),
-            let video = NSManagedObject(entity: entity, insertIntoManagedObjectContext: moc)
+    func saveFavorite(_ videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool {
+        guard let entity = NSEntityDescription.entity(
+            forEntityName: FavoriteVideo.NAME, in: moc),
+            let video = NSManagedObject(entity: entity, insertInto: moc)
                 as? FavoriteVideo else {
                     return false
         }
@@ -71,13 +71,13 @@ class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
         }
     }
     
-    func loadVideos(completionHandler: (videos:[FavoriteVideo]?) -> Void) {
+    func loadVideos(_ completionHandler: (_ videos:[FavoriteVideo]?) -> Void) {
         let employeesFetch = NSFetchRequest(entityName: FavoriteVideo.NAME)
         do {
-             let videos =  try moc.executeFetchRequest(employeesFetch) as? [FavoriteVideo]
+             let videos =  try moc.fetch(employeesFetch) as? [FavoriteVideo]
             completionHandler(videos: videos)
         } catch {
-            completionHandler(videos: nil)
+            completionHandler(nil)
         }
     }
 }

@@ -10,21 +10,23 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    private lazy var __once: () = {
+            self.setupViews()
+        }()
+
     static let ID = "MainVC"
 
     @IBOutlet weak var playerView: UIView!
     
     @IBOutlet weak var contentsView: UIView!
     
-    private var token: dispatch_once_t = 0
+    fileprivate var token: Int = 0
     
-    private let playVideoPresenter = PlayVideoPresenter()
+    fileprivate let playVideoPresenter = PlayVideoPresenter()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        dispatch_once(&token) {
-            self.setupViews()
-        }
+        _ = self.__once
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,12 +34,12 @@ class MainVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupViews() {
+    fileprivate func setupViews() {
         let playerVC = UIStoryboard.instantiateVcWithId(PlayerVC.ID) as! PlayerVC
         playerVC.view.frame = playerView.bounds
         playerView.addSubview(playerVC.view)
         self.addChildViewController(playerVC)
-        playerVC.didMoveToParentViewController(self)
+        playerVC.didMove(toParentViewController: self)
         playVideoPresenter.playVideoDelegate = playerVC
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
@@ -45,17 +47,17 @@ class MainVC: UIViewController {
         segmentedVC.setPlayVideoPresenter(playVideoPresenter)
         contentsView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
-        segmentedVC.didMoveToParentViewController(self)
+        segmentedVC.didMove(toParentViewController: self)
     }
     
     
     //handle screen rotation
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        contentsView.hidden = shouldHideContentsView(size)
-        super.viewWillTransitionToSize(size, withTransitionCoordinator:coordinator)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        contentsView.isHidden = shouldHideContentsView(size)
+        super.viewWillTransition(to: size, with:coordinator)
     }
     
-    private func shouldHideContentsView(newSize: CGSize) -> Bool {
+    fileprivate func shouldHideContentsView(_ newSize: CGSize) -> Bool {
         if (UIDevice.isPad()) {
             return false
         }

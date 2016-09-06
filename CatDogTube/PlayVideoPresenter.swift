@@ -13,40 +13,40 @@ protocol PlayVideoDelegate {
     /**
      - returns: true when play succeed, false if fail
      */
-    func playVideo(video:Video) -> Bool
+    func playVideo(_ video:Video) -> Bool
 }
 
 protocol VideoListStatusDelegate {
-    func onListLoadFinished(videos: [Video], isForeground: Bool)
+    func onListLoadFinished(_ videos: [Video], isForeground: Bool)
     
-    func onItemTapped(video: Video)
+    func onItemTapped(_ video: Video)
 }
 
 class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     
     var playVideoDelegate: PlayVideoDelegate?
     
-    private var hasVideoPlayed = false
+    fileprivate var hasVideoPlayed = false
     
-    func onItemTapped(video: Video) {
+    func onItemTapped(_ video: Video) {
         playVideo(video)
     }
     
-    func onListLoadFinished(videos: [Video], isForeground: Bool) {
+    func onListLoadFinished(_ videos: [Video], isForeground: Bool) {
         guard let video = videos.first else { return }
         if shouldPlayVideo(hasVideoPlayed, isForeground: isForeground) {
             playVideo(video)
         }
     }
     
-    func shouldPlayVideo(hasPlayed: Bool, isForeground: Bool) -> Bool {
+    func shouldPlayVideo(_ hasPlayed: Bool, isForeground: Bool) -> Bool {
         if (!hasPlayed && isForeground) {
             return true
         }
         return false
     }
     
-    private func playVideo(video: Video) {
+    fileprivate func playVideo(_ video: Video) {
         hasVideoPlayed = true
         playVideoDelegate?.playVideo(video)
     }

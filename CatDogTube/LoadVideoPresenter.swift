@@ -12,7 +12,7 @@ protocol LoadVideoDelegate {
     /*
      must be called in main thread
      */
-    func onLoadSuccess(videos: [Video])
+    func onLoadSuccess(_ videos: [Video])
 
     /*
      must be called in main thread
@@ -25,7 +25,7 @@ protocol LoadVideoDelegate {
  */
 class LoadVideoPresenter: NSObject {
     
-    private let useCase: LoadVideoUseCase
+    fileprivate let useCase: LoadVideoUseCase
     
     var loadVideoDelegate: LoadVideoDelegate?
     
@@ -35,10 +35,10 @@ class LoadVideoPresenter: NSObject {
     }
     
     func loadVideo() {
-        NSThread.dispatchAsyncGlobal(){
+        Thread.dispatchAsyncGlobal(){
             self.useCase.loadVideos() { videos in
-                NSThread.dispatchAsyncMain() {
-                    guard let nonNilVideos = videos where !nonNilVideos.isEmpty else {
+                Thread.dispatchAsyncMain() {
+                    guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
                         self.loadVideoDelegate?.onLoadFail()
                         return
                     }
