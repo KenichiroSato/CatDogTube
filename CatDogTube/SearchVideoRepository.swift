@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SearchVideoDataSourceProtocol {
-    func searchVideos(_ searchWord:String, completionHandler: (_ videos:[YouTubeVideo]?) -> Void)
+    func searchVideos(_ searchWord:String, completionHandler: @escaping (_ videos:[YouTubeVideo]?) -> Void)
 }
 
 class SearchVideoRepository: NSObject, SearchVideoRepositoryProtocol {
@@ -22,10 +22,10 @@ class SearchVideoRepository: NSObject, SearchVideoRepositoryProtocol {
     }
     
     func searchVideos(_ keyword:String, contentType:ContentType,
-                      completionHandler: (_ videos:[Video]?) -> Void) {
+                      completionHandler: @escaping (_ videos:[Video]?) -> Void) {
         dataSource.searchVideos(keyword, completionHandler:{ videoEntities in
             let videos = VideoTranslater.translate(videoEntities, contentType:contentType)
-            completionHandler(videos: videos)
+            completionHandler(videos)
         })
     }
 }

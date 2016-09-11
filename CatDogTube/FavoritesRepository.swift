@@ -26,12 +26,12 @@ class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
     func loadFavorites(_ completionHandler: (_ videos: [Video]?) -> Void) {
         dataSource.loadVideos() { favoriteVideos in
             let videos = VideoTranslater.translateVideos(favoriteVideos)
-            completionHandler(videos: videos)
+            completionHandler(videos)
         }
     }
     
     func saveFavorite(_ video:Video) -> Bool {
-        guard let imageUrlString = video.imageUrl.absoluteString else { return false }
+        let imageUrlString = video.imageUrl.absoluteString
         
         return dataSource.saveFavorite(video.videoId, title: video.title, imageUrl:
             imageUrlString, contentType: video.contentType.rawValue)

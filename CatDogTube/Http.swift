@@ -30,9 +30,9 @@ class Http: NSObject {
             return URL(string: baseUrl)
         }
         var url = baseUrl + "?"
-        for (index, (key, value)) in queries.enumerated() {
-            if let encodedValue = value.urlEncodes() {
-                url += key + "=" + encodedValue
+        for (index, dic) in queries.enumerated() {
+            if let encodedValue = dic.value.urlEncodes() {
+                url += dic.key + "=" + encodedValue
                 if index != queries.count - 1 {url += "&"}
             }
         }

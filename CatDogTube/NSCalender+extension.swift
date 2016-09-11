@@ -9,7 +9,7 @@
 
 import Foundation
 
-extension NSCalendar {
+extension Calendar {
     
     func dateWithYear(_ year:Int, Month:Int, Day:Int) -> Date? {
         return (self as NSCalendar).date(era: 1, year: year, month: Month, day: Day, hour: 0, minute: 0, second: 0, nanosecond: 0)
@@ -19,8 +19,7 @@ extension NSCalendar {
      - returns: NSDateComponents which includes only year, month, day, hour, minute, second
      */
     func components(_ date:Date) -> DateComponents {
-        return (self as NSCalendar).components([Calendar.year, Calendar.monthSymbols, Calendar.firstWeekday,
-            Calendar.hour, Calendar.minute, Calendar.second], from: date)
+        return dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
     }
     
     /**

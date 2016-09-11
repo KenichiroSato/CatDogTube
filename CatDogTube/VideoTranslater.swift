@@ -22,7 +22,7 @@ class  VideoTranslater: NSObject {
         guard let url = URL(string: entity.imageUrl) else {
             return nil
         }
-        return Video(id: entity.videoId, title:entity.title , url: url as NSURL, type: contentType)
+        return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
     
     class func translateVideos(_ videos:[FavoriteVideo]?) -> [Video]? {
@@ -34,6 +34,6 @@ class  VideoTranslater: NSObject {
             let contentType = ContentType(rawValue: entity.contentType) else {
             return nil
         }
-        return Video(id: entity.videoId, title:entity.title , url: url as NSURL, type: contentType)
+        return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
 }

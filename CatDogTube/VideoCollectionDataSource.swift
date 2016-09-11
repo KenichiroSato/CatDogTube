@@ -37,7 +37,7 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
             
             let video = videos[(indexPath as NSIndexPath).row]
             cell.setTitileWithShadow(video.title)
-            cell.imageView.sd_setImage(with: video.imageUrl as URL!, placeholderImage: nil, options: SDWebImageOptions.retryFailed, completed: {_,_, cacheType,_ in
+            cell.imageView.sd_setImage(with: video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.retryFailed, completed: {_,_, cacheType,_ in
                 cell.imageView.addGradientLayer(UIColor.white)
             })
             return cell

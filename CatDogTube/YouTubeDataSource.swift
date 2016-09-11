@@ -77,16 +77,16 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
             guard let code = (response as? HTTPURLResponse)?.statusCode
                 , code == Http.StatusCode.ok.rawValue,
                 let nonNilData = data else {
-                    completionHandler(videos: nil)
+                    completionHandler(nil)
                     return
             }
             let videos = YouTubeDataParser.parseResponse(nonNilData)
-            completionHandler(videos: videos)
+            completionHandler(videos)
         })
     }
     
-    fileprivate func performGetRequest(_ targetURL: URL, completion: (_ data: Data?, _ response: URLResponse?, _ error: NSError?) -> Void) {
-        let request = NSMutableURLRequest(url: targetURL)
+    fileprivate func performGetRequest(_ targetURL: URL, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
+        var request = URLRequest(url: targetURL) //NSMutableURLRequest(url: targetURL)
         request.httpMethod = Http.Method.GET.rawValue
         let sessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfiguration)

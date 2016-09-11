@@ -72,10 +72,10 @@ class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
     }
     
     func loadVideos(_ completionHandler: (_ videos:[FavoriteVideo]?) -> Void) {
-        let employeesFetch = NSFetchRequest(entityName: FavoriteVideo.NAME)
+        let employeesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: FavoriteVideo.NAME)
         do {
              let videos =  try moc.fetch(employeesFetch) as? [FavoriteVideo]
-            completionHandler(videos: videos)
+            completionHandler(videos)
         } catch {
             completionHandler(nil)
         }
