@@ -51,7 +51,7 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     }
 
     // MARK: - PlayVideoDelegate
-    func playVideo(_ video: Video) -> Bool {
+    func play(video: Video) -> Bool {
         self.video = video
         isLoaded = loadVideo()
         return isLoaded

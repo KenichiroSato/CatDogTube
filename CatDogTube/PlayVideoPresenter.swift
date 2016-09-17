@@ -13,7 +13,7 @@ protocol PlayVideoDelegate {
     /**
      - returns: true when play succeed, false if fail
      */
-    func playVideo(_ video:Video) -> Bool
+    func play(video:Video) -> Bool
 }
 
 protocol VideoListStatusDelegate {
@@ -29,13 +29,13 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     private var hasVideoPlayed = false
     
     func onItemTapped(_ video: Video) {
-        playVideo(video)
+        play(video:video)
     }
     
     func onListLoadFinished(_ videos: [Video], isForeground: Bool) {
         guard let video = videos.first else { return }
         if shouldPlayVideo(hasVideoPlayed, isForeground: isForeground) {
-            playVideo(video)
+            play(video:video)
         }
     }
     
@@ -46,9 +46,9 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
         return false
     }
     
-    private func playVideo(_ video: Video) {
+    private func play(video: Video) {
         hasVideoPlayed = true
-        _ = playVideoDelegate?.playVideo(video)
+        _ = playVideoDelegate?.play(video:video)
     }
 
 }
