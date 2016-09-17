@@ -15,7 +15,7 @@ extension Thread {
     }
     
     class func dispatchAsyncGlobal(_ block: @escaping () -> ()) {
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: block)
+        DispatchQueue.global(qos: .default).async(execute: block)
     }
     
 }

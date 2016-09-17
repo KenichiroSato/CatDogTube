@@ -48,7 +48,7 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     
     fileprivate func playVideo(_ video: Video) {
         hasVideoPlayed = true
-        playVideoDelegate?.playVideo(video)
+        _ = playVideoDelegate?.playVideo(video)
     }
 
 }
