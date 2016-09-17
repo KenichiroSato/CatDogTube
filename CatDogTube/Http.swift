@@ -18,11 +18,11 @@ class Http: NSObject {
     enum StatusCode: Int {
         case ok = 200
         
-        case bad_REQUEST = 400
+        case badRequest = 400
         case unauthorized = 401
-        case not_FOUND = 404
+        case notFound = 404
         
-        case internal_SERVER_ERROR = 500
+        case internalServerError = 500
     }
     
     class func generateRequestURL(_ baseUrl:String, queries:[String:String]) -> URL? {
