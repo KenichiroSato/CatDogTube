@@ -15,10 +15,10 @@ class Video: NSObject {
     
     let videoId:String
     let title:String
-    let imageUrl:NSURL
+    let imageUrl:URL
     let contentType:ContentType
     
-    init(id:String, title:String, url:NSURL, type:ContentType) {
+    init(id:String, title:String, url:URL, type:ContentType) {
         self.videoId = id
         self.title = title
         self.imageUrl = url

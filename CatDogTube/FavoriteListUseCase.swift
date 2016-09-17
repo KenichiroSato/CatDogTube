@@ -9,8 +9,8 @@
 import Foundation
 
 protocol FavoritesRepositoryProtocol {
-    func loadFavorites(completionHandler: (videos:[Video]?) -> Void)
-    func saveFavorite(video:Video) -> Bool
+    func loadFavorites(_ completionHandler: (_ videos:[Video]?) -> Void)
+    func saveFavorite(_ video:Video) -> Bool
 }
 
 class FavoriteListUseCase: NSObject, LoadVideoUseCase {
@@ -27,13 +27,13 @@ class FavoriteListUseCase: NSObject, LoadVideoUseCase {
     }
     
     // MARK: - LoadVideoUseCase
-    func loadVideos(completionHandler: (videos:[Video]?) -> Void) {
+    func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void) {
         repository.loadFavorites() { videos in
-            completionHandler(videos: videos)
+            completionHandler(videos)
         }
     }
     
-    func saveFavorite(video:Video) -> Bool {
+    func saveFavorite(_ video:Video) -> Bool {
         return repository.saveFavorite(video)
     }
 

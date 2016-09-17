@@ -523,19 +523,27 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kenichiro Sato";
 				TargetAttributes = {
 					59A88AB51C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H2W9ZJ8C83;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					59A88AC91C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = H2W9ZJ8C83;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
 					59A88AD41C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = H2W9ZJ8C83;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
 				};
@@ -787,6 +795,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -796,8 +805,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -832,6 +843,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -841,8 +853,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -861,6 +875,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -870,13 +885,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 93F29EF1A8B4140951437979 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.catdogtube.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
+				PROVISIONING_PROFILE_SPECIFIER = 20160903_provisioning;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -885,13 +906,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B6B89F4AC103CEC6973E31D /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.catdogtube.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c6db84e7-96fb-4a6a-a417-a1c1b43398e8";
+				PROVISIONING_PROFILE_SPECIFIER = Adhoc_20160904_sato_kenichiro;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -900,10 +926,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTubeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Debug;
@@ -912,10 +940,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTubeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Release;
@@ -923,10 +954,14 @@
 		59A88AE51C4B1BAD00D40B23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTubeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
+				PROVISIONING_PROFILE_SPECIFIER = 20160903_provisioning;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;
 			};
@@ -935,10 +970,15 @@
 		59A88AE61C4B1BAD00D40B23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTubeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
+				PROVISIONING_PROFILE_SPECIFIER = 20160903_provisioning;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;
 			};

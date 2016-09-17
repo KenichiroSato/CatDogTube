@@ -8,14 +8,14 @@
 
 import Foundation
 
-extension NSThread {
+extension Thread {
     
-    class func dispatchAsyncMain(block: () -> ()) {
-        dispatch_async(dispatch_get_main_queue(), block)
+    class func dispatchAsyncMain(_ block: @escaping () -> ()) {
+        DispatchQueue.main.async(execute: block)
     }
     
-    class func dispatchAsyncGlobal(block: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+    class func dispatchAsyncGlobal(_ block: @escaping () -> ()) {
+        DispatchQueue.global(qos: .default).async(execute: block)
     }
     
 }

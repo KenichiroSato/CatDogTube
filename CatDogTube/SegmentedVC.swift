@@ -10,18 +10,22 @@ import UIKit
 import HMSegmentedControl
 
 protocol SegmentdChildViewDelegate {
-    func onSegmentChanged(isCurrentIndex:Bool)
+    func onSegmentChanged(_ isCurrentIndex:Bool)
 }
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate {
+    
+    private lazy var __once: () = {
+            self.setupViews()
+        }()
     
     static let ID = "SegmentedVC"
 
     private var gradientColors : [CGColor] {
         get {
-            let darkColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
-            let middleColor = UIColor.blackColor().colorWithAlphaComponent(0.1).CGColor
-            let clearColor = UIColor.clearColor().CGColor
+            let darkColor = UIColor.black.withAlphaComponent(0.4).cgColor
+            let middleColor = UIColor.black.withAlphaComponent(0.1).cgColor
+            let clearColor = UIColor.clear.cgColor
             return [darkColor, middleColor, clearColor]
         }
     }
@@ -36,17 +40,15 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private let segmentedControl = HMSegmentedControl()
     
-    var token: dispatch_once_t = 0
+    var token: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.scrollsToTop = false
     }
     
-    override func viewDidAppear(animated: Bool) {
-        dispatch_once(&token) {
-            self.setupViews()
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        _ = self.__once
     }
     
     private func setupViews() {
@@ -55,22 +57,22 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         
         segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
         segmentedControl.type = HMSegmentedControlTypeImages
-        segmentedControl.backgroundColor = UIColor.redColor()
-        segmentedControl.frame = CGRectMake(0, 0, contentView.width(),
-            self.headerView.frame.size.height)
+        segmentedControl.backgroundColor = UIColor.red
+        segmentedControl.frame = CGRect(x: 0, y: 0, width: contentView.width(),
+            height: self.headerView.frame.size.height)
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
-        segmentedControl.selectionIndicatorColor = UIColor.whiteColor()
-        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()];
+        segmentedControl.selectionIndicatorColor = UIColor.white
+        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white];
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
         segmentedControl.indexChangeBlock = {
             [unowned self] (index: Int) in
-            self.contentView.moveToIndex(index)
+            self.contentView.move(to:index)
         }
         headerView.addSubview(segmentedControl)
         
         contentView.delegate = self
         contentView.contentSize =
-            CGSizeMake(contentView.width() * CGFloat(segmentedItems.count), contentView.height())
+            CGSize(width: contentView.width() * CGFloat(segmentedItems.count), height: contentView.height())
         contentView.delaysContentTouches = false
         notifySegmentChanged()
     }
@@ -78,17 +80,17 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     private func setupShadowView() {
         shadowLayer.colors = gradientColors
         shadowLayer.frame = shadowView.bounds
-        shadowView.layer.insertSublayer(shadowLayer, atIndex: 0)
+        shadowView.layer.insertSublayer(shadowLayer, at: 0)
     }
 
     private func setupSubViews() {
-        for (index, item) in segmentedItems.enumerate() {
+        for (index, item) in segmentedItems.enumerated() {
             
             let vc = item.viewController
             self.addChildViewController(vc)
-            vc.didMoveToParentViewController(self)
-            vc.view.frame = CGRectMake(CGFloat(index) * contentView.width(), 0,
-                contentView.width(), contentView.height())
+            vc.didMove(toParentViewController: self)
+            vc.view.frame = CGRect(x: CGFloat(index) * contentView.width(), y: 0,
+                width: contentView.width(), height: contentView.height())
             if let view = vc.view {
                 contentView.addSubview(view)
             }
@@ -96,7 +98,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     private func notifySegmentChanged() {
-        for (index, childVC) in self.childViewControllers.enumerate() {
+        for (index, childVC) in self.childViewControllers.enumerated() {
             if let vc = childVC as? SegmentdChildViewDelegate {
                 let isCurrentIndex = (index == self.contentView.currentIndex())
                 vc.onSegmentChanged(isCurrentIndex)
@@ -104,7 +106,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func setPlayVideoPresenter(presenter: PlayVideoPresenter) {
+    func setPlayVideoPresenter(_ presenter: PlayVideoPresenter) {
         segmentedItems.forEach({
             if let vc = $0.viewController as? VideoCollectionVC {
                 vc.videoListStatusDelegate = presenter
@@ -118,7 +120,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     //This is called after user manually scrolled
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageWidth: CGFloat = self.view.frame.size.width
         let page = contentView.contentOffset.x / pageWidth
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
@@ -126,7 +128,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
     
     //This is called after user tapped Tab area
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         notifySegmentChanged()
     }
     

@@ -30,19 +30,19 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     }
     
     private func showPlayer() {
-        playerView.hidden = false
-        activityIndicator.hidden = true
+        playerView.isHidden = false
+        activityIndicator.isHidden = true
     }
     
     private func hidePlayer() {
-        playerView.hidden = true
-        activityIndicator.hidden = false
+        playerView.isHidden = true
+        activityIndicator.isHidden = false
     }
     
     // return false if failed
     private func loadVideo() -> Bool {
         guard let nonNilVideo = video else { return false }
-        return playerView.loadWithVideoId(nonNilVideo.videoId, playerVars:  ["playsinline":1])
+        return playerView.load(withVideoId: nonNilVideo.videoId, playerVars:  ["playsinline":1])
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,14 +51,14 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     }
 
     // MARK: - PlayVideoDelegate
-    func playVideo(video: Video) -> Bool {
+    func play(video: Video) -> Bool {
         self.video = video
         isLoaded = loadVideo()
         return isLoaded
     }
 
     // MARK: - YTPlayerViewDelegate
-    func playerViewDidBecomeReady(playerView: YTPlayerView!) {
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView!) {
         if isLoaded {
             playerView.playVideo()
         } else {
@@ -66,12 +66,12 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
         }
     }
     
-    func playerView(playerView: YTPlayerView!, didChangeToState state: YTPlayerState) {
+    func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState) {
         switch state {
-        case .Playing,
-             .Unstarted: //If app cannot play the video, status becomes .Unstarted
+        case .playing,
+             .unstarted: //If app cannot play the video, status becomes .Unstarted
             showPlayer()
-        case .Ended:
+        case .ended:
             dismissModally()
         default:
             break

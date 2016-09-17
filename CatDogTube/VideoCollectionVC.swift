@@ -38,8 +38,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         collectionView.delegate = self
 
         refreshControl.addTarget(self, action: #selector(VideoCollectionVC.pullToRefresh),
-            forControlEvents: UIControlEvents.ValueChanged)
-        refreshControl.tintColor = UIColor.blackColor()
+            for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.black
         collectionView.addSubview(refreshControl)
 
         tryReloadView.reloadDelegate = self
@@ -52,7 +52,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func loadVideo(showFullScreenLoading:Bool) {
+    func loadVideo(_ showFullScreenLoading:Bool) {
         if (showFullScreenLoading) {
             tryReloadView.showIndicator()
         }
@@ -65,28 +65,28 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     private func showErrorDialog() {
         let alertController = UIAlertController(title: Text.MSG_FAILED_TO_LOAD,
-                                                message: nil, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: Text.OK, style: .Default, handler:nil)
+                                                message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Text.OK, style: .default, handler:nil)
         alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK - UICollectionViewDelegateFlowLayout
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
             let width = self.view.frame.width
             let height = width * VideoCell.aspectRatio
-            return CGSizeMake(width, height)
+            return CGSize(width: width, height: height)
     }
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let video = dataSource.video(indexPath.row) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let video = dataSource.video((indexPath as NSIndexPath).row) {
             videoListStatusDelegate?.onItemTapped(video)
         }
     }
     
     // MARK: LoadVideoDelegate
-    func onLoadSuccess(videos: [Video]) {
+    func onLoadSuccess(_ videos: [Video]) {
         dataSource.videos = videos
         videoListStatusDelegate?.onListLoadFinished(videos, isForeground: isForeground)
         self.refreshControl.endRefreshing()
@@ -108,7 +108,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     }
     
     // MARK: SegmentdChildViewDelegate
-    func onSegmentChanged(isCurrentIndex: Bool) {
+    func onSegmentChanged(_ isCurrentIndex: Bool) {
         collectionView.scrollsToTop = isCurrentIndex
         isForeground = isCurrentIndex
     }

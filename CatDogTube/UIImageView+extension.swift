@@ -10,61 +10,61 @@ import UIKit
 
 enum ViewSide {
     
-    static let allValues = [TOP, BOTTOM, RIGHT, LEFT]
+    static let allValues = [top, bottom, right, left]
     
-    case TOP
-    case BOTTOM
-    case RIGHT
-    case LEFT
+    case top
+    case bottom
+    case right
+    case left
     
-    func gradationFrame(view: UIView) -> CGRect {
+    func gradationFrame(_ view: UIView) -> CGRect {
         switch (self) {
-        case .TOP:
-            return CGRectMake(0, 0, view.bounds.width, UIImageView.GRADIENT_SIZE)
-        case .BOTTOM:
-            return CGRectMake(0, view.bounds.height - UIImageView.GRADIENT_SIZE ,
-                              view.bounds.width, UIImageView.GRADIENT_SIZE)
-        case .RIGHT:
-            return CGRectMake(view.bounds.width - UIImageView.GRADIENT_SIZE, 0, UIImageView.GRADIENT_SIZE, view.bounds.height)
-        case .LEFT:
-            return CGRectMake(0, 0, UIImageView.GRADIENT_SIZE, view.bounds.height)
+        case .top:
+            return CGRect(x: 0, y: 0, width: view.bounds.width, height: UIImageView.GRADIENT_SIZE)
+        case .bottom:
+            return CGRect(x: 0, y: view.bounds.height - UIImageView.GRADIENT_SIZE ,
+                              width: view.bounds.width, height: UIImageView.GRADIENT_SIZE)
+        case .right:
+            return CGRect(x: view.bounds.width - UIImageView.GRADIENT_SIZE, y: 0, width: UIImageView.GRADIENT_SIZE, height: view.bounds.height)
+        case .left:
+            return CGRect(x: 0, y: 0, width: UIImageView.GRADIENT_SIZE, height: view.bounds.height)
         }
     }
     
     func points() -> (start: CGPoint, end: CGPoint) {
         switch (self) {
-        case .TOP:
-            return (CGPointMake(0, 0), CGPointMake(0, 1))
-        case .BOTTOM:
-            return (CGPointMake(0, 1), CGPointMake(0, 0))
-        case .LEFT:
-            return (CGPointMake(0, 0), CGPointMake(1, 0))
-        case .RIGHT:
-            return (CGPointMake(1, 0), CGPointMake(0, 0))
+        case .top:
+            return (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 1))
+        case .bottom:
+            return (CGPoint(x: 0, y: 1), CGPoint(x: 0, y: 0))
+        case .left:
+            return (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 0))
+        case .right:
+            return (CGPoint(x: 1, y: 0), CGPoint(x: 0, y: 0))
         }
     }
 }
 
 extension UIImageView {
     
-    static private let GRADIENT_SIZE: CGFloat = 15.0
+    static fileprivate let GRADIENT_SIZE: CGFloat = 15.0
     
-    func addGradientLayer(baseColor:UIColor) {
+    func addGradientLayer(_ baseColor:UIColor) {
         for side in ViewSide.allValues {
             let gradient = CAGradientLayer()
             gradient.colors = gradientColors(baseColor)
             gradient.frame = side.gradationFrame(self)
             gradient.startPoint = side.points().start
             gradient.endPoint = side.points().end
-            self.layer.insertSublayer(gradient, atIndex: 0)
+            self.layer.insertSublayer(gradient, at: 0)
         }
         self.image = self.getImageFromView()
         removeGradientLayer()
     }
     
-    private func gradientColors(baseColor:UIColor) -> [CGColor] {
-        let startColor = baseColor.CGColor
-        let clearColor = baseColor.colorWithAlphaComponent(0.0).CGColor
+    private func gradientColors(_ baseColor:UIColor) -> [CGColor] {
+        let startColor = baseColor.cgColor
+        let clearColor = baseColor.withAlphaComponent(0.0).cgColor
         return [startColor, clearColor]
     }
     
@@ -76,7 +76,7 @@ extension UIImageView {
         var image: UIImage?
         UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0)
         if let context = UIGraphicsGetCurrentContext() {
-            self.layer.renderInContext(context)
+            self.layer.render(in: context)
             image = UIGraphicsGetImageFromCurrentImageContext()
         }
         UIGraphicsEndImageContext()

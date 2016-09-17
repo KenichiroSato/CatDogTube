@@ -13,10 +13,10 @@ import SwiftyJSON
 class VideoExcluderTests: XCTestCase {
     
     private let videos:[Video] = [
-        Video(id: "1", title: "子犬のワルツ", url: NSURL(string: "yahoo")!, type: ContentType.CAT),
-        Video(id: "2", title: "mmd video", url: NSURL(string: "yahoo")!, type: ContentType.CAT),
-        Video(id: "3", title: "ok video", url: NSURL(string: "yahoo")!, type: ContentType.CAT),
-        Video(id: "4", title: "ok video2", url: NSURL(string: "yahoo")!, type: ContentType.CAT)
+        Video(id: "1", title: "子犬のワルツ", url: URL(string: "yahoo")!, type: ContentType.cat),
+        Video(id: "2", title: "mmd video", url: URL(string: "yahoo")!, type: ContentType.cat),
+        Video(id: "3", title: "ok video", url: URL(string: "yahoo")!, type: ContentType.cat),
+        Video(id: "4", title: "ok video2", url: URL(string: "yahoo")!, type: ContentType.cat)
     ]
     
     override func setUp() {

@@ -12,15 +12,15 @@ import UIKit
 class Screen {
     
     static func HEIGHT() -> CGFloat {
-        return UIScreen.mainScreen().bounds.height
+        return UIScreen.main.bounds.height
     }
     
     static func WIDTH() -> CGFloat {
-        return UIScreen.mainScreen().bounds.width
+        return UIScreen.main.bounds.width
     }
     
     static func STATUS_BAR_HEIGHT() -> CGFloat {
-        return UIDevice.currentDevice().orientation.isLandscape ? 0 : 20
+        return UIDevice.current.orientation.isLandscape ? 0 : 20
     }
     
     

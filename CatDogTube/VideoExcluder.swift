@@ -63,13 +63,13 @@ class VideoExcluder: NSObject {
         "メガネ"
         ]
     
-    class func excludeInappropriateVideos(videos:[Video]?) -> [Video]? {
+    class func excludeInappropriateVideos(_ videos:[Video]?) -> [Video]? {
         return videos?.filter{!VideoExcluder.isInappropriateVideo($0)}
     }
     
-    private class func isInappropriateVideo(video:Video) -> Bool {
+    private class func isInappropriateVideo(_ video:Video) -> Bool {
         for ngWord in VideoExcluder.NG_WORDS {
-            if (video.title.lowercaseString.containsString(ngWord.lowercaseString)) {
+            if (video.title.lowercased().contains(ngWord.lowercased())) {
                 return true
             }
         }

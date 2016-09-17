@@ -8,17 +8,17 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
     
     /**
      return String formatted in RFC3339 yyyy-MM-dd'T'HH:mm:ss'Z'
      - returns: formatted String
      */
     func RFC3339String() -> String {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        return formatter.stringFromDate(self)
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
+        return formatter.string(from: self)
     }
     
     /**
@@ -26,10 +26,10 @@ extension NSDate {
      - parameter days: the UInt days. return value is calculated by this parameter.
      - returns: days ago date.
      */
-    func daysAgo(days:UInt) -> NSDate {
+    func daysAgo(_ days:UInt) -> Date {
         let timeInterval = self.timeIntervalSince1970
         let daysInSec = Double(days * 24 * 60 * 60)
         let newInterval = timeInterval - daysInSec
-        return NSDate(timeIntervalSince1970: newInterval)
+        return Date(timeIntervalSince1970: newInterval)
     }
 }

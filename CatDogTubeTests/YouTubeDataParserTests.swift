@@ -12,14 +12,14 @@ import SwiftyJSON
 
 class YouTubeDataParserTests: XCTestCase {
 
-    var testData:NSData!
+    var testData:Data!
     
     override func setUp() {
         super.setUp()
         
-        let testBundle = NSBundle(forClass: self.dynamicType)
-        let path : String = testBundle.pathForResource("searchResponse", ofType: "json")!
-        let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: path)!
+        let bundle = Bundle(for: type(of: self))
+        let path : String = bundle.path(forResource: "searchResponse", ofType: "json")!
+        let fileHandle : FileHandle = FileHandle(forReadingAtPath: path)!
         testData = fileHandle.readDataToEndOfFile()
 
         // Put setup code here. This method is called before the invocation of each test method in the class.

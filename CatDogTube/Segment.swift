@@ -16,7 +16,7 @@ class Segment : NSObject {
     
     var iconImage:UIImage {
         get {
-            return UIImage.named(iconName, size: CGSizeMake(ICON_SIZE, ICON_SIZE))!
+            return UIImage.named(iconName, size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
         }
     }
 

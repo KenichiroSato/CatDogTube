@@ -11,11 +11,11 @@ import UIKit
 extension UIDevice {
     
     class func isPad() -> Bool {
-        return (self.currentDevice().userInterfaceIdiom == .Pad)
+        return (self.current.userInterfaceIdiom == .pad)
     }
     
     class func isPhone() -> Bool {
-        return (self.currentDevice().userInterfaceIdiom == .Phone)
+        return (self.current.userInterfaceIdiom == .phone)
     }
     
 }

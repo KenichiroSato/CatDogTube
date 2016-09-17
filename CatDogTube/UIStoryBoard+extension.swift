@@ -10,8 +10,8 @@ import UIKit
 
 extension UIStoryboard {
     
-    class func instantiateVcWithId(id:String) -> UIViewController {
+    class func instantiateVcWithId(_ id:String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewControllerWithIdentifier(id)
+        return storyboard.instantiateViewController(withIdentifier: id)
     }
 }

@@ -25,20 +25,20 @@ class HttpTests: XCTestCase {
         let param:[String:String] = [:]
         let url = Http.generateRequestURL("https://www.googleapis.com/youtube/v3/search", queries: param)
         
-        XCTAssertEqual(NSURL(string: "https://www.googleapis.com/youtube/v3/search"), url)
+        XCTAssertEqual(URL(string: "https://www.googleapis.com/youtube/v3/search"), url)
     }
     
     func testWithParameter() {
         let param:[String:String] = ["publishedAfter" : "2013-02-01T00:00:00Z"]
         let url = Http.generateRequestURL("https://www.googleapis.com/youtube/v3/search", queries: param)
         
-        XCTAssertEqual(NSURL(string: "https://www.googleapis.com/youtube/v3/search?publishedAfter=2013-02-01T00:00:00Z"), url)
+        XCTAssertEqual(URL(string: "https://www.googleapis.com/youtube/v3/search?publishedAfter=2013-02-01T00:00:00Z"), url)
     }
     
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

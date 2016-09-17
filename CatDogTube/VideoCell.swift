@@ -25,13 +25,13 @@ class VideoCell: UICollectionViewCell {
         }
     }
     
-    func setTitileWithShadow(title:String) {
+    func setTitileWithShadow(_ title:String) {
         let attrStr = NSMutableAttributedString(string: title)
         
         let shadow = NSShadow()
-        shadow.shadowColor = UIColor.blackColor()
+        shadow.shadowColor = UIColor.black
         shadow.shadowBlurRadius = 4.0
-        shadow.shadowOffset = CGSizeMake(1, 1)
+        shadow.shadowOffset = CGSize(width: 1, height: 1)
         attrStr.addAttribute(NSShadowAttributeName, value: shadow,
                              range:NSMakeRange(0, attrStr.length))
         self.title.attributedText = attrStr

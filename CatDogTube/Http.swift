@@ -16,27 +16,27 @@ class Http: NSObject {
     }
     
     enum StatusCode: Int {
-        case OK = 200
+        case ok = 200
         
-        case BAD_REQUEST = 400
-        case UNAUTHORIZED = 401
-        case NOT_FOUND = 404
+        case badRequest = 400
+        case unauthorized = 401
+        case notFound = 404
         
-        case INTERNAL_SERVER_ERROR = 500
+        case internalServerError = 500
     }
     
-    class func generateRequestURL(baseUrl:String, queries:[String:String]) -> NSURL? {
+    class func generateRequestURL(_ baseUrl:String, queries:[String:String]) -> URL? {
         if (queries.count == 0) {
-            return NSURL(string: baseUrl)
+            return URL(string: baseUrl)
         }
         var url = baseUrl + "?"
-        for (index, (key, value)) in queries.enumerate() {
-            if let encodedValue = value.urlEncodes() {
-                url += key + "=" + encodedValue
+        for (index, dic) in queries.enumerated() {
+            if let encodedValue = dic.value.urlEncodes() {
+                url += dic.key + "=" + encodedValue
                 if index != queries.count - 1 {url += "&"}
             }
         }
         
-        return NSURL(string: url)
+        return URL(string: url)
     }
 }
