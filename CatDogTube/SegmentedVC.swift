@@ -66,7 +66,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
         segmentedControl.indexChangeBlock = {
             [unowned self] (index: Int) in
-            self.contentView.moveToIndex(index)
+            self.contentView.move(to:index)
         }
         headerView.addSubview(segmentedControl)
         

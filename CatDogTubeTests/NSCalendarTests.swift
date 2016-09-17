@@ -28,7 +28,7 @@ class NSCalendarTests: XCTestCase {
         let minDate = calendar.dateWithYear(2011, Month: 1, Day: 1)!
         
         for _ in 0...10 {
-            let randomDate = calendar.randomDate(maxDate, minDate: minDate)
+            let randomDate = calendar.randomDate(between: maxDate, and: minDate)
             let rand = calendar.components(randomDate)
             XCTAssertLessThanOrEqual(rand.year!, 2016)
             XCTAssertGreaterThanOrEqual(rand.year!, 2011)
@@ -41,7 +41,7 @@ class NSCalendarTests: XCTestCase {
         let minDate = calendar.dateWithYear(2016, Month: 3, Day: 1)!
         
         for _ in 0...10 {
-            let randomDate = calendar.randomDate(maxDate, minDate: minDate)
+            let randomDate = calendar.randomDate(between: maxDate, and: minDate)
             let rand = calendar.components(randomDate)
             XCTAssertLessThanOrEqual(rand.month!, 8)
             XCTAssertGreaterThanOrEqual(rand.month!, 3)
@@ -54,7 +54,7 @@ class NSCalendarTests: XCTestCase {
         let minDate = calendar.dateWithYear(2016, Month: 8, Day: 15)!
         
         for _ in 0...10 {
-            let randomDate = calendar.randomDate(maxDate, minDate: minDate)
+            let randomDate = calendar.randomDate(between: maxDate, and: minDate)
             let rand = calendar.components(randomDate)
             XCTAssertLessThanOrEqual(rand.day!, 23)
             XCTAssertGreaterThanOrEqual(rand.day!, 15)

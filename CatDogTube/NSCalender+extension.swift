@@ -26,7 +26,7 @@ extension Calendar {
      generate the random date between maxDate and minDate.
      - returns: random date between maxDate and minDate
      */
-    func randomDate(_ maxDate:Date, minDate:Date) -> Date {
+    func randomDate(between maxDate:Date, and minDate:Date) -> Date {
         let maxTimeInterval = maxDate.timeIntervalSince1970
         let minTimeInterval = minDate.timeIntervalSince1970
         

@@ -25,7 +25,7 @@ extension UIScrollView {
         return Int(index)
     }
     
-    func moveToIndex(_ index:Int) {
+    func move(to index:Int) {
         let move = self.width() * CGFloat(index);
         self.scrollRectToVisible(
             CGRect(x: move , y: 0, width: width(), height: height()), animated: true)

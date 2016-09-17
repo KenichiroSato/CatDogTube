@@ -24,7 +24,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         "order" : "viewCount"
     ]
     
-    private func generateParams(_ searchWord:String) -> [String:String]{
+    private func generateParams(with searchWord:String) -> [String:String]{
         var params = initialSearchParams
         params["q"] = searchWord
         
@@ -55,7 +55,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
             else {
                 return (nil, nil)
         }
-        let publishedBefore = cal.randomDate(today, minDate: minDate)
+        let publishedBefore = cal.randomDate(between:today, and: minDate)
         let publishedAfter = publishedBefore.daysAgo(SEARCH_PERIOD_DAYS)
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
@@ -67,7 +67,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
             return
         }
         
-        let searchParams = generateParams(searchWord)
+        let searchParams = generateParams(with:searchWord)
         guard let requestUrl = Http.generateRequestURL(baseUrl, queries: searchParams) else {
             completionHandler(nil)
             return
