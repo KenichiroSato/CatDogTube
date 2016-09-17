@@ -10,9 +10,9 @@ import UIKit
 
 class Segment : NSObject {
 
-    fileprivate let ICON_SIZE : CGFloat = 45.0
+    private let ICON_SIZE : CGFloat = 45.0
     
-    fileprivate let iconName:String
+    private let iconName:String
     
     var iconImage:UIImage {
         get {

@@ -18,7 +18,7 @@ class SegmentFactory: NSObject {
         return segments
     }
     
-    fileprivate class func searchSegment(_ contentType:ContentType) -> Segment {
+    private class func searchSegment(_ contentType:ContentType) -> Segment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
@@ -30,7 +30,7 @@ class SegmentFactory: NSObject {
         return Segment(vc: vc, iconName: contentType.iconName())
     }
     
-    fileprivate class func favoriteSegment() -> Segment {
+    private class func favoriteSegment() -> Segment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         

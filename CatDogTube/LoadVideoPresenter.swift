@@ -25,7 +25,7 @@ protocol LoadVideoDelegate {
  */
 class LoadVideoPresenter: NSObject {
     
-    fileprivate let useCase: LoadVideoUseCase
+    private let useCase: LoadVideoUseCase
     
     var loadVideoDelegate: LoadVideoDelegate?
     

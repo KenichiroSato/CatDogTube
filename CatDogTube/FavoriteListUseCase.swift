@@ -19,7 +19,7 @@ class FavoriteListUseCase: NSObject, LoadVideoUseCase {
         return FavoriteListUseCase(repo: FavoritesRepository(dataSource: FavoritesDatasource()))
     }
     
-    fileprivate let repository: FavoritesRepositoryProtocol
+    private let repository: FavoritesRepositoryProtocol
     
     init(repo:FavoritesRepositoryProtocol) {
         self.repository = repo

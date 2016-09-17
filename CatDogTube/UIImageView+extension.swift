@@ -62,17 +62,17 @@ extension UIImageView {
         removeGradientLayer()
     }
     
-    fileprivate func gradientColors(_ baseColor:UIColor) -> [CGColor] {
+    private func gradientColors(_ baseColor:UIColor) -> [CGColor] {
         let startColor = baseColor.cgColor
         let clearColor = baseColor.withAlphaComponent(0.0).cgColor
         return [startColor, clearColor]
     }
     
-    fileprivate func removeGradientLayer() {
+    private func removeGradientLayer() {
         self.layer.sublayers?.forEach({$0.removeFromSuperlayer()})
     }
     
-    fileprivate func getImageFromView() -> UIImage? {
+    private func getImageFromView() -> UIImage? {
         var image: UIImage?
         UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0)
         if let context = UIGraphicsGetCurrentContext() {

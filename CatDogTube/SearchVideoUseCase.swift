@@ -14,9 +14,9 @@ protocol SearchVideoRepositoryProtocol {
 
 class SearchVideoUseCase: NSObject, LoadVideoUseCase {
 
-    fileprivate let repository:SearchVideoRepositoryProtocol
+    private let repository:SearchVideoRepositoryProtocol
     
-    fileprivate let contentType: ContentType
+    private let contentType: ContentType
     
     init(content: ContentType, repo:SearchVideoRepositoryProtocol) {
         contentType = content

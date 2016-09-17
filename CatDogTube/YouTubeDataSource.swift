@@ -10,12 +10,12 @@ import Foundation
 
 class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
     
-    fileprivate let baseUrl = "https://www.googleapis.com/youtube/v3/search"
+    private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
-    fileprivate let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
-    fileprivate let SEARCH_PERIOD_DAYS: UInt = 30
+    private let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
+    private let SEARCH_PERIOD_DAYS: UInt = 30
     
-    fileprivate let initialSearchParams = [
+    private let initialSearchParams = [
         "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
         "part" : "snippet",
         "type" : "video",
@@ -24,7 +24,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         "order" : "viewCount"
     ]
     
-    fileprivate func generateParams(_ searchWord:String) -> [String:String]{
+    private func generateParams(_ searchWord:String) -> [String:String]{
         var params = initialSearchParams
         params["q"] = searchWord
         
@@ -48,7 +48,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         return params
     }
     
-    fileprivate func generatePublishedParam() -> (before:String?, after:String?) {
+    private func generatePublishedParam() -> (before:String?, after:String?) {
         let cal = NSCalendar.current
         let today = Date()
         guard let minDate = cal.dateWithYear(oldest.year, Month: oldest.month, Day: oldest.day)
@@ -85,7 +85,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         })
     }
     
-    fileprivate func performGetRequest(_ targetURL: URL, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
+    private func performGetRequest(_ targetURL: URL, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
         var request = URLRequest(url: targetURL) //NSMutableURLRequest(url: targetURL)
         request.httpMethod = Http.Method.GET.rawValue
         let sessionConfiguration = URLSessionConfiguration.default

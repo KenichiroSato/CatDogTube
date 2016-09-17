@@ -18,7 +18,7 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var video:Video?
-    fileprivate var isLoaded:Bool = false
+    private var isLoaded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +29,18 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
         isLoaded = loadVideo()
     }
     
-    fileprivate func showPlayer() {
+    private func showPlayer() {
         playerView.isHidden = false
         activityIndicator.isHidden = true
     }
     
-    fileprivate func hidePlayer() {
+    private func hidePlayer() {
         playerView.isHidden = true
         activityIndicator.isHidden = false
     }
     
     // return false if failed
-    fileprivate func loadVideo() -> Bool {
+    private func loadVideo() -> Bool {
         guard let nonNilVideo = video else { return false }
         return playerView.load(withVideoId: nonNilVideo.videoId, playerVars:  ["playsinline":1])
     }

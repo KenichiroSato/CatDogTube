@@ -23,9 +23,9 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     var videoListStatusDelegate: VideoListStatusDelegate?
     
-    fileprivate var refreshControl = UIRefreshControl()
+    private var refreshControl = UIRefreshControl()
     
-    fileprivate var isForeground = false
+    private var isForeground = false
 
     required init?(coder aDecoder: NSCoder) {
         dataSource = VideoCollectionDataSource()
@@ -63,7 +63,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         loadVideo(false)
     }
     
-    fileprivate func showErrorDialog() {
+    private func showErrorDialog() {
         let alertController = UIAlertController(title: Text.MSG_FAILED_TO_LOAD,
                                                 message: nil, preferredStyle: .alert)
         let okAction = UIAlertAction(title: Text.OK, style: .default, handler:nil)

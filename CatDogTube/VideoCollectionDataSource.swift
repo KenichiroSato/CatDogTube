@@ -12,7 +12,7 @@ import youtube_ios_player_helper
 
 class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
 
-    fileprivate let REUSE_IDENTIFIER = "VideoCell"
+    private let REUSE_IDENTIFIER = "VideoCell"
 
     var videos: [Video] = []
   

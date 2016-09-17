@@ -18,7 +18,7 @@ class  VideoTranslater: NSObject {
         return videos?.flatMap({self.translateVideo($0, contentType: contentType)})
     }
     
-    class fileprivate func translateVideo(_ entity:YouTubeVideo, contentType:ContentType) -> Video? {
+    class private func translateVideo(_ entity:YouTubeVideo, contentType:ContentType) -> Video? {
         guard let url = URL(string: entity.imageUrl) else {
             return nil
         }
@@ -29,7 +29,7 @@ class  VideoTranslater: NSObject {
         return videos?.flatMap(translateVideo)
     }
     
-    class fileprivate func translateVideo(_ entity:FavoriteVideo) -> Video? {
+    class private func translateVideo(_ entity:FavoriteVideo) -> Video? {
         guard let url = URL(string: entity.imageUrl),
             let contentType = ContentType(rawValue: entity.contentType) else {
             return nil

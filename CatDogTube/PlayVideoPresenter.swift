@@ -26,7 +26,7 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     
     var playVideoDelegate: PlayVideoDelegate?
     
-    fileprivate var hasVideoPlayed = false
+    private var hasVideoPlayed = false
     
     func onItemTapped(_ video: Video) {
         playVideo(video)
@@ -46,7 +46,7 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
         return false
     }
     
-    fileprivate func playVideo(_ video: Video) {
+    private func playVideo(_ video: Video) {
         hasVideoPlayed = true
         _ = playVideoDelegate?.playVideo(video)
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class VideoExcluder: NSObject {
 
-    static fileprivate let NG_WORDS:[String] = [
+    static private let NG_WORDS:[String] = [
         "シュレディンガー",
         "ワルツ",
         "おまわりさん",
@@ -67,7 +67,7 @@ class VideoExcluder: NSObject {
         return videos?.filter{!VideoExcluder.isInappropriateVideo($0)}
     }
     
-    fileprivate class func isInappropriateVideo(_ video:Video) -> Bool {
+    private class func isInappropriateVideo(_ video:Video) -> Bool {
         for ngWord in VideoExcluder.NG_WORDS {
             if (video.title.lowercased().contains(ngWord.lowercased())) {
                 return true

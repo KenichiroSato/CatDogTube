@@ -20,9 +20,9 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var contentsView: UIView!
     
-    fileprivate var token: Int = 0
+    private var token: Int = 0
     
-    fileprivate let playVideoPresenter = PlayVideoPresenter()
+    private let playVideoPresenter = PlayVideoPresenter()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -34,7 +34,7 @@ class MainVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    fileprivate func setupViews() {
+    private func setupViews() {
         let playerVC = UIStoryboard.instantiateVcWithId(PlayerVC.ID) as! PlayerVC
         playerVC.view.frame = playerView.bounds
         playerView.addSubview(playerVC.view)
@@ -57,7 +57,7 @@ class MainVC: UIViewController {
         super.viewWillTransition(to: size, with:coordinator)
     }
     
-    fileprivate func shouldHideContentsView(_ newSize: CGSize) -> Bool {
+    private func shouldHideContentsView(_ newSize: CGSize) -> Bool {
         if (UIDevice.isPad()) {
             return false
         }

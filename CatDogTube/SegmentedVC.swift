@@ -21,7 +21,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     static let ID = "SegmentedVC"
 
-    fileprivate var gradientColors : [CGColor] {
+    private var gradientColors : [CGColor] {
         get {
             let darkColor = UIColor.black.withAlphaComponent(0.4).cgColor
             let middleColor = UIColor.black.withAlphaComponent(0.1).cgColor
@@ -31,14 +31,14 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
 
     // add Segment Item in Factory to increase Tab items
-    fileprivate let segmentedItems = SegmentFactory.generate()
+    private let segmentedItems = SegmentFactory.generate()
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
     @IBOutlet weak var shadowView: UIView!
-    fileprivate let shadowLayer = CAGradientLayer()
+    private let shadowLayer = CAGradientLayer()
     
-    fileprivate let segmentedControl = HMSegmentedControl()
+    private let segmentedControl = HMSegmentedControl()
     
     var token: Int = 0
     
@@ -51,7 +51,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         _ = self.__once
     }
     
-    fileprivate func setupViews() {
+    private func setupViews() {
         setupSubViews()
         setupShadowView()
         
@@ -77,13 +77,13 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         notifySegmentChanged()
     }
     
-    fileprivate func setupShadowView() {
+    private func setupShadowView() {
         shadowLayer.colors = gradientColors
         shadowLayer.frame = shadowView.bounds
         shadowView.layer.insertSublayer(shadowLayer, at: 0)
     }
 
-    fileprivate func setupSubViews() {
+    private func setupSubViews() {
         for (index, item) in segmentedItems.enumerated() {
             
             let vc = item.viewController
@@ -97,7 +97,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    fileprivate func notifySegmentChanged() {
+    private func notifySegmentChanged() {
         for (index, childVC) in self.childViewControllers.enumerated() {
             if let vc = childVC as? SegmentdChildViewDelegate {
                 let isCurrentIndex = (index == self.contentView.currentIndex())

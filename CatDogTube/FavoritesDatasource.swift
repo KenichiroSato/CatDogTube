@@ -16,7 +16,7 @@ import CoreData
 
 class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
 
-    static fileprivate let XCDATAMODELD_NAME = "Favorites"
+    static private let XCDATAMODELD_NAME = "Favorites"
     
     let moc: NSManagedObjectContext
     

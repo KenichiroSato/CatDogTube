@@ -34,7 +34,7 @@ extension Calendar {
         return Date(timeIntervalSince1970: randTimeInterval)
     }
     
-    fileprivate func minMaxDesignation(min: Double, max: Double) -> Double {
+    private func minMaxDesignation(min: Double, max: Double) -> Double {
         if min < max {
             let diff = max - min + 1
             let random : Double = Double(arc4random_uniform(UInt32(diff)))
