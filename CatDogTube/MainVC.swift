@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class MainVC: UIViewController {
 
@@ -27,6 +28,11 @@ class MainVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         _ = self.__once
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showCustomDialog()
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,14 +74,23 @@ class MainVC: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showCustomDialog() {
+        
+        // Create a custom view controller
+        let teamSelectVC = TeamSelectViewController(nibName:
+            TeamSelectViewController.name, bundle: nil)
+        
+        // Create the dialog
+        let popup = PopupDialog(viewController: teamSelectVC, buttonAlignment: .horizontal, transitionStyle: .bounceUp, gestureDismissal: true)
+        
+        let button = DefaultButton(title: "OK") {
+           // self.label.text = "You rated \(ratingVC.cosmosStarRating.rating) stars"
+            print("onTap")
+        }
+        
+        popup.addButtons([button])
+ 
+        // Present dialog
+        present(popup, animated: true, completion: nil)
     }
-    */
-
 }
