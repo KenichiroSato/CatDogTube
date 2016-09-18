@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 xcodeproj './CatDogTube.xcodeproj'
 
@@ -6,6 +6,7 @@ pod 'HMSegmentedControl'
 pod 'SDWebImage', '~>3.7'
 pod 'SwiftyJSON', :git => 'https://github.com/IBM-Swift/SwiftyJSON.git'
 pod 'youtube-ios-player-helper', '0.1.4'
+pod 'PopupDialog', :git => 'https://github.com/Orderella/PopupDialog.git', :branch => 'Swift3'
 
 pod 'Fabric'
 pod 'Crashlytics'
