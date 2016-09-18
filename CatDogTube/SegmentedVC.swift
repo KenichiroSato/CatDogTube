@@ -106,7 +106,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func setPlayVideoPresenter(_ presenter: PlayVideoPresenter) {
+    func set(playVideoPresenter presenter: PlayVideoPresenter) {
         segmentedItems.forEach({
             if let vc = $0.viewController as? VideoCollectionVC {
                 vc.videoListStatusDelegate = presenter

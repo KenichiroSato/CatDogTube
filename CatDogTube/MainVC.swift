@@ -44,7 +44,7 @@ class MainVC: UIViewController {
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
         segmentedVC.view.frame = contentsView.bounds
-        segmentedVC.setPlayVideoPresenter(playVideoPresenter)
+        segmentedVC.set(playVideoPresenter:playVideoPresenter)
         contentsView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)
