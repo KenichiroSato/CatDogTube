@@ -12,18 +12,27 @@ class TeamSelectViewController: UIViewController {
 
     static let name = "TeamSelectViewController"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("view didload TEamSelect")
-        // Do any additional setup after loading the view.
-    }
-
+    private var teamSelectDeleagte: TeamSelectDelegate?
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func set(teamSelectDelegate: TeamSelectDelegate) {
+        self.teamSelectDeleagte = teamSelectDelegate
+    }
+    
+    @IBAction func onCatSelected(_ sender: AnyObject) {
+        teamSelectDeleagte?.onTeamSelected(contentType: .cat)
+        teamSelectDeleagte = nil
+    }
 
+    @IBAction func onDogSelected(_ sender: AnyObject) {
+        teamSelectDeleagte?.onTeamSelected(contentType: .dog)
+        teamSelectDeleagte = nil
+    }
+    
     /*
     // MARK: - Navigation
 

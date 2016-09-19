@@ -32,7 +32,7 @@ class MainVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showCustomDialog()
+        TeamSelectPresenter().showDialogWith(parent: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,23 +74,4 @@ class MainVC: UIViewController {
         }
     }
     
-    func showCustomDialog() {
-        
-        // Create a custom view controller
-        let teamSelectVC = TeamSelectViewController(nibName:
-            TeamSelectViewController.name, bundle: nil)
-        
-        // Create the dialog
-        let popup = PopupDialog(viewController: teamSelectVC, buttonAlignment: .horizontal, transitionStyle: .bounceUp, gestureDismissal: true)
-        
-        let button = DefaultButton(title: "OK") {
-           // self.label.text = "You rated \(ratingVC.cosmosStarRating.rating) stars"
-            print("onTap")
-        }
-        
-        popup.addButtons([button])
- 
-        // Present dialog
-        present(popup, animated: true, completion: nil)
-    }
 }

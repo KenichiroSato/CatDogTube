@@ -65,6 +65,10 @@
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
 		59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */; };
 		59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */; };
+		59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1651D8E68CC009068ED /* TeamUseCase.swift */; };
+		59B4F1681D8E6BEE009068ED /* TeamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1671D8E6BEE009068ED /* TeamRepository.swift */; };
+		59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */; };
+		59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */; };
 		59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F611D79BBC000548945 /* VideoExcluder.swift */; };
 		59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F631D79C3B700548945 /* VideoExcluderTests.swift */; };
 		DF90F465D9F7EEA463CD3BD1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3C53F122BC3D82F0D236E6 /* Pods.framework */; };
@@ -153,6 +157,10 @@
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
 		59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectViewController.swift; sourceTree = "<group>"; };
 		59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSelectViewController.xib; sourceTree = "<group>"; };
+		59B4F1651D8E68CC009068ED /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUseCase.swift; sourceTree = "<group>"; };
+		59B4F1671D8E6BEE009068ED /* TeamRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepository.swift; sourceTree = "<group>"; };
+		59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataSource.swift; sourceTree = "<group>"; };
+		59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectPresenter.swift; sourceTree = "<group>"; };
 		59B91F611D79BBC000548945 /* VideoExcluder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluder.swift; sourceTree = "<group>"; };
 		59B91F631D79C3B700548945 /* VideoExcluderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluderTests.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +267,7 @@
 			children = (
 				59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */,
 				59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */,
+				59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 				59B91F611D79BBC000548945 /* VideoExcluder.swift */,
 				590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */,
 				59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */,
+				59B4F1651D8E68CC009068ED /* TeamUseCase.swift */,
 			);
 			name = Usecase;
 			sourceTree = "<group>";
@@ -281,6 +291,7 @@
 				590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */,
 				590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */,
 				590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */,
+				59B4F1671D8E6BEE009068ED /* TeamRepository.swift */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -288,6 +299,7 @@
 		59047C5C1CA7A7710051C489 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				59B4F1641D8E686A009068ED /* UserDefaults */,
 				590491AC1CC2423600FEABAD /* Favorites */,
 				590A83581C546397000C6179 /* YouTube */,
 			);
@@ -451,6 +463,14 @@
 				59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */,
 			);
 			name = CustomView;
+			sourceTree = "<group>";
+		};
+		59B4F1641D8E686A009068ED /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
+			);
+			name = UserDefaults;
 			sourceTree = "<group>";
 		};
 		8021351649DAD15CBB941E03 /* Frameworks */ = {
@@ -694,7 +714,10 @@
 				59047C5B1CA7A61B0051C489 /* YouTubeVideo.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				59751D9C1CF00AF700B704D2 /* UIStoryBoard+extension.swift in Sources */,
+				59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */,
+				59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */,
 				59751D9E1CF5E05C00B704D2 /* PlayVideoPresenter.swift in Sources */,
+				59B4F1681D8E6BEE009068ED /* TeamRepository.swift in Sources */,
 				596456D91C7E03ED005FA866 /* Http.swift in Sources */,
 				59047C611CA7AD8A0051C489 /* VideoTranslater.swift in Sources */,
 				590491A71CC1EA3700FEABAD /* ContentType.swift in Sources */,
@@ -718,6 +741,7 @@
 				590491C81CCCE44500FEABAD /* SearchVideoRepository.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
 				59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */,
+				59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */,
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
 				59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,

@@ -11,11 +11,20 @@ import UIKit
 class SegmentFactory: NSObject {
     
     class func generate() -> [Segment] {
-        var segments: [Segment] = []
-        segments.append(searchSegment(ContentType.cat))
-        segments.append(searchSegment(ContentType.dog))
-        //segments.append(favoriteSegment())
-        return segments
+        
+        let catSegment = searchSegment(ContentType.cat)
+        let dogSegment = searchSegment(ContentType.dog)
+        
+        if (SegmentFactory.isCatTeam()) {
+            return [catSegment, dogSegment]
+        } else {
+            return [dogSegment, catSegment]
+        }
+    }
+    
+    private class func isCatTeam() -> Bool {
+        let type = TeamUseCase.create().loadTeam()
+        return type == ContentType.cat
     }
     
     private class func searchSegment(_ contentType:ContentType) -> Segment {

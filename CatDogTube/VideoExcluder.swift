@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class VideoExcluder: NSObject {
 
@@ -60,7 +60,8 @@ class VideoExcluder: NSObject {
         "Episode",
         "プリキュア",
         "ミケランジェロ",
-        "メガネ"
+        "メガネ",
+        "MAD"
         ]
     
     class func excludeInappropriateVideos(_ videos:[Video]?) -> [Video]? {
