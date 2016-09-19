@@ -19,7 +19,11 @@ class MainVC: UIViewController {
 
     @IBOutlet weak var playerView: UIView!
     
+    // contains segmentContainerView and buttons
     @IBOutlet weak var contentsView: UIView!
+    
+    // contains SegmentedVC
+    @IBOutlet weak var segmentContainerView: UIView!
     
     private var token: Int = 0
     
@@ -48,9 +52,9 @@ class MainVC: UIViewController {
         playVideoPresenter.playVideoDelegate = playerVC
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
-        segmentedVC.view.frame = contentsView.bounds
+        segmentedVC.view.frame = segmentContainerView.bounds
         segmentedVC.set(playVideoPresenter:playVideoPresenter)
-        contentsView.addSubview(segmentedVC.view)
+        segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)
     }
