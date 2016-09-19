@@ -9,8 +9,8 @@
 import Foundation
 
 protocol TeamRepositoryProtocol {
-    func loadTeam() -> ContentType?
-    func save(team contentType:ContentType)
+    func loadTeam() -> Team?
+    func save(team:Team)
 }
 
 class TeamUseCase: NSObject {
@@ -28,11 +28,11 @@ class TeamUseCase: NSObject {
         super.init()
     }
 
-    func loadTeam() -> ContentType? {
+    func loadTeam() -> Team? {
         return repo.loadTeam()
     }
     
-    func save(team:ContentType) {
+    func save(team:Team) {
         repo.save(team: team)
     }
 }

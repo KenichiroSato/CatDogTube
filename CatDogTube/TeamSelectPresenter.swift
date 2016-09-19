@@ -10,7 +10,7 @@ import UIKit
 import PopupDialog
 
 protocol  TeamSelectDelegate {
-    func onTeamSelected(contentType:ContentType)
+    func onTeamSelected(team:Team)
 }
 
 class TeamSelectPresenter: NSObject, TeamSelectDelegate {
@@ -43,8 +43,8 @@ class TeamSelectPresenter: NSObject, TeamSelectDelegate {
     
     
     // MARK: - TeamSelectDelegate
-    func onTeamSelected(contentType: ContentType) {
-        TeamUseCase.create().save(team: contentType)
+    func onTeamSelected(team:Team) {
+        TeamUseCase.create().save(team: team)
         dialog.dismiss()
     }
 

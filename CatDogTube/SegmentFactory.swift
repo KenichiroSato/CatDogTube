@@ -15,16 +15,11 @@ class SegmentFactory: NSObject {
         let catSegment = searchSegment(ContentType.cat)
         let dogSegment = searchSegment(ContentType.dog)
         
-        if (SegmentFactory.isCatTeam()) {
-            return [catSegment, dogSegment]
-        } else {
+        if let team = TeamUseCase.create().loadTeam(), team.isDogTeam() {
             return [dogSegment, catSegment]
+        } else {
+            return [catSegment, dogSegment]
         }
-    }
-    
-    private class func isCatTeam() -> Bool {
-        let type = TeamUseCase.create().loadTeam()
-        return type == ContentType.cat
     }
     
     private class func searchSegment(_ contentType:ContentType) -> Segment {

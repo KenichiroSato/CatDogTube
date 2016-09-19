@@ -9,8 +9,8 @@
 import Foundation
 
 protocol TeamDataSourceProtocol {
-    func loadTeam() -> Int16
-    func save(team:Int16)
+    func loadTeamName() -> String?
+    func save(teamName:String)
 }
 
 
@@ -24,12 +24,11 @@ class TeamRepository: NSObject, TeamRepositoryProtocol {
     }
     
     // MARK: - TeamRepositoryProtocol
-    func loadTeam() -> ContentType? {
-        let teamId:Int16 = dataSource.loadTeam()
-        return ContentType(rawValue: teamId)
+    func loadTeam() -> Team? {
+        return Team(name: dataSource.loadTeamName())
     }
     
-    func save(team contentType:ContentType) {
-        dataSource.save(team: contentType.rawValue)
+    func save(team:Team) {
+        dataSource.save(teamName: team.nameString())
     }
 }

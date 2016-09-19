@@ -13,15 +13,14 @@ class UserDefaultsDataSource: NSObject, TeamDataSourceProtocol {
     private let TEAM_KEY = "team"
     
     // MARK: - TeamDataSourceProtocol
-    func loadTeam() -> Int16 {
+    func loadTeamName() -> String? {
         let ud = UserDefaults.standard
-        return Int16(ud.integer(forKey: TEAM_KEY))
+        return ud.string(forKey: TEAM_KEY)
     }
     
-    func save(team:Int16) {
+    func save(teamName:String) {
         let ud = UserDefaults.standard
-        let intVal: Int = Int(team)
-        ud.set(intVal, forKey: TEAM_KEY)
+        ud.set(teamName, forKey: TEAM_KEY)
         ud.synchronize()
     }
 

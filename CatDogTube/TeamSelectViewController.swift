@@ -24,12 +24,12 @@ class TeamSelectViewController: UIViewController {
     }
     
     @IBAction func onCatSelected(_ sender: AnyObject) {
-        teamSelectDeleagte?.onTeamSelected(contentType: .cat)
+        teamSelectDeleagte?.onTeamSelected(team: Team(teamName: .catTeam))
         teamSelectDeleagte = nil
     }
 
     @IBAction func onDogSelected(_ sender: AnyObject) {
-        teamSelectDeleagte?.onTeamSelected(contentType: .dog)
+        teamSelectDeleagte?.onTeamSelected(team: Team(teamName: .dogTeam))
         teamSelectDeleagte = nil
     }
     
