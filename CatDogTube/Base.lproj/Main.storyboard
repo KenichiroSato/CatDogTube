@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="76K-0V-vGq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="76K-0V-vGq">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -59,6 +58,16 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-cb-yEu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="KnC-Js-GvQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="ekj-WC-Qf1"/>
+                                </constraints>
+                                <state key="normal" image="reload"/>
+                                <connections>
+                                    <action selector="onSettingSelected:" destination="76K-0V-vGq" eventType="touchUpInside" id="ydb-yW-Pvc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -73,9 +82,11 @@
                             <constraint firstAttribute="bottomMargin" secondItem="Hw4-XS-GA8" secondAttribute="bottom" id="LVQ-Cl-10h"/>
                             <constraint firstItem="fjM-Xe-Vb0" firstAttribute="top" secondItem="3T6-qV-MOo" secondAttribute="topMargin" id="QSV-D3-veI"/>
                             <constraint firstItem="Vqc-b1-B6C" firstAttribute="top" secondItem="Hw4-XS-GA8" secondAttribute="bottom" id="SxZ-Ui-jyb"/>
+                            <constraint firstItem="Vqc-b1-B6C" firstAttribute="top" secondItem="PKZ-cb-yEu" secondAttribute="bottom" constant="10" id="YMW-2k-fwJ"/>
                             <constraint firstAttribute="trailing" secondItem="fjM-Xe-Vb0" secondAttribute="trailing" id="gSP-qx-jwb"/>
                             <constraint firstItem="Vqc-b1-B6C" firstAttribute="top" secondItem="fjM-Xe-Vb0" secondAttribute="bottom" id="gqR-Ew-vON"/>
                             <constraint firstItem="fjM-Xe-Vb0" firstAttribute="leading" secondItem="3T6-qV-MOo" secondAttribute="leading" id="mtY-Yi-cSl"/>
+                            <constraint firstAttribute="trailing" secondItem="PKZ-cb-yEu" secondAttribute="trailing" constant="10" id="n6d-r4-FsL"/>
                             <constraint firstItem="Hw4-XS-GA8" firstAttribute="top" secondItem="3T6-qV-MOo" secondAttribute="topMargin" id="nsP-Hd-EXv"/>
                             <constraint firstAttribute="trailing" secondItem="Hw4-XS-GA8" secondAttribute="trailing" id="rML-m3-KRK"/>
                             <constraint firstItem="Hw4-XS-GA8" firstAttribute="top" secondItem="fjM-Xe-Vb0" secondAttribute="bottom" id="vwM-k9-k81"/>
@@ -227,7 +238,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCell" id="Xkh-Mb-8Y7" customClass="VideoCell" customModule="CatDogTube" customModuleProvider="target">
-                                        <rect key="frame" x="14" y="0.0" width="572" height="268"/>
+                                        <rect key="frame" x="-99" y="0.0" width="572" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="572" height="268"/>
@@ -324,4 +335,7 @@
             <point key="canvasLocation" x="1813" y="-305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="reload" width="595" height="842"/>
+    </resources>
 </document>

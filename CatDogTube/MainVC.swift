@@ -32,7 +32,6 @@ class MainVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        TeamSelectPresenter().showDialogWith(parent: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +55,13 @@ class MainVC: UIViewController {
         segmentedVC.didMove(toParentViewController: self)
     }
     
+    @IBAction func onSettingSelected(_ sender: AnyObject) {
+        showTeamSelectDialog()
+    }
+    
+    private func showTeamSelectDialog() {
+        TeamSelectPresenter().showDialogWith(parent: self)
+    }
     
     //handle screen rotation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
