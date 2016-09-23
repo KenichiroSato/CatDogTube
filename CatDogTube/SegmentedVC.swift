@@ -40,8 +40,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private let segmentedControl = HMSegmentedControl()
     
-    var token: Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.scrollsToTop = false

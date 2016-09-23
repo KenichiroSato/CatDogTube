@@ -25,8 +25,6 @@ class MainVC: UIViewController {
     // contains SegmentedVC
     @IBOutlet weak var segmentContainerView: UIView!
     
-    private var token: Int = 0
-    
     private let playVideoPresenter = PlayVideoPresenter()
     
     override func viewDidLayoutSubviews() {
