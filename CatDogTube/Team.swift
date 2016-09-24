@@ -11,14 +11,26 @@ import Foundation
 enum TeamName: String {
     case catTeam = "cat_team"
     case dogTeam = "dog_team"
+    
+    static func get(from contentType:ContentType) -> TeamName {
+        switch contentType {
+        case .cat:
+            return .catTeam
+        case .dog:
+            return .dogTeam
+        }
+    }
 }
 
 class Team: NSObject {
 
     private let name: TeamName
     
-    init(teamName:TeamName) {
-        name = teamName
+    let contentType: ContentType
+    
+    init(contentType: ContentType) {
+        self.contentType = contentType
+        name = TeamName.get(from: contentType)
         super.init()
     }
     
@@ -26,9 +38,9 @@ class Team: NSObject {
         guard let teamName = name else {return nil}
         
         if (teamName == TeamName.catTeam.rawValue) {
-            self.init(teamName: .catTeam)
+            self.init(contentType:.cat)
         } else if (teamName == TeamName.dogTeam.rawValue) {
-            self.init(teamName: .dogTeam)
+            self.init(contentType:.dog)
         } else {
             return nil
         }

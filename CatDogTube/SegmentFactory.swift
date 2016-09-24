@@ -31,7 +31,7 @@ class SegmentFactory: NSObject {
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
-        return Segment(vc: vc, iconName: contentType.iconName())
+        return Segment(vc: vc, contentType: contentType)
     }
     
     private class func favoriteSegment() -> Segment {
@@ -42,6 +42,6 @@ class SegmentFactory: NSObject {
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
-        return Segment(vc: vc, iconName: ContentType.cat.iconName())
+        return Segment(vc: vc, contentType: ContentType.cat)
     }
 }

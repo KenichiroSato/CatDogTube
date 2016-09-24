@@ -35,7 +35,7 @@ class TeamTests: XCTestCase {
         XCTAssertNil(monkeyTeam)
         
         
-        let cat2 = Team(teamName: .catTeam)
+        let cat2 = Team(contentType: .cat)
         XCTAssertEqual(cat2.nameString(), "cat_team")
         
         let nilTeam = Team(name: nil)
