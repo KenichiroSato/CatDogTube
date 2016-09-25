@@ -33,6 +33,23 @@ class TeamUseCase: NSObject {
     }
     
     func save(team:Team) {
-        repo.save(team: team)
+        if (shouldSave(newTeam: team)) {
+            repo.save(team: team)
+            notifyTeamSaved(team: team)
+        }
     }
+    
+    private func shouldSave(newTeam:Team) -> Bool {
+        guard let oldTeam = loadTeam() else {
+            return true
+        }
+        return (oldTeam.contentType != newTeam.contentType)
+    }
+
+    private func notifyTeamSaved(team:Team) {
+        NotificationCenter.default.post(
+            name: Notifications.NAME_TEAM_SAVED,
+            object: self, userInfo: [Notifications.KEY_TEAM: team])
+    }
+
 }

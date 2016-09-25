@@ -63,6 +63,7 @@
 		59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
+		59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9C81D9561BC00BAF092 /* Notifications.swift */; };
 		59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */; };
 		59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */; };
 		59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1651D8E68CC009068ED /* TeamUseCase.swift */; };
@@ -157,6 +158,7 @@
 		59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
+		59B3A9C81D9561BC00BAF092 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectViewController.swift; sourceTree = "<group>"; };
 		59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSelectViewController.xib; sourceTree = "<group>"; };
 		59B4F1651D8E68CC009068ED /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUseCase.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */,
 				596456D41C721437005FA866 /* Screen.swift */,
 				590DAECD1C7027F2002281B4 /* Text.swift */,
+				59B3A9C81D9561BC00BAF092 /* Notifications.swift */,
 			);
 			name = constants;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
 				59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
+				59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */,
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
 				590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */,

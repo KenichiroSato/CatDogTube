@@ -12,11 +12,11 @@ class Segment : NSObject {
 
     private let ICON_SIZE : CGFloat = 45.0
     
-    private let type:ContentType
+    let contentType:ContentType
     
     var iconImage:UIImage {
         get {
-            return UIImage.named(type.iconName(), size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
+            return UIImage.named(contentType.iconName(), size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
         }
     }
 
@@ -24,7 +24,7 @@ class Segment : NSObject {
     
     init(vc:UIViewController, contentType:ContentType) {
         self.viewController = vc
-        self.type = contentType
+        self.contentType = contentType
         super.init()
     }
 
