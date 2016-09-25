@@ -64,6 +64,7 @@
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
 		59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9C81D9561BC00BAF092 /* Notifications.swift */; };
+		59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */; };
 		59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */; };
 		59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */; };
 		59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1651D8E68CC009068ED /* TeamUseCase.swift */; };
@@ -159,6 +160,7 @@
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
 		59B3A9C81D9561BC00BAF092 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectViewController.swift; sourceTree = "<group>"; };
 		59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSelectViewController.xib; sourceTree = "<group>"; };
 		59B4F1651D8E68CC009068ED /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUseCase.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				590A83561C5390C8000C6179 /* String+extension.swift */,
+				59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */,
 				59751DA11CF9305300B704D2 /* UIDevice+extension.swift */,
 				5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */,
 				5990C0791C6C1D22006762CE /* UIViewController+extension.swift */,
@@ -718,6 +721,7 @@
 				590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */,
 				5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */,
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
+				59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */,
 				59047C5E1CA7A7910051C489 /* YouTubeDataSource.swift in Sources */,
 				59047C551CA786AC0051C489 /* SearchVideoUseCase.swift in Sources */,
 				59047C5B1CA7A61B0051C489 /* YouTubeVideo.swift in Sources */,

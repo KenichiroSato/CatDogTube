@@ -43,7 +43,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private func registerNotificationObserver() {
         NotificationCenter.default.addObserver(
-            self, selector: #selector(teamSelected(notification:)),
+            self, selector: #selector(reorderTabs(notification:)),
             name:Notifications.NAME_TEAM_SAVED , object: nil)
     }
     
@@ -142,34 +142,24 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         notifySegmentChanged()
     }
     
-    @objc private func teamSelected(notification: NSNotification) {
-        print("team Selected!")
+    @objc private func reorderTabs(notification: NSNotification) {
         
         guard let team = notification.userInfo?[Notifications.KEY_TEAM] as? Team else {
             return
         }
-        guard segmentedItems.count == 2 else { return }
-        
-        if let firstSegment = segmentedItems.first,
-            team.contentType == firstSegment.contentType {
+        guard let firstSegment = segmentedItems.first,
+            team.contentType != firstSegment.contentType else {
             return
         }
         
-        let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
-        
-        
         segmentedItems.reverse()
-        //segmentedItems = [secondSegment, firstSegment]
-        
-        print("team = " + team.nameString())
-        contentView.subviews.forEach({$0.removeFromSuperview()})
-
+        contentView.removeAllSubVIews()
         setupSubViews()
         segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
+        let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
         segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
         contentView.move(to: newIndex)
         notifySegmentChanged()
-     
     }
     
     private func oppositeIndex(from currentIndex:Int) -> Int {
