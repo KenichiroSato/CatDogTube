@@ -63,6 +63,16 @@
 		59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
+		59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9C81D9561BC00BAF092 /* Notifications.swift */; };
+		59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */; };
+		59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */; };
+		59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */; };
+		59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1651D8E68CC009068ED /* TeamUseCase.swift */; };
+		59B4F1681D8E6BEE009068ED /* TeamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1671D8E6BEE009068ED /* TeamRepository.swift */; };
+		59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */; };
+		59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */; };
+		59B4F16E1D8F66F8009068ED /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16D1D8F66F8009068ED /* Team.swift */; };
+		59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16F1D8F7A70009068ED /* TeamTests.swift */; };
 		59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F611D79BBC000548945 /* VideoExcluder.swift */; };
 		59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F631D79C3B700548945 /* VideoExcluderTests.swift */; };
 		DF90F465D9F7EEA463CD3BD1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3C53F122BC3D82F0D236E6 /* Pods.framework */; };
@@ -149,6 +159,16 @@
 		59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
+		59B3A9C81D9561BC00BAF092 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectViewController.swift; sourceTree = "<group>"; };
+		59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSelectViewController.xib; sourceTree = "<group>"; };
+		59B4F1651D8E68CC009068ED /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUseCase.swift; sourceTree = "<group>"; };
+		59B4F1671D8E6BEE009068ED /* TeamRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepository.swift; sourceTree = "<group>"; };
+		59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataSource.swift; sourceTree = "<group>"; };
+		59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectPresenter.swift; sourceTree = "<group>"; };
+		59B4F16D1D8F66F8009068ED /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		59B4F16F1D8F7A70009068ED /* TeamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTests.swift; sourceTree = "<group>"; };
 		59B91F611D79BBC000548945 /* VideoExcluder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluder.swift; sourceTree = "<group>"; };
 		59B91F631D79C3B700548945 /* VideoExcluderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluderTests.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +227,8 @@
 				590DAEDD1C70A8A8002281B4 /* segmented */,
 				0CD0D5721C6B62CA00A24DED /* player */,
 				59751D991CF0077400B704D2 /* MainVC.swift */,
+				59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */,
+				59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -225,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				590A83531C532858000C6179 /* Video.swift */,
+				59B4F16D1D8F66F8009068ED /* Team.swift */,
 				590491A61CC1EA3700FEABAD /* ContentType.swift */,
 			);
 			name = Model;
@@ -253,6 +276,7 @@
 			children = (
 				59047C681CA7FCF00051C489 /* LoadVideoPresenter.swift */,
 				59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */,
+				59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -264,6 +288,7 @@
 				59B91F611D79BBC000548945 /* VideoExcluder.swift */,
 				590491A81CC23D0E00FEABAD /* FavoriteListUseCase.swift */,
 				59047C661CA7C4600051C489 /* LoadVideoUseCase.swift */,
+				59B4F1651D8E68CC009068ED /* TeamUseCase.swift */,
 			);
 			name = Usecase;
 			sourceTree = "<group>";
@@ -275,6 +300,7 @@
 				590491AA1CC23EA200FEABAD /* FavoritesRepository.swift */,
 				590491AD1CC2439500FEABAD /* DummyFavoritesRepository.swift */,
 				590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */,
+				59B4F1671D8E6BEE009068ED /* TeamRepository.swift */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -282,6 +308,7 @@
 		59047C5C1CA7A7710051C489 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				59B4F1641D8E686A009068ED /* UserDefaults */,
 				590491AC1CC2423600FEABAD /* Favorites */,
 				590A83581C546397000C6179 /* YouTube */,
 			);
@@ -311,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				590A83561C5390C8000C6179 /* String+extension.swift */,
+				59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */,
 				59751DA11CF9305300B704D2 /* UIDevice+extension.swift */,
 				5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */,
 				5990C0791C6C1D22006762CE /* UIViewController+extension.swift */,
@@ -350,6 +378,7 @@
 				590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */,
 				596456D41C721437005FA866 /* Screen.swift */,
 				590DAECD1C7027F2002281B4 /* Text.swift */,
+				59B3A9C81D9561BC00BAF092 /* Notifications.swift */,
 			);
 			name = constants;
 			sourceTree = "<group>";
@@ -421,6 +450,7 @@
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
 				5995F3971C9545F700F07172 /* NSCalendarTests.swift */,
 				59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */,
+				59B4F16F1D8F7A70009068ED /* TeamTests.swift */,
 				590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */,
 				59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */,
 				590A835D1C546A16000C6179 /* searchResponse.json */,
@@ -445,6 +475,14 @@
 				59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */,
 			);
 			name = CustomView;
+			sourceTree = "<group>";
+		};
+		59B4F1641D8E686A009068ED /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
+			);
+			name = UserDefaults;
 			sourceTree = "<group>";
 		};
 		8021351649DAD15CBB941E03 /* Frameworks */ = {
@@ -577,6 +615,7 @@
 				590DAED31C702B70002281B4 /* Localizable.strings in Resources */,
 				59A88AE81C4B2DA000D40B23 /* Settings.bundle in Resources */,
 				59A88AC41C4B1BAD00D40B23 /* LaunchScreen.storyboard in Resources */,
+				59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */,
 				59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */,
 				59A88AC11C4B1BAD00D40B23 /* Assets.xcassets in Resources */,
 				59A88ABF1C4B1BAD00D40B23 /* Main.storyboard in Resources */,
@@ -682,12 +721,17 @@
 				590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */,
 				5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */,
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
+				59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */,
 				59047C5E1CA7A7910051C489 /* YouTubeDataSource.swift in Sources */,
 				59047C551CA786AC0051C489 /* SearchVideoUseCase.swift in Sources */,
 				59047C5B1CA7A61B0051C489 /* YouTubeVideo.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				59751D9C1CF00AF700B704D2 /* UIStoryBoard+extension.swift in Sources */,
+				59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */,
+				59B4F16E1D8F66F8009068ED /* Team.swift in Sources */,
+				59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */,
 				59751D9E1CF5E05C00B704D2 /* PlayVideoPresenter.swift in Sources */,
+				59B4F1681D8E6BEE009068ED /* TeamRepository.swift in Sources */,
 				596456D91C7E03ED005FA866 /* Http.swift in Sources */,
 				59047C611CA7AD8A0051C489 /* VideoTranslater.swift in Sources */,
 				590491A71CC1EA3700FEABAD /* ContentType.swift in Sources */,
@@ -710,9 +754,12 @@
 				590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */,
 				590491C81CCCE44500FEABAD /* SearchVideoRepository.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
+				59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */,
+				59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */,
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
 				59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
+				59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */,
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
 				590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */,
@@ -733,6 +780,7 @@
 				59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */,
+				59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */,
 				59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */,
 				59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */,
 				59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */,
@@ -830,7 +878,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -872,7 +920,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

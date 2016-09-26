@@ -17,6 +17,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private lazy var __once: () = {
             self.setupViews()
+            self.registerNotificationObserver()
         }()
     
     static let ID = "SegmentedVC"
@@ -31,7 +32,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     }
 
     // add Segment Item in Factory to increase Tab items
-    private let segmentedItems = SegmentFactory.generate()
+    private var segmentedItems = SegmentFactory.generate()
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -40,7 +41,16 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     private let segmentedControl = HMSegmentedControl()
     
-    var token: Int = 0
+    private func registerNotificationObserver() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(reorderTabs(notification:)),
+            name:Notifications.NAME_TEAM_SAVED , object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(
+            self, name: Notifications.NAME_TEAM_SAVED, object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +116,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func setPlayVideoPresenter(_ presenter: PlayVideoPresenter) {
+    func set(playVideoPresenter presenter: PlayVideoPresenter) {
         segmentedItems.forEach({
             if let vc = $0.viewController as? VideoCollectionVC {
                 vc.videoListStatusDelegate = presenter
@@ -132,4 +142,28 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         notifySegmentChanged()
     }
     
+    @objc private func reorderTabs(notification: NSNotification) {
+        
+        guard let team = notification.userInfo?[Notifications.KEY_TEAM] as? Team else {
+            return
+        }
+        guard let firstSegment = segmentedItems.first,
+            team.contentType != firstSegment.contentType else {
+            return
+        }
+        
+        segmentedItems.reverse()
+        contentView.removeAllSubVIews()
+        setupSubViews()
+        segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
+        let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
+        segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
+        contentView.move(to: newIndex)
+        notifySegmentChanged()
+    }
+    
+    private func oppositeIndex(from currentIndex:Int) -> Int {
+        let opposite = (currentIndex == 0) ? 1 : 0
+        return opposite
+    }
 }

@@ -11,11 +11,15 @@ import UIKit
 class SegmentFactory: NSObject {
     
     class func generate() -> [Segment] {
-        var segments: [Segment] = []
-        segments.append(searchSegment(ContentType.cat))
-        segments.append(searchSegment(ContentType.dog))
-        //segments.append(favoriteSegment())
-        return segments
+        
+        let catSegment = searchSegment(ContentType.cat)
+        let dogSegment = searchSegment(ContentType.dog)
+        
+        if let team = TeamUseCase.create().loadTeam(), team.isDogTeam() {
+            return [dogSegment, catSegment]
+        } else {
+            return [catSegment, dogSegment]
+        }
     }
     
     private class func searchSegment(_ contentType:ContentType) -> Segment {
@@ -27,7 +31,7 @@ class SegmentFactory: NSObject {
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
-        return Segment(vc: vc, iconName: contentType.iconName())
+        return Segment(vc: vc, contentType: contentType)
     }
     
     private class func favoriteSegment() -> Segment {
@@ -38,6 +42,6 @@ class SegmentFactory: NSObject {
         let presenter = LoadVideoPresenter(useCase: useCase)
         vc.presenter = presenter
         
-        return Segment(vc: vc, iconName: ContentType.cat.iconName())
+        return Segment(vc: vc, contentType: ContentType.cat)
     }
 }

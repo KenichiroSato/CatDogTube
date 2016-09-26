@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class MainVC: UIViewController {
 
@@ -18,15 +19,21 @@ class MainVC: UIViewController {
 
     @IBOutlet weak var playerView: UIView!
     
+    // contains segmentContainerView and buttons
     @IBOutlet weak var contentsView: UIView!
     
-    private var token: Int = 0
+    // contains SegmentedVC
+    @IBOutlet weak var segmentContainerView: UIView!
     
     private let playVideoPresenter = PlayVideoPresenter()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         _ = self.__once
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,13 +50,20 @@ class MainVC: UIViewController {
         playVideoPresenter.playVideoDelegate = playerVC
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
-        segmentedVC.view.frame = contentsView.bounds
-        segmentedVC.setPlayVideoPresenter(playVideoPresenter)
-        contentsView.addSubview(segmentedVC.view)
+        segmentedVC.view.frame = segmentContainerView.bounds
+        segmentedVC.set(playVideoPresenter:playVideoPresenter)
+        segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)
     }
     
+    @IBAction func onSettingSelected(_ sender: AnyObject) {
+        showTeamSelectDialog()
+    }
+    
+    private func showTeamSelectDialog() {
+        TeamSelectPresenter().showDialogWith(parent: self)
+    }
     
     //handle screen rotation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -68,14 +82,4 @@ class MainVC: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
