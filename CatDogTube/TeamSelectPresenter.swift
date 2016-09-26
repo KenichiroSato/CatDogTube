@@ -33,10 +33,6 @@ class TeamSelectPresenter: NSObject, TeamSelectDelegate {
         teamSelectVC.set(teamSelectDelegate: self)
     }
     
-    deinit {
-        print("deinit")
-    }
-    
     func showDialogWith(parent: UIViewController) {
         parent.present(dialog, animated: true, completion: nil)
     }
