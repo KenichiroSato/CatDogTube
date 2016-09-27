@@ -153,7 +153,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
         
         segmentedItems.reverse()
-        contentView.removeAllSubVIews()
+        contentView.removeAllSubViews()
         setupSubViews()
         segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
         let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
