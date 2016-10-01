@@ -9,15 +9,14 @@
 import Foundation
 
 protocol LoadVideoDelegate {
-    /*
-     must be called in main thread
-     */
-    func onLoadSuccess(_ videos: [Video])
-
-    /*
-     must be called in main thread
-     */
-    func onLoadFail()
+    
+    func set(videos:[Video])
+    
+    func showErrorUI()
+    
+    func hideErrorUI()
+    
+    func showLoadingIndicator()
 }
 
 /**
@@ -34,18 +33,31 @@ class LoadVideoPresenter: NSObject {
         super.init()
     }
     
-    func loadVideo() {
+    func loadVideo(withFullScreenIndicator:Bool) {
+        if (withFullScreenIndicator) {
+            loadVideoDelegate?.showLoadingIndicator()
+        }
+        
         Thread.dispatchAsyncGlobal(){
             self.useCase.loadVideos() { videos in
                 Thread.dispatchAsyncMain() {
                     guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
-                        self.loadVideoDelegate?.onLoadFail()
+                        self.onLoadFail()
                         return
                     }
-                    self.loadVideoDelegate?.onLoadSuccess(nonNilVideos)
+                    self.onLoadSuccess(videos: nonNilVideos)
                 }
             }
         }
     }
 
+    private func onLoadSuccess(videos:[Video]) {
+        loadVideoDelegate?.set(videos: videos)
+        loadVideoDelegate?.hideErrorUI()
+    }
+    
+    private func onLoadFail() {
+        loadVideoDelegate?.set(videos: [])
+        loadVideoDelegate?.showErrorUI()
+    }
 }
