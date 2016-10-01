@@ -62,7 +62,8 @@ class VideoExcluder: NSObject {
         "ミケランジェロ",
         "メガネ",
         "MAD",
-        "やさぐれ"
+        "やさぐれ",
+        "ミスキャンパス"
         ]
     
     class func excludeInappropriateVideos(_ videos:[Video]?) -> [Video]? {

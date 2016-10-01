@@ -45,22 +45,19 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         tryReloadView.reloadDelegate = self
         
         presenter?.loadVideoDelegate = self
-        loadVideo(true)
+        loadVideo(withFullScreenIndicator: true)
     }
     
     func invalidateLayout() {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func loadVideo(_ showFullScreenLoading:Bool) {
-        if (showFullScreenLoading) {
-            tryReloadView.showIndicator()
-        }
-        presenter?.loadVideo()
+    func loadVideo(withFullScreenIndicator:Bool) {
+        presenter?.loadVideo(withFullScreenIndicator: withFullScreenIndicator)
     }
 
     func pullToRefresh() {
-        loadVideo(false)
+        loadVideo(withFullScreenIndicator: false)
     }
     
     private func showErrorDialog() {
@@ -86,25 +83,29 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     }
     
     // MARK: LoadVideoDelegate
-    func onLoadSuccess(_ videos: [Video]) {
+    func set(videos:[Video]) {
         dataSource.videos = videos
         videoListStatusDelegate?.onListLoadFinished(videos, isForeground: isForeground)
         self.refreshControl.endRefreshing()
         self.collectionView.reloadData()
-        tryReloadView.hide()
     }
     
-    func onLoadFail() {
-        dataSource.videos = []
-        self.refreshControl.endRefreshing()
-        self.collectionView.reloadData()
+    func showLoadingIndicator() {
+        tryReloadView.showIndicator()
+    }
+    
+    func showErrorUI() {
         tryReloadView.showReload()
         showErrorDialog()
     }
-
+    
+    func hideErrorUI() {
+        tryReloadView.hide()
+    }
+    
     // MARK: TryReloadDelegate
     func onTryReload() {
-        loadVideo(true)
+        loadVideo(withFullScreenIndicator: true)
     }
     
     // MARK: SegmentdChildViewDelegate
