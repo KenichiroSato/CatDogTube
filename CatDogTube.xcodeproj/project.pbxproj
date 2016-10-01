@@ -295,6 +295,7 @@
 			children = (
 				5926E8631D9F494F008D687B /* presentation */,
 				5926E8641D9F4973008D687B /* domain */,
+				5926E8741D9F4FDE008D687B /* data */,
 			);
 			name = setting;
 			sourceTree = "<group>";
@@ -407,6 +408,7 @@
 		5926E86F1D9F4C61008D687B /* search */ = {
 			isa = PBXGroup;
 			children = (
+				596456D81C7E03ED005FA866 /* Http.swift */,
 				590A83581C546397000C6179 /* YouTube */,
 			);
 			name = search;
@@ -426,26 +428,26 @@
 		5926E8711D9F4D28008D687B /* common */ = {
 			isa = PBXGroup;
 			children = (
-				5926E8721D9F4D32008D687B /* presentation */,
-				5926E8731D9F4D54008D687B /* data */,
+				590A83691C5C9E31000C6179 /* constants */,
+				590A83551C5390A8000C6179 /* extension */,
+				5926E8721D9F4D32008D687B /* customView */,
 			);
 			name = common;
 			sourceTree = "<group>";
 		};
-		5926E8721D9F4D32008D687B /* presentation */ = {
+		5926E8721D9F4D32008D687B /* customView */ = {
 			isa = PBXGroup;
 			children = (
 				59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */,
 				59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */,
 			);
-			name = presentation;
+			name = customView;
 			sourceTree = "<group>";
 		};
-		5926E8731D9F4D54008D687B /* data */ = {
+		5926E8741D9F4FDE008D687B /* data */ = {
 			isa = PBXGroup;
 			children = (
 				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
-				596456D81C7E03ED005FA866 /* Http.swift */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -478,8 +480,6 @@
 			children = (
 				5926E8711D9F4D28008D687B /* common */,
 				5926E85E1D9F47C0008D687B /* function */,
-				590A83691C5C9E31000C6179 /* constants */,
-				590A83551C5390A8000C6179 /* extension */,
 				59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */,
 				59751D991CF0077400B704D2 /* MainVC.swift */,
 				59A88ABD1C4B1BAD00D40B23 /* Main.storyboard */,
