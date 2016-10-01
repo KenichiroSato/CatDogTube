@@ -9,7 +9,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
+class PlayerVC: UIViewController, PlayVideoDelegate {
     
     static let ID = "PlayerVC"
 
@@ -19,14 +19,7 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerView.delegate = self
-        
         hidePlayer()
-    }
-    
-    private func showPlayer() {
-        playerView.isHidden = false
-        activityIndicator.isHidden = true
     }
     
     private func hidePlayer() {
@@ -35,27 +28,25 @@ class PlayerVC: UIViewController, YTPlayerViewDelegate, PlayVideoDelegate {
     }
 
     // MARK: - PlayVideoDelegate
-    func loadPlayerView(with videoId: String) -> Bool {
+    func loadPlayerView(with videoId: String, delegate: YTPlayerViewDelegate) -> Bool {
+        playerView.delegate = delegate
         return playerView.load(withVideoId: videoId, playerVars: ["playsinline":1])
     }
     
     func loadVideo(with videoId: String) {
         playerView.loadVideo(byId: videoId, startSeconds: 0.0, suggestedQuality: .auto)
     }
-    
-    // MARK: - YTPlayerViewDelegate
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView!) {
-        playerView.playVideo()
+
+    func showPlayer() {
+        playerView.isHidden = false
+        activityIndicator.isHidden = true
     }
     
-    func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState) {
-        switch state {
-        case .playing,
-             .unstarted: //If app cannot play the video, status becomes .Unstarted
-            showPlayer()
-        default:
-            break
-        }
+    func play() {
+         playerView.playVideo()
     }
     
+    func pause() {
+        playerView.pauseVideo()
+    }
 }

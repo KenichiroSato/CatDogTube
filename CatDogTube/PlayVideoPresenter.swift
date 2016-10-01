@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import youtube_ios_player_helper
 
 protocol PlayVideoDelegate {
 
@@ -15,13 +16,19 @@ protocol PlayVideoDelegate {
      This will initialize the video module
      - returns: true when play succeed, false if fail
      */
-    func loadPlayerView(with videoId: String) -> Bool
+    func loadPlayerView(with videoId: String, delegate:YTPlayerViewDelegate) -> Bool
     
 
     /**
      Call this when video module is already initialized.
      */
     func loadVideo(with videoId: String)
+    
+    func play()
+    
+    func pause()
+    
+    func showPlayer()
     
 }
 
@@ -31,7 +38,7 @@ protocol VideoListStatusDelegate {
     func onItemTapped(_ video: Video)
 }
 
-class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
+class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegate {
     
     var playVideoDelegate: PlayVideoDelegate?
     
@@ -57,9 +64,24 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     
     private func play(video: Video) {
         if (!hasVideoPlayed) {
-            hasVideoPlayed = (playVideoDelegate?.loadPlayerView(with: video.videoId))!
+            hasVideoPlayed = playVideoDelegate?.loadPlayerView(with: video.videoId, delegate: self) ?? false
         } else {
             playVideoDelegate?.loadVideo(with: video.videoId)
+        }
+    }
+
+    // MARK: - YTPlayerViewDelegate
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView!) {
+        playVideoDelegate?.play()
+    }
+    
+    func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState) {
+        switch state {
+        case .playing,
+             .unstarted: //If app cannot play the video, status becomes .Unstarted
+            playVideoDelegate?.showPlayer()
+        default:
+            break
         }
     }
 
