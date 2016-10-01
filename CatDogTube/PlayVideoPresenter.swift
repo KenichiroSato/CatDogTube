@@ -42,7 +42,7 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegat
     
     var playVideoDelegate: PlayVideoDelegate?
     
-    private var hasVideoPlayed = false
+    private var hasPlayed = false
     
     func onItemTapped(_ video: Video) {
         play(video:video)
@@ -50,7 +50,7 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegat
     
     func onListLoadFinished(_ videos: [Video], isForeground: Bool) {
         guard let video = videos.first else { return }
-        if shouldPlayVideo(hasVideoPlayed, isForeground: isForeground) {
+        if shouldPlayVideo(hasPlayed, isForeground: isForeground) {
             play(video:video)
         }
     }
@@ -63,8 +63,8 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegat
     }
     
     private func play(video: Video) {
-        if (!hasVideoPlayed) {
-            hasVideoPlayed = playVideoDelegate?.loadPlayerView(with: video.videoId, delegate: self) ?? false
+        if (!hasPlayed) {
+            hasPlayed = playVideoDelegate?.loadPlayerView(with: video.videoId, delegate: self) ?? false
         } else {
             playVideoDelegate?.loadVideo(with: video.videoId)
         }
