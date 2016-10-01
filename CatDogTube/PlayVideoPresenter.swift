@@ -9,11 +9,20 @@
 import Foundation
 
 protocol PlayVideoDelegate {
-    
+
     /**
+     call this when video is played for the first time
+     This will initialize the video module
      - returns: true when play succeed, false if fail
      */
-    func play(video:Video) -> Bool
+    func loadPlayerView(with videoId: String) -> Bool
+    
+
+    /**
+     Call this when video module is already initialized.
+     */
+    func loadVideo(with videoId: String)
+    
 }
 
 protocol VideoListStatusDelegate {
@@ -47,8 +56,11 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate {
     }
     
     private func play(video: Video) {
-        hasVideoPlayed = true
-        _ = playVideoDelegate?.play(video:video)
+        if (!hasVideoPlayed) {
+            hasVideoPlayed = (playVideoDelegate?.loadPlayerView(with: video.videoId))!
+        } else {
+            playVideoDelegate?.loadVideo(with: video.videoId)
+        }
     }
 
 }
