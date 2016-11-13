@@ -71,11 +71,11 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegat
     }
 
     // MARK: - YTPlayerViewDelegate
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView!) {
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         playVideoDelegate?.play()
     }
     
-    func playerView(_ playerView: YTPlayerView!, didChangeTo state: YTPlayerState) {
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
         switch state {
         case .playing,
              .unstarted: //If app cannot play the video, status becomes .Unstarted
