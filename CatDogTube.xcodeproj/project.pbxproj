@@ -593,7 +593,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Kenichiro Sato";
 				TargetAttributes = {
 					59A88AB51C4B1BAD00D40B23 = {
