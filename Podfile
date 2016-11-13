@@ -1,3 +1,5 @@
+source "https://github.com/CocoaPods/Old-Specs"
+
 platform :ios, '9.0'
 use_frameworks!
 xcodeproj './CatDogTube.xcodeproj'
@@ -5,7 +7,7 @@ xcodeproj './CatDogTube.xcodeproj'
 pod 'HMSegmentedControl'
 pod 'SDWebImage', '~>3.7'
 pod 'SwiftyJSON', :git => 'https://github.com/IBM-Swift/SwiftyJSON.git'
-pod 'youtube-ios-player-helper', '0.1.4'
+pod 'youtube-ios-player-helper', '0.1.6'
 pod 'PopupDialog', :git => 'https://github.com/Orderella/PopupDialog.git', :branch => 'Swift3'
 
 pod 'Fabric'
