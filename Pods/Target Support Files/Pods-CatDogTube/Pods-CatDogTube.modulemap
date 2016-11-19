@@ -1,0 +1,6 @@
+framework module Pods_CatDogTube {
+  umbrella header "Pods-CatDogTube-umbrella.h"
+
+  export *
+  module * { export * }
+}
