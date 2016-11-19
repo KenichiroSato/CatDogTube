@@ -26,3 +26,8 @@ target 'CatDogTube' do
   end
 
 end
+
+post_install do | installer |
+  require 'fileutils'
+  FileUtils.cp_r('Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube-acknowledgements.plist', 'CatDogTube/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+end
