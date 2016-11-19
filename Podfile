@@ -18,6 +18,7 @@ target 'CatDogTube' do
   target 'CatDogTubeTests' do
     inherit! :search_paths
     # Pods for testing
+    pod "Cuckoo"
   end
 
   target 'CatDogTubeUITests' do
