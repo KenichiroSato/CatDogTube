@@ -38,6 +38,8 @@
 		590DAED31C702B70002281B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 590DAED51C702B70002281B4 /* Localizable.strings */; };
 		590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDB1C70464B002281B4 /* UIImage+extension.swift */; };
 		590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDE1C70A8C0002281B4 /* Segment.swift */; };
+		5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765991DE088D000FEBAD8 /* GeneratedMocks.swift */; };
+		595765AA1DE12B1300FEBAD8 /* TeamRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */; };
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
 		59751D9A1CF0077400B704D2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D991CF0077400B704D2 /* MainVC.swift */; };
@@ -131,6 +133,8 @@
 		590DAED91C702C8D002281B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAEDB1C70464B002281B4 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		590DAEDE1C70A8C0002281B4 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		595765991DE088D000FEBAD8 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepositoryTests.swift; sourceTree = "<group>"; };
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		59751D991CF0077400B704D2 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -509,12 +513,14 @@
 		59A88ACD1C4B1BAD00D40B23 /* CatDogTubeTests */ = {
 			isa = PBXGroup;
 			children = (
+				595765991DE088D000FEBAD8 /* GeneratedMocks.swift */,
 				59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */,
 				59B91F631D79C3B700548945 /* VideoExcluderTests.swift */,
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
 				5995F3971C9545F700F07172 /* NSCalendarTests.swift */,
 				59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */,
 				59B4F16F1D8F7A70009068ED /* TeamTests.swift */,
+				595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */,
 				590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */,
 				59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */,
 				590A835D1C546A16000C6179 /* searchResponse.json */,
@@ -573,6 +579,7 @@
 			buildConfigurationList = 59A88AE11C4B1BAD00D40B23 /* Build configuration list for PBXNativeTarget "CatDogTubeTests" */;
 			buildPhases = (
 				B4B67FD91E4F0F6623545157 /* [CP] Check Pods Manifest.lock */,
+				595765981DE0877100FEBAD8 /* ShellScript */,
 				59A88AC61C4B1BAD00D40B23 /* Sources */,
 				59A88AC71C4B1BAD00D40B23 /* Frameworks */,
 				59A88AC81C4B1BAD00D40B23 /* Resources */,
@@ -723,6 +730,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 74c6959f11db7982048c578bd1b27ba01ee06673 55ca640f7f5aeacb49113690a22bcae3ed56b5295229ae1ceafe783cd862abe6";
+		};
+		595765981DE0877100FEBAD8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
 		};
 		59A88AE91C4B2F9A00D40B23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -926,9 +946,11 @@
 				59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */,
+				5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */,
 				59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */,
 				59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */,
 				59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */,
+				595765AA1DE12B1300FEBAD8 /* TeamRepositoryTests.swift in Sources */,
 				59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
