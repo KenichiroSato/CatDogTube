@@ -38,16 +38,12 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             view?.showLoadingIndicator()
         }
         
-        Thread.dispatchAsyncGlobal(){
-            self.useCase.loadVideos() { videos in
-                Thread.dispatchAsyncMain() {
-                    guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
-                        self.onLoadFail()
-                        return
-                    }
-                    self.onLoadSuccess(videos: nonNilVideos)
-                }
+        useCase.loadVideos() { videos in
+            guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
+                self.onLoadFail()
+                return
             }
+            self.onLoadSuccess(videos: nonNilVideos)
         }
     }
     

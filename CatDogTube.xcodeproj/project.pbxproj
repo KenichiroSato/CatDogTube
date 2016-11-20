@@ -63,6 +63,7 @@
 		59A88ADA1C4B1BAD00D40B23 /* CatDogTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */; };
 		59A88AE81C4B2DA000D40B23 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59A88AE71C4B2DA000D40B23 /* Settings.bundle */; };
 		59AAC0AB1DE18718007ADE97 /* VideoCollectionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */; };
+		59AAC0AD1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */; };
 		59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */; };
 		59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
@@ -165,6 +166,7 @@
 		59A88ADB1C4B1BAD00D40B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A88AE71C4B2DA000D40B23 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionContract.swift; sourceTree = "<group>"; };
+		59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresernterTests.swift; sourceTree = "<group>"; };
 		59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslaterTests.swift; sourceTree = "<group>"; };
 		59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
 				5995F3971C9545F700F07172 /* NSCalendarTests.swift */,
 				59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */,
+				59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */,
 				59B4F16F1D8F7A70009068ED /* TeamTests.swift */,
 				595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */,
 				590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */,
@@ -745,7 +748,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/Video.swift\" \\\n\"${INPUT_DIR}/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
 		};
 		59A88AE91C4B2F9A00D40B23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -951,6 +954,7 @@
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */,
 				5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */,
+				59AAC0AD1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift in Sources */,
 				59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */,
 				59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */,
 				59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */,
