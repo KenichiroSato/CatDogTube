@@ -110,7 +110,6 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     // MARK: SegmentdChildViewDelegate
     func onSegmentChanged(_ isCurrentIndex: Bool) {
-        collectionView.scrollsToTop = isCurrentIndex
         isForeground = isCurrentIndex
     }
 }
