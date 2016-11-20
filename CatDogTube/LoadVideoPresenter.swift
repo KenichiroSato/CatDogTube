@@ -8,34 +8,34 @@
 
 import Foundation
 
-protocol LoadVideoDelegate {
-    
-    func set(videos:[Video])
-    
-    func showErrorUI()
-    
-    func hideErrorUI()
-    
-    func showLoadingIndicator()
-}
-
 /**
  Presenter for Video list UI.
  */
-class LoadVideoPresenter: NSObject {
+class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private let useCase: LoadVideoUseCase
     
-    var loadVideoDelegate: LoadVideoDelegate?
+    private var view: VideoCollectionContract_View?
     
     init(useCase: LoadVideoUseCase) {
         self.useCase = useCase
         super.init()
     }
     
+    private func onLoadSuccess(videos:[Video]) {
+        view?.show(videos: videos)
+        view?.hideErrorUI()
+    }
+    
+    private func onLoadFail() {
+        view?.show(videos: [])
+        view?.showErrorUI()
+    }
+    
+    // MARK: VideoCollectionContract_Presenter
     func loadVideo(withFullScreenIndicator:Bool) {
         if (withFullScreenIndicator) {
-            loadVideoDelegate?.showLoadingIndicator()
+            view?.showLoadingIndicator()
         }
         
         Thread.dispatchAsyncGlobal(){
@@ -50,14 +50,9 @@ class LoadVideoPresenter: NSObject {
             }
         }
     }
-
-    private func onLoadSuccess(videos:[Video]) {
-        loadVideoDelegate?.set(videos: videos)
-        loadVideoDelegate?.hideErrorUI()
-    }
     
-    private func onLoadFail() {
-        loadVideoDelegate?.set(videos: [])
-        loadVideoDelegate?.showErrorUI()
+    func set(view: VideoCollectionContract_View) {
+        self.view = view
     }
+
 }

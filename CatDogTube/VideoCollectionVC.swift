@@ -8,8 +8,7 @@
 
 import UIKit
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, LoadVideoDelegate,
-    SegmentdChildViewDelegate, TryReloadDelegate {
+class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, SegmentdChildViewDelegate, TryReloadDelegate {
     
     static let ID = "VideoCollectionVC"
     
@@ -19,7 +18,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     let dataSource: VideoCollectionDataSource
     
-    var presenter: LoadVideoPresenter?
+    var presenter: VideoCollectionContract_Presenter?
     
     var videoListStatusDelegate: VideoListStatusDelegate?
     
@@ -44,7 +43,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
 
         tryReloadView.reloadDelegate = self
         
-        presenter?.loadVideoDelegate = self
+        presenter?.set(view: self)
         loadVideo(withFullScreenIndicator: true)
     }
     
@@ -82,8 +81,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         }
     }
     
-    // MARK: LoadVideoDelegate
-    func set(videos:[Video]) {
+    // MARK: VideoCollectionContract_View
+    func show(videos:[Video]) {
         dataSource.videos = videos
         videoListStatusDelegate?.onListLoadFinished(videos, isForeground: isForeground)
         self.refreshControl.endRefreshing()

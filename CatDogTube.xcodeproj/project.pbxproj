@@ -62,6 +62,7 @@
 		59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */; };
 		59A88ADA1C4B1BAD00D40B23 /* CatDogTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */; };
 		59A88AE81C4B2DA000D40B23 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59A88AE71C4B2DA000D40B23 /* Settings.bundle */; };
+		59AAC0AB1DE18718007ADE97 /* VideoCollectionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */; };
 		59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */; };
 		59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
@@ -163,6 +164,7 @@
 		59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDogTubeUITests.swift; sourceTree = "<group>"; };
 		59A88ADB1C4B1BAD00D40B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A88AE71C4B2DA000D40B23 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionContract.swift; sourceTree = "<group>"; };
 		59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslaterTests.swift; sourceTree = "<group>"; };
 		59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				590A835F1C54ED8E000C6179 /* VideoCollectionVC.swift */,
 				590A83621C54F4EA000C6179 /* VideoCollectionDataSource.swift */,
 				590A83641C54F6BE000C6179 /* VideoCell.swift */,
+				59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */,
 			);
 			name = collection;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
 				59B91F621D79BBC000548945 /* VideoExcluder.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
+				59AAC0AB1DE18718007ADE97 /* VideoCollectionContract.swift in Sources */,
 				59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */,
 				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
