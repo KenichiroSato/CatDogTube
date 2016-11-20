@@ -3,7 +3,7 @@
 //  CatDogTube
 //
 //  Created by Kenichiro Sato on 2015/11/23.
-//  Copyright © 2015年 Kenichiro Sato. All rights reserved.
+//  Copyright © 2015 Kenichiro Sato. All rights reserved.
 //
 
 import Foundation

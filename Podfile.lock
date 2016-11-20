@@ -1,6 +1,7 @@
 PODS:
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
+  - Cuckoo (0.8.0)
   - Fabric (1.6.5)
   - HMSegmentedControl (1.5.2)
   - PopupDialog (0.5.0)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Crashlytics
+  - Cuckoo
   - Fabric
   - HMSegmentedControl
   - PopupDialog (from `https://github.com/Orderella/PopupDialog.git`, branch `Swift3`)
@@ -31,6 +33,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Cuckoo: edc656cee594c0a19480406a4214a9e12a31dd56
   Fabric: 338ffd3c2afcab120638907b4251189de9ad17b3
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   PopupDialog: 9890441b81105b9076757af2afe2b037be682f3e
@@ -38,6 +41,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 436a6936530a7a4889ebdac31f0e26a5530ae961
+PODFILE CHECKSUM: 1dc4c4a5656340aff3fa11b1fe9b34bd2864e484
 
 COCOAPODS: 1.1.1
