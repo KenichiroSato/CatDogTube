@@ -28,7 +28,7 @@ class SegmentFactory: NSObject {
         
         let useCase = SearchVideoUseCase(content: contentType,
                                          repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
-        let presenter = LoadVideoPresenter(useCase: useCase)
+        let presenter = LoadVideoPresenter(useCase: useCase, executor:ThreadExecutor())
         vc.presenter = presenter
         
         return Segment(vc: vc, contentType: contentType)
@@ -39,7 +39,7 @@ class SegmentFactory: NSObject {
             as! VideoCollectionVC
         
         let useCase = FavoriteListUseCase.create()
-        let presenter = LoadVideoPresenter(useCase: useCase)
+        let presenter = LoadVideoPresenter(useCase: useCase, executor:ThreadExecutor())
         vc.presenter = presenter
         
         return Segment(vc: vc, contentType: ContentType.cat)

@@ -54,7 +54,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.scrollsToTop = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
