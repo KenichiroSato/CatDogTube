@@ -17,19 +17,26 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private var view: VideoCollectionContract_View?
     
-    init(useCase: LoadVideoUseCase) {
+    private let executor: ThreadExecutorProtocol
+    
+    init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol ) {
         self.useCase = useCase
+        self.executor = executor
         super.init()
     }
     
     private func onLoadSuccess(videos:[Video]) {
-        view?.show(videos: videos)
-        view?.hideErrorUI()
+        executor.runOnMain {
+            self.view?.show(videos: videos)
+            self.view?.hideErrorUI()
+        }
     }
     
     private func onLoadFail() {
-        view?.show(videos: [])
-        view?.showErrorUI()
+        executor.runOnMain {
+            self.view?.show(videos: [])
+            self.view?.showErrorUI()
+        }
     }
     
     // MARK: VideoCollectionContract_Presenter
@@ -38,12 +45,14 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             view?.showLoadingIndicator()
         }
         
-        useCase.loadVideos() { videos in
-            guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
-                self.onLoadFail()
-                return
+        executor.runOnBackground {
+            self.useCase.loadVideos() { videos in
+                guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
+                    self.onLoadFail()
+                    return
+                }
+                self.onLoadSuccess(videos: nonNilVideos)
             }
-            self.onLoadSuccess(videos: nonNilVideos)
         }
     }
     

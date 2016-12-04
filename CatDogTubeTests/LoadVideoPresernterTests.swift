@@ -44,7 +44,7 @@ class LoadVideoPresernterTests: XCTestCase {
         stub(mockUsecase) { mock in
             when(mock.loadVideos(anyClosure())).thenDoNothing()
         }
-        let presenter = LoadVideoPresenter(useCase: mockUsecase)
+        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: true)
         
@@ -55,7 +55,7 @@ class LoadVideoPresernterTests: XCTestCase {
         stub(mockUsecase) { mock in
             when(mock.loadVideos(anyClosure())).thenDoNothing()
         }
-        let presenter = LoadVideoPresenter(useCase: mockUsecase)
+        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: false)
         
@@ -69,7 +69,7 @@ class LoadVideoPresernterTests: XCTestCase {
             }
         }
 
-        let presenter = LoadVideoPresenter(useCase: mockUsecase)
+        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: true)
         
@@ -86,7 +86,7 @@ class LoadVideoPresernterTests: XCTestCase {
             }
         }
         
-        let presenter = LoadVideoPresenter(useCase: mockUsecase)
+        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: true)
 
