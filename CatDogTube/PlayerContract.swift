@@ -33,8 +33,8 @@ protocol PlayerContract_View {
 
 protocol PlayerContract_Presenter {
     
-    func onListLoadFinished(_ videos: [Video], isForeground: Bool)
+    func onVideoLoaded(_ videos: [Video], isForeground: Bool)
     
-    func onItemTapped(_ video: Video)
+    func onVideoTapped(_ video: Video)
 
 }

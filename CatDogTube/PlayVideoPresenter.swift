@@ -16,11 +16,11 @@ class PlayVideoPresenter: NSObject, PlayerContract_Presenter, YTPlayerViewDelega
     private var hasPlayed = false
     
     // MARK: PlayerContract_Presenter
-    func onItemTapped(_ video: Video) {
+    func onVideoTapped(_ video: Video) {
         play(video:video)
     }
     
-    func onListLoadFinished(_ videos: [Video], isForeground: Bool) {
+    func onVideoLoaded(_ videos: [Video], isForeground: Bool) {
         guard let video = videos.first else { return }
         if shouldPlayVideo(hasPlayed, isForeground: isForeground) {
             play(video:video)

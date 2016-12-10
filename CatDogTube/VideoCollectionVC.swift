@@ -77,14 +77,14 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let video = dataSource.video((indexPath as NSIndexPath).row) {
-            videoListStatusDelegate?.onItemTapped(video)
+            videoListStatusDelegate?.onVideoTapped(video)
         }
     }
     
     // MARK: VideoCollectionContract_View
     func show(videos:[Video]) {
         dataSource.videos = videos
-        videoListStatusDelegate?.onListLoadFinished(videos, isForeground: isForeground)
+        videoListStatusDelegate?.onVideoLoaded(videos, isForeground: isForeground)
         self.refreshControl.endRefreshing()
         self.collectionView.reloadData()
     }
