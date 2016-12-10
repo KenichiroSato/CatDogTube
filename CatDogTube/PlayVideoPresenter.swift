@@ -9,18 +9,13 @@
 import Foundation
 import youtube_ios_player_helper
 
-protocol VideoListStatusDelegate {
-    func onListLoadFinished(_ videos: [Video], isForeground: Bool)
-    
-    func onItemTapped(_ video: Video)
-}
-
-class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegate {
+class PlayVideoPresenter: NSObject, PlayerContract_Presenter, YTPlayerViewDelegate {
     
     var playVideoDelegate: PlayerContract_View?
     
     private var hasPlayed = false
     
+    // MARK: PlayerContract_Presenter
     func onItemTapped(_ video: Video) {
         play(video:video)
     }

@@ -20,7 +20,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     var presenter: VideoCollectionContract_Presenter?
     
-    var videoListStatusDelegate: VideoListStatusDelegate?
+    var videoListStatusDelegate: PlayerContract_Presenter?
     
     private var refreshControl = UIRefreshControl()
     

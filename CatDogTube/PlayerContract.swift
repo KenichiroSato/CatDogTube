@@ -32,5 +32,9 @@ protocol PlayerContract_View {
 }
 
 protocol PlayerContract_Presenter {
-    func showVideo(with videoId:String)
+    
+    func onListLoadFinished(_ videos: [Video], isForeground: Bool)
+    
+    func onItemTapped(_ video: Video)
+
 }
