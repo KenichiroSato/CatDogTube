@@ -9,7 +9,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-class PlayerVC: UIViewController, PlayVideoDelegate {
+class PlayerVC: UIViewController, PlayerContract_View {
     
     static let ID = "PlayerVC"
 
@@ -27,7 +27,7 @@ class PlayerVC: UIViewController, PlayVideoDelegate {
         activityIndicator.isHidden = false
     }
 
-    // MARK: - PlayVideoDelegate
+    // MARK: - PlayerContract_View
     func loadPlayerView(with videoId: String, delegate: YTPlayerViewDelegate) -> Bool {
         playerView.delegate = delegate
         return playerView.load(withVideoId: videoId, playerVars: ["playsinline":1])

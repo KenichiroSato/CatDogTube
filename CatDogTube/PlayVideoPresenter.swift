@@ -9,29 +9,6 @@
 import Foundation
 import youtube_ios_player_helper
 
-protocol PlayVideoDelegate {
-
-    /**
-     call this when video is played for the first time
-     This will initialize the video module
-     - returns: true when play succeed, false if fail
-     */
-    func loadPlayerView(with videoId: String, delegate:YTPlayerViewDelegate) -> Bool
-    
-
-    /**
-     Call this when video module is already initialized.
-     */
-    func loadVideo(with videoId: String)
-    
-    func play()
-    
-    func pause()
-    
-    func showPlayer()
-    
-}
-
 protocol VideoListStatusDelegate {
     func onListLoadFinished(_ videos: [Video], isForeground: Bool)
     
@@ -40,7 +17,7 @@ protocol VideoListStatusDelegate {
 
 class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegate {
     
-    var playVideoDelegate: PlayVideoDelegate?
+    var playVideoDelegate: PlayerContract_View?
     
     private var hasPlayed = false
     
