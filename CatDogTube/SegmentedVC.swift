@@ -13,10 +13,10 @@ protocol SegmentdChildViewDelegate {
     func onSegmentChanged(_ isCurrentIndex:Bool)
 }
 
-class SegmentedVC: UIViewController, UIScrollViewDelegate {
+class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {
     
     private lazy var __once: () = {
-            self.setupViews()
+            self.presenter?.loadSegments()
             self.registerNotificationObserver()
         }()
     
@@ -30,9 +30,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
             return [darkColor, middleColor, clearColor]
         }
     }
+    
+    var presenter: SegmentedContract_Presenter?
 
     // add Segment Item in Factory to increase Tab items
-    private var segmentedItems = SegmentFactory.generate()
+    private var segmentedItems: [Segment] = []
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -60,6 +62,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         _ = self.__once
     }
     
+    func show(segments: [Segment]) {
+        self.segmentedItems = segments
+        setupViews()
+    }
+
     private func setupViews() {
         setupSubViews()
         setupShadowView()
