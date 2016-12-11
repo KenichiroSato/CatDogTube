@@ -9,7 +9,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-class PlayerVC: UIViewController, PlayerContract_View {
+class PlayerVC: UIViewController, PlayerContract_View, YTPlayerViewDelegate {
     
     static let ID = "PlayerVC"
 
@@ -28,8 +28,8 @@ class PlayerVC: UIViewController, PlayerContract_View {
     }
 
     // MARK: - PlayerContract_View
-    func loadPlayerView(with videoId: String, delegate: YTPlayerViewDelegate) -> Bool {
-        playerView.delegate = delegate
+    func loadPlayerView(with videoId: String) -> Bool {
+        playerView.delegate = self
         return playerView.load(withVideoId: videoId, playerVars: ["playsinline":1])
     }
     
@@ -49,4 +49,20 @@ class PlayerVC: UIViewController, PlayerContract_View {
     func pause() {
         playerView.pauseVideo()
     }
+    
+    // MARK: - YTPlayerViewDelegate
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        play()
+    }
+    
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
+        switch state {
+        case .playing,
+             .unstarted: //If app cannot play the video, status becomes .Unstarted
+            showPlayer()
+        default:
+            break
+        }
+    }
+
 }

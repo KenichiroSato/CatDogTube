@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-11 02:03:46 +0000
+// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-11 03:03:50 +0000
 
 //
 //  UseCase.swift
@@ -69,7 +69,7 @@ class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-11 02:03:46 +0000
+// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-11 03:03:50 +0000
 
 //
 //  PlayContract.swift
@@ -83,7 +83,6 @@ import Cuckoo
 @testable import CatDogTube
 
 import Foundation
-import youtube_ios_player_helper
 
 class MockPlayerContract_View: PlayerContract_View, Cuckoo.Mock {
     typealias MocksType = PlayerContract_View
@@ -98,8 +97,8 @@ class MockPlayerContract_View: PlayerContract_View, Cuckoo.Mock {
         return self
     }
     
-    func loadPlayerView(with videoId: String, delegate: YTPlayerViewDelegate) -> Bool {
-        return manager.call("loadPlayerView(with: String, delegate: YTPlayerViewDelegate) -> Bool", parameters: (videoId, delegate), original: observed.map { o in return { (videoId: String, delegate: YTPlayerViewDelegate) -> Bool in o.loadPlayerView(with: videoId, delegate: delegate) } })
+    func loadPlayerView(with videoId: String) -> Bool {
+        return manager.call("loadPlayerView(with: String) -> Bool", parameters: (videoId), original: observed.map { o in return { (videoId: String) -> Bool in o.loadPlayerView(with: videoId) } })
     }
     
     func loadVideo(with videoId: String) {
@@ -125,9 +124,9 @@ class MockPlayerContract_View: PlayerContract_View, Cuckoo.Mock {
             self.manager = manager
         }
         
-        func loadPlayerView<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with videoId: M1, delegate: M2) -> Cuckoo.StubFunction<(String, YTPlayerViewDelegate), Bool> where M1.MatchedType == String, M2.MatchedType == YTPlayerViewDelegate {
-            let matchers: [Cuckoo.ParameterMatcher<(String, YTPlayerViewDelegate)>] = [wrap(matchable: videoId) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
-            return Cuckoo.StubFunction(stub: manager.createStub("loadPlayerView(with: String, delegate: YTPlayerViewDelegate) -> Bool", parameterMatchers: matchers))
+        func loadPlayerView<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.StubFunction<(String), Bool> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: videoId) { $0 }]
+            return Cuckoo.StubFunction(stub: manager.createStub("loadPlayerView(with: String) -> Bool", parameterMatchers: matchers))
         }
         
         func loadVideo<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.StubNoReturnFunction<(String)> where M1.MatchedType == String {
@@ -160,9 +159,9 @@ class MockPlayerContract_View: PlayerContract_View, Cuckoo.Mock {
         }
         
         @discardableResult
-        func loadPlayerView<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with videoId: M1, delegate: M2) -> Cuckoo.__DoNotUse<Bool> where M1.MatchedType == String, M2.MatchedType == YTPlayerViewDelegate {
-            let matchers: [Cuckoo.ParameterMatcher<(String, YTPlayerViewDelegate)>] = [wrap(matchable: videoId) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
-            return manager.verify("loadPlayerView(with: String, delegate: YTPlayerViewDelegate) -> Bool", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        func loadPlayerView<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.__DoNotUse<Bool> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: videoId) { $0 }]
+            return manager.verify("loadPlayerView(with: String) -> Bool", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
         @discardableResult
@@ -190,7 +189,7 @@ class MockPlayerContract_View: PlayerContract_View, Cuckoo.Mock {
 
 class PlayerContract_ViewStub: PlayerContract_View {
     
-    func loadPlayerView(with videoId: String, delegate: YTPlayerViewDelegate) -> Bool {
+    func loadPlayerView(with videoId: String) -> Bool {
         return DefaultValueRegistry.defaultValue(for: Bool.self)
     }
     
@@ -286,7 +285,7 @@ class PlayerContract_PresenterStub: PlayerContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-11 02:03:46 +0000
+// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-11 03:03:50 +0000
 
 //
 //  Team.swift
@@ -372,7 +371,7 @@ class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-11 02:03:46 +0000
+// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-11 03:03:50 +0000
 
 //
 //  Video.swift
@@ -444,7 +443,7 @@ class VideoStub: Video {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-11 02:03:46 +0000
+// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-11 03:03:50 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -641,7 +640,7 @@ class VideoCollectionContract_PresenterStub: VideoCollectionContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-11 02:03:46 +0000
+// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-11 03:03:50 +0000
 
 //
 //  TeamRepository.swift

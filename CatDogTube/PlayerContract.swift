@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import youtube_ios_player_helper
 
 protocol PlayerContract_View {
 
@@ -16,7 +15,7 @@ protocol PlayerContract_View {
      This will initialize the video module
      - returns: true when play succeed, false if fail
      */
-    func loadPlayerView(with videoId: String, delegate:YTPlayerViewDelegate) -> Bool
+    func loadPlayerView(with videoId: String) -> Bool
     
     /**
      Call this when video module is already initialized.
