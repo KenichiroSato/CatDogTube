@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-11 03:03:50 +0000
+// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-11 06:47:37 +0000
 
 //
 //  UseCase.swift
@@ -69,7 +69,7 @@ class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-11 03:03:50 +0000
+// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-11 06:47:37 +0000
 
 //
 //  PlayContract.swift
@@ -285,7 +285,7 @@ class PlayerContract_PresenterStub: PlayerContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-11 03:03:50 +0000
+// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-11 06:47:37 +0000
 
 //
 //  Team.swift
@@ -371,7 +371,7 @@ class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-11 03:03:50 +0000
+// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-11 06:47:37 +0000
 
 //
 //  Video.swift
@@ -443,7 +443,7 @@ class VideoStub: Video {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-11 03:03:50 +0000
+// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-11 06:47:37 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -586,6 +586,14 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         return manager.call("loadVideo(withFullScreenIndicator: Bool)", parameters: (withFullScreenIndicator), original: observed.map { o in return { (withFullScreenIndicator: Bool) in o.loadVideo(withFullScreenIndicator: withFullScreenIndicator) } })
     }
     
+    func onSegmentChanged(isForeground: Bool) {
+        return manager.call("onSegmentChanged(isForeground: Bool)", parameters: (isForeground), original: observed.map { o in return { (isForeground: Bool) in o.onSegmentChanged(isForeground: isForeground) } })
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        return manager.call("onVideoTapped(_: Video)", parameters: (video), original: observed.map { o in return { (video: Video) in o.onVideoTapped(video) } })
+    }
+    
     struct __StubbingProxy_VideoCollectionContract_Presenter: Cuckoo.StubbingProxy {
         private let manager: Cuckoo.MockManager
         
@@ -601,6 +609,16 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         func loadVideo<M1: Cuckoo.Matchable>(withFullScreenIndicator: M1) -> Cuckoo.StubNoReturnFunction<(Bool)> where M1.MatchedType == Bool {
             let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: withFullScreenIndicator) { $0 }]
             return Cuckoo.StubNoReturnFunction(stub: manager.createStub("loadVideo(withFullScreenIndicator: Bool)", parameterMatchers: matchers))
+        }
+        
+        func onSegmentChanged<M1: Cuckoo.Matchable>(isForeground: M1) -> Cuckoo.StubNoReturnFunction<(Bool)> where M1.MatchedType == Bool {
+            let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: isForeground) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("onSegmentChanged(isForeground: Bool)", parameterMatchers: matchers))
+        }
+        
+        func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.StubNoReturnFunction<(Video)> where M1.MatchedType == Video {
+            let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("onVideoTapped(_: Video)", parameterMatchers: matchers))
         }
     }
     
@@ -626,6 +644,18 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
             let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: withFullScreenIndicator) { $0 }]
             return manager.verify("loadVideo(withFullScreenIndicator: Bool)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
+        
+        @discardableResult
+        func onSegmentChanged<M1: Cuckoo.Matchable>(isForeground: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Bool {
+            let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: isForeground) { $0 }]
+            return manager.verify("onSegmentChanged(isForeground: Bool)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Video {
+            let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
+            return manager.verify("onVideoTapped(_: Video)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
     }
 }
 
@@ -638,9 +668,17 @@ class VideoCollectionContract_PresenterStub: VideoCollectionContract_Presenter {
     func loadVideo(withFullScreenIndicator: Bool) {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
+    
+    func onSegmentChanged(isForeground: Bool) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-11 03:03:50 +0000
+// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-11 06:47:37 +0000
 
 //
 //  TeamRepository.swift

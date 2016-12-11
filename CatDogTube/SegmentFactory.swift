@@ -10,10 +10,10 @@ import UIKit
 
 class SegmentFactory: NSObject {
     
-    class func generate() -> [Segment] {
+    class func generate(with playerPresenter:PlayerContract_Presenter) -> [Segment] {
         
-        let catSegment = searchSegment(ContentType.cat)
-        let dogSegment = searchSegment(ContentType.dog)
+        let catSegment = searchSegment(ContentType.cat, playerPresenter: playerPresenter)
+        let dogSegment = searchSegment(ContentType.dog, playerPresenter: playerPresenter)
         
         if let team = TeamUseCase.create().loadTeam(), team.isDogTeam() {
             return [dogSegment, catSegment]
@@ -22,24 +22,26 @@ class SegmentFactory: NSObject {
         }
     }
     
-    private class func searchSegment(_ contentType:ContentType) -> Segment {
+    private class func searchSegment(_ contentType:ContentType, playerPresenter:PlayerContract_Presenter) -> Segment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
-        let useCase = SearchVideoUseCase(content: contentType,
-                                         repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
-        let presenter = LoadVideoPresenter(useCase: useCase, executor:ThreadExecutor())
+        let useCase = SearchVideoUseCase(
+            content: contentType, repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
+        let presenter = LoadVideoPresenter(
+            useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
         return Segment(vc: vc, contentType: contentType)
     }
     
-    private class func favoriteSegment() -> Segment {
+    private class func favoriteSegment(_ playerPresenter:PlayerContract_Presenter) -> Segment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
         let useCase = FavoriteListUseCase.create()
-        let presenter = LoadVideoPresenter(useCase: useCase, executor:ThreadExecutor())
+        let presenter = LoadVideoPresenter(
+            useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
         return Segment(vc: vc, contentType: ContentType.cat)

@@ -122,14 +122,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         }
     }
     
-    func set(playVideoPresenter presenter: PlayVideoPresenter) {
-        segmentedItems.forEach({
-            if let vc = $0.viewController as? VideoCollectionVC {
-                vc.videoListStatusDelegate = presenter
-            }
-        })
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

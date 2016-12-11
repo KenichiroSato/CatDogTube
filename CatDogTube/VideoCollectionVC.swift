@@ -20,12 +20,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     var presenter: VideoCollectionContract_Presenter?
     
-    var videoListStatusDelegate: PlayerContract_Presenter?
-    
     private var refreshControl = UIRefreshControl()
     
-    private var isForeground = false
-
     required init?(coder aDecoder: NSCoder) {
         dataSource = VideoCollectionDataSource()
         super.init(coder: aDecoder)
@@ -77,14 +73,13 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let video = dataSource.video((indexPath as NSIndexPath).row) {
-            videoListStatusDelegate?.onVideoTapped(video)
+            presenter?.onVideoTapped(video)
         }
     }
     
     // MARK: VideoCollectionContract_View
     func show(videos:[Video]) {
         dataSource.videos = videos
-        videoListStatusDelegate?.onVideoLoaded(videos, isForeground: isForeground)
         self.refreshControl.endRefreshing()
         self.collectionView.reloadData()
     }
@@ -109,6 +104,6 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     // MARK: SegmentdChildViewDelegate
     func onSegmentChanged(_ isCurrentIndex: Bool) {
-        isForeground = isCurrentIndex
+        presenter?.onSegmentChanged(isForeground: isCurrentIndex)
     }
 }

@@ -17,16 +17,22 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private var view: VideoCollectionContract_View?
     
+    var playerPresenter: PlayerContract_Presenter
+    
     private let executor: ThreadExecutorProtocol
     
-    init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol ) {
+    private var isForeground = false
+    
+    init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol, playerPresenter: PlayerContract_Presenter ) {
         self.useCase = useCase
         self.executor = executor
+        self.playerPresenter = playerPresenter
         super.init()
     }
     
     private func onLoadSuccess(videos:[Video]) {
         executor.runOnMain {
+            self.playerPresenter.onVideoLoaded(videos, isForeground: self.isForeground)
             self.view?.show(videos: videos)
             self.view?.hideErrorUI()
         }
@@ -60,4 +66,11 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
         self.view = view
     }
 
+    func onSegmentChanged(isForeground: Bool) {
+        self.isForeground = isForeground
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        playerPresenter.onVideoTapped(video)
+    }
 }
