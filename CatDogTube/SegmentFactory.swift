@@ -14,10 +14,12 @@ class SegmentFactory: NSObject {
         
         let catSegment = searchSegment(ContentType.cat, playerPresenter: playerPresenter)
         let dogSegment = searchSegment(ContentType.dog, playerPresenter: playerPresenter)
-        
+
         if let team = TeamUseCase.create().loadTeam(), team.isDogTeam() {
+            dogSegment.presenter.markAsPrimal()
             return [dogSegment, catSegment]
         } else {
+            catSegment.presenter.markAsPrimal()
             return [catSegment, dogSegment]
         }
     }
@@ -32,7 +34,7 @@ class SegmentFactory: NSObject {
             useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
-        return Segment(vc: vc, contentType: contentType)
+        return Segment(vc: vc, contentType: contentType, presenter:presenter)
     }
     
     private class func favoriteSegment(_ playerPresenter:PlayerContract_Presenter) -> Segment {
@@ -44,6 +46,6 @@ class SegmentFactory: NSObject {
             useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
-        return Segment(vc: vc, contentType: ContentType.cat)
+        return Segment(vc: vc, contentType: ContentType.cat, presenter:presenter)
     }
 }

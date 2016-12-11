@@ -24,15 +24,15 @@ class PlayVideoPresenter: NSObject, PlayerContract_Presenter {
         play(video:video)
     }
     
-    func onVideoLoaded(_ videos: [Video], isForeground: Bool) {
+    func onVideoLoaded(_ videos: [Video]) {
         guard let video = videos.first else { return }
-        if shouldPlayVideo(hasPlayed, isForeground: isForeground) {
+        if shouldPlayVideo(hasPlayed) {
             play(video:video)
         }
     }
     
-    func shouldPlayVideo(_ hasPlayed: Bool, isForeground: Bool) -> Bool {
-        if (!hasPlayed && isForeground) {
+    func shouldPlayVideo(_ hasPlayed: Bool) -> Bool {
+        if (!hasPlayed) {
             return true
         }
         return false

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, SegmentdChildViewDelegate, TryReloadDelegate {
+class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, TryReloadDelegate {
     
     static let ID = "VideoCollectionVC"
     
@@ -102,8 +102,4 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         loadVideo(withFullScreenIndicator: true)
     }
     
-    // MARK: SegmentdChildViewDelegate
-    func onSegmentChanged(_ isCurrentIndex: Bool) {
-        presenter?.onSegmentChanged(isForeground: isCurrentIndex)
-    }
 }

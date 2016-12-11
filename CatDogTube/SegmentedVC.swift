@@ -9,10 +9,6 @@
 import UIKit
 import HMSegmentedControl
 
-protocol SegmentdChildViewDelegate {
-    func onSegmentChanged(_ isCurrentIndex:Bool)
-}
-
 class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {
     
     private lazy var __once: () = {
@@ -90,7 +86,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         contentView.contentSize =
             CGSize(width: contentView.width() * CGFloat(segmentedItems.count), height: contentView.height())
         contentView.delaysContentTouches = false
-        notifySegmentChanged()
     }
     
     private func setupShadowView() {
@@ -113,15 +108,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         }
     }
     
-    private func notifySegmentChanged() {
-        for (index, childVC) in self.childViewControllers.enumerated() {
-            if let vc = childVC as? SegmentdChildViewDelegate {
-                let isCurrentIndex = (index == self.contentView.currentIndex())
-                vc.onSegmentChanged(isCurrentIndex)
-            }
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -132,12 +118,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         let pageWidth: CGFloat = self.view.frame.size.width
         let page = contentView.contentOffset.x / pageWidth
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
-        notifySegmentChanged()
     }
     
     //This is called after user tapped Tab area
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        notifySegmentChanged()
+        //nop
     }
     
     @objc private func reorderTabs(notification: NSNotification) {
@@ -157,7 +142,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
         segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
         contentView.move(to: newIndex)
-        notifySegmentChanged()
     }
     
     private func oppositeIndex(from currentIndex:Int) -> Int {

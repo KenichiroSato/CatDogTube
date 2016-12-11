@@ -29,25 +29,11 @@ class PlayVideoPresenterTests: XCTestCase {
     
     func testShouldPlayVideo1() {
         let hasPlayed = false
-        let isForeground = false
-        XCTAssertFalse(presenter.shouldPlayVideo(hasPlayed, isForeground: isForeground))
+        XCTAssertTrue(presenter.shouldPlayVideo(hasPlayed))
     }
     
     func testShouldPlayVideo2() {
-        let hasPlayed = false
-        let isForeground = true
-        XCTAssertTrue(presenter.shouldPlayVideo(hasPlayed, isForeground: isForeground))
-    }
-    
-    func testShouldPlayVideo3() {
         let hasPlayed = true
-        let isForeground = false
-        XCTAssertFalse(presenter.shouldPlayVideo(hasPlayed, isForeground: isForeground))
-    }
-    
-    func testShouldPlayVideo4() {
-        let hasPlayed = true
-        let isForeground = true
-        XCTAssertFalse(presenter.shouldPlayVideo(hasPlayed, isForeground: isForeground))
+        XCTAssertFalse(presenter.shouldPlayVideo(hasPlayed))
     }
 }

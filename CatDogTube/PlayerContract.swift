@@ -32,7 +32,7 @@ protocol PlayerContract_View {
 
 protocol PlayerContract_Presenter {
     
-    func onVideoLoaded(_ videos: [Video], isForeground: Bool)
+    func onVideoLoaded(_ videos: [Video])
     
     func onVideoTapped(_ video: Video)
 

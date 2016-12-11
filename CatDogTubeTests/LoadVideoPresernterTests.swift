@@ -39,7 +39,7 @@ class LoadVideoPresernterTests: XCTestCase {
         }
         
         stub(mockPlayerPresenter) { mock in
-            when(mock.onVideoLoaded(any(), isForeground: false)).thenDoNothing()
+            when(mock.onVideoLoaded(any())).thenDoNothing()
         }
     }
     
@@ -89,7 +89,23 @@ class LoadVideoPresernterTests: XCTestCase {
         verify(self.mockView, times(0)).showErrorUI()
         verify(self.mockView, times(1)).hideErrorUI()
         verify(self.mockView).show(videos:any())
-        verify(self.mockPlayerPresenter).onVideoLoaded(any(), isForeground: false)
+        verify(self.mockPlayerPresenter, times(0)).onVideoLoaded(any())
+    }
+    
+    func testLoadSuccessWithPrimal() {
+        stub(mockUsecase) { mock in
+            when(mock.loadVideos(anyClosure())).then { closure in
+                closure(self.videos)
+            }
+        }
+        let presenter = LoadVideoPresenter(useCase: mockUsecase,
+                                           executor:DummyThreadExecutor(),
+                                           playerPresenter: mockPlayerPresenter)
+        presenter.markAsPrimal()
+        presenter.set(view: mockView)
+        presenter.loadVideo(withFullScreenIndicator: true)
+        
+        verify(self.mockPlayerPresenter, times(1)).onVideoLoaded(any())
     }
     
     func testLoadFail() {
