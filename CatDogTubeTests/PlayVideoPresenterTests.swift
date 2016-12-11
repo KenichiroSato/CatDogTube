@@ -11,10 +11,14 @@ import XCTest
 
 class PlayVideoPresenterTests: XCTestCase {
     
-    let presenter = PlayVideoPresenter()
+    private var mockView: MockPlayerContract_View!
+
+    var presenter: PlayVideoPresenter!
     
     override func setUp() {
         super.setUp()
+        mockView = MockPlayerContract_View()
+        presenter = PlayVideoPresenter(view: mockView)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     

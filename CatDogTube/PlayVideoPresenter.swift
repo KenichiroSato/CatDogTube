@@ -11,9 +11,14 @@ import youtube_ios_player_helper
 
 class PlayVideoPresenter: NSObject, PlayerContract_Presenter, YTPlayerViewDelegate {
     
-    var playVideoDelegate: PlayerContract_View?
+    var view: PlayerContract_View
     
     private var hasPlayed = false
+    
+    init(view: PlayerContract_View) {
+        self.view = view
+        super.init()
+    }
     
     // MARK: PlayerContract_Presenter
     func onVideoTapped(_ video: Video) {
@@ -36,22 +41,22 @@ class PlayVideoPresenter: NSObject, PlayerContract_Presenter, YTPlayerViewDelega
     
     private func play(video: Video) {
         if (!hasPlayed) {
-            hasPlayed = playVideoDelegate?.loadPlayerView(with: video.videoId, delegate: self) ?? false
+            hasPlayed = view.loadPlayerView(with: video.videoId, delegate: self)
         } else {
-            playVideoDelegate?.loadVideo(with: video.videoId)
+            view.loadVideo(with: video.videoId)
         }
     }
 
     // MARK: - YTPlayerViewDelegate
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        playVideoDelegate?.play()
+        view.play()
     }
     
     func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
         switch state {
         case .playing,
              .unstarted: //If app cannot play the video, status becomes .Unstarted
-            playVideoDelegate?.showPlayer()
+            view.showPlayer()
         default:
             break
         }
