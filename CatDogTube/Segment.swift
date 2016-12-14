@@ -22,9 +22,12 @@ class Segment : NSObject {
 
     let viewController: UIViewController
     
-    init(vc:UIViewController, contentType:ContentType) {
+    let presenter: LoadVideoPresenter
+    
+    init(vc:UIViewController, contentType:ContentType, presenter: LoadVideoPresenter) {
         self.viewController = vc
         self.contentType = contentType
+        self.presenter = presenter
         super.init()
     }
 

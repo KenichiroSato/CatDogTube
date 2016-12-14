@@ -21,11 +21,14 @@ class LoadVideoPresernterTests: XCTestCase {
 
     private var mockView: MockVideoCollectionContract_View!
     
+    private var mockPlayerPresenter: MockPlayerContract_Presenter!
+    
     private var mockUsecase: MockLoadVideoUseCase!
     
     override func setUp() {
         super.setUp()
         mockView = MockVideoCollectionContract_View()
+        mockPlayerPresenter = MockPlayerContract_Presenter()
         mockUsecase = MockLoadVideoUseCase()
         
         stub(mockView) {mock in
@@ -33,6 +36,10 @@ class LoadVideoPresernterTests: XCTestCase {
             when(mock.showErrorUI()).thenDoNothing()
             when(mock.hideErrorUI()).thenDoNothing()
             when(mock.showLoadingIndicator()).thenDoNothing()
+        }
+        
+        stub(mockPlayerPresenter) { mock in
+            when(mock.onVideoLoaded(any())).thenDoNothing()
         }
     }
     
@@ -44,7 +51,9 @@ class LoadVideoPresernterTests: XCTestCase {
         stub(mockUsecase) { mock in
             when(mock.loadVideos(anyClosure())).thenDoNothing()
         }
-        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
+        let presenter = LoadVideoPresenter(useCase: mockUsecase,
+                                           executor:DummyThreadExecutor(),
+                                           playerPresenter: mockPlayerPresenter)
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: true)
         
@@ -55,7 +64,9 @@ class LoadVideoPresernterTests: XCTestCase {
         stub(mockUsecase) { mock in
             when(mock.loadVideos(anyClosure())).thenDoNothing()
         }
-        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
+        let presenter = LoadVideoPresenter(useCase: mockUsecase,
+                                           executor:DummyThreadExecutor(),
+                                           playerPresenter: mockPlayerPresenter)
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: false)
         
@@ -68,8 +79,9 @@ class LoadVideoPresernterTests: XCTestCase {
                 closure(self.videos)
             }
         }
-
-        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
+        let presenter = LoadVideoPresenter(useCase: mockUsecase,
+                                           executor:DummyThreadExecutor(),
+                                           playerPresenter: mockPlayerPresenter)
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: true)
         
@@ -77,6 +89,23 @@ class LoadVideoPresernterTests: XCTestCase {
         verify(self.mockView, times(0)).showErrorUI()
         verify(self.mockView, times(1)).hideErrorUI()
         verify(self.mockView).show(videos:any())
+        verify(self.mockPlayerPresenter, times(0)).onVideoLoaded(any())
+    }
+    
+    func testLoadSuccessWithPrimal() {
+        stub(mockUsecase) { mock in
+            when(mock.loadVideos(anyClosure())).then { closure in
+                closure(self.videos)
+            }
+        }
+        let presenter = LoadVideoPresenter(useCase: mockUsecase,
+                                           executor:DummyThreadExecutor(),
+                                           playerPresenter: mockPlayerPresenter)
+        presenter.markAsPrimal()
+        presenter.set(view: mockView)
+        presenter.loadVideo(withFullScreenIndicator: true)
+        
+        verify(self.mockPlayerPresenter, times(1)).onVideoLoaded(any())
     }
     
     func testLoadFail() {
@@ -86,7 +115,9 @@ class LoadVideoPresernterTests: XCTestCase {
             }
         }
         
-        let presenter = LoadVideoPresenter(useCase: mockUsecase, executor:DummyThreadExecutor())
+        let presenter = LoadVideoPresenter(useCase: mockUsecase,
+                                           executor:DummyThreadExecutor(),
+                                           playerPresenter: mockPlayerPresenter)
         presenter.set(view: mockView)
         presenter.loadVideo(withFullScreenIndicator: true)
 

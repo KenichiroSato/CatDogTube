@@ -9,14 +9,10 @@
 import UIKit
 import HMSegmentedControl
 
-protocol SegmentdChildViewDelegate {
-    func onSegmentChanged(_ isCurrentIndex:Bool)
-}
-
-class SegmentedVC: UIViewController, UIScrollViewDelegate {
+class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {
     
     private lazy var __once: () = {
-            self.setupViews()
+            self.presenter?.loadSegments()
             self.registerNotificationObserver()
         }()
     
@@ -30,9 +26,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
             return [darkColor, middleColor, clearColor]
         }
     }
+    
+    var presenter: SegmentedContract_Presenter?
 
     // add Segment Item in Factory to increase Tab items
-    private var segmentedItems = SegmentFactory.generate()
+    private var segmentedItems: [Segment] = []
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -60,6 +58,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         _ = self.__once
     }
     
+    func show(segments: [Segment]) {
+        self.segmentedItems = segments
+        setupViews()
+    }
+
     private func setupViews() {
         setupSubViews()
         setupShadowView()
@@ -83,7 +86,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         contentView.contentSize =
             CGSize(width: contentView.width() * CGFloat(segmentedItems.count), height: contentView.height())
         contentView.delaysContentTouches = false
-        notifySegmentChanged()
     }
     
     private func setupShadowView() {
@@ -106,23 +108,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    private func notifySegmentChanged() {
-        for (index, childVC) in self.childViewControllers.enumerated() {
-            if let vc = childVC as? SegmentdChildViewDelegate {
-                let isCurrentIndex = (index == self.contentView.currentIndex())
-                vc.onSegmentChanged(isCurrentIndex)
-            }
-        }
-    }
-    
-    func set(playVideoPresenter presenter: PlayVideoPresenter) {
-        segmentedItems.forEach({
-            if let vc = $0.viewController as? VideoCollectionVC {
-                vc.videoListStatusDelegate = presenter
-            }
-        })
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -133,12 +118,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         let pageWidth: CGFloat = self.view.frame.size.width
         let page = contentView.contentOffset.x / pageWidth
         segmentedControl.setSelectedSegmentIndex(UInt(page), animated: true)
-        notifySegmentChanged()
     }
     
     //This is called after user tapped Tab area
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        notifySegmentChanged()
+        //nop
     }
     
     @objc private func reorderTabs(notification: NSNotification) {
@@ -158,7 +142,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate {
         let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
         segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
         contentView.move(to: newIndex)
-        notifySegmentChanged()
     }
     
     private func oppositeIndex(from currentIndex:Int) -> Int {

@@ -7,56 +7,32 @@
 //
 
 import Foundation
-import youtube_ios_player_helper
 
-protocol PlayVideoDelegate {
-
-    /**
-     call this when video is played for the first time
-     This will initialize the video module
-     - returns: true when play succeed, false if fail
-     */
-    func loadPlayerView(with videoId: String, delegate:YTPlayerViewDelegate) -> Bool
+class PlayVideoPresenter: NSObject, PlayerContract_Presenter {
     
-
-    /**
-     Call this when video module is already initialized.
-     */
-    func loadVideo(with videoId: String)
-    
-    func play()
-    
-    func pause()
-    
-    func showPlayer()
-    
-}
-
-protocol VideoListStatusDelegate {
-    func onListLoadFinished(_ videos: [Video], isForeground: Bool)
-    
-    func onItemTapped(_ video: Video)
-}
-
-class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegate {
-    
-    var playVideoDelegate: PlayVideoDelegate?
+    var view: PlayerContract_View
     
     private var hasPlayed = false
     
-    func onItemTapped(_ video: Video) {
+    init(view: PlayerContract_View) {
+        self.view = view
+        super.init()
+    }
+    
+    // MARK: PlayerContract_Presenter
+    func onVideoTapped(_ video: Video) {
         play(video:video)
     }
     
-    func onListLoadFinished(_ videos: [Video], isForeground: Bool) {
+    func onVideoLoaded(_ videos: [Video]) {
         guard let video = videos.first else { return }
-        if shouldPlayVideo(hasPlayed, isForeground: isForeground) {
+        if shouldPlayVideo(hasPlayed) {
             play(video:video)
         }
     }
     
-    func shouldPlayVideo(_ hasPlayed: Bool, isForeground: Bool) -> Bool {
-        if (!hasPlayed && isForeground) {
+    func shouldPlayVideo(_ hasPlayed: Bool) -> Bool {
+        if (!hasPlayed) {
             return true
         }
         return false
@@ -64,24 +40,9 @@ class PlayVideoPresenter: NSObject, VideoListStatusDelegate, YTPlayerViewDelegat
     
     private func play(video: Video) {
         if (!hasPlayed) {
-            hasPlayed = playVideoDelegate?.loadPlayerView(with: video.videoId, delegate: self) ?? false
+            hasPlayed = view.loadPlayerView(with: video.videoId)
         } else {
-            playVideoDelegate?.loadVideo(with: video.videoId)
-        }
-    }
-
-    // MARK: - YTPlayerViewDelegate
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        playVideoDelegate?.play()
-    }
-    
-    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
-        switch state {
-        case .playing,
-             .unstarted: //If app cannot play the video, status becomes .Unstarted
-            playVideoDelegate?.showPlayer()
-        default:
-            break
+            view.loadVideo(with: video.videoId)
         }
     }
 

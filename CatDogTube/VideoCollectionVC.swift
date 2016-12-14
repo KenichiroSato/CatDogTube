@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, SegmentdChildViewDelegate, TryReloadDelegate {
+class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, TryReloadDelegate {
     
     static let ID = "VideoCollectionVC"
     
@@ -20,12 +20,8 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     var presenter: VideoCollectionContract_Presenter?
     
-    var videoListStatusDelegate: VideoListStatusDelegate?
-    
     private var refreshControl = UIRefreshControl()
     
-    private var isForeground = false
-
     required init?(coder aDecoder: NSCoder) {
         dataSource = VideoCollectionDataSource()
         super.init(coder: aDecoder)
@@ -77,14 +73,13 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let video = dataSource.video((indexPath as NSIndexPath).row) {
-            videoListStatusDelegate?.onItemTapped(video)
+            presenter?.onVideoTapped(video)
         }
     }
     
     // MARK: VideoCollectionContract_View
     func show(videos:[Video]) {
         dataSource.videos = videos
-        videoListStatusDelegate?.onListLoadFinished(videos, isForeground: isForeground)
         self.refreshControl.endRefreshing()
         self.collectionView.reloadData()
     }
@@ -107,8 +102,4 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
         loadVideo(withFullScreenIndicator: true)
     }
     
-    // MARK: SegmentdChildViewDelegate
-    func onSegmentChanged(_ isCurrentIndex: Bool) {
-        isForeground = isCurrentIndex
-    }
 }

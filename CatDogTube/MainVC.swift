@@ -25,8 +25,6 @@ class MainVC: UIViewController {
     // contains SegmentedVC
     @IBOutlet weak var segmentContainerView: UIView!
     
-    private let playVideoPresenter = PlayVideoPresenter()
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         _ = self.__once
@@ -47,11 +45,12 @@ class MainVC: UIViewController {
         playerView.addSubview(playerVC.view)
         self.addChildViewController(playerVC)
         playerVC.didMove(toParentViewController: self)
-        playVideoPresenter.playVideoDelegate = playerVC
+        let playerPresenter = PlayVideoPresenter(view: playerVC)
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
         segmentedVC.view.frame = segmentContainerView.bounds
-        segmentedVC.set(playVideoPresenter:playVideoPresenter)
+        let presenter = SegmentsPresenter(view: segmentedVC, playerPresenter: playerPresenter)
+        segmentedVC.presenter = presenter
         segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)

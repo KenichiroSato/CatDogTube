@@ -17,16 +17,25 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private var view: VideoCollectionContract_View?
     
+    var playerPresenter: PlayerContract_Presenter
+    
     private let executor: ThreadExecutorProtocol
     
-    init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol ) {
+    // If true, top contents of this presenter' view will played when app is launched.
+    private var isPrimal = false
+    
+    init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol, playerPresenter: PlayerContract_Presenter ) {
         self.useCase = useCase
         self.executor = executor
+        self.playerPresenter = playerPresenter
         super.init()
     }
     
     private func onLoadSuccess(videos:[Video]) {
         executor.runOnMain {
+            if (self.isPrimal) {
+                self.playerPresenter.onVideoLoaded(videos)
+            }
             self.view?.show(videos: videos)
             self.view?.hideErrorUI()
         }
@@ -60,4 +69,11 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
         self.view = view
     }
 
+    func markAsPrimal() {
+        isPrimal = true
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        playerPresenter.onVideoTapped(video)
+    }
 }

@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-04 06:02:37 +0000
+// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-11 07:26:19 +0000
 
 //
 //  UseCase.swift
@@ -69,7 +69,223 @@ class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-04 06:02:37 +0000
+// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-11 07:26:19 +0000
+
+//
+//  PlayContract.swift
+//  CatDogTube
+//
+//  Created by ken on 2016/12/10.
+//  Copyright © 2016 Kenichiro Sato. All rights reserved.
+//
+
+import Cuckoo
+@testable import CatDogTube
+
+import Foundation
+
+class MockPlayerContract_View: PlayerContract_View, Cuckoo.Mock {
+    typealias MocksType = PlayerContract_View
+    typealias Stubbing = __StubbingProxy_PlayerContract_View
+    typealias Verification = __VerificationProxy_PlayerContract_View
+    let manager = Cuckoo.MockManager()
+    
+    private var observed: PlayerContract_View?
+    
+    func spy(on victim: PlayerContract_View) -> Self {
+        observed = victim
+        return self
+    }
+    
+    func loadPlayerView(with videoId: String) -> Bool {
+        return manager.call("loadPlayerView(with: String) -> Bool", parameters: (videoId), original: observed.map { o in return { (videoId: String) -> Bool in o.loadPlayerView(with: videoId) } })
+    }
+    
+    func loadVideo(with videoId: String) {
+        return manager.call("loadVideo(with: String)", parameters: (videoId), original: observed.map { o in return { (videoId: String) in o.loadVideo(with: videoId) } })
+    }
+    
+    func play() {
+        return manager.call("play()", parameters: (), original: observed.map { o in return { () in o.play() } })
+    }
+    
+    func pause() {
+        return manager.call("pause()", parameters: (), original: observed.map { o in return { () in o.pause() } })
+    }
+    
+    func showPlayer() {
+        return manager.call("showPlayer()", parameters: (), original: observed.map { o in return { () in o.showPlayer() } })
+    }
+    
+    struct __StubbingProxy_PlayerContract_View: Cuckoo.StubbingProxy {
+        private let manager: Cuckoo.MockManager
+        
+        init(manager: Cuckoo.MockManager) {
+            self.manager = manager
+        }
+        
+        func loadPlayerView<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.StubFunction<(String), Bool> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: videoId) { $0 }]
+            return Cuckoo.StubFunction(stub: manager.createStub("loadPlayerView(with: String) -> Bool", parameterMatchers: matchers))
+        }
+        
+        func loadVideo<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.StubNoReturnFunction<(String)> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: videoId) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("loadVideo(with: String)", parameterMatchers: matchers))
+        }
+        
+        func play() -> Cuckoo.StubNoReturnFunction<()> {
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("play()", parameterMatchers: []))
+        }
+        
+        func pause() -> Cuckoo.StubNoReturnFunction<()> {
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("pause()", parameterMatchers: []))
+        }
+        
+        func showPlayer() -> Cuckoo.StubNoReturnFunction<()> {
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("showPlayer()", parameterMatchers: []))
+        }
+    }
+    
+    struct __VerificationProxy_PlayerContract_View: Cuckoo.VerificationProxy {
+        private let manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+        
+        init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+        
+        @discardableResult
+        func loadPlayerView<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.__DoNotUse<Bool> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: videoId) { $0 }]
+            return manager.verify("loadPlayerView(with: String) -> Bool", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func loadVideo<M1: Cuckoo.Matchable>(with videoId: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
+            let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: videoId) { $0 }]
+            return manager.verify("loadVideo(with: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func play() -> Cuckoo.__DoNotUse<Void> {
+            return manager.verify("play()", callMatcher: callMatcher, parameterMatchers: [] as [Cuckoo.ParameterMatcher<Void>], sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func pause() -> Cuckoo.__DoNotUse<Void> {
+            return manager.verify("pause()", callMatcher: callMatcher, parameterMatchers: [] as [Cuckoo.ParameterMatcher<Void>], sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func showPlayer() -> Cuckoo.__DoNotUse<Void> {
+            return manager.verify("showPlayer()", callMatcher: callMatcher, parameterMatchers: [] as [Cuckoo.ParameterMatcher<Void>], sourceLocation: sourceLocation)
+        }
+    }
+}
+
+class PlayerContract_ViewStub: PlayerContract_View {
+    
+    func loadPlayerView(with videoId: String) -> Bool {
+        return DefaultValueRegistry.defaultValue(for: Bool.self)
+    }
+    
+    func loadVideo(with videoId: String) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    func play() {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    func pause() {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    func showPlayer() {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+}
+
+class MockPlayerContract_Presenter: PlayerContract_Presenter, Cuckoo.Mock {
+    typealias MocksType = PlayerContract_Presenter
+    typealias Stubbing = __StubbingProxy_PlayerContract_Presenter
+    typealias Verification = __VerificationProxy_PlayerContract_Presenter
+    let manager = Cuckoo.MockManager()
+    
+    private var observed: PlayerContract_Presenter?
+    
+    func spy(on victim: PlayerContract_Presenter) -> Self {
+        observed = victim
+        return self
+    }
+    
+    func onVideoLoaded(_ videos: [Video]) {
+        return manager.call("onVideoLoaded(_: [Video])", parameters: (videos), original: observed.map { o in return { (videos: [Video]) in o.onVideoLoaded(videos) } })
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        return manager.call("onVideoTapped(_: Video)", parameters: (video), original: observed.map { o in return { (video: Video) in o.onVideoTapped(video) } })
+    }
+    
+    struct __StubbingProxy_PlayerContract_Presenter: Cuckoo.StubbingProxy {
+        private let manager: Cuckoo.MockManager
+        
+        init(manager: Cuckoo.MockManager) {
+            self.manager = manager
+        }
+        
+        func onVideoLoaded<M1: Cuckoo.Matchable>(_ videos: M1) -> Cuckoo.StubNoReturnFunction<([Video])> where M1.MatchedType == [Video] {
+            let matchers: [Cuckoo.ParameterMatcher<([Video])>] = [wrap(matchable: videos) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("onVideoLoaded(_: [Video])", parameterMatchers: matchers))
+        }
+        
+        func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.StubNoReturnFunction<(Video)> where M1.MatchedType == Video {
+            let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("onVideoTapped(_: Video)", parameterMatchers: matchers))
+        }
+    }
+    
+    struct __VerificationProxy_PlayerContract_Presenter: Cuckoo.VerificationProxy {
+        private let manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+        
+        init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+        
+        @discardableResult
+        func onVideoLoaded<M1: Cuckoo.Matchable>(_ videos: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == [Video] {
+            let matchers: [Cuckoo.ParameterMatcher<([Video])>] = [wrap(matchable: videos) { $0 }]
+            return manager.verify("onVideoLoaded(_: [Video])", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Video {
+            let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
+            return manager.verify("onVideoTapped(_: Video)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+    }
+}
+
+class PlayerContract_PresenterStub: PlayerContract_Presenter {
+    
+    func onVideoLoaded(_ videos: [Video]) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+}
+
+// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-11 07:26:19 +0000
 
 //
 //  Team.swift
@@ -155,7 +371,7 @@ class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-04 06:02:37 +0000
+// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-11 07:26:19 +0000
 
 //
 //  Video.swift
@@ -227,7 +443,7 @@ class VideoStub: Video {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-04 06:02:37 +0000
+// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-11 07:26:19 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -370,6 +586,14 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         return manager.call("loadVideo(withFullScreenIndicator: Bool)", parameters: (withFullScreenIndicator), original: observed.map { o in return { (withFullScreenIndicator: Bool) in o.loadVideo(withFullScreenIndicator: withFullScreenIndicator) } })
     }
     
+    func markAsPrimal() {
+        return manager.call("markAsPrimal()", parameters: (), original: observed.map { o in return { () in o.markAsPrimal() } })
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        return manager.call("onVideoTapped(_: Video)", parameters: (video), original: observed.map { o in return { (video: Video) in o.onVideoTapped(video) } })
+    }
+    
     struct __StubbingProxy_VideoCollectionContract_Presenter: Cuckoo.StubbingProxy {
         private let manager: Cuckoo.MockManager
         
@@ -385,6 +609,15 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         func loadVideo<M1: Cuckoo.Matchable>(withFullScreenIndicator: M1) -> Cuckoo.StubNoReturnFunction<(Bool)> where M1.MatchedType == Bool {
             let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: withFullScreenIndicator) { $0 }]
             return Cuckoo.StubNoReturnFunction(stub: manager.createStub("loadVideo(withFullScreenIndicator: Bool)", parameterMatchers: matchers))
+        }
+        
+        func markAsPrimal() -> Cuckoo.StubNoReturnFunction<()> {
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("markAsPrimal()", parameterMatchers: []))
+        }
+        
+        func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.StubNoReturnFunction<(Video)> where M1.MatchedType == Video {
+            let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("onVideoTapped(_: Video)", parameterMatchers: matchers))
         }
     }
     
@@ -410,6 +643,17 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
             let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: withFullScreenIndicator) { $0 }]
             return manager.verify("loadVideo(withFullScreenIndicator: Bool)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
+        
+        @discardableResult
+        func markAsPrimal() -> Cuckoo.__DoNotUse<Void> {
+            return manager.verify("markAsPrimal()", callMatcher: callMatcher, parameterMatchers: [] as [Cuckoo.ParameterMatcher<Void>], sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Video {
+            let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
+            return manager.verify("onVideoTapped(_: Video)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
     }
 }
 
@@ -422,9 +666,17 @@ class VideoCollectionContract_PresenterStub: VideoCollectionContract_Presenter {
     func loadVideo(withFullScreenIndicator: Bool) {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
+    
+    func markAsPrimal() {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+    func onVideoTapped(_ video: Video) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-04 06:02:37 +0000
+// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-11 07:26:19 +0000
 
 //
 //  TeamRepository.swift

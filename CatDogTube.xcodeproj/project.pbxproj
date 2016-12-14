@@ -83,6 +83,9 @@
 		59EE7D4D1DF3DE0B00121F7B /* ThreadExecutorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7D4C1DF3DE0B00121F7B /* ThreadExecutorProtocol.swift */; };
 		59EE7D4F1DF3E17200121F7B /* ThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */; };
 		59EE7D511DF3E48800121F7B /* DummyThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7D501DF3E48800121F7B /* DummyThreadExecutor.swift */; };
+		BE8CDDA01DFBCE4500146016 /* PlayerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CDD9F1DFBCE4500146016 /* PlayerContract.swift */; };
+		BE8CDDA21DFBF05500146016 /* SegmentedContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CDDA11DFBF05500146016 /* SegmentedContract.swift */; };
+		BE8CDDA41DFBF1C200146016 /* SegmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CDDA31DFBF1C200146016 /* SegmentsPresenter.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -191,6 +194,9 @@
 		59EE7D501DF3E48800121F7B /* DummyThreadExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyThreadExecutor.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F593EC182E75B1D20E73949 /* Pods-CatDogTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.release.xcconfig"; sourceTree = "<group>"; };
+		BE8CDD9F1DFBCE4500146016 /* PlayerContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerContract.swift; sourceTree = "<group>"; };
+		BE8CDDA11DFBF05500146016 /* SegmentedContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedContract.swift; sourceTree = "<group>"; };
+		BE8CDDA31DFBF1C200146016 /* SegmentsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentsPresenter.swift; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
 		D806D44D3A88D5DB77DFD26B /* Pods_CatDogTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +312,8 @@
 				59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */,
 				590DAEDE1C70A8C0002281B4 /* Segment.swift */,
 				59047C641CA7C3EB0051C489 /* SegmentFactory.swift */,
+				BE8CDDA11DFBF05500146016 /* SegmentedContract.swift */,
+				BE8CDDA31DFBF1C200146016 /* SegmentsPresenter.swift */,
 			);
 			name = segmented;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 			children = (
 				59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */,
 				0CD0D5731C6B62E900A24DED /* PlayerVC.swift */,
+				BE8CDD9F1DFBCE4500146016 /* PlayerContract.swift */,
 			);
 			name = presentation;
 			sourceTree = "<group>";
@@ -757,7 +766,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/Video.swift\" \\\n\"${INPUT_DIR}/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\"\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/Video.swift\" \\\n\"${INPUT_DIR}/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\" \\\n\"${INPUT_DIR}/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
 		};
 		59A88AE91C4B2F9A00D40B23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -900,6 +909,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */,
+				BE8CDDA01DFBCE4500146016 /* PlayerContract.swift in Sources */,
 				5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */,
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
 				59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */,
@@ -949,7 +959,9 @@
 				590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */,
 				5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */,
 				590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */,
+				BE8CDDA41DFBF1C200146016 /* SegmentsPresenter.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
+				BE8CDDA21DFBF05500146016 /* SegmentedContract.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
 				59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */,
 				59751DA21CF9305300B704D2 /* UIDevice+extension.swift in Sources */,
