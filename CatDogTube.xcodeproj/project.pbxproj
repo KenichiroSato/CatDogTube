@@ -648,7 +648,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kenichiro Sato";
 				TargetAttributes = {
 					59A88AB51C4B1BAD00D40B23 = {
@@ -1174,6 +1174,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = H2W9ZJ8C83;
 				INFOPLIST_FILE = CatDogTubeTests/Info.plist;
@@ -1189,6 +1190,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A25B3397100E83A4C82EA5F /* Pods-CatDogTubeTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = H2W9ZJ8C83;
