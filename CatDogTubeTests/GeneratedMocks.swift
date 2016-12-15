@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-11 07:26:19 +0000
+// MARK: - Mocks generated from file: CatDogTube/LoadVideoUseCase.swift at 2016-12-15 14:04:47 +0000
 
 //
 //  UseCase.swift
@@ -69,7 +69,7 @@ class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-11 07:26:19 +0000
+// MARK: - Mocks generated from file: CatDogTube/PlayerContract.swift at 2016-12-15 14:04:47 +0000
 
 //
 //  PlayContract.swift
@@ -285,7 +285,7 @@ class PlayerContract_PresenterStub: PlayerContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-11 07:26:19 +0000
+// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-15 14:04:47 +0000
 
 //
 //  Team.swift
@@ -371,7 +371,7 @@ class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-11 07:26:19 +0000
+// MARK: - Mocks generated from file: CatDogTube/Video.swift at 2016-12-15 14:04:47 +0000
 
 //
 //  Video.swift
@@ -443,7 +443,7 @@ class VideoStub: Video {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-11 07:26:19 +0000
+// MARK: - Mocks generated from file: CatDogTube/VideoCollectionContract.swift at 2016-12-15 14:04:47 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -676,7 +676,7 @@ class VideoCollectionContract_PresenterStub: VideoCollectionContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-11 07:26:19 +0000
+// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-15 14:04:47 +0000
 
 //
 //  TeamRepository.swift
