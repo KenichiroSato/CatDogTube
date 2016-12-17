@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    class func named(_ name:String, size:CGSize) -> UIImage? {
+    class public func named(_ name:String, size:CGSize) -> UIImage? {
         if let image = UIImage(named: name) {
             UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
             defer { UIGraphicsEndImageContext() }

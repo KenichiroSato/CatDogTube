@@ -11,14 +11,14 @@ import Foundation
 
 extension Calendar {
     
-    func dateWithYear(_ year:Int, Month:Int, Day:Int) -> Date? {
+    public func dateWithYear(_ year:Int, Month:Int, Day:Int) -> Date? {
         return (self as NSCalendar).date(era: 1, year: year, month: Month, day: Day, hour: 0, minute: 0, second: 0, nanosecond: 0)
     }
     
     /**
      - returns: NSDateComponents which includes only year, month, day, hour, minute, second
      */
-    func components(_ date:Date) -> DateComponents {
+    public func components(_ date:Date) -> DateComponents {
         return dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
     }
     
@@ -26,7 +26,7 @@ extension Calendar {
      generate the random date between maxDate and minDate.
      - returns: random date between maxDate and minDate
      */
-    func randomDate(between maxDate:Date, and minDate:Date) -> Date {
+    public func randomDate(between maxDate:Date, and minDate:Date) -> Date {
         let maxTimeInterval = maxDate.timeIntervalSince1970
         let minTimeInterval = minDate.timeIntervalSince1970
         

@@ -17,7 +17,7 @@ enum ViewSide {
     case right
     case left
     
-    func gradationFrame(_ view: UIView) -> CGRect {
+    public func gradationFrame(_ view: UIView) -> CGRect {
         switch (self) {
         case .top:
             return CGRect(x: 0, y: 0, width: view.bounds.width, height: UIImageView.GRADIENT_SIZE)
@@ -31,7 +31,7 @@ enum ViewSide {
         }
     }
     
-    func points() -> (start: CGPoint, end: CGPoint) {
+    public func points() -> (start: CGPoint, end: CGPoint) {
         switch (self) {
         case .top:
             return (CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 1))
@@ -49,7 +49,7 @@ extension UIImageView {
     
     static fileprivate let GRADIENT_SIZE: CGFloat = 15.0
     
-    func addGradientLayer(_ baseColor:UIColor) {
+    public func addGradientLayer(_ baseColor:UIColor) {
         for side in ViewSide.allValues {
             let gradient = CAGradientLayer()
             gradient.colors = gradientColors(baseColor)
