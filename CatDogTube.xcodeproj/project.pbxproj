@@ -90,6 +90,11 @@
 		BED52E191E04C00600241F4E /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E141E04C00600241F4E /* UIScrollView+extension.swift */; };
 		BED52E1A1E04C00600241F4E /* UIStoryBoard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E151E04C00600241F4E /* UIStoryBoard+extension.swift */; };
 		BED52E1C1E04C00E00241F4E /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E1B1E04C00E00241F4E /* UIViewController+extension.swift */; };
+		BED52E301E05008400241F4E /* CatDogTubeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; };
+		BED52E371E05008400241F4E /* CatDogTubeDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E361E05008400241F4E /* CatDogTubeDomainTests.swift */; };
+		BED52E391E05008400241F4E /* CatDogTubeDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = BED52E291E05008300241F4E /* CatDogTubeDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BED52E3C1E05008400241F4E /* CatDogTubeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; };
+		BED52E3D1E05008400241F4E /* CatDogTubeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +135,27 @@
 			remoteGlobalIDString = BEB4CC4B1E042ADB00317410;
 			remoteInfo = Extension;
 		};
+		BED52E311E05008400241F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED52E261E05008300241F4E;
+			remoteInfo = CatDogTubeDomain;
+		};
+		BED52E331E05008400241F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59A88AB51C4B1BAD00D40B23;
+			remoteInfo = CatDogTube;
+		};
+		BED52E3A1E05008400241F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED52E261E05008300241F4E;
+			remoteInfo = CatDogTubeDomain;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +165,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BED52E3D1E05008400241F4E /* CatDogTubeDomain.framework in Embed Frameworks */,
 				BEB4CC621E042ADB00317410 /* Extension.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -241,6 +268,12 @@
 		BED52E141E04C00600241F4E /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		BED52E151E04C00600241F4E /* UIStoryBoard+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+extension.swift"; sourceTree = "<group>"; };
 		BED52E1B1E04C00E00241F4E /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		BED52E271E05008300241F4E /* CatDogTubeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatDogTubeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED52E291E05008300241F4E /* CatDogTubeDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatDogTubeDomain.h; sourceTree = "<group>"; };
+		BED52E2A1E05008300241F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED52E2F1E05008400241F4E /* CatDogTubeDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatDogTubeDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED52E361E05008400241F4E /* CatDogTubeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDogTubeDomainTests.swift; sourceTree = "<group>"; };
+		BED52E381E05008400241F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
 		D806D44D3A88D5DB77DFD26B /* Pods_CatDogTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +289,7 @@
 			files = (
 				BEB4CC611E042ADB00317410 /* Extension.framework in Frameworks */,
 				4B7BFFD544FA10D097EEC177 /* Pods_CatDogTube.framework in Frameworks */,
+				BED52E3C1E05008400241F4E /* CatDogTubeDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +321,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB4CC551E042ADB00317410 /* Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED52E231E05008300241F4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED52E2C1E05008300241F4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED52E301E05008400241F4E /* CatDogTubeDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +592,8 @@
 				59A88AD81C4B1BAD00D40B23 /* CatDogTubeUITests */,
 				BEB4CC4D1E042ADB00317410 /* Extension */,
 				BEB4CC5A1E042ADB00317410 /* ExtensionTests */,
+				BED52E281E05008300241F4E /* CatDogTubeDomain */,
+				BED52E351E05008400241F4E /* CatDogTubeDomainTests */,
 				59A88AB71C4B1BAD00D40B23 /* Products */,
 				8021351649DAD15CBB941E03 /* Frameworks */,
 				1304634266D9100905F8F650 /* Pods */,
@@ -557,6 +608,8 @@
 				59A88AD51C4B1BAD00D40B23 /* CatDogTubeUITests.xctest */,
 				BEB4CC4C1E042ADB00317410 /* Extension.framework */,
 				BEB4CC541E042ADB00317410 /* ExtensionTests.xctest */,
+				BED52E271E05008300241F4E /* CatDogTubeDomain.framework */,
+				BED52E2F1E05008400241F4E /* CatDogTubeDomainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -646,6 +699,24 @@
 			path = ExtensionTests;
 			sourceTree = "<group>";
 		};
+		BED52E281E05008300241F4E /* CatDogTubeDomain */ = {
+			isa = PBXGroup;
+			children = (
+				BED52E291E05008300241F4E /* CatDogTubeDomain.h */,
+				BED52E2A1E05008300241F4E /* Info.plist */,
+			);
+			path = CatDogTubeDomain;
+			sourceTree = "<group>";
+		};
+		BED52E351E05008400241F4E /* CatDogTubeDomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				BED52E361E05008400241F4E /* CatDogTubeDomainTests.swift */,
+				BED52E381E05008400241F4E /* Info.plist */,
+			);
+			path = CatDogTubeDomainTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -654,6 +725,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB4CC5E1E042ADB00317410 /* Extension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED52E241E05008300241F4E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED52E391E05008400241F4E /* CatDogTubeDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +757,7 @@
 			);
 			dependencies = (
 				BEB4CC601E042ADB00317410 /* PBXTargetDependency */,
+				BED52E3B1E05008400241F4E /* PBXTargetDependency */,
 			);
 			name = CatDogTube;
 			productName = CatDogTube;
@@ -764,6 +844,43 @@
 			productReference = BEB4CC541E042ADB00317410 /* ExtensionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BED52E261E05008300241F4E /* CatDogTubeDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BED52E421E05008400241F4E /* Build configuration list for PBXNativeTarget "CatDogTubeDomain" */;
+			buildPhases = (
+				BED52E221E05008300241F4E /* Sources */,
+				BED52E231E05008300241F4E /* Frameworks */,
+				BED52E241E05008300241F4E /* Headers */,
+				BED52E251E05008300241F4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CatDogTubeDomain;
+			productName = CatDogTubeDomain;
+			productReference = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BED52E2E1E05008300241F4E /* CatDogTubeDomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BED52E431E05008400241F4E /* Build configuration list for PBXNativeTarget "CatDogTubeDomainTests" */;
+			buildPhases = (
+				BED52E2B1E05008300241F4E /* Sources */,
+				BED52E2C1E05008300241F4E /* Frameworks */,
+				BED52E2D1E05008300241F4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BED52E321E05008400241F4E /* PBXTargetDependency */,
+				BED52E341E05008400241F4E /* PBXTargetDependency */,
+			);
+			name = CatDogTubeDomainTests;
+			productName = CatDogTubeDomainTests;
+			productReference = BED52E2F1E05008400241F4E /* CatDogTubeDomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -804,6 +921,16 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
+					BED52E261E05008300241F4E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = H2W9ZJ8C83;
+						ProvisioningStyle = Automatic;
+					};
+					BED52E2E1E05008300241F4E = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 59A88AB51C4B1BAD00D40B23;
+					};
 				};
 			};
 			buildConfigurationList = 59A88AB11C4B1BAD00D40B23 /* Build configuration list for PBXProject "CatDogTube" */;
@@ -825,6 +952,8 @@
 				59A88AD41C4B1BAD00D40B23 /* CatDogTubeUITests */,
 				BEB4CC4B1E042ADB00317410 /* Extension */,
 				BEB4CC531E042ADB00317410 /* ExtensionTests */,
+				BED52E261E05008300241F4E /* CatDogTubeDomain */,
+				BED52E2E1E05008300241F4E /* CatDogTubeDomainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -867,6 +996,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BEB4CC521E042ADB00317410 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED52E251E05008300241F4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED52E2D1E05008300241F4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1158,6 +1301,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BED52E221E05008300241F4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BED52E2B1E05008300241F4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED52E371E05008400241F4E /* CatDogTubeDomainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1185,6 +1343,21 @@
 			isa = PBXTargetDependency;
 			target = BEB4CC4B1E042ADB00317410 /* Extension */;
 			targetProxy = BEB4CC5F1E042ADB00317410 /* PBXContainerItemProxy */;
+		};
+		BED52E321E05008400241F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BED52E261E05008300241F4E /* CatDogTubeDomain */;
+			targetProxy = BED52E311E05008400241F4E /* PBXContainerItemProxy */;
+		};
+		BED52E341E05008400241F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59A88AB51C4B1BAD00D40B23 /* CatDogTube */;
+			targetProxy = BED52E331E05008400241F4E /* PBXContainerItemProxy */;
+		};
+		BED52E3B1E05008400241F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BED52E261E05008300241F4E /* CatDogTubeDomain */;
+			targetProxy = BED52E3A1E05008400241F4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1504,6 +1677,92 @@
 			};
 			name = Release;
 		};
+		BED52E3E1E05008400241F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CatDogTubeDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BED52E3F1E05008400241F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CatDogTubeDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BED52E401E05008400241F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = CatDogTubeDomainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
+			};
+			name = Debug;
+		};
+		BED52E411E05008400241F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = CatDogTubeDomainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1560,6 +1819,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BED52E421E05008400241F4E /* Build configuration list for PBXNativeTarget "CatDogTubeDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED52E3E1E05008400241F4E /* Debug */,
+				BED52E3F1E05008400241F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BED52E431E05008400241F4E /* Build configuration list for PBXNativeTarget "CatDogTubeDomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED52E401E05008400241F4E /* Debug */,
+				BED52E411E05008400241F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
