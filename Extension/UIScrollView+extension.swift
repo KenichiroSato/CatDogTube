@@ -10,22 +10,22 @@ import UIKit
 
 extension UIScrollView {
     
-    func width() -> CGFloat {
+    public func width() -> CGFloat {
         return self.frame.size.width
     }
     
-    func height() -> CGFloat {
+    public func height() -> CGFloat {
         return self.frame.size.height
     }
     
-    func currentIndex() -> Int {
+    public func currentIndex() -> Int {
         guard width() != 0 else {return 0}
         let offsetX = self.contentOffset.x
         let index = offsetX/width()
         return Int(index)
     }
     
-    func move(to index:Int) {
+    public func move(to index:Int) {
         let move = self.width() * CGFloat(index);
         self.scrollRectToVisible(
             CGRect(x: move , y: 0, width: width(), height: height()), animated: true)

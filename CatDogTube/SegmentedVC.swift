@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
 import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {

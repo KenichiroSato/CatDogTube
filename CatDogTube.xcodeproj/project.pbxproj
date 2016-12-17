@@ -26,7 +26,6 @@
 		590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491C41CCB212F00FEABAD /* FavoriteVideo.swift */; };
 		590491C81CCCE44500FEABAD /* SearchVideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */; };
 		590A83541C532858000C6179 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83531C532858000C6179 /* Video.swift */; };
-		590A83571C5390C8000C6179 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83561C5390C8000C6179 /* String+extension.swift */; };
 		590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A83591C5463BB000C6179 /* YouTubeDataParser.swift */; };
 		590A835C1C5469EA000C6179 /* YouTubeDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */; };
 		590A835E1C546A16000C6179 /* searchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 590A835D1C546A16000C6179 /* searchResponse.json */; };
@@ -36,24 +35,15 @@
 		590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */; };
 		590DAECE1C7027F2002281B4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAECD1C7027F2002281B4 /* Text.swift */; };
 		590DAED31C702B70002281B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 590DAED51C702B70002281B4 /* Localizable.strings */; };
-		590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDB1C70464B002281B4 /* UIImage+extension.swift */; };
 		590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAEDE1C70A8C0002281B4 /* Segment.swift */; };
 		5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765991DE088D000FEBAD8 /* GeneratedMocks.swift */; };
 		595765AA1DE12B1300FEBAD8 /* TeamRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */; };
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
 		59751D9A1CF0077400B704D2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D991CF0077400B704D2 /* MainVC.swift */; };
-		59751D9C1CF00AF700B704D2 /* UIStoryBoard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9B1CF00AF700B704D2 /* UIStoryBoard+extension.swift */; };
 		59751D9E1CF5E05C00B704D2 /* PlayVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */; };
 		59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */; };
-		59751DA21CF9305300B704D2 /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751DA11CF9305300B704D2 /* UIDevice+extension.swift */; };
 		59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59774B5B1C82877D00302A65 /* HttpTests.swift */; };
-		5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */; };
-		5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990C0791C6C1D22006762CE /* UIViewController+extension.swift */; };
-		5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */; };
-		5995F3961C95453F00F07172 /* NSCalender+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995F3951C95453F00F07172 /* NSCalender+extension.swift */; };
-		5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995F3971C9545F700F07172 /* NSCalendarTests.swift */; };
-		5995F39A1C954EB500F07172 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995F3991C954EB500F07172 /* NSDate+extension.swift */; };
 		59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */; };
 		59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */; };
 		59A88ABF1C4B1BAD00D40B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A88ABD1C4B1BAD00D40B23 /* Main.storyboard */; };
@@ -65,11 +55,9 @@
 		59AAC0AB1DE18718007ADE97 /* VideoCollectionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */; };
 		59AAC0AD1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */; };
 		59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */; };
-		59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
 		59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9C81D9561BC00BAF092 /* Notifications.swift */; };
-		59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */; };
 		59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */; };
 		59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */; };
 		59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1651D8E68CC009068ED /* TeamUseCase.swift */; };
@@ -86,6 +74,22 @@
 		BE8CDDA01DFBCE4500146016 /* PlayerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CDD9F1DFBCE4500146016 /* PlayerContract.swift */; };
 		BE8CDDA21DFBF05500146016 /* SegmentedContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CDDA11DFBF05500146016 /* SegmentedContract.swift */; };
 		BE8CDDA41DFBF1C200146016 /* SegmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CDDA31DFBF1C200146016 /* SegmentsPresenter.swift */; };
+		BEB4CC551E042ADB00317410 /* Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB4CC4C1E042ADB00317410 /* Extension.framework */; };
+		BEB4CC5C1E042ADB00317410 /* NSCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4CC5B1E042ADB00317410 /* NSCalendarTests.swift */; };
+		BEB4CC5E1E042ADB00317410 /* Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB4CC4E1E042ADB00317410 /* Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEB4CC611E042ADB00317410 /* Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB4CC4C1E042ADB00317410 /* Extension.framework */; };
+		BEB4CC621E042ADB00317410 /* Extension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEB4CC4C1E042ADB00317410 /* Extension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEB4CC6B1E042DE700317410 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4CC6A1E042DE700317410 /* String+extension.swift */; };
+		BED52E0A1E04BCDA00241F4E /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E091E04BCDA00241F4E /* UIView+extension.swift */; };
+		BED52E0E1E04BFFB00241F4E /* NSCalender+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E0B1E04BFFB00241F4E /* NSCalender+extension.swift */; };
+		BED52E0F1E04BFFB00241F4E /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E0C1E04BFFB00241F4E /* NSDate+extension.swift */; };
+		BED52E101E04BFFB00241F4E /* NSThread+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E0D1E04BFFB00241F4E /* NSThread+extension.swift */; };
+		BED52E161E04C00600241F4E /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E111E04C00600241F4E /* UIDevice+extension.swift */; };
+		BED52E171E04C00600241F4E /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E121E04C00600241F4E /* UIImage+extension.swift */; };
+		BED52E181E04C00600241F4E /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E131E04C00600241F4E /* UIImageView+extension.swift */; };
+		BED52E191E04C00600241F4E /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E141E04C00600241F4E /* UIScrollView+extension.swift */; };
+		BED52E1A1E04C00600241F4E /* UIStoryBoard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E151E04C00600241F4E /* UIStoryBoard+extension.swift */; };
+		BED52E1C1E04C00E00241F4E /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E1B1E04C00E00241F4E /* UIViewController+extension.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -105,7 +109,42 @@
 			remoteGlobalIDString = 59A88AB51C4B1BAD00D40B23;
 			remoteInfo = CatDogTube;
 		};
+		BEB4CC561E042ADB00317410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEB4CC4B1E042ADB00317410;
+			remoteInfo = Extension;
+		};
+		BEB4CC581E042ADB00317410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59A88AB51C4B1BAD00D40B23;
+			remoteInfo = CatDogTube;
+		};
+		BEB4CC5F1E042ADB00317410 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59A88AAE1C4B1BAD00D40B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEB4CC4B1E042ADB00317410;
+			remoteInfo = Extension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BEB4CC681E042ADB00317410 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BEB4CC621E042ADB00317410 /* Extension.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A25B3397100E83A4C82EA5F /* Pods-CatDogTubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +167,6 @@
 		590491C41CCB212F00FEABAD /* FavoriteVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVideo.swift; sourceTree = "<group>"; };
 		590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVideoRepository.swift; sourceTree = "<group>"; };
 		590A83531C532858000C6179 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		590A83561C5390C8000C6179 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		590A83591C5463BB000C6179 /* YouTubeDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParser.swift; sourceTree = "<group>"; };
 		590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeDataParserTests.swift; sourceTree = "<group>"; };
 		590A835D1C546A16000C6179 /* searchResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchResponse.json; sourceTree = "<group>"; };
@@ -139,24 +177,15 @@
 		590DAECD1C7027F2002281B4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		590DAED41C702B70002281B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAED91C702C8D002281B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		590DAEDB1C70464B002281B4 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		590DAEDE1C70A8C0002281B4 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		595765991DE088D000FEBAD8 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepositoryTests.swift; sourceTree = "<group>"; };
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		59751D991CF0077400B704D2 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		59751D9B1CF00AF700B704D2 /* UIStoryBoard+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+extension.swift"; sourceTree = "<group>"; };
 		59751D9D1CF5E05C00B704D2 /* PlayVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenter.swift; sourceTree = "<group>"; };
 		59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenterTests.swift; sourceTree = "<group>"; };
-		59751DA11CF9305300B704D2 /* UIDevice+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		59774B5B1C82877D00302A65 /* HttpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTests.swift; sourceTree = "<group>"; };
-		5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
-		5990C0791C6C1D22006762CE /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
-		5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
-		5995F3951C95453F00F07172 /* NSCalender+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalender+extension.swift"; sourceTree = "<group>"; };
-		5995F3971C9545F700F07172 /* NSCalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCalendarTests.swift; sourceTree = "<group>"; };
-		5995F3991C954EB500F07172 /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
 		59A88AB61C4B1BAD00D40B23 /* CatDogTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatDogTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedVC.swift; sourceTree = "<group>"; };
@@ -174,11 +203,9 @@
 		59AAC0AA1DE18718007ADE97 /* VideoCollectionContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionContract.swift; sourceTree = "<group>"; };
 		59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresernterTests.swift; sourceTree = "<group>"; };
 		59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslaterTests.swift; sourceTree = "<group>"; };
-		59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
 		59B3A9C81D9561BC00BAF092 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectViewController.swift; sourceTree = "<group>"; };
 		59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSelectViewController.xib; sourceTree = "<group>"; };
 		59B4F1651D8E68CC009068ED /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUseCase.swift; sourceTree = "<group>"; };
@@ -197,6 +224,23 @@
 		BE8CDD9F1DFBCE4500146016 /* PlayerContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerContract.swift; sourceTree = "<group>"; };
 		BE8CDDA11DFBF05500146016 /* SegmentedContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedContract.swift; sourceTree = "<group>"; };
 		BE8CDDA31DFBF1C200146016 /* SegmentsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentsPresenter.swift; sourceTree = "<group>"; };
+		BEB4CC4C1E042ADB00317410 /* Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB4CC4E1E042ADB00317410 /* Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
+		BEB4CC4F1E042ADB00317410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB4CC541E042ADB00317410 /* ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB4CC5B1E042ADB00317410 /* NSCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCalendarTests.swift; sourceTree = "<group>"; };
+		BEB4CC5D1E042ADB00317410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB4CC6A1E042DE700317410 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		BED52E091E04BCDA00241F4E /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		BED52E0B1E04BFFB00241F4E /* NSCalender+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalender+extension.swift"; sourceTree = "<group>"; };
+		BED52E0C1E04BFFB00241F4E /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
+		BED52E0D1E04BFFB00241F4E /* NSThread+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+extension.swift"; sourceTree = "<group>"; };
+		BED52E111E04C00600241F4E /* UIDevice+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
+		BED52E121E04C00600241F4E /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		BED52E131E04C00600241F4E /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
+		BED52E141E04C00600241F4E /* UIScrollView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
+		BED52E151E04C00600241F4E /* UIStoryBoard+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+extension.swift"; sourceTree = "<group>"; };
+		BED52E1B1E04C00E00241F4E /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
 		D806D44D3A88D5DB77DFD26B /* Pods_CatDogTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB4CC611E042ADB00317410 /* Extension.framework in Frameworks */,
 				4B7BFFD544FA10D097EEC177 /* Pods_CatDogTube.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +272,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEB4CC481E042ADB00317410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEB4CC511E042ADB00317410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEB4CC551E042ADB00317410 /* Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,24 +313,6 @@
 				590491A61CC1EA3700FEABAD /* ContentType.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		590A83551C5390A8000C6179 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				590A83561C5390C8000C6179 /* String+extension.swift */,
-				59B3A9CA1D9766BE00BAF092 /* UIView+extension.swift */,
-				59751DA11CF9305300B704D2 /* UIDevice+extension.swift */,
-				5990C0771C66F9EE006762CE /* UIScrollView+extension.swift */,
-				5990C0791C6C1D22006762CE /* UIViewController+extension.swift */,
-				5991FE9F1C6ECA8A007F484A /* UIImageView+extension.swift */,
-				590DAEDB1C70464B002281B4 /* UIImage+extension.swift */,
-				5995F3951C95453F00F07172 /* NSCalender+extension.swift */,
-				5995F3991C954EB500F07172 /* NSDate+extension.swift */,
-				59ADE6CD1CB24A87001A6BD0 /* NSThread+extension.swift */,
-				59751D9B1CF00AF700B704D2 /* UIStoryBoard+extension.swift */,
-			);
-			name = extension;
 			sourceTree = "<group>";
 		};
 		590A83581C546397000C6179 /* YouTube */ = {
@@ -468,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				590A83691C5C9E31000C6179 /* constants */,
-				590A83551C5390A8000C6179 /* extension */,
 				5926E8721D9F4D32008D687B /* customView */,
 				59EE7D4C1DF3DE0B00121F7B /* ThreadExecutorProtocol.swift */,
 				59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */,
@@ -500,6 +541,8 @@
 				59A88AB81C4B1BAD00D40B23 /* CatDogTube */,
 				59A88ACD1C4B1BAD00D40B23 /* CatDogTubeTests */,
 				59A88AD81C4B1BAD00D40B23 /* CatDogTubeUITests */,
+				BEB4CC4D1E042ADB00317410 /* Extension */,
+				BEB4CC5A1E042ADB00317410 /* ExtensionTests */,
 				59A88AB71C4B1BAD00D40B23 /* Products */,
 				8021351649DAD15CBB941E03 /* Frameworks */,
 				1304634266D9100905F8F650 /* Pods */,
@@ -512,6 +555,8 @@
 				59A88AB61C4B1BAD00D40B23 /* CatDogTube.app */,
 				59A88ACA1C4B1BAD00D40B23 /* CatDogTubeTests.xctest */,
 				59A88AD51C4B1BAD00D40B23 /* CatDogTubeUITests.xctest */,
+				BEB4CC4C1E042ADB00317410 /* Extension.framework */,
+				BEB4CC541E042ADB00317410 /* ExtensionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -539,7 +584,6 @@
 				59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */,
 				59B91F631D79C3B700548945 /* VideoExcluderTests.swift */,
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
-				5995F3971C9545F700F07172 /* NSCalendarTests.swift */,
 				59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */,
 				59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */,
 				59B4F16F1D8F7A70009068ED /* TeamTests.swift */,
@@ -573,7 +617,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BEB4CC4D1E042ADB00317410 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BEB4CC6A1E042DE700317410 /* String+extension.swift */,
+				BED52E091E04BCDA00241F4E /* UIView+extension.swift */,
+				BED52E1B1E04C00E00241F4E /* UIViewController+extension.swift */,
+				BED52E0B1E04BFFB00241F4E /* NSCalender+extension.swift */,
+				BED52E0C1E04BFFB00241F4E /* NSDate+extension.swift */,
+				BED52E0D1E04BFFB00241F4E /* NSThread+extension.swift */,
+				BED52E111E04C00600241F4E /* UIDevice+extension.swift */,
+				BED52E121E04C00600241F4E /* UIImage+extension.swift */,
+				BED52E131E04C00600241F4E /* UIImageView+extension.swift */,
+				BED52E141E04C00600241F4E /* UIScrollView+extension.swift */,
+				BED52E151E04C00600241F4E /* UIStoryBoard+extension.swift */,
+				BEB4CC4E1E042ADB00317410 /* Extension.h */,
+				BEB4CC4F1E042ADB00317410 /* Info.plist */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BEB4CC5A1E042ADB00317410 /* ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEB4CC5B1E042ADB00317410 /* NSCalendarTests.swift */,
+				BEB4CC5D1E042ADB00317410 /* Info.plist */,
+			);
+			path = ExtensionTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BEB4CC491E042ADB00317410 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEB4CC5E1E042ADB00317410 /* Extension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		59A88AB51C4B1BAD00D40B23 /* CatDogTube */ = {
@@ -588,10 +672,12 @@
 				590DAECC1C701B3D002281B4 /* ShellScript */,
 				81B78823573EC7D6955F33CB /* [CP] Embed Pods Frameworks */,
 				C36726954F86CE2569221CF6 /* [CP] Copy Pods Resources */,
+				BEB4CC681E042ADB00317410 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BEB4CC601E042ADB00317410 /* PBXTargetDependency */,
 			);
 			name = CatDogTube;
 			productName = CatDogTube;
@@ -641,13 +727,50 @@
 			productReference = 59A88AD51C4B1BAD00D40B23 /* CatDogTubeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		BEB4CC4B1E042ADB00317410 /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEB4CC671E042ADB00317410 /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				BEB4CC471E042ADB00317410 /* Sources */,
+				BEB4CC481E042ADB00317410 /* Frameworks */,
+				BEB4CC491E042ADB00317410 /* Headers */,
+				BEB4CC4A1E042ADB00317410 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = BEB4CC4C1E042ADB00317410 /* Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BEB4CC531E042ADB00317410 /* ExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEB4CC691E042ADB00317410 /* Build configuration list for PBXNativeTarget "ExtensionTests" */;
+			buildPhases = (
+				BEB4CC501E042ADB00317410 /* Sources */,
+				BEB4CC511E042ADB00317410 /* Frameworks */,
+				BEB4CC521E042ADB00317410 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEB4CC571E042ADB00317410 /* PBXTargetDependency */,
+				BEB4CC591E042ADB00317410 /* PBXTargetDependency */,
+			);
+			name = ExtensionTests;
+			productName = ExtensionTests;
+			productReference = BEB4CC541E042ADB00317410 /* ExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		59A88AAE1C4B1BAD00D40B23 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kenichiro Sato";
 				TargetAttributes = {
@@ -671,6 +794,16 @@
 						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
+					BEB4CC4B1E042ADB00317410 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = H2W9ZJ8C83;
+						ProvisioningStyle = Automatic;
+					};
+					BEB4CC531E042ADB00317410 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 59A88AB51C4B1BAD00D40B23;
+					};
 				};
 			};
 			buildConfigurationList = 59A88AB11C4B1BAD00D40B23 /* Build configuration list for PBXProject "CatDogTube" */;
@@ -690,6 +823,8 @@
 				59A88AB51C4B1BAD00D40B23 /* CatDogTube */,
 				59A88AC91C4B1BAD00D40B23 /* CatDogTubeTests */,
 				59A88AD41C4B1BAD00D40B23 /* CatDogTubeUITests */,
+				BEB4CC4B1E042ADB00317410 /* Extension */,
+				BEB4CC531E042ADB00317410 /* ExtensionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -718,6 +853,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		59A88AD31C4B1BAD00D40B23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEB4CC4A1E042ADB00317410 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEB4CC521E042ADB00317410 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -908,16 +1057,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				590DAEDC1C70464B002281B4 /* UIImage+extension.swift in Sources */,
 				BE8CDDA01DFBCE4500146016 /* PlayerContract.swift in Sources */,
-				5990C07A1C6C1D22006762CE /* UIViewController+extension.swift in Sources */,
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
-				59B3A9CB1D9766BE00BAF092 /* UIView+extension.swift in Sources */,
 				59047C5E1CA7A7910051C489 /* YouTubeDataSource.swift in Sources */,
 				59047C551CA786AC0051C489 /* SearchVideoUseCase.swift in Sources */,
 				59047C5B1CA7A61B0051C489 /* YouTubeVideo.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
-				59751D9C1CF00AF700B704D2 /* UIStoryBoard+extension.swift in Sources */,
 				59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */,
 				59B4F16E1D8F66F8009068ED /* Team.swift in Sources */,
 				59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */,
@@ -931,18 +1076,14 @@
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
 				596456D51C721437005FA866 /* Screen.swift in Sources */,
 				59047C691CA7FCF00051C489 /* LoadVideoPresenter.swift in Sources */,
-				5990C0781C66F9EE006762CE /* UIScrollView+extension.swift in Sources */,
 				590491AB1CC23EA200FEABAD /* FavoritesRepository.swift in Sources */,
 				0CD0D5741C6B62E900A24DED /* PlayerVC.swift in Sources */,
 				590A83651C54F6BE000C6179 /* VideoCell.swift in Sources */,
-				59ADE6CE1CB24A87001A6BD0 /* NSThread+extension.swift in Sources */,
 				59047C651CA7C3EB0051C489 /* SegmentFactory.swift in Sources */,
-				5995F39A1C954EB500F07172 /* NSDate+extension.swift in Sources */,
 				59751D9A1CF0077400B704D2 /* MainVC.swift in Sources */,
 				590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */,
 				590491B31CCB18E700FEABAD /* FavoritesDatasource.swift in Sources */,
 				590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */,
-				5995F3961C95453F00F07172 /* NSCalender+extension.swift in Sources */,
 				590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */,
 				590491C81CCCE44500FEABAD /* SearchVideoRepository.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
@@ -954,17 +1095,14 @@
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
 				59AAC0AB1DE18718007ADE97 /* VideoCollectionContract.swift in Sources */,
 				59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */,
-				590A83571C5390C8000C6179 /* String+extension.swift in Sources */,
 				590A83541C532858000C6179 /* Video.swift in Sources */,
 				590491C21CCB207200FEABAD /* Favorites.xcdatamodeld in Sources */,
-				5991FEA01C6ECA8A007F484A /* UIImageView+extension.swift in Sources */,
 				590DAEDF1C70A8C0002281B4 /* Segment.swift in Sources */,
 				BE8CDDA41DFBF1C200146016 /* SegmentsPresenter.swift in Sources */,
 				590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */,
 				BE8CDDA21DFBF05500146016 /* SegmentedContract.swift in Sources */,
 				59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */,
 				59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */,
-				59751DA21CF9305300B704D2 /* UIDevice+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,7 +1113,6 @@
 				590A835C1C5469EA000C6179 /* YouTubeDataParserTests.swift in Sources */,
 				59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
-				5995F3981C9545F700F07172 /* NSCalendarTests.swift in Sources */,
 				5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */,
 				59AAC0AD1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift in Sources */,
 				59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */,
@@ -995,6 +1132,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEB4CC471E042ADB00317410 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BED52E0F1E04BFFB00241F4E /* NSDate+extension.swift in Sources */,
+				BED52E161E04C00600241F4E /* UIDevice+extension.swift in Sources */,
+				BED52E181E04C00600241F4E /* UIImageView+extension.swift in Sources */,
+				BED52E101E04BFFB00241F4E /* NSThread+extension.swift in Sources */,
+				BED52E1C1E04C00E00241F4E /* UIViewController+extension.swift in Sources */,
+				BED52E0A1E04BCDA00241F4E /* UIView+extension.swift in Sources */,
+				BED52E171E04C00600241F4E /* UIImage+extension.swift in Sources */,
+				BED52E1A1E04C00600241F4E /* UIStoryBoard+extension.swift in Sources */,
+				BEB4CC6B1E042DE700317410 /* String+extension.swift in Sources */,
+				BED52E191E04C00600241F4E /* UIScrollView+extension.swift in Sources */,
+				BED52E0E1E04BFFB00241F4E /* NSCalender+extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEB4CC501E042ADB00317410 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEB4CC5C1E042ADB00317410 /* NSCalendarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1007,6 +1170,21 @@
 			isa = PBXTargetDependency;
 			target = 59A88AB51C4B1BAD00D40B23 /* CatDogTube */;
 			targetProxy = 59A88AD61C4B1BAD00D40B23 /* PBXContainerItemProxy */;
+		};
+		BEB4CC571E042ADB00317410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEB4CC4B1E042ADB00317410 /* Extension */;
+			targetProxy = BEB4CC561E042ADB00317410 /* PBXContainerItemProxy */;
+		};
+		BEB4CC591E042ADB00317410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59A88AB51C4B1BAD00D40B23 /* CatDogTube */;
+			targetProxy = BEB4CC581E042ADB00317410 /* PBXContainerItemProxy */;
+		};
+		BEB4CC601E042ADB00317410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEB4CC4B1E042ADB00317410 /* Extension */;
+			targetProxy = BEB4CC5F1E042ADB00317410 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1242,6 +1420,90 @@
 			};
 			name = Release;
 		};
+		BEB4CC631E042ADB00317410 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Extension/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BEB4CC641E042ADB00317410 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H2W9ZJ8C83;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Extension/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BEB4CC651E042ADB00317410 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = ExtensionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.ExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
+			};
+			name = Debug;
+		};
+		BEB4CC661E042ADB00317410 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = ExtensionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.capken.ExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1277,6 +1539,24 @@
 			buildConfigurations = (
 				59A88AE51C4B1BAD00D40B23 /* Debug */,
 				59A88AE61C4B1BAD00D40B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEB4CC671E042ADB00317410 /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEB4CC631E042ADB00317410 /* Debug */,
+				BEB4CC641E042ADB00317410 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEB4CC691E042ADB00317410 /* Build configuration list for PBXNativeTarget "ExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEB4CC651E042ADB00317410 /* Debug */,
+				BEB4CC661E042ADB00317410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

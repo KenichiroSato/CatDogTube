@@ -10,11 +10,11 @@ import Foundation
 
 extension Thread {
     
-    class func dispatchAsyncMain(_ block: @escaping () -> ()) {
+    class public func dispatchAsyncMain(_ block: @escaping () -> ()) {
         DispatchQueue.main.async(execute: block)
     }
     
-    class func dispatchAsyncGlobal(_ block: @escaping () -> ()) {
+    class public func dispatchAsyncGlobal(_ block: @escaping () -> ()) {
         DispatchQueue.global(qos: .default).async(execute: block)
     }
     

@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -45,6 +46,16 @@
                BlueprintIdentifier = "59A88AD41C4B1BAD00D40B23"
                BuildableName = "CatDogTubeUITests.xctest"
                BlueprintName = "CatDogTubeUITests"
+               ReferencedContainer = "container:CatDogTube.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BEB4CC531E042ADB00317410"
+               BuildableName = "ExtensionTests.xctest"
+               BlueprintName = "ExtensionTests"
                ReferencedContainer = "container:CatDogTube.xcodeproj">
             </BuildableReference>
          </TestableReference>
