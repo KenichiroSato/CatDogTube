@@ -317,13 +317,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		590A83551C5390A8000C6179 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = extension;
-			sourceTree = "<group>";
-		};
 		590A83581C546397000C6179 /* YouTube */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,7 +512,6 @@
 			isa = PBXGroup;
 			children = (
 				590A83691C5C9E31000C6179 /* constants */,
-				590A83551C5390A8000C6179 /* extension */,
 				5926E8721D9F4D32008D687B /* customView */,
 				59EE7D4C1DF3DE0B00121F7B /* ThreadExecutorProtocol.swift */,
 				59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */,
