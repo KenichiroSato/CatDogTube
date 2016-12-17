@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import CatDogTube
+@testable import Extension
 
 class NSCalendarTests: XCTestCase {
     
