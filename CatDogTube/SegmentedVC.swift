@@ -7,6 +7,7 @@
 //
 
 import HMSegmentedControl
+import CatDogTubeDomain
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {
     
@@ -31,7 +32,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     var presenter: SegmentedContract_Presenter?
 
     // add Segment Item in Factory to increase Tab items
-    private var segmentedItems: [Segment] = []
+    private var segmentedItems: [SegmentProtocol] = []
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -59,7 +60,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         _ = self.__once
     }
     
-    func show(segments: [Segment]) {
+    func show(segments: [SegmentProtocol]) {
         self.segmentedItems = segments
         setupViews()
     }
@@ -97,7 +98,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
 
     private func setupSubViews() {
         for (index, item) in segmentedItems.enumerated() {
-            guard let vc = item.view as? UIViewController else {
+            guard let vc = item.view() as? UIViewController else {
                 continue
             }
             self.addChildViewController(vc)
@@ -136,7 +137,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         guard let team = notification.userInfo?[Notifications.KEY_TEAM] as? Team else {
             return
         }
-        guard let firstSegment = segmentedItems.first,
+        guard let firstSegment = segmentedItems.first as? SearchSegment,
             team.contentType != firstSegment.contentType else {
             return
         }

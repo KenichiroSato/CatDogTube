@@ -8,16 +8,16 @@
 
 import CatDogTubeDomain
 
-class Segment : NSObject, SegmentProtocol {
+class SearchSegment : NSObject, SegmentProtocol {
 
     let contentType:ContentType
     
-    let view: SegmentContract_View
+    let _view: SegmentContract_View
     
     let presenter: SegmentContract_Presenter
     
     init(view:SegmentContract_View, contentType:ContentType, presenter: SegmentContract_Presenter) {
-        self.view = view
+        self._view = view
         self.contentType = contentType
         self.presenter = presenter
         super.init()
@@ -31,6 +31,10 @@ class Segment : NSObject, SegmentProtocol {
         case .dog:
             return "dog"
         }
+    }
+    
+    func view() -> SegmentContract_View {
+        return _view
     }
 
 }

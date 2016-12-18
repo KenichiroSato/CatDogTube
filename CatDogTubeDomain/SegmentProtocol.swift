@@ -9,5 +9,7 @@
 import Foundation
 
 public protocol SegmentProtocol {
-     func iconName() -> String
+    func iconName() -> String
+    
+    func view() -> SegmentContract_View
 }

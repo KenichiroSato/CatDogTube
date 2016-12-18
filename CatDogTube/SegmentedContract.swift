@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import CatDogTubeDomain
 
 protocol SegmentedContract_View {
-    func show(segments: [Segment])
+    func show(segments: [SegmentProtocol])
 }
 
 protocol SegmentedContract_Presenter {

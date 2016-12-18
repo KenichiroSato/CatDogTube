@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CatDogTubeDomain
 
 class SegmentFactory: NSObject {
     
-    class func generate(with playerPresenter:PlayerContract_Presenter) -> [Segment] {
+    class func generate(with playerPresenter:PlayerContract_Presenter) -> [SegmentProtocol] {
         
         let catSegment = searchSegment(ContentType.cat, playerPresenter: playerPresenter)
         let dogSegment = searchSegment(ContentType.dog, playerPresenter: playerPresenter)
@@ -24,7 +25,7 @@ class SegmentFactory: NSObject {
         }
     }
     
-    private class func searchSegment(_ contentType:ContentType, playerPresenter:PlayerContract_Presenter) -> Segment {
+    private class func searchSegment(_ contentType:ContentType, playerPresenter:PlayerContract_Presenter) -> SearchSegment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
@@ -35,10 +36,11 @@ class SegmentFactory: NSObject {
             useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
-        return Segment(view: vc, contentType: contentType, presenter:presenter)
+        return SearchSegment(view: vc, contentType: contentType, presenter:presenter)
     }
     
-    private class func favoriteSegment(_ playerPresenter:PlayerContract_Presenter) -> Segment {
+    /*
+    private class func favoriteSegment(_ playerPresenter:PlayerContract_Presenter) -> SegmentProtocol {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
@@ -49,4 +51,5 @@ class SegmentFactory: NSObject {
         
         return Segment(view: vc, contentType: ContentType.cat, presenter:presenter)
     }
+ */
 }
