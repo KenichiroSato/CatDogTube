@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CatDogTubeDomain
 
 protocol VideoCollectionContract_View: SegmentContract_View {
     

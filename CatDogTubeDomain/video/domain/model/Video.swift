@@ -11,12 +11,12 @@ import Foundation
 /**
  Video model which is used Domain layer and Presentation layer 
  */
-class Video: NSObject {
+public class Video: NSObject {
     
-    let videoId:String
-    let title:String
-    let imageUrl:URL
-    let contentType:ContentType
+    public let videoId:String
+    public let title:String
+    public let imageUrl:URL
+    public let contentType:ContentType
     
     init(id:String, title:String, url:URL, type:ContentType) {
         self.videoId = id
@@ -25,7 +25,7 @@ class Video: NSObject {
         self.contentType = type
     }
 
-    override var description: String {
+    override public var description: String {
         get {return (videoId + "\n" +
             title + "\n" +
             imageUrl.description

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchWordProviderProtocol {
+public protocol SearchWordProviderProtocol {
     func searchWord(for content:ContentType) -> String
 }

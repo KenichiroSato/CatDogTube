@@ -6,8 +6,6 @@
 //  Copyright © 2016 Kenichiro Sato. All rights reserved.
 //
 
-import CatDogTubeDomain
-
 class SearchSegment : NSObject, SegmentProtocol {
 
     let contentType:ContentType
