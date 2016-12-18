@@ -35,7 +35,7 @@ class SegmentFactory: NSObject {
             useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
-        return Segment(vc: vc, contentType: contentType, presenter:presenter)
+        return Segment(view: vc, contentType: contentType, presenter:presenter)
     }
     
     private class func favoriteSegment(_ playerPresenter:PlayerContract_Presenter) -> Segment {
@@ -47,6 +47,6 @@ class SegmentFactory: NSObject {
             useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter
         
-        return Segment(vc: vc, contentType: ContentType.cat, presenter:presenter)
+        return Segment(view: vc, contentType: ContentType.cat, presenter:presenter)
     }
 }

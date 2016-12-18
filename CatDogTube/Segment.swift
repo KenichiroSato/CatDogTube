@@ -20,12 +20,12 @@ class Segment : NSObject, SegmentProtocol {
         }
     }
 
-    let viewController: SegmentContract_View
+    let view: SegmentContract_View
     
     let presenter: SegmentContract_Presenter
     
-    init(vc:SegmentContract_View, contentType:ContentType, presenter: SegmentContract_Presenter) {
-        self.viewController = vc
+    init(view:SegmentContract_View, contentType:ContentType, presenter: SegmentContract_Presenter) {
+        self.view = view
         self.contentType = contentType
         self.presenter = presenter
         super.init()

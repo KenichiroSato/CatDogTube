@@ -95,7 +95,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
 
     private func setupSubViews() {
         for (index, item) in segmentedItems.enumerated() {
-            guard let vc = item.viewController as? UIViewController else {
+            guard let vc = item.view as? UIViewController else {
                 continue
             }
             self.addChildViewController(vc)
