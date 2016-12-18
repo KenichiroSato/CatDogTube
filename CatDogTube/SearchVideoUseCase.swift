@@ -18,15 +18,21 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     
     private let contentType: ContentType
     
-    init(content: ContentType, repo:SearchVideoRepositoryProtocol) {
+    private let searchWordProvider: SearchWordProviderProtocol
+    
+    init(content: ContentType,
+         repo:SearchVideoRepositoryProtocol,
+        wordProvider: SearchWordProviderProtocol) {
         contentType = content
         repository = repo
+        searchWordProvider = wordProvider
         super.init()
     }
     
     // MARK: - LoadVideoUseCase
     func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void) {
-        repository.searchVideos(contentType.keyword(), contentType: contentType) { videos in
+        repository.searchVideos(searchWordProvider.searchWord(for: contentType),
+                                contentType: contentType) { videos in
             let okVideos = VideoExcluder.excludeInappropriateVideos(videos)
             completionHandler(okVideos)
         }

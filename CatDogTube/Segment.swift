@@ -16,10 +16,19 @@ class Segment : NSObject {
     
     var iconImage:UIImage {
         get {
-            return UIImage.named(contentType.iconName(), size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
+            return UIImage.named(iconName(), size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
         }
     }
 
+    private func iconName() -> String {
+        switch self.contentType {
+        case .cat:
+            return "cat"
+        case .dog:
+            return "dog"
+        }
+    }
+    
     let viewController: UIViewController
     
     let presenter: LoadVideoPresenter

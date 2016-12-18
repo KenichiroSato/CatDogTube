@@ -95,6 +95,10 @@
 		BED52E391E05008400241F4E /* CatDogTubeDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = BED52E291E05008300241F4E /* CatDogTubeDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED52E3C1E05008400241F4E /* CatDogTubeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; };
 		BED52E3D1E05008400241F4E /* CatDogTubeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BED52E451E05023200241F4E /* VideoCollectionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E441E05023200241F4E /* VideoCollectionContract.swift */; };
+		BED52E4B1E05039D00241F4E /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E4A1E05039D00241F4E /* Video.swift */; };
+		BED52E4F1E05079F00241F4E /* SearchWordProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */; };
+		BED52E511E05080A00241F4E /* SearchWordProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E501E05080A00241F4E /* SearchWordProvider.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -274,6 +278,10 @@
 		BED52E2F1E05008400241F4E /* CatDogTubeDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatDogTubeDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED52E361E05008400241F4E /* CatDogTubeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDogTubeDomainTests.swift; sourceTree = "<group>"; };
 		BED52E381E05008400241F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED52E441E05023200241F4E /* VideoCollectionContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionContract.swift; sourceTree = "<group>"; };
+		BED52E4A1E05039D00241F4E /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordProviderProtocol.swift; sourceTree = "<group>"; };
+		BED52E501E05080A00241F4E /* SearchWordProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordProvider.swift; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
 		D806D44D3A88D5DB77DFD26B /* Pods_CatDogTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,6 +528,8 @@
 			isa = PBXGroup;
 			children = (
 				590491C71CCCE44500FEABAD /* SearchVideoRepository.swift */,
+				BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */,
+				BED52E501E05080A00241F4E /* SearchWordProvider.swift */,
 				59047C541CA786AC0051C489 /* SearchVideoUseCase.swift */,
 				59B91F611D79BBC000548945 /* VideoExcluder.swift */,
 			);
@@ -702,6 +712,7 @@
 		BED52E281E05008300241F4E /* CatDogTubeDomain */ = {
 			isa = PBXGroup;
 			children = (
+				BED52E461E0502C500241F4E /* video */,
 				BED52E291E05008300241F4E /* CatDogTubeDomain.h */,
 				BED52E2A1E05008300241F4E /* Info.plist */,
 			);
@@ -715,6 +726,39 @@
 				BED52E381E05008400241F4E /* Info.plist */,
 			);
 			path = CatDogTubeDomainTests;
+			sourceTree = "<group>";
+		};
+		BED52E461E0502C500241F4E /* video */ = {
+			isa = PBXGroup;
+			children = (
+				BED52E471E05031400241F4E /* presantation */,
+				BED52E481E05032800241F4E /* domain */,
+			);
+			name = video;
+			sourceTree = "<group>";
+		};
+		BED52E471E05031400241F4E /* presantation */ = {
+			isa = PBXGroup;
+			children = (
+				BED52E441E05023200241F4E /* VideoCollectionContract.swift */,
+			);
+			name = presantation;
+			sourceTree = "<group>";
+		};
+		BED52E481E05032800241F4E /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				BED52E491E05033200241F4E /* model */,
+			);
+			name = domain;
+			sourceTree = "<group>";
+		};
+		BED52E491E05033200241F4E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BED52E4A1E05039D00241F4E /* Video.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -924,6 +968,7 @@
 					BED52E261E05008300241F4E = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = H2W9ZJ8C83;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					BED52E2E1E05008300241F4E = {
@@ -1200,6 +1245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED52E511E05080A00241F4E /* SearchWordProvider.swift in Sources */,
 				BE8CDDA01DFBCE4500146016 /* PlayerContract.swift in Sources */,
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
 				59047C5E1CA7A7910051C489 /* YouTubeDataSource.swift in Sources */,
@@ -1225,6 +1271,7 @@
 				59047C651CA7C3EB0051C489 /* SegmentFactory.swift in Sources */,
 				59751D9A1CF0077400B704D2 /* MainVC.swift in Sources */,
 				590A83601C54ED8E000C6179 /* VideoCollectionVC.swift in Sources */,
+				BED52E4F1E05079F00241F4E /* SearchWordProviderProtocol.swift in Sources */,
 				590491B31CCB18E700FEABAD /* FavoritesDatasource.swift in Sources */,
 				590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */,
 				590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */,
@@ -1305,6 +1352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED52E451E05023200241F4E /* VideoCollectionContract.swift in Sources */,
+				BED52E4B1E05039D00241F4E /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1681,6 +1730,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1698,6 +1748,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1708,6 +1759,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";

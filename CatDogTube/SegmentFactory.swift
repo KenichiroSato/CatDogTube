@@ -28,8 +28,9 @@ class SegmentFactory: NSObject {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
-        let useCase = SearchVideoUseCase(
-            content: contentType, repo:  SearchVideoRepository(dataSource: YouTubeDataSource()))
+        let useCase = SearchVideoUseCase(content: contentType,
+                                         repo:  SearchVideoRepository(dataSource: YouTubeDataSource()),
+                                         wordProvider:SearchWordProvider())
         let presenter = LoadVideoPresenter(
             useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
         vc.presenter = presenter

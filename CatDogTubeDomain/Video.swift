@@ -29,7 +29,7 @@ class Video: NSObject {
         get {return (videoId + "\n" +
             title + "\n" +
             imageUrl.description + "\n" +
-            contentType )}
+            contentType.keyword() )}
     }
     
 }
