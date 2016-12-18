@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CatDogTubeDomain
 
-class Segment : NSObject {
+class Segment : NSObject, SegmentProtocol {
 
     private let ICON_SIZE : CGFloat = 45.0
     
@@ -20,15 +21,6 @@ class Segment : NSObject {
         }
     }
 
-    private func iconName() -> String {
-        switch self.contentType {
-        case .cat:
-            return "cat"
-        case .dog:
-            return "dog"
-        }
-    }
-    
     let viewController: UIViewController
     
     let presenter: LoadVideoPresenter
@@ -38,6 +30,16 @@ class Segment : NSObject {
         self.contentType = contentType
         self.presenter = presenter
         super.init()
+    }
+
+    //MARK: SegmentProtocol
+    func iconName() -> String {
+        switch self.contentType {
+        case .cat:
+            return "cat"
+        case .dog:
+            return "dog"
+        }
     }
 
 }

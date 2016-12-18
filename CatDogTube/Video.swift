@@ -28,8 +28,8 @@ class Video: NSObject {
     override var description: String {
         get {return (videoId + "\n" +
             title + "\n" +
-            imageUrl.description + "\n" +
-            contentType )}
+            imageUrl.description
+            )}
     }
     
 }
