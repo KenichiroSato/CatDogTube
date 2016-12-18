@@ -10,16 +10,8 @@ import CatDogTubeDomain
 
 class Segment : NSObject, SegmentProtocol {
 
-    private let ICON_SIZE : CGFloat = 45.0
-    
     let contentType:ContentType
     
-    var iconImage:UIImage {
-        get {
-            return UIImage.named(iconName(), size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
-        }
-    }
-
     let view: SegmentContract_View
     
     let presenter: SegmentContract_Presenter

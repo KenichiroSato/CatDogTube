@@ -10,6 +10,8 @@ import HMSegmentedControl
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {
     
+    private let ICON_SIZE : CGFloat = 45.0
+    
     private lazy var __once: () = {
             self.presenter?.loadSegments()
             self.registerNotificationObserver()
@@ -66,7 +68,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         setupSubViews()
         setupShadowView()
         
-        segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
+        segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
         segmentedControl.type = HMSegmentedControlTypeImages
         segmentedControl.backgroundColor = UIColor.red
         segmentedControl.frame = CGRect(x: 0, y: 0, width: contentView.width(),
@@ -108,6 +110,10 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         }
     }
     
+    private func iconImage(_ iconName: String) -> UIImage {
+        return UIImage.named(iconName, size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -138,7 +144,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         segmentedItems.reverse()
         contentView.removeAllSubViews()
         setupSubViews()
-        segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
+        segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
         let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
         segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
         contentView.move(to: newIndex)
