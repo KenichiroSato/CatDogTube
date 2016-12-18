@@ -95,8 +95,6 @@
 		BED52E391E05008400241F4E /* CatDogTubeDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = BED52E291E05008300241F4E /* CatDogTubeDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED52E3C1E05008400241F4E /* CatDogTubeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; };
 		BED52E3D1E05008400241F4E /* CatDogTubeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BED52E271E05008300241F4E /* CatDogTubeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BED52E451E05023200241F4E /* VideoCollectionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E441E05023200241F4E /* VideoCollectionContract.swift */; };
-		BED52E4B1E05039D00241F4E /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E4A1E05039D00241F4E /* Video.swift */; };
 		BED52E4F1E05079F00241F4E /* SearchWordProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */; };
 		BED52E511E05080A00241F4E /* SearchWordProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E501E05080A00241F4E /* SearchWordProvider.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
@@ -278,8 +276,6 @@
 		BED52E2F1E05008400241F4E /* CatDogTubeDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatDogTubeDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED52E361E05008400241F4E /* CatDogTubeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDogTubeDomainTests.swift; sourceTree = "<group>"; };
 		BED52E381E05008400241F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BED52E441E05023200241F4E /* VideoCollectionContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionContract.swift; sourceTree = "<group>"; };
-		BED52E4A1E05039D00241F4E /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordProviderProtocol.swift; sourceTree = "<group>"; };
 		BED52E501E05080A00241F4E /* SearchWordProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordProvider.swift; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -740,7 +736,6 @@
 		BED52E471E05031400241F4E /* presantation */ = {
 			isa = PBXGroup;
 			children = (
-				BED52E441E05023200241F4E /* VideoCollectionContract.swift */,
 			);
 			name = presantation;
 			sourceTree = "<group>";
@@ -756,7 +751,6 @@
 		BED52E491E05033200241F4E /* model */ = {
 			isa = PBXGroup;
 			children = (
-				BED52E4A1E05039D00241F4E /* Video.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1352,8 +1346,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BED52E451E05023200241F4E /* VideoCollectionContract.swift in Sources */,
-				BED52E4B1E05039D00241F4E /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1785,7 +1777,6 @@
 		BED52E401E05008400241F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = CatDogTubeDomainTests/Info.plist;
@@ -1802,7 +1793,6 @@
 		BED52E411E05008400241F4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = CatDogTubeDomainTests/Info.plist;
