@@ -6,7 +6,6 @@
 //  Copyright © 2016 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
 import CatDogTubeDomain
 
 class Segment : NSObject, SegmentProtocol {
@@ -21,11 +20,11 @@ class Segment : NSObject, SegmentProtocol {
         }
     }
 
-    let viewController: UIViewController
+    let viewController: SegmentContract_View
     
-    let presenter: LoadVideoPresenter
+    let presenter: SegmentContract_Presenter
     
-    init(vc:UIViewController, contentType:ContentType, presenter: LoadVideoPresenter) {
+    init(vc:SegmentContract_View, contentType:ContentType, presenter: SegmentContract_Presenter) {
         self.viewController = vc
         self.contentType = contentType
         self.presenter = presenter

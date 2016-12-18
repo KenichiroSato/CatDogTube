@@ -98,6 +98,7 @@
 		BED52E4F1E05079F00241F4E /* SearchWordProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */; };
 		BED52E511E05080A00241F4E /* SearchWordProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E501E05080A00241F4E /* SearchWordProvider.swift */; };
 		BED52E531E060EAC00241F4E /* SegmentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E521E060EAC00241F4E /* SegmentProtocol.swift */; };
+		BED52E551E06173E00241F4E /* SegmentContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E541E06173E00241F4E /* SegmentContract.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -280,6 +281,7 @@
 		BED52E4E1E05079F00241F4E /* SearchWordProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordProviderProtocol.swift; sourceTree = "<group>"; };
 		BED52E501E05080A00241F4E /* SearchWordProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordProvider.swift; sourceTree = "<group>"; };
 		BED52E521E060EAC00241F4E /* SegmentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentProtocol.swift; sourceTree = "<group>"; };
+		BED52E541E06173E00241F4E /* SegmentContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentContract.swift; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
 		D806D44D3A88D5DB77DFD26B /* Pods_CatDogTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -739,6 +741,7 @@
 			isa = PBXGroup;
 			children = (
 				BED52E521E060EAC00241F4E /* SegmentProtocol.swift */,
+				BED52E541E06173E00241F4E /* SegmentContract.swift */,
 			);
 			name = presantation;
 			sourceTree = "<group>";
@@ -1350,6 +1353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED52E531E060EAC00241F4E /* SegmentProtocol.swift in Sources */,
+				BED52E551E06173E00241F4E /* SegmentContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

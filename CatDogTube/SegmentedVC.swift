@@ -95,8 +95,9 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
 
     private func setupSubViews() {
         for (index, item) in segmentedItems.enumerated() {
-            
-            let vc = item.viewController
+            guard let vc = item.viewController as? UIViewController else {
+                continue
+            }
             self.addChildViewController(vc)
             vc.didMove(toParentViewController: self)
             vc.view.frame = CGRect(x: CGFloat(index) * contentView.width(), y: 0,
