@@ -14,13 +14,18 @@ class SegmentsPresenter: SegmentedContract_Presenter {
     
     private let playerPresenter: PlayerContract_Presenter
     
-    init(view: SegmentedContract_View, playerPresenter: PlayerContract_Presenter) {
+    private let segmentFactory: SegmentFactoryProtocol
+    
+    init(view: SegmentedContract_View,
+         playerPresenter: PlayerContract_Presenter,
+         segmentFactory: SegmentFactoryProtocol) {
         self.view = view
         self.playerPresenter = playerPresenter
+        self.segmentFactory = segmentFactory
     }
     
     func loadSegments() {
-        let segments = SegmentFactory.generate(with: playerPresenter)
+        let segments = segmentFactory.createSegments(with: playerPresenter)
         view.show(segments: segments)
     }
     
