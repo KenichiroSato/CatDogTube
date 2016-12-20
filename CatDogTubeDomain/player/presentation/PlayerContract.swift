@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PlayerContract_View {
+public protocol PlayerContract_View {
 
     /**
      call this when video is played for the first time
@@ -30,7 +30,7 @@ protocol PlayerContract_View {
     
 }
 
-protocol PlayerContract_Presenter {
+public protocol PlayerContract_Presenter {
     
     func onVideoLoaded(_ videos: [Video])
     

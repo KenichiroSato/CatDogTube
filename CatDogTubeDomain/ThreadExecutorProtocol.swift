@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ThreadExecutorProtocol {
+public protocol ThreadExecutorProtocol {
     
     func runOnMain(_ block:@escaping () -> ())
     

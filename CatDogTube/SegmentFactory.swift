@@ -9,10 +9,11 @@
 import UIKit
 import CatDogTubeDomain
 
-class SegmentFactory: NSObject {
+class SegmentFactory: SegmentFactoryProtocol {
     
-    class func generate(with playerPresenter:PlayerContract_Presenter) -> [SegmentProtocol] {
-        
+    //MARK: SegmentFactoryProtocol
+    func createSegments(with playerPresenter:PlayerContract_Presenter) -> [SegmentProtocol] {
+
         let catSegment = searchSegment(ContentType.cat, playerPresenter: playerPresenter)
         let dogSegment = searchSegment(ContentType.dog, playerPresenter: playerPresenter)
 
@@ -25,7 +26,7 @@ class SegmentFactory: NSObject {
         }
     }
     
-    private class func searchSegment(_ contentType:ContentType, playerPresenter:PlayerContract_Presenter) -> SearchSegment {
+    private func searchSegment(_ contentType:ContentType, playerPresenter:PlayerContract_Presenter) -> SearchSegment {
         let vc = UIStoryboard.instantiateVcWithId(VideoCollectionVC.ID)
             as! VideoCollectionVC
         
