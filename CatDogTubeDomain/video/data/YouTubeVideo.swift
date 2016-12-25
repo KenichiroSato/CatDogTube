@@ -13,19 +13,19 @@ import Foundation
  This must be used only in Data layer and must not be used
  in Domain layer and Presentaton layer.
  */
-class YouTubeVideo: NSObject {
+public class YouTubeVideo: NSObject {
 
     let videoId:String
     let title:String
     let imageUrl:String
     
-    init(id:String, title:String, url:String) {
+    public init(id:String, title:String, url:String) {
         self.videoId = id
         self.title = title
         self.imageUrl = url
     }
     
-    override var description: String {
+    override public var description: String {
         get {return (videoId + "\n" + title + "\n" + imageUrl + "\n")}
     }
  

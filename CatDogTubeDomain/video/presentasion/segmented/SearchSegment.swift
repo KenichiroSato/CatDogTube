@@ -6,15 +6,15 @@
 //  Copyright © 2016 Kenichiro Sato. All rights reserved.
 //
 
-class SearchSegment : NSObject, SegmentProtocol {
+public class SearchSegment : NSObject, SegmentProtocol {
 
-    let contentType:ContentType
+    public let contentType:ContentType
     
     let _view: SegmentContract_View
     
-    let presenter: SegmentContract_Presenter
+    public let presenter: SegmentContract_Presenter
     
-    init(view:SegmentContract_View, contentType:ContentType, presenter: SegmentContract_Presenter) {
+    public init(view:SegmentContract_View, contentType:ContentType, presenter: SegmentContract_Presenter) {
         self._view = view
         self.contentType = contentType
         self.presenter = presenter
@@ -22,7 +22,7 @@ class SearchSegment : NSObject, SegmentProtocol {
     }
 
     //MARK: SegmentProtocol
-    func iconName() -> String {
+    public func iconName() -> String {
         switch self.contentType {
         case .cat:
             return "cat"
@@ -31,7 +31,7 @@ class SearchSegment : NSObject, SegmentProtocol {
         }
     }
     
-    func view() -> SegmentContract_View {
+    public func view() -> SegmentContract_View {
         return _view
     }
 

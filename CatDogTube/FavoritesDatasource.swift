@@ -13,7 +13,7 @@ import CoreData
  managedObjectContext initialization is based on below information
  https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/InitializingtheCoreDataStack.html
  */
-
+/*
 class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
 
     static private let XCDATAMODELD_NAME = "Favorites"
@@ -81,3 +81,4 @@ class FavoritesDatasource: NSObject, FavoritesDataSourceProtocol{
         }
     }
 }
+ */

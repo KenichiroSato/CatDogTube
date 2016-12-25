@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import CatDogTubeDomain
 
 class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
-    
+
     private let baseUrl = "https://www.googleapis.com/youtube/v3/search"
     
     private let oldest:(year:Int, month:Int, day:Int) = (2011, 1, 1)
@@ -59,9 +60,9 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         let publishedAfter = publishedBefore.daysAgo(SEARCH_PERIOD_DAYS)
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
-    
-    func searchVideos(_ searchWord:String, completionHandler: @escaping (_ videos:[YouTubeVideo]?) -> Void){
-        
+
+    public func searchVideos(_ searchWord: String, completionHandler: @escaping ([YouTubeVideo]?) -> Void) {
+
         guard !searchWord.isEmpty else {
             completionHandler(nil)
             return

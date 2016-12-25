@@ -8,6 +8,7 @@
 
 import UIKit
 import PopupDialog
+import CatDogTubeDomain
 
 class MainVC: UIViewController {
 
@@ -49,7 +50,9 @@ class MainVC: UIViewController {
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
         segmentedVC.view.frame = segmentContainerView.bounds
-        let presenter = SegmentsPresenter(view: segmentedVC, playerPresenter: playerPresenter)
+        let presenter = SegmentsPresenter(view: segmentedVC as SegmentedContract_View,
+                                          playerPresenter: playerPresenter,
+                                          segmentFactory: SegmentFactory())
         segmentedVC.presenter = presenter
         segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)

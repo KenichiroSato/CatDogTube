@@ -8,23 +8,23 @@
 
 import Foundation
 
-class PlayVideoPresenter: NSObject, PlayerContract_Presenter {
+public class PlayVideoPresenter: NSObject, PlayerContract_Presenter {
     
     var view: PlayerContract_View
     
     private var hasPlayed = false
     
-    init(view: PlayerContract_View) {
+    public init(view: PlayerContract_View) {
         self.view = view
         super.init()
     }
     
     // MARK: PlayerContract_Presenter
-    func onVideoTapped(_ video: Video) {
+    public func onVideoTapped(_ video: Video) {
         play(video:video)
     }
     
-    func onVideoLoaded(_ videos: [Video]) {
+    public func onVideoLoaded(_ videos: [Video]) {
         guard let video = videos.first else { return }
         if shouldPlayVideo(hasPlayed) {
             play(video:video)

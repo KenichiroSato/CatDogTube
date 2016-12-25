@@ -24,7 +24,7 @@ class  VideoTranslater: NSObject {
         }
         return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
-    
+/*
     class func translateVideos(_ videos:[FavoriteVideo]?) -> [Video]? {
         return videos?.flatMap(translateVideo)
     }
@@ -36,4 +36,5 @@ class  VideoTranslater: NSObject {
         }
         return Video(id: entity.videoId, title:entity.title , url: url, type: contentType)
     }
+ */
 }

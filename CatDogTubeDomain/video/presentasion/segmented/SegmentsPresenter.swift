@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SegmentsPresenter: SegmentedContract_Presenter {
+public class SegmentsPresenter: SegmentedContract_Presenter {
 
     private var view: SegmentedContract_View
     
@@ -16,7 +16,7 @@ class SegmentsPresenter: SegmentedContract_Presenter {
     
     private let segmentFactory: SegmentFactoryProtocol
     
-    init(view: SegmentedContract_View,
+    public init(view: SegmentedContract_View,
          playerPresenter: PlayerContract_Presenter,
          segmentFactory: SegmentFactoryProtocol) {
         self.view = view
@@ -24,7 +24,7 @@ class SegmentsPresenter: SegmentedContract_Presenter {
         self.segmentFactory = segmentFactory
     }
     
-    func loadSegments() {
+    public func loadSegments() {
         let segments = segmentFactory.createSegments(with: playerPresenter)
         view.show(segments: segments)
     }

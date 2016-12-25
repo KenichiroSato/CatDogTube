@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoadVideoUseCase {
+public protocol LoadVideoUseCase {
     
     func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void)
     

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 protocol FavoritesDataSourceProtocol {
     func loadVideos(_ completionHandler: (_ videos:[FavoriteVideo]?) -> Void)
     func saveFavorite(_ videoId:String, title:String, imageUrl:String, contentType:Int16) -> Bool
@@ -37,3 +37,4 @@ class FavoritesRepository: NSObject, FavoritesRepositoryProtocol {
             imageUrlString, contentType: video.contentType.rawValue)
     }
 }
+*/

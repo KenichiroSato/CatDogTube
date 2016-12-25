@@ -8,20 +8,20 @@
 
 import Foundation
 
-protocol SearchVideoDataSourceProtocol {
-    func searchVideos(_ searchWord:String, completionHandler: @escaping (_ videos:[YouTubeVideo]?) -> Void)
+public protocol SearchVideoDataSourceProtocol {
+    func searchVideos(_ searchWord:String, completionHandler: @escaping (_ videoEntities:[YouTubeVideo]?) -> Void)
 }
 
-class SearchVideoRepository: NSObject, SearchVideoRepositoryProtocol {
+public class SearchVideoRepository: NSObject, SearchVideoRepositoryProtocol {
 
     let dataSource : SearchVideoDataSourceProtocol
     
-    init(dataSource:SearchVideoDataSourceProtocol) {
+    public init(dataSource:SearchVideoDataSourceProtocol) {
         self.dataSource = dataSource
         super.init()
     }
     
-    func searchVideos(_ keyword:String, contentType:ContentType,
+    public func searchVideos(_ keyword:String, contentType:ContentType,
                       completionHandler: @escaping (_ videos:[Video]?) -> Void) {
         dataSource.searchVideos(keyword, completionHandler:{ videoEntities in
             let videos = VideoTranslater.translate(videoEntities, contentType:contentType)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CatDogTubeDomain
 
 class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, TryReloadDelegate {
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol VideoCollectionContract_View: SegmentContract_View {
+public protocol VideoCollectionContract_View: SegmentContract_View {
     
     func show(videos:[Video])
     
@@ -20,7 +20,7 @@ protocol VideoCollectionContract_View: SegmentContract_View {
 
 }
 
-protocol VideoCollectionContract_Presenter: SegmentContract_Presenter {
+public protocol VideoCollectionContract_Presenter: SegmentContract_Presenter {
     
     func set(view: VideoCollectionContract_View)
     

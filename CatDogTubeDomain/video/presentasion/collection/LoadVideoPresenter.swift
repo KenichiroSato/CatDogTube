@@ -11,7 +11,7 @@ import Foundation
 /**
  Presenter for Video list UI.
  */
-class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
+public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private let useCase: LoadVideoUseCase
     
@@ -24,7 +24,7 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     // If true, top contents of this presenter' view will played when app is launched.
     private var isPrimal = false
     
-    init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol, playerPresenter: PlayerContract_Presenter ) {
+    public init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol, playerPresenter: PlayerContract_Presenter ) {
         self.useCase = useCase
         self.executor = executor
         self.playerPresenter = playerPresenter
@@ -49,7 +49,7 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     }
     
     // MARK: VideoCollectionContract_Presenter
-    func loadVideo(withFullScreenIndicator:Bool) {
+    public func loadVideo(withFullScreenIndicator:Bool) {
         if (withFullScreenIndicator) {
             view?.showLoadingIndicator()
         }
@@ -65,15 +65,15 @@ class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
         }
     }
     
-    func set(view: VideoCollectionContract_View) {
+    public func set(view: VideoCollectionContract_View) {
         self.view = view
     }
 
-    func markAsPrimal() {
+    public func markAsPrimal() {
         isPrimal = true
     }
     
-    func onVideoTapped(_ video: Video) {
+    public func onVideoTapped(_ video: Video) {
         playerPresenter.onVideoTapped(video)
     }
 }

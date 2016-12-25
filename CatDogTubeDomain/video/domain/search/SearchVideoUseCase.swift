@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol SearchVideoRepositoryProtocol {
+public protocol SearchVideoRepositoryProtocol {
     func searchVideos(_ keyword:String, contentType: ContentType, completionHandler: @escaping (_ videos:[Video]?) -> Void)
 }
 
-class SearchVideoUseCase: NSObject, LoadVideoUseCase {
+public class SearchVideoUseCase: NSObject, LoadVideoUseCase {
 
     private let repository:SearchVideoRepositoryProtocol
     
@@ -20,7 +20,7 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     
     private let searchWordProvider: SearchWordProviderProtocol
     
-    init(content: ContentType,
+    public init(content: ContentType,
          repo:SearchVideoRepositoryProtocol,
         wordProvider: SearchWordProviderProtocol) {
         contentType = content
@@ -30,7 +30,7 @@ class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     }
     
     // MARK: - LoadVideoUseCase
-    func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void) {
+    public func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void) {
         repository.searchVideos(searchWordProvider.searchWord(for: contentType),
                                 contentType: contentType) { videos in
             let okVideos = VideoExcluder.excludeInappropriateVideos(videos)
