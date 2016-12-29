@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2016-12-29 03:43:33 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2016-12-29 03:50:01 +0000
 
 //
 //  PlayContract.swift
@@ -214,7 +214,7 @@ public class PlayerContract_PresenterStub: PlayerContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2016-12-29 03:43:33 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2016-12-29 03:50:01 +0000
 
 //
 //  UseCase.swift
@@ -285,7 +285,7 @@ public class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2016-12-29 03:43:33 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2016-12-29 03:50:01 +0000
 
 //
 //  Video.swift
@@ -357,7 +357,7 @@ public class VideoStub: Video {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2016-12-29 03:43:33 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2016-12-29 03:50:01 +0000
 
 //
 //  VideoCollectionContract.swift
