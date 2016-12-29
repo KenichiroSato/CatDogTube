@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import CatDogTube
+@testable import CatDogTubeDomain
 
 /**
  This class is used to avoid using background thread in Unit Test.

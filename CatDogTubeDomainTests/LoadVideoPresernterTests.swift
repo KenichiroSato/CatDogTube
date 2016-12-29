@@ -8,7 +8,7 @@
 
 import XCTest
 import Cuckoo
-@testable import CatDogTube
+@testable import CatDogTubeDomain
 
 class LoadVideoPresernterTests: XCTestCase {
     

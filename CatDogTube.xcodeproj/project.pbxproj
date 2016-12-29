@@ -33,7 +33,6 @@
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
 		59751D9A1CF0077400B704D2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D991CF0077400B704D2 /* MainVC.swift */; };
-		59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */; };
 		59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59774B5B1C82877D00302A65 /* HttpTests.swift */; };
 		59A88ABA1C4B1BAD00D40B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */; };
 		59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ABB1C4B1BAD00D40B23 /* SegmentedVC.swift */; };
@@ -43,8 +42,6 @@
 		59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */; };
 		59A88ADA1C4B1BAD00D40B23 /* CatDogTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */; };
 		59A88AE81C4B2DA000D40B23 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59A88AE71C4B2DA000D40B23 /* Settings.bundle */; };
-		59AAC0AD1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */; };
-		59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */; };
 		59ADE6D31CB2857B001A6BD0 /* TryReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */; };
 		59ADE6D41CB2857B001A6BD0 /* TryReloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */; };
 		59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9C81D9561BC00BAF092 /* Notifications.swift */; };
@@ -56,12 +53,16 @@
 		59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */; };
 		59B4F16E1D8F66F8009068ED /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16D1D8F66F8009068ED /* Team.swift */; };
 		59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16F1D8F7A70009068ED /* TeamTests.swift */; };
-		59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B91F631D79C3B700548945 /* VideoExcluderTests.swift */; };
 		59EE7D4F1DF3E17200121F7B /* ThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */; };
-		59EE7D511DF3E48800121F7B /* DummyThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7D501DF3E48800121F7B /* DummyThreadExecutor.swift */; };
 		62EF447ACC292480D58F21C3 /* Pods_CatDogTubeDomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96930EA411F2A3F9B11ECB79 /* Pods_CatDogTubeDomainTests.framework */; };
 		BE7C42991E0FBFF10092B568 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C42981E0FBFF10092B568 /* YouTubeVideo.swift */; };
 		BE7C429B1E0FC0820092B568 /* VideoTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C429A1E0FC0820092B568 /* VideoTranslater.swift */; };
+		BE828E161E14B52900E078A3 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE828E151E14B52900E078A3 /* GeneratedMocks.swift */; };
+		BE828E181E14B79200E078A3 /* DummyThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE828E171E14B79200E078A3 /* DummyThreadExecutor.swift */; };
+		BE828E1D1E14B79C00E078A3 /* LoadVideoPresernterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE828E191E14B79C00E078A3 /* LoadVideoPresernterTests.swift */; };
+		BE828E1E1E14B79C00E078A3 /* PlayVideoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE828E1A1E14B79C00E078A3 /* PlayVideoPresenterTests.swift */; };
+		BE828E1F1E14B79C00E078A3 /* VideoExcluderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE828E1B1E14B79C00E078A3 /* VideoExcluderTests.swift */; };
+		BE828E201E14B79C00E078A3 /* VideoTranslaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE828E1C1E14B79C00E078A3 /* VideoTranslaterTests.swift */; };
 		BEB4CC551E042ADB00317410 /* Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB4CC4C1E042ADB00317410 /* Extension.framework */; };
 		BEB4CC5C1E042ADB00317410 /* NSCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4CC5B1E042ADB00317410 /* NSCalendarTests.swift */; };
 		BEB4CC5E1E042ADB00317410 /* Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB4CC4E1E042ADB00317410 /* Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,7 +209,6 @@
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		59751D991CF0077400B704D2 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenterTests.swift; sourceTree = "<group>"; };
 		59774B5B1C82877D00302A65 /* HttpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTests.swift; sourceTree = "<group>"; };
 		59A88AB61C4B1BAD00D40B23 /* CatDogTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatDogTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A88AB91C4B1BAD00D40B23 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,8 +224,6 @@
 		59A88AD91C4B1BAD00D40B23 /* CatDogTubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDogTubeUITests.swift; sourceTree = "<group>"; };
 		59A88ADB1C4B1BAD00D40B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A88AE71C4B2DA000D40B23 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresernterTests.swift; sourceTree = "<group>"; };
-		59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslaterTests.swift; sourceTree = "<group>"; };
 		59ADE6D11CB2857B001A6BD0 /* TryReloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryReloadView.swift; sourceTree = "<group>"; };
 		59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TryReloadView.xib; sourceTree = "<group>"; };
 		59B3A9C81D9561BC00BAF092 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -237,15 +235,19 @@
 		59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectPresenter.swift; sourceTree = "<group>"; };
 		59B4F16D1D8F66F8009068ED /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		59B4F16F1D8F7A70009068ED /* TeamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTests.swift; sourceTree = "<group>"; };
-		59B91F631D79C3B700548945 /* VideoExcluderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluderTests.swift; sourceTree = "<group>"; };
 		59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadExecutor.swift; sourceTree = "<group>"; };
-		59EE7D501DF3E48800121F7B /* DummyThreadExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyThreadExecutor.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96930EA411F2A3F9B11ECB79 /* Pods_CatDogTubeDomainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTubeDomainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F593EC182E75B1D20E73949 /* Pods-CatDogTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.release.xcconfig"; sourceTree = "<group>"; };
 		A4E0C799E5E435E4FFA4D35F /* Pods-CatDogTubeDomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeDomainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeDomainTests/Pods-CatDogTubeDomainTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE7C42981E0FBFF10092B568 /* YouTubeVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
 		BE7C429A1E0FC0820092B568 /* VideoTranslater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslater.swift; sourceTree = "<group>"; };
+		BE828E151E14B52900E078A3 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		BE828E171E14B79200E078A3 /* DummyThreadExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyThreadExecutor.swift; sourceTree = "<group>"; };
+		BE828E191E14B79C00E078A3 /* LoadVideoPresernterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadVideoPresernterTests.swift; sourceTree = "<group>"; };
+		BE828E1A1E14B79C00E078A3 /* PlayVideoPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenterTests.swift; sourceTree = "<group>"; };
+		BE828E1B1E14B79C00E078A3 /* VideoExcluderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExcluderTests.swift; sourceTree = "<group>"; };
+		BE828E1C1E14B79C00E078A3 /* VideoTranslaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTranslaterTests.swift; sourceTree = "<group>"; };
 		BEB4CC4C1E042ADB00317410 /* Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB4CC4E1E042ADB00317410 /* Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
 		BEB4CC4F1E042ADB00317410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -637,17 +639,12 @@
 			children = (
 				595765991DE088D000FEBAD8 /* GeneratedMocks.swift */,
 				59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */,
-				59B91F631D79C3B700548945 /* VideoExcluderTests.swift */,
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
-				59751D9F1CF92CDE00B704D2 /* PlayVideoPresenterTests.swift */,
-				59AAC0AC1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift */,
 				59B4F16F1D8F7A70009068ED /* TeamTests.swift */,
 				595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */,
 				590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */,
-				59ADE6CB1CB2365A001A6BD0 /* VideoTranslaterTests.swift */,
 				590A835D1C546A16000C6179 /* searchResponse.json */,
 				59A88AD01C4B1BAD00D40B23 /* Info.plist */,
-				59EE7D501DF3E48800121F7B /* DummyThreadExecutor.swift */,
 			);
 			path = CatDogTubeTests;
 			sourceTree = "<group>";
@@ -726,7 +723,13 @@
 			isa = PBXGroup;
 			children = (
 				BED52E361E05008400241F4E /* CatDogTubeDomainTests.swift */,
+				BE828E171E14B79200E078A3 /* DummyThreadExecutor.swift */,
+				BE828E191E14B79C00E078A3 /* LoadVideoPresernterTests.swift */,
+				BE828E1A1E14B79C00E078A3 /* PlayVideoPresenterTests.swift */,
+				BE828E1B1E14B79C00E078A3 /* VideoExcluderTests.swift */,
+				BE828E1C1E14B79C00E078A3 /* VideoTranslaterTests.swift */,
 				BED52E381E05008400241F4E /* Info.plist */,
+				BE828E151E14B52900E078A3 /* GeneratedMocks.swift */,
 			);
 			path = CatDogTubeDomainTests;
 			sourceTree = "<group>";
@@ -971,6 +974,7 @@
 			buildConfigurationList = BED52E431E05008400241F4E /* Build configuration list for PBXNativeTarget "CatDogTubeDomainTests" */;
 			buildPhases = (
 				75F9C68041738E4B921298BC /* [CP] Check Pods Manifest.lock */,
+				BE828E211E14B8CA00E078A3 /* ShellScript */,
 				BED52E2B1E05008300241F4E /* Sources */,
 				BED52E2C1E05008300241F4E /* Frameworks */,
 				BED52E2D1E05008300241F4E /* Resources */,
@@ -1316,6 +1320,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CatDogTubeUITests/Pods-CatDogTubeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BE828E211E14B8CA00E078A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nTARGET_DOMAIN=\"${PROJECT_NAME}Domain\"\nOUTPUT_FILE=\"./${TARGET_DOMAIN}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${TARGET_DOMAIN}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${TARGET_DOMAIN}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/video/domain/model/Video.swift\" \\\n\"${INPUT_DIR}/video/domain/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/video/presentasion/collection/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/player/presentation/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
+		};
 		C36726954F86CE2569221CF6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1392,16 +1409,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				590A835C1C5469EA000C6179 /* YouTubeDataParserTests.swift in Sources */,
-				59ADE6CC1CB2365A001A6BD0 /* VideoTranslaterTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */,
-				59AAC0AD1DE19DEE007ADE97 /* LoadVideoPresernterTests.swift in Sources */,
 				59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */,
-				59B91F641D79C3B700548945 /* VideoExcluderTests.swift in Sources */,
-				59751DA01CF92CDE00B704D2 /* PlayVideoPresenterTests.swift in Sources */,
 				595765AA1DE12B1300FEBAD8 /* TeamRepositoryTests.swift in Sources */,
 				59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */,
-				59EE7D511DF3E48800121F7B /* DummyThreadExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,6 +1483,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED52E371E05008400241F4E /* CatDogTubeDomainTests.swift in Sources */,
+				BE828E1D1E14B79C00E078A3 /* LoadVideoPresernterTests.swift in Sources */,
+				BE828E161E14B52900E078A3 /* GeneratedMocks.swift in Sources */,
+				BE828E1E1E14B79C00E078A3 /* PlayVideoPresenterTests.swift in Sources */,
+				BE828E181E14B79200E078A3 /* DummyThreadExecutor.swift in Sources */,
+				BE828E1F1E14B79C00E078A3 /* VideoExcluderTests.swift in Sources */,
+				BE828E201E14B79C00E078A3 /* VideoTranslaterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

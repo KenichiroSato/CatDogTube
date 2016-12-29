@@ -3,7 +3,7 @@
 //  CatDogTubeDomainTests
 //
 //  Created by ken on 2016/12/17.
-//  Copyright © 2016年 Kenichiro Sato. All rights reserved.
+//  Copyright © 2016 Kenichiro Sato. All rights reserved.
 //
 
 import XCTest

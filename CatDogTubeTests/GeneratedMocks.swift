@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-25 09:31:59 +0000
+// MARK: - Mocks generated from file: CatDogTube/Team.swift at 2016-12-29 03:43:33 +0000
 
 //
 //  Team.swift
@@ -85,7 +85,7 @@ class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-25 09:31:59 +0000
+// MARK: - Mocks generated from file: CatDogTube/TeamRepository.swift at 2016-12-29 03:43:33 +0000
 
 //
 //  TeamRepository.swift

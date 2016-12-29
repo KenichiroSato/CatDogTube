@@ -3,11 +3,11 @@
 //  CatDogTube
 //
 //  Created by Kenichiro Sato on 2016/04/04.
-//  Copyright © 2016年 Kenichiro Sato. All rights reserved.
+//  Copyright © 2016 Kenichiro Sato. All rights reserved.
 //
 
 import XCTest
-@testable import CatDogTube
+@testable import CatDogTubeDomain
 
 class VideoTranslaterTests: XCTestCase {
 

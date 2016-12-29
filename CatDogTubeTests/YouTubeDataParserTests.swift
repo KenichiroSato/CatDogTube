@@ -9,6 +9,7 @@
 import XCTest
 import SwiftyJSON
 @testable import CatDogTube
+@testable import CatDogTubeDomain
 
 class YouTubeDataParserTests: XCTestCase {
 

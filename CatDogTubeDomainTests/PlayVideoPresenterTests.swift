@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import CatDogTube
+@testable import CatDogTubeDomain
 
 class PlayVideoPresenterTests: XCTestCase {
     
