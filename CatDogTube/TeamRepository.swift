@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CatDogTubeDomain
 
 protocol TeamDataSourceProtocol {
     func loadTeamName() -> String?

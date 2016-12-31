@@ -64,7 +64,11 @@ class MainVC: UIViewController {
     }
     
     private func showTeamSelectDialog() {
-        TeamSelectPresenter().showDialogWith(parent: self)
+
+        let presenter = TeamSelectPresenter()
+        let teamSelectVC = TeamSelectViewController(parent: self, presenter: presenter)
+        presenter.set(view: teamSelectVC)
+        presenter.startTeamSelection()
     }
     
     //handle screen rotation

@@ -7,41 +7,25 @@
 //
 
 import UIKit
-import PopupDialog
+import CatDogTubeDomain
 
-protocol  TeamSelectDelegate {
-    func onTeamSelected(team:Team)
-}
+class TeamSelectPresenter: NSObject, TeamSelectContract_Presenter {
 
-class TeamSelectPresenter: NSObject, TeamSelectDelegate {
-
-    private var dialog: PopupDialog
+    private var view: TeamSelectContract_View?
     
-    override init() {
-        
-        // Create a custom view controller
-        let teamSelectVC = TeamSelectViewController(nibName:
-            TeamSelectViewController.name, bundle: nil)
-        
-        // Create the dialog
-        dialog = PopupDialog(viewController: teamSelectVC,
-                             buttonAlignment: .horizontal,
-                             transitionStyle: .bounceUp,
-                             gestureDismissal: true)
-
-        super.init()
-        teamSelectVC.set(teamSelectDelegate: self)
+    func set(view: TeamSelectContract_View) {
+        self.view = view
     }
     
-    func showDialogWith(parent: UIViewController) {
-        parent.present(dialog, animated: true, completion: nil)
+    func startTeamSelection() {
+        view?.showDialog()
     }
     
     
     // MARK: - TeamSelectDelegate
-    func onTeamSelected(team:Team) {
+    func onTeamSelected(_ team:Team) {
         TeamUseCase.create().save(team: team)
-        dialog.dismiss()
+        view?.dismissDialog()
     }
 
 }

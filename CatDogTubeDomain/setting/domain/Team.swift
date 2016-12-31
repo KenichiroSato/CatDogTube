@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CatDogTubeDomain
 
 enum TeamName: String {
     case catTeam = "cat_team"
@@ -23,19 +22,19 @@ enum TeamName: String {
     }
 }
 
-class Team: NSObject {
-
+public class Team: NSObject {
+    
     private let name: TeamName
     
-    let contentType: ContentType
+    public let contentType: ContentType
     
-    init(contentType: ContentType) {
+    public init(contentType: ContentType) {
         self.contentType = contentType
         name = TeamName.get(from: contentType)
         super.init()
     }
     
-    convenience init?(name:String?) {
+    public convenience init?(name:String?) {
         guard let teamName = name else {return nil}
         
         if (teamName == TeamName.catTeam.rawValue) {
@@ -47,11 +46,11 @@ class Team: NSObject {
         }
     }
     
-    func nameString() -> String {
+    public func nameString() -> String {
         return name.rawValue
     }
     
-    func isDogTeam() -> Bool {
+    public func isDogTeam() -> Bool {
         return name == .dogTeam
     }
 }

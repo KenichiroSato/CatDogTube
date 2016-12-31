@@ -7,40 +7,50 @@
 //
 
 import UIKit
+import PopupDialog
+import CatDogTubeDomain
 
-class TeamSelectViewController: UIViewController {
+class TeamSelectViewController: UIViewController, TeamSelectContract_View {
 
     static let name = "TeamSelectViewController"
     
-    private var teamSelectDeleagte: TeamSelectDelegate?
+    private var dialog: PopupDialog?
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private var parentVC: UIViewController?
+    
+    private let presenter: TeamSelectContract_Presenter
+    
+    init(parent: UIViewController, presenter: TeamSelectContract_Presenter) {
+        self.parentVC = parent
+        self.presenter = presenter
+        super.init(nibName: TeamSelectViewController.name, bundle: nil)
     }
     
-    func set(teamSelectDelegate: TeamSelectDelegate) {
-        self.teamSelectDeleagte = teamSelectDelegate
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
+
     @IBAction func onCatSelected(_ sender: AnyObject) {
-        teamSelectDeleagte?.onTeamSelected(team: Team(contentType:.cat))
-        teamSelectDeleagte = nil
+        presenter.onTeamSelected(Team(contentType:.cat))
     }
 
     @IBAction func onDogSelected(_ sender: AnyObject) {
-        teamSelectDeleagte?.onTeamSelected(team: Team(contentType:.dog))
-        teamSelectDeleagte = nil
+        presenter.onTeamSelected(Team(contentType:.dog))
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: TeamSelectContract_View
+    func showDialog() {
+        dialog = PopupDialog(viewController: self,
+                             buttonAlignment: .horizontal,
+                             transitionStyle: .bounceUp,
+                             gestureDismissal: true)
+        if let dialogVC = dialog {
+            parentVC?.present(dialogVC, animated: true, completion: nil)
+        }
     }
-    */
+    
+    func dismissDialog() {
+        dialog?.dismiss()
+    }
 
 }
