@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import CatDogTubeDomain
+/*
 class DummyFavoritesRepository: NSObject, FavoritesRepositoryProtocol {
 
     func loadFavorites(_ completionHandler: (_ videos:[Video]?) -> Void) {
@@ -25,3 +26,4 @@ class DummyFavoritesRepository: NSObject, FavoritesRepositoryProtocol {
         return true
     }
 }
+*/

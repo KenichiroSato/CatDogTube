@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import youtube_ios_player_helper
+import CatDogTubeDomain
 
 class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
 

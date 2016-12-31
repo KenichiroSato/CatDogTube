@@ -59,6 +59,16 @@
                ReferencedContainer = "container:CatDogTube.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BED52E2E1E05008300241F4E"
+               BuildableName = "CatDogTubeDomainTests.xctest"
+               BlueprintName = "CatDogTubeDomainTests"
+               ReferencedContainer = "container:CatDogTube.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

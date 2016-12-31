@@ -7,8 +7,11 @@
 //
 
 import HMSegmentedControl
+import CatDogTubeDomain
 
 class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_View {
+    
+    private let ICON_SIZE : CGFloat = 45.0
     
     private lazy var __once: () = {
             self.presenter?.loadSegments()
@@ -29,7 +32,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     var presenter: SegmentedContract_Presenter?
 
     // add Segment Item in Factory to increase Tab items
-    private var segmentedItems: [Segment] = []
+    private var segmentedItems: [SegmentProtocol] = []
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -57,7 +60,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         _ = self.__once
     }
     
-    func show(segments: [Segment]) {
+    func show(segments: [SegmentProtocol]) {
         self.segmentedItems = segments
         setupViews()
     }
@@ -66,7 +69,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         setupSubViews()
         setupShadowView()
         
-        segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
+        segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
         segmentedControl.type = HMSegmentedControlTypeImages
         segmentedControl.backgroundColor = UIColor.red
         segmentedControl.frame = CGRect(x: 0, y: 0, width: contentView.width(),
@@ -95,8 +98,9 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
 
     private func setupSubViews() {
         for (index, item) in segmentedItems.enumerated() {
-            
-            let vc = item.viewController
+            guard let vc = item.view() as? UIViewController else {
+                continue
+            }
             self.addChildViewController(vc)
             vc.didMove(toParentViewController: self)
             vc.view.frame = CGRect(x: CGFloat(index) * contentView.width(), y: 0,
@@ -105,6 +109,10 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
                 contentView.addSubview(view)
             }
         }
+    }
+    
+    private func iconImage(_ iconName: String) -> UIImage {
+        return UIImage.named(iconName, size: CGSize(width: ICON_SIZE, height: ICON_SIZE))!
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,7 +137,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         guard let team = notification.userInfo?[Notifications.KEY_TEAM] as? Team else {
             return
         }
-        guard let firstSegment = segmentedItems.first,
+        guard let firstSegment = segmentedItems.first as? SearchSegment,
             team.contentType != firstSegment.contentType else {
             return
         }
@@ -137,7 +145,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         segmentedItems.reverse()
         contentView.removeAllSubViews()
         setupSubViews()
-        segmentedControl.sectionImages = segmentedItems.map({$0.iconImage})
+        segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
         let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
         segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
         contentView.move(to: newIndex)

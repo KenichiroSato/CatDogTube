@@ -26,6 +26,12 @@ target 'CatDogTube' do
     # Pods for testing
   end
 
+  target 'CatDogTubeDomainTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod "Cuckoo"
+  end
+
 end
 
 post_install do | installer |
