@@ -7,33 +7,26 @@
 //
 
 import Foundation
-import CatDogTubeDomain
 
-protocol TeamRepositoryProtocol {
+public protocol TeamRepositoryProtocol {
     func loadTeam() -> Team?
     func save(team:Team)
 }
 
-class TeamUseCase: NSObject {
-
+public class TeamUseCase: NSObject {
+    
     private let repo: TeamRepositoryProtocol
     
-    static func create() -> TeamUseCase {
-        let dataSource = UserDefaultsDataSource()
-        let repo = TeamRepository(dataSource: dataSource)
-        return TeamUseCase(repo: repo)
-    }
-    
-    init(repo:TeamRepositoryProtocol) {
+    public init(repo:TeamRepositoryProtocol) {
         self.repo = repo
         super.init()
     }
-
-    func loadTeam() -> Team? {
+    
+    public func loadTeam() -> Team? {
         return repo.loadTeam()
     }
     
-    func save(team:Team) {
+    public func save(team:Team) {
         if (shouldSave(newTeam: team)) {
             repo.save(team: team)
             notifyTeamSaved(team: team)
@@ -46,11 +39,13 @@ class TeamUseCase: NSObject {
         }
         return (oldTeam.contentType != newTeam.contentType)
     }
-
+    
     private func notifyTeamSaved(team:Team) {
+        /*
         NotificationCenter.default.post(
             name: Notifications.NAME_TEAM_SAVED,
             object: self, userInfo: [Notifications.KEY_TEAM: team])
+ */
     }
-
+    
 }

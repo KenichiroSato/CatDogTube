@@ -65,7 +65,9 @@ class MainVC: UIViewController {
     
     private func showTeamSelectDialog() {
 
-        let presenter = TeamSelectPresenter()
+        let repo = TeamRepository(dataSource: UserDefaultsDataSource())
+        let useCase = TeamUseCase(repo: repo)
+        let presenter = TeamSelectPresenter(useCase: useCase)
         let teamSelectVC = TeamSelectViewController(parent: self, presenter: presenter)
         presenter.set(view: teamSelectVC)
         presenter.startTeamSelection()
