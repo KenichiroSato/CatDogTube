@@ -28,6 +28,7 @@
 		590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */; };
 		590DAECE1C7027F2002281B4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAECD1C7027F2002281B4 /* Text.swift */; };
 		590DAED31C702B70002281B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 590DAED51C702B70002281B4 /* Localizable.strings */; };
+		590DCCFF1E19E549007CB40E /* TeamNotificationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DCCFE1E19E549007CB40E /* TeamNotificationContract.swift */; };
 		5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765991DE088D000FEBAD8 /* GeneratedMocks.swift */; };
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
@@ -205,6 +206,7 @@
 		590DAECD1C7027F2002281B4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		590DAED41C702B70002281B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAED91C702C8D002281B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		590DCCFE1E19E549007CB40E /* TeamNotificationContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotificationContract.swift; sourceTree = "<group>"; };
 		595765991DE088D000FEBAD8 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
@@ -436,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				5926E8631D9F494F008D687B /* presentation */,
-				5926E8641D9F4973008D687B /* domain */,
 				5926E8741D9F4FDE008D687B /* data */,
 			);
 			name = setting;
@@ -449,13 +450,6 @@
 				59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */,
 			);
 			name = presentation;
-			sourceTree = "<group>";
-		};
-		5926E8641D9F4973008D687B /* domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = domain;
 			sourceTree = "<group>";
 		};
 		5926E8661D9F4A42008D687B /* player */ = {
@@ -670,6 +664,7 @@
 				59F4E9761E17861D00C143CC /* Team.swift */,
 				59F4E97A1E17982700C143CC /* TeamUseCase.swift */,
 				59F4E97C1E17985100C143CC /* TeamRepository.swift */,
+				590DCCFE1E19E549007CB40E /* TeamNotificationContract.swift */,
 			);
 			name = domain;
 			sourceTree = "<group>";
@@ -1204,7 +1199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/Video.swift\" \\\n\"${INPUT_DIR}/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\" \\\n\"${INPUT_DIR}/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
 		};
 		59A88AE91C4B2F9A00D40B23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1483,6 +1478,7 @@
 				59F4E9791E1797E900C143CC /* TeamSelectPresenter.swift in Sources */,
 				59F4E97D1E17985100C143CC /* TeamRepository.swift in Sources */,
 				BED52E7E1E06375B00241F4E /* VideoExcluder.swift in Sources */,
+				590DCCFF1E19E549007CB40E /* TeamNotificationContract.swift in Sources */,
 				BE7C429B1E0FC0820092B568 /* VideoTranslater.swift in Sources */,
 				0CCA0B221E09560E0050F351 /* SegmentFactoryProtocol.swift in Sources */,
 				BED52E751E06375200241F4E /* ContentType.swift in Sources */,
