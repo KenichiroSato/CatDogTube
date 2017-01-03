@@ -41,11 +41,13 @@ public class TeamUseCase: NSObject {
     }
     
     private func notifyTeamSaved(team:Team) {
-        /*
+        let NAME_TEAM_SAVED = Notification.Name("team_saved")
+        // Key for UserInfo
+        let KEY_TEAM = "team"
+
         NotificationCenter.default.post(
-            name: Notifications.NAME_TEAM_SAVED,
-            object: self, userInfo: [Notifications.KEY_TEAM: team])
- */
-    }
+            name: NAME_TEAM_SAVED,
+            object: self, userInfo: [KEY_TEAM: team])
+     }
     
 }

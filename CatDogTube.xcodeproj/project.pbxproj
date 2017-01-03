@@ -378,13 +378,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		59047C4F1CA771080051C489 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		590A83581C546397000C6179 /* YouTube */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,7 +483,6 @@
 		5926E86B1D9F4BCD008D687B /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				59047C4F1CA771080051C489 /* Model */,
 				5926E86C1D9F4C3F008D687B /* favorite */,
 				5926E86D1D9F4C4A008D687B /* search */,
 			);

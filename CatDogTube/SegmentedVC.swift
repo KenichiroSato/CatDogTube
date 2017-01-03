@@ -14,9 +14,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     private let ICON_SIZE : CGFloat = 45.0
     
     private lazy var __once: () = {
-            self.presenter?.loadSegments()
-            self.registerNotificationObserver()
-        }()
+        self.presenter?.loadSegments()
+    }()
     
     static let ID = "SegmentedVC"
 
@@ -40,17 +39,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     private let shadowLayer = CAGradientLayer()
     
     private let segmentedControl = HMSegmentedControl()
-    
-    private func registerNotificationObserver() {
-        NotificationCenter.default.addObserver(
-            self, selector: #selector(reorderTabs(notification:)),
-            name:Notifications.NAME_TEAM_SAVED , object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(
-            self, name: Notifications.NAME_TEAM_SAVED, object: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,16 +120,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         //nop
     }
     
-    @objc private func reorderTabs(notification: NSNotification) {
-        
-        guard let team = notification.userInfo?[Notifications.KEY_TEAM] as? Team else {
-            return
-        }
+    func reorderTabs(team:Team) {
         guard let firstSegment = segmentedItems.first as? SearchSegment,
             team.contentType != firstSegment.contentType else {
             return
         }
-        
         segmentedItems.reverse()
         contentView.removeAllSubViews()
         setupSubViews()
