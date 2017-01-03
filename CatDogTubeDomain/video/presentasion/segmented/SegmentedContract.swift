@@ -11,7 +11,7 @@ import Foundation
 public protocol SegmentedContract_View {
     func show(segments: [SegmentProtocol])
     
-    func reorderTabs(team:Team)
+    func reorder(segments:[SegmentProtocol])
 }
 
 public protocol SegmentedContract_Presenter {

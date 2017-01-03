@@ -52,7 +52,12 @@ public class SegmentsPresenter: SegmentedContract_Presenter {
         guard let team = notification.userInfo?[KEY_TEAM] as? Team else {
             return
         }
-        view.reorderTabs(team: team)
+        guard let firstSegment = segments.first as? SearchSegment,
+            team.contentType != firstSegment.contentType else {
+                return
+        }
+        segments.reverse()
+        view.reorder(segments: segments)
     }
 
     
