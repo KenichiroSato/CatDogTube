@@ -13,5 +13,11 @@ public protocol TeamNotificationContract_Sender {
 }
 
 public protocol TeamNotificationContract_Receiver {
+    
+    func set(adopter: TeamNotificationContract_ReceiveAdopter)
     func onSelected(team: Team)
+}
+
+public protocol TeamNotificationContract_ReceiveAdopter {
+    // just a marker protocol
 }

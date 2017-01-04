@@ -17,4 +17,5 @@ public protocol SegmentedContract_View {
 public protocol SegmentedContract_Presenter {
     
     func loadSegments()
+    
 }

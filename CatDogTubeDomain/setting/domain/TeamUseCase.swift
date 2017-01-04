@@ -17,8 +17,11 @@ public class TeamUseCase: NSObject {
     
     private let repo: TeamRepositoryProtocol
     
-    public init(repo:TeamRepositoryProtocol) {
+    private let notificationSender: TeamNotificationContract_Sender?
+    
+    public init(repo:TeamRepositoryProtocol, sender: TeamNotificationContract_Sender?) {
         self.repo = repo
+        self.notificationSender = sender
         super.init()
     }
     
@@ -41,13 +44,7 @@ public class TeamUseCase: NSObject {
     }
     
     private func notifyTeamSaved(team:Team) {
-        let NAME_TEAM_SAVED = Notification.Name("team_saved")
-        // Key for UserInfo
-        let KEY_TEAM = "team"
-
-        NotificationCenter.default.post(
-            name: NAME_TEAM_SAVED,
-            object: self, userInfo: [KEY_TEAM: team])
+        notificationSender?.postSelected(team: team)
      }
     
 }

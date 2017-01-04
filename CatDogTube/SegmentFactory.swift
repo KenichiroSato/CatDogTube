@@ -18,7 +18,7 @@ class SegmentFactory: SegmentFactoryProtocol {
         let dogSegment = searchSegment(ContentType.dog, playerPresenter: playerPresenter)
 
         let repo = TeamRepository(dataSource: UserDefaultsDataSource())
-        let useCase = TeamUseCase(repo: repo)
+        let useCase = TeamUseCase(repo: repo, sender: nil)
         if let team = useCase.loadTeam(), team.isDogTeam() {
             dogSegment.presenter.markAsPrimal()
             return [dogSegment, catSegment]

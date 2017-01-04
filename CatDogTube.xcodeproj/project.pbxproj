@@ -104,6 +104,8 @@
 		BED52E911E06383D00241F4E /* PlayerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E8F1E06383D00241F4E /* PlayerContract.swift */; };
 		BED52E921E06383D00241F4E /* PlayVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E901E06383D00241F4E /* PlayVideoPresenter.swift */; };
 		BED52E941E0638A500241F4E /* ThreadExecutorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E931E0638A500241F4E /* ThreadExecutorProtocol.swift */; };
+		BEF0261B1E1C88FF002150AA /* TeamNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0261A1E1C88FF002150AA /* TeamNotificationSender.swift */; };
+		BEF0261D1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0261C1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -293,6 +295,8 @@
 		BED52E8F1E06383D00241F4E /* PlayerContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerContract.swift; sourceTree = "<group>"; };
 		BED52E901E06383D00241F4E /* PlayVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenter.swift; sourceTree = "<group>"; };
 		BED52E931E0638A500241F4E /* ThreadExecutorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadExecutorProtocol.swift; sourceTree = "<group>"; };
+		BEF0261A1E1C88FF002150AA /* TeamNotificationSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotificationSender.swift; sourceTree = "<group>"; };
+		BEF0261C1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotificationReceiveAdaptor.swift; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFA28B0A383E737C0A6C726B /* Pods-CatDogTubeDomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeDomainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeDomainTests/Pods-CatDogTubeDomainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
@@ -430,19 +434,13 @@
 		5926E8621D9F4946008D687B /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				5926E8631D9F494F008D687B /* presentation */,
-				5926E8741D9F4FDE008D687B /* data */,
-			);
-			name = setting;
-			sourceTree = "<group>";
-		};
-		5926E8631D9F494F008D687B /* presentation */ = {
-			isa = PBXGroup;
-			children = (
 				59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */,
 				59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */,
+				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
+				BEF0261A1E1C88FF002150AA /* TeamNotificationSender.swift */,
+				BEF0261C1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift */,
 			);
-			name = presentation;
+			name = setting;
 			sourceTree = "<group>";
 		};
 		5926E8661D9F4A42008D687B /* player */ = {
@@ -553,14 +551,6 @@
 				59ADE6D21CB2857B001A6BD0 /* TryReloadView.xib */,
 			);
 			name = customView;
-			sourceTree = "<group>";
-		};
-		5926E8741D9F4FDE008D687B /* data */ = {
-			isa = PBXGroup;
-			children = (
-				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
-			);
-			name = data;
 			sourceTree = "<group>";
 		};
 		59A88AAD1C4B1BAD00D40B23 = {
@@ -1381,6 +1371,7 @@
 				59047C5E1CA7A7910051C489 /* YouTubeDataSource.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
 				59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */,
+				BEF0261D1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift in Sources */,
 				59EE7D4F1DF3E17200121F7B /* ThreadExecutor.swift in Sources */,
 				596456D91C7E03ED005FA866 /* Http.swift in Sources */,
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
@@ -1394,6 +1385,7 @@
 				590491B31CCB18E700FEABAD /* FavoritesDatasource.swift in Sources */,
 				590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */,
 				590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */,
+				BEF0261B1E1C88FF002150AA /* TeamNotificationSender.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
 				59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */,
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,

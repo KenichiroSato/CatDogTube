@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SegmentsPresenter: SegmentedContract_Presenter {
+public class SegmentsPresenter: SegmentedContract_Presenter, TeamNotificationContract_Receiver {
 
     //FIXME delete this
     let NAME_TEAM_SAVED = Notification.Name("team_saved")
@@ -22,36 +22,28 @@ public class SegmentsPresenter: SegmentedContract_Presenter {
     
     private var segments: [SegmentProtocol] = []
     
+    private var notificationAdopter: TeamNotificationContract_ReceiveAdopter?
+    
     public init(view: SegmentedContract_View,
          playerPresenter: PlayerContract_Presenter,
          segmentFactory: SegmentFactoryProtocol) {
         self.view = view
         self.playerPresenter = playerPresenter
         self.segmentFactory = segmentFactory
-        registerNotificationObserver()
     }
     
-    private func registerNotificationObserver() {
-        NotificationCenter.default.addObserver(
-            self, selector: #selector(reorderTabs(notification:)),
-            name:NAME_TEAM_SAVED , object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(
-            self, name: NAME_TEAM_SAVED, object: nil)
-    }
-
-    
+    //MARK: SegmentedContract_Presenter
     public func loadSegments() {
         segments = segmentFactory.createSegments(with: playerPresenter)
         view.show(segments: segments)
     }
     
-    @objc private func reorderTabs(notification: NSNotification) {
-        guard let team = notification.userInfo?[KEY_TEAM] as? Team else {
-            return
-        }
+    //MARK: TeamNotificationContract_Receiver
+    public func set(adopter: TeamNotificationContract_ReceiveAdopter) {
+        notificationAdopter = adopter
+    }
+    
+    public func onSelected(team: Team) {
         guard let firstSegment = segments.first as? SearchSegment,
             team.contentType != firstSegment.contentType else {
                 return
@@ -59,6 +51,5 @@ public class SegmentsPresenter: SegmentedContract_Presenter {
         segments.reverse()
         view.reorder(segments: segments)
     }
-
     
 }

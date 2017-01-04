@@ -57,6 +57,9 @@ class MainVC: UIViewController {
         segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)
+        
+        let teamNotificationReceiveAdaptor = TeamNotificationReceiveAdaptor(receiver: presenter)
+        presenter.set(adopter: teamNotificationReceiveAdaptor)
     }
     
     @IBAction func onSettingSelected(_ sender: AnyObject) {
@@ -66,7 +69,7 @@ class MainVC: UIViewController {
     private func showTeamSelectDialog() {
 
         let repo = TeamRepository(dataSource: UserDefaultsDataSource())
-        let useCase = TeamUseCase(repo: repo)
+        let useCase = TeamUseCase(repo: repo, sender: TeamNotificationSender())
         let presenter = TeamSelectPresenter(useCase: useCase)
         let teamSelectVC = TeamSelectViewController(parent: self, presenter: presenter)
         presenter.set(view: teamSelectVC)
