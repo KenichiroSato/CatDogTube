@@ -6,15 +6,23 @@
 //  Copyright © 2016 Kenichiro Sato. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class SegmentsPresenter: SegmentedContract_Presenter {
+public class SegmentsPresenter: SegmentedContract_Presenter, TeamNotificationContract_Receiver {
+
+    //FIXME delete this
+    let NAME_TEAM_SAVED = Notification.Name("team_saved")
+    let KEY_TEAM = "team"
 
     private var view: SegmentedContract_View
     
     private let playerPresenter: PlayerContract_Presenter
     
     private let segmentFactory: SegmentFactoryProtocol
+    
+    private var segments: [SegmentProtocol] = []
+    
+    private var notificationAdopter: TeamNotificationContract_ReceiveAdopter?
     
     public init(view: SegmentedContract_View,
          playerPresenter: PlayerContract_Presenter,
@@ -24,9 +32,24 @@ public class SegmentsPresenter: SegmentedContract_Presenter {
         self.segmentFactory = segmentFactory
     }
     
+    //MARK: SegmentedContract_Presenter
     public func loadSegments() {
-        let segments = segmentFactory.createSegments(with: playerPresenter)
+        segments = segmentFactory.createSegments(with: playerPresenter)
         view.show(segments: segments)
+    }
+    
+    //MARK: TeamNotificationContract_Receiver
+    public func set(adopter: TeamNotificationContract_ReceiveAdopter) {
+        notificationAdopter = adopter
+    }
+    
+    public func onSelected(team: Team) {
+        guard let firstSegment = segments.first as? SearchSegment,
+            team.contentType != firstSegment.contentType else {
+                return
+        }
+        segments.reverse()
+        view.reorder(segments: segments)
     }
     
 }

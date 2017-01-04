@@ -14,9 +14,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     private let ICON_SIZE : CGFloat = 45.0
     
     private lazy var __once: () = {
-            self.presenter?.loadSegments()
-            self.registerNotificationObserver()
-        }()
+        self.presenter?.loadSegments()
+    }()
     
     static let ID = "SegmentedVC"
 
@@ -31,8 +30,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     
     var presenter: SegmentedContract_Presenter?
 
-    // add Segment Item in Factory to increase Tab items
-    private var segmentedItems: [SegmentProtocol] = []
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -40,17 +37,6 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     private let shadowLayer = CAGradientLayer()
     
     private let segmentedControl = HMSegmentedControl()
-    
-    private func registerNotificationObserver() {
-        NotificationCenter.default.addObserver(
-            self, selector: #selector(reorderTabs(notification:)),
-            name:Notifications.NAME_TEAM_SAVED , object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(
-            self, name: Notifications.NAME_TEAM_SAVED, object: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +47,11 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     }
     
     func show(segments: [SegmentProtocol]) {
-        self.segmentedItems = segments
-        setupViews()
+        setupViews(with: segments)
     }
 
-    private func setupViews() {
-        setupSubViews()
+    private func setupViews(with segmentedItems:[SegmentProtocol]) {
+        setupSubViews(with: segmentedItems)
         setupShadowView()
         
         segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
@@ -96,7 +81,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         shadowView.layer.insertSublayer(shadowLayer, at: 0)
     }
 
-    private func setupSubViews() {
+    private func setupSubViews(with segmentedItems:[SegmentProtocol]) {
         for (index, item) in segmentedItems.enumerated() {
             guard let vc = item.view() as? UIViewController else {
                 continue
@@ -132,20 +117,10 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         //nop
     }
     
-    @objc private func reorderTabs(notification: NSNotification) {
-        
-        guard let team = notification.userInfo?[Notifications.KEY_TEAM] as? Team else {
-            return
-        }
-        guard let firstSegment = segmentedItems.first as? SearchSegment,
-            team.contentType != firstSegment.contentType else {
-            return
-        }
-        
-        segmentedItems.reverse()
+    func reorder(segments: [SegmentProtocol]) {
         contentView.removeAllSubViews()
-        setupSubViews()
-        segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
+        setupSubViews(with: segments)
+        segmentedControl.sectionImages = segments.map({self.iconImage($0.iconName())})
         let newIndex = oppositeIndex(from: segmentedControl.selectedSegmentIndex)
         segmentedControl.setSelectedSegmentIndex(UInt(newIndex), animated: true)
         contentView.move(to: newIndex)

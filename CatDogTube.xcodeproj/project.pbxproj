@@ -28,8 +28,8 @@
 		590A836B1C5C9E58000C6179 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A836A1C5C9E58000C6179 /* SegueIdentifier.swift */; };
 		590DAECE1C7027F2002281B4 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DAECD1C7027F2002281B4 /* Text.swift */; };
 		590DAED31C702B70002281B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 590DAED51C702B70002281B4 /* Localizable.strings */; };
+		590DCCFF1E19E549007CB40E /* TeamNotificationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DCCFE1E19E549007CB40E /* TeamNotificationContract.swift */; };
 		5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765991DE088D000FEBAD8 /* GeneratedMocks.swift */; };
-		595765AA1DE12B1300FEBAD8 /* TeamRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */; };
 		596456D51C721437005FA866 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D41C721437005FA866 /* Screen.swift */; };
 		596456D91C7E03ED005FA866 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596456D81C7E03ED005FA866 /* Http.swift */; };
 		59751D9A1CF0077400B704D2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59751D991CF0077400B704D2 /* MainVC.swift */; };
@@ -47,13 +47,15 @@
 		59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3A9C81D9561BC00BAF092 /* Notifications.swift */; };
 		59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */; };
 		59B4F1631D8E3CAC009068ED /* TeamSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */; };
-		59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1651D8E68CC009068ED /* TeamUseCase.swift */; };
-		59B4F1681D8E6BEE009068ED /* TeamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1671D8E6BEE009068ED /* TeamRepository.swift */; };
 		59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */; };
-		59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */; };
-		59B4F16E1D8F66F8009068ED /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16D1D8F66F8009068ED /* Team.swift */; };
-		59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4F16F1D8F7A70009068ED /* TeamTests.swift */; };
 		59EE7D4F1DF3E17200121F7B /* ThreadExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */; };
+		59F4E9751E1784FF00C143CC /* TeamSelectContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E9741E1784FF00C143CC /* TeamSelectContract.swift */; };
+		59F4E9771E17861D00C143CC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E9761E17861D00C143CC /* Team.swift */; };
+		59F4E9791E1797E900C143CC /* TeamSelectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E9781E1797E900C143CC /* TeamSelectPresenter.swift */; };
+		59F4E97B1E17982700C143CC /* TeamUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E97A1E17982700C143CC /* TeamUseCase.swift */; };
+		59F4E97D1E17985100C143CC /* TeamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E97C1E17985100C143CC /* TeamRepository.swift */; };
+		59F4E97F1E19D9B600C143CC /* TeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E97E1E19D9B500C143CC /* TeamTests.swift */; };
+		59F4E9811E19D9D500C143CC /* TeamRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4E9801E19D9D500C143CC /* TeamRepositoryTests.swift */; };
 		62EF447ACC292480D58F21C3 /* Pods_CatDogTubeDomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96930EA411F2A3F9B11ECB79 /* Pods_CatDogTubeDomainTests.framework */; };
 		BE7C42991E0FBFF10092B568 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C42981E0FBFF10092B568 /* YouTubeVideo.swift */; };
 		BE7C429B1E0FC0820092B568 /* VideoTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C429A1E0FC0820092B568 /* VideoTranslater.swift */; };
@@ -102,6 +104,8 @@
 		BED52E911E06383D00241F4E /* PlayerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E8F1E06383D00241F4E /* PlayerContract.swift */; };
 		BED52E921E06383D00241F4E /* PlayVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E901E06383D00241F4E /* PlayVideoPresenter.swift */; };
 		BED52E941E0638A500241F4E /* ThreadExecutorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52E931E0638A500241F4E /* ThreadExecutorProtocol.swift */; };
+		BEF0261B1E1C88FF002150AA /* TeamNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0261A1E1C88FF002150AA /* TeamNotificationSender.swift */; };
+		BEF0261D1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF0261C1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift */; };
 		F9FC9ED417C94EA636F4A61A /* Pods_CatDogTubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE67EEB29397D671B1E46C7B /* Pods_CatDogTubeUITests.framework */; };
 		FECEF3310CD3B571C53438CA /* Pods_CatDogTubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56474FC43CBA4C3810643B69 /* Pods_CatDogTubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -204,8 +208,8 @@
 		590DAECD1C7027F2002281B4 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		590DAED41C702B70002281B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		590DAED91C702C8D002281B4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		590DCCFE1E19E549007CB40E /* TeamNotificationContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotificationContract.swift; sourceTree = "<group>"; };
 		595765991DE088D000FEBAD8 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
-		595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepositoryTests.swift; sourceTree = "<group>"; };
 		596456D41C721437005FA866 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		596456D81C7E03ED005FA866 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		59751D991CF0077400B704D2 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -229,13 +233,15 @@
 		59B3A9C81D9561BC00BAF092 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectViewController.swift; sourceTree = "<group>"; };
 		59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSelectViewController.xib; sourceTree = "<group>"; };
-		59B4F1651D8E68CC009068ED /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUseCase.swift; sourceTree = "<group>"; };
-		59B4F1671D8E6BEE009068ED /* TeamRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepository.swift; sourceTree = "<group>"; };
 		59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataSource.swift; sourceTree = "<group>"; };
-		59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectPresenter.swift; sourceTree = "<group>"; };
-		59B4F16D1D8F66F8009068ED /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		59B4F16F1D8F7A70009068ED /* TeamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTests.swift; sourceTree = "<group>"; };
 		59EE7D4E1DF3E17200121F7B /* ThreadExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadExecutor.swift; sourceTree = "<group>"; };
+		59F4E9741E1784FF00C143CC /* TeamSelectContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamSelectContract.swift; path = ../domain/TeamSelectContract.swift; sourceTree = "<group>"; };
+		59F4E9761E17861D00C143CC /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = domain/Team.swift; sourceTree = "<group>"; };
+		59F4E9781E1797E900C143CC /* TeamSelectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSelectPresenter.swift; sourceTree = "<group>"; };
+		59F4E97A1E17982700C143CC /* TeamUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamUseCase.swift; path = domain/TeamUseCase.swift; sourceTree = "<group>"; };
+		59F4E97C1E17985100C143CC /* TeamRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamRepository.swift; path = domain/TeamRepository.swift; sourceTree = "<group>"; };
+		59F4E97E1E19D9B500C143CC /* TeamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTests.swift; sourceTree = "<group>"; };
+		59F4E9801E19D9D500C143CC /* TeamRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRepositoryTests.swift; sourceTree = "<group>"; };
 		5D3C53F122BC3D82F0D236E6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96930EA411F2A3F9B11ECB79 /* Pods_CatDogTubeDomainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDogTubeDomainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F593EC182E75B1D20E73949 /* Pods-CatDogTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +295,8 @@
 		BED52E8F1E06383D00241F4E /* PlayerContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerContract.swift; sourceTree = "<group>"; };
 		BED52E901E06383D00241F4E /* PlayVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenter.swift; sourceTree = "<group>"; };
 		BED52E931E0638A500241F4E /* ThreadExecutorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadExecutorProtocol.swift; sourceTree = "<group>"; };
+		BEF0261A1E1C88FF002150AA /* TeamNotificationSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotificationSender.swift; sourceTree = "<group>"; };
+		BEF0261C1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamNotificationReceiveAdaptor.swift; sourceTree = "<group>"; };
 		CCC5773A7B60027082CA6340 /* Pods-CatDogTubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeTests/Pods-CatDogTubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFA28B0A383E737C0A6C726B /* Pods-CatDogTubeDomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTubeDomainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTubeDomainTests/Pods-CatDogTubeDomainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7547870291555D3AD615F0C /* Pods-CatDogTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDogTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatDogTube/Pods-CatDogTube.debug.xcconfig"; sourceTree = "<group>"; };
@@ -374,13 +382,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		59047C4F1CA771080051C489 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		590A83581C546397000C6179 /* YouTube */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,39 +434,13 @@
 		5926E8621D9F4946008D687B /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				5926E8631D9F494F008D687B /* presentation */,
-				5926E8641D9F4973008D687B /* domain */,
-				5926E8741D9F4FDE008D687B /* data */,
-			);
-			name = setting;
-			sourceTree = "<group>";
-		};
-		5926E8631D9F494F008D687B /* presentation */ = {
-			isa = PBXGroup;
-			children = (
-				59B4F16B1D8E733B009068ED /* TeamSelectPresenter.swift */,
 				59B4F1601D8E3CAC009068ED /* TeamSelectViewController.swift */,
 				59B4F1611D8E3CAC009068ED /* TeamSelectViewController.xib */,
+				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
+				BEF0261A1E1C88FF002150AA /* TeamNotificationSender.swift */,
+				BEF0261C1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift */,
 			);
-			name = presentation;
-			sourceTree = "<group>";
-		};
-		5926E8641D9F4973008D687B /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				5926E8651D9F499C008D687B /* model */,
-				59B4F1671D8E6BEE009068ED /* TeamRepository.swift */,
-				59B4F1651D8E68CC009068ED /* TeamUseCase.swift */,
-			);
-			name = domain;
-			sourceTree = "<group>";
-		};
-		5926E8651D9F499C008D687B /* model */ = {
-			isa = PBXGroup;
-			children = (
-				59B4F16D1D8F66F8009068ED /* Team.swift */,
-			);
-			name = model;
+			name = setting;
 			sourceTree = "<group>";
 		};
 		5926E8661D9F4A42008D687B /* player */ = {
@@ -506,7 +481,6 @@
 		5926E86B1D9F4BCD008D687B /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				59047C4F1CA771080051C489 /* Model */,
 				5926E86C1D9F4C3F008D687B /* favorite */,
 				5926E86D1D9F4C4A008D687B /* search */,
 			);
@@ -579,14 +553,6 @@
 			name = customView;
 			sourceTree = "<group>";
 		};
-		5926E8741D9F4FDE008D687B /* data */ = {
-			isa = PBXGroup;
-			children = (
-				59B4F1691D8E6F69009068ED /* UserDefaultsDataSource.swift */,
-			);
-			name = data;
-			sourceTree = "<group>";
-		};
 		59A88AAD1C4B1BAD00D40B23 = {
 			isa = PBXGroup;
 			children = (
@@ -640,8 +606,6 @@
 				595765991DE088D000FEBAD8 /* GeneratedMocks.swift */,
 				59A88ACE1C4B1BAD00D40B23 /* CatDogTubeTests.swift */,
 				59774B5B1C82877D00302A65 /* HttpTests.swift */,
-				59B4F16F1D8F7A70009068ED /* TeamTests.swift */,
-				595765A91DE12B1300FEBAD8 /* TeamRepositoryTests.swift */,
 				590A835B1C5469EA000C6179 /* YouTubeDataParserTests.swift */,
 				590A835D1C546A16000C6179 /* searchResponse.json */,
 				59A88AD01C4B1BAD00D40B23 /* Info.plist */,
@@ -656,6 +620,35 @@
 				59A88ADB1C4B1BAD00D40B23 /* Info.plist */,
 			);
 			path = CatDogTubeUITests;
+			sourceTree = "<group>";
+		};
+		59F4E9711E17847600C143CC /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				59F4E9731E1784BE00C143CC /* domain */,
+				59F4E9721E17848C00C143CC /* presentation */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		59F4E9721E17848C00C143CC /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				59F4E9741E1784FF00C143CC /* TeamSelectContract.swift */,
+				59F4E9781E1797E900C143CC /* TeamSelectPresenter.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		59F4E9731E1784BE00C143CC /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				59F4E9761E17861D00C143CC /* Team.swift */,
+				59F4E97A1E17982700C143CC /* TeamUseCase.swift */,
+				59F4E97C1E17985100C143CC /* TeamRepository.swift */,
+				590DCCFE1E19E549007CB40E /* TeamNotificationContract.swift */,
+			);
+			name = domain;
 			sourceTree = "<group>";
 		};
 		8021351649DAD15CBB941E03 /* Frameworks */ = {
@@ -711,6 +704,7 @@
 			isa = PBXGroup;
 			children = (
 				BED52E931E0638A500241F4E /* ThreadExecutorProtocol.swift */,
+				59F4E9711E17847600C143CC /* setting */,
 				BED52E8D1E0637FF00241F4E /* player */,
 				BED52E461E0502C500241F4E /* video */,
 				BED52E291E05008300241F4E /* CatDogTubeDomain.h */,
@@ -730,6 +724,8 @@
 				BE828E1C1E14B79C00E078A3 /* VideoTranslaterTests.swift */,
 				BED52E381E05008400241F4E /* Info.plist */,
 				BE828E151E14B52900E078A3 /* GeneratedMocks.swift */,
+				59F4E97E1E19D9B500C143CC /* TeamTests.swift */,
+				59F4E9801E19D9D500C143CC /* TeamRepositoryTests.swift */,
 			);
 			path = CatDogTubeDomainTests;
 			sourceTree = "<group>";
@@ -1185,7 +1181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/Video.swift\" \\\n\"${INPUT_DIR}/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/TeamRepository.swift\" \\\n\"${INPUT_DIR}/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nOUTPUT_FILE=\"./${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Team.swift\" \\\n\"${INPUT_DIR}/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
 		};
 		59A88AE91C4B2F9A00D40B23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1331,7 +1327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nTARGET_DOMAIN=\"${PROJECT_NAME}Domain\"\nOUTPUT_FILE=\"./${TARGET_DOMAIN}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${TARGET_DOMAIN}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${TARGET_DOMAIN}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/video/domain/model/Video.swift\" \\\n\"${INPUT_DIR}/video/domain/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/video/presentasion/collection/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/player/presentation/PlayerContract.swift\"\n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
+			shellScript = "# Define output file; change \"${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name\nTARGET_DOMAIN=\"${PROJECT_NAME}Domain\"\nOUTPUT_FILE=\"./${TARGET_DOMAIN}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory; change \"${PROJECT_NAME}\" to your project's root source folder, if it's not the default name\nINPUT_DIR=\"./${TARGET_DOMAIN}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files; include as many input files as you'd like to create mocks for\n${PODS_ROOT}/Cuckoo/run generate --testable \"${TARGET_DOMAIN}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/video/domain/model/Video.swift\" \\\n\"${INPUT_DIR}/video/domain/LoadVideoUseCase.swift\" \\\n\"${INPUT_DIR}/video/presentasion/collection/VideoCollectionContract.swift\" \\\n\"${INPUT_DIR}/player/presentation/PlayerContract.swift\" \\\n\"${INPUT_DIR}/setting/domain/Team.swift\" \\\n\"${INPUT_DIR}/setting/domain/TeamUseCase.swift\" \\\n\"${INPUT_DIR}/setting/domain/TeamRepository.swift\" \n\n# ... and so forth\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group";
 		};
 		C36726954F86CE2569221CF6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1374,10 +1370,8 @@
 				590DAECE1C7027F2002281B4 /* Text.swift in Sources */,
 				59047C5E1CA7A7910051C489 /* YouTubeDataSource.swift in Sources */,
 				590A83631C54F4EA000C6179 /* VideoCollectionDataSource.swift in Sources */,
-				59B4F1661D8E68CC009068ED /* TeamUseCase.swift in Sources */,
-				59B4F16E1D8F66F8009068ED /* Team.swift in Sources */,
 				59B4F16A1D8E6F69009068ED /* UserDefaultsDataSource.swift in Sources */,
-				59B4F1681D8E6BEE009068ED /* TeamRepository.swift in Sources */,
+				BEF0261D1E1C8D22002150AA /* TeamNotificationReceiveAdaptor.swift in Sources */,
 				59EE7D4F1DF3E17200121F7B /* ThreadExecutor.swift in Sources */,
 				596456D91C7E03ED005FA866 /* Http.swift in Sources */,
 				590A835A1C5463BB000C6179 /* YouTubeDataParser.swift in Sources */,
@@ -1391,9 +1385,9 @@
 				590491B31CCB18E700FEABAD /* FavoritesDatasource.swift in Sources */,
 				590491AE1CC2439500FEABAD /* DummyFavoritesRepository.swift in Sources */,
 				590491C61CCB212F00FEABAD /* FavoriteVideo.swift in Sources */,
+				BEF0261B1E1C88FF002150AA /* TeamNotificationSender.swift in Sources */,
 				59A88ABC1C4B1BAD00D40B23 /* SegmentedVC.swift in Sources */,
 				59B4F1621D8E3CAC009068ED /* TeamSelectViewController.swift in Sources */,
-				59B4F16C1D8E733B009068ED /* TeamSelectPresenter.swift in Sources */,
 				590491C51CCB212F00FEABAD /* FavoriteVideo+CoreDataProperties.swift in Sources */,
 				590491A91CC23D0E00FEABAD /* FavoriteListUseCase.swift in Sources */,
 				59B3A9C91D9561BC00BAF092 /* Notifications.swift in Sources */,
@@ -1411,8 +1405,6 @@
 				590A835C1C5469EA000C6179 /* YouTubeDataParserTests.swift in Sources */,
 				59A88ACF1C4B1BAD00D40B23 /* CatDogTubeTests.swift in Sources */,
 				5957659A1DE088D000FEBAD8 /* GeneratedMocks.swift in Sources */,
-				59B4F1701D8F7A70009068ED /* TeamTests.swift in Sources */,
-				595765AA1DE12B1300FEBAD8 /* TeamRepositoryTests.swift in Sources */,
 				59774B5C1C82877D00302A65 /* HttpTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1462,16 +1454,22 @@
 				BED52E7C1E06375B00241F4E /* SearchVideoUseCase.swift in Sources */,
 				BED52E8A1E06377100241F4E /* SegmentedContract.swift in Sources */,
 				BED52E761E06375200241F4E /* Video.swift in Sources */,
+				59F4E9751E1784FF00C143CC /* TeamSelectContract.swift in Sources */,
+				59F4E9771E17861D00C143CC /* Team.swift in Sources */,
 				BED52E891E06377100241F4E /* SegmentContract.swift in Sources */,
 				BE7C42991E0FBFF10092B568 /* YouTubeVideo.swift in Sources */,
 				BED52E921E06383D00241F4E /* PlayVideoPresenter.swift in Sources */,
+				59F4E9791E1797E900C143CC /* TeamSelectPresenter.swift in Sources */,
+				59F4E97D1E17985100C143CC /* TeamRepository.swift in Sources */,
 				BED52E7E1E06375B00241F4E /* VideoExcluder.swift in Sources */,
+				590DCCFF1E19E549007CB40E /* TeamNotificationContract.swift in Sources */,
 				BE7C429B1E0FC0820092B568 /* VideoTranslater.swift in Sources */,
 				0CCA0B221E09560E0050F351 /* SegmentFactoryProtocol.swift in Sources */,
 				BED52E751E06375200241F4E /* ContentType.swift in Sources */,
 				BED52E8C1E06377100241F4E /* SegmentsPresenter.swift in Sources */,
 				BED52E911E06383D00241F4E /* PlayerContract.swift in Sources */,
 				BED52E941E0638A500241F4E /* ThreadExecutorProtocol.swift in Sources */,
+				59F4E97B1E17982700C143CC /* TeamUseCase.swift in Sources */,
 				BED52E7B1E06375B00241F4E /* SearchVideoRepository.swift in Sources */,
 				BED52E821E06376800241F4E /* VideoCollectionContract.swift in Sources */,
 				BED52E881E06377100241F4E /* SearchSegment.swift in Sources */,
@@ -1486,6 +1484,8 @@
 				BE828E1D1E14B79C00E078A3 /* LoadVideoPresernterTests.swift in Sources */,
 				BE828E161E14B52900E078A3 /* GeneratedMocks.swift in Sources */,
 				BE828E1E1E14B79C00E078A3 /* PlayVideoPresenterTests.swift in Sources */,
+				59F4E97F1E19D9B600C143CC /* TeamTests.swift in Sources */,
+				59F4E9811E19D9D500C143CC /* TeamRepositoryTests.swift in Sources */,
 				BE828E181E14B79200E078A3 /* DummyThreadExecutor.swift in Sources */,
 				BE828E1F1E14B79C00E078A3 /* VideoExcluderTests.swift in Sources */,
 				BE828E201E14B79C00E078A3 /* VideoTranslaterTests.swift in Sources */,

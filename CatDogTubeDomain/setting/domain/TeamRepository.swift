@@ -8,27 +8,27 @@
 
 import Foundation
 
-protocol TeamDataSourceProtocol {
+public protocol TeamDataSourceProtocol {
     func loadTeamName() -> String?
     func save(teamName:String)
 }
 
 
-class TeamRepository: NSObject, TeamRepositoryProtocol {
-
+public class TeamRepository: NSObject, TeamRepositoryProtocol {
+    
     private let dataSource : TeamDataSourceProtocol
     
-    init(dataSource:TeamDataSourceProtocol) {
+    public init(dataSource:TeamDataSourceProtocol) {
         self.dataSource = dataSource
         super.init()
     }
     
     // MARK: - TeamRepositoryProtocol
-    func loadTeam() -> Team? {
+    public func loadTeam() -> Team? {
         return Team(name: dataSource.loadTeamName())
     }
     
-    func save(team:Team) {
+    public func save(team:Team) {
         dataSource.save(teamName: team.nameString())
     }
 }

@@ -10,9 +10,12 @@ import Foundation
 
 public protocol SegmentedContract_View {
     func show(segments: [SegmentProtocol])
+    
+    func reorder(segments:[SegmentProtocol])
 }
 
 public protocol SegmentedContract_Presenter {
     
     func loadSegments()
+    
 }
