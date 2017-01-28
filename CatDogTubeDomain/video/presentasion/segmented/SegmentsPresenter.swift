@@ -10,10 +10,6 @@ import Foundation
 
 public class SegmentsPresenter: SegmentedContract_Presenter, TeamNotificationContract_Receiver {
 
-    //FIXME delete this
-    let NAME_TEAM_SAVED = Notification.Name("team_saved")
-    let KEY_TEAM = "team"
-
     private var view: SegmentedContract_View
     
     private let playerPresenter: PlayerContract_Presenter
