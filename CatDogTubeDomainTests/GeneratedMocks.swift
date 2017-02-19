@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -231,7 +231,7 @@ public class VideoCollectionContract_PresenterStub: VideoCollectionContract_Pres
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  TeamRepository.swift
@@ -392,7 +392,7 @@ public class TeamRepositoryStub: TeamRepository {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  PlayContract.swift
@@ -608,7 +608,7 @@ public class PlayerContract_PresenterStub: PlayerContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  Team.swift
@@ -694,7 +694,7 @@ public class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  UseCase.swift
@@ -765,7 +765,7 @@ public class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  TeamUseCase.swift
@@ -926,7 +926,7 @@ public class TeamUseCaseStub: TeamUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2017-01-04 02:14:26 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2017-02-19 03:24:09 +0000
 
 //
 //  Video.swift
