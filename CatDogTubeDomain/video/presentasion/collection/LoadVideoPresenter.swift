@@ -15,7 +15,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private let useCase: LoadVideoUseCase
     
-    private var view: VideoCollectionContract_View?
+    private var view: VideoCollectionContract_View
     
     var playerPresenter: PlayerContract_Presenter
     
@@ -24,11 +24,16 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     // If true, top contents of this presenter' view will played when app is launched.
     private var isPrimal = false
     
-    public init(useCase: LoadVideoUseCase, executor: ThreadExecutorProtocol, playerPresenter: PlayerContract_Presenter ) {
+    public init(view: VideoCollectionContract_View,
+                useCase: LoadVideoUseCase,
+                executor: ThreadExecutorProtocol,
+                playerPresenter: PlayerContract_Presenter ) {
+        self.view = view
         self.useCase = useCase
         self.executor = executor
         self.playerPresenter = playerPresenter
         super.init()
+        view.set(presenter: self)
     }
     
     private func onLoadSuccess(videos:[Video]) {
@@ -36,22 +41,22 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             if (self.isPrimal) {
                 self.playerPresenter.onVideoLoaded(videos)
             }
-            self.view?.show(videos: videos)
-            self.view?.hideErrorUI()
+            self.view.show(videos: videos)
+            self.view.hideErrorUI()
         }
     }
     
     private func onLoadFail() {
         executor.runOnMain {
-            self.view?.show(videos: [])
-            self.view?.showErrorUI()
+            self.view.show(videos: [])
+            self.view.showErrorUI()
         }
     }
     
     // MARK: VideoCollectionContract_Presenter
     public func loadVideo(withFullScreenIndicator:Bool) {
         if (withFullScreenIndicator) {
-            view?.showLoadingIndicator()
+            view.showLoadingIndicator()
         }
         
         executor.runOnBackground {
@@ -65,10 +70,6 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
         }
     }
     
-    public func set(view: VideoCollectionContract_View) {
-        self.view = view
-    }
-
     public func markAsPrimal() {
         isPrimal = true
     }

@@ -19,7 +19,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     let dataSource: VideoCollectionDataSource
     
-    var presenter: VideoCollectionContract_Presenter?
+    private var presenter: VideoCollectionContract_Presenter?
     
     private var refreshControl = UIRefreshControl()
     
@@ -40,7 +40,6 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
 
         tryReloadView.reloadDelegate = self
         
-        presenter?.set(view: self)
         loadVideo(withFullScreenIndicator: true)
     }
     
@@ -79,6 +78,10 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     }
     
     // MARK: VideoCollectionContract_View
+    public func set(presenter: VideoCollectionContract_Presenter) {
+        self.presenter = presenter
+    }
+    
     func show(videos:[Video]) {
         dataSource.videos = videos
         self.refreshControl.endRefreshing()

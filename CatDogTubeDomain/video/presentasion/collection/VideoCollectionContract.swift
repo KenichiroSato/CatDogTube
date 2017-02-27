@@ -10,6 +10,8 @@ import Foundation
 
 public protocol VideoCollectionContract_View: SegmentContract_View {
     
+    func set(presenter: VideoCollectionContract_Presenter)
+    
     func show(videos:[Video])
     
     func showErrorUI()
@@ -21,8 +23,6 @@ public protocol VideoCollectionContract_View: SegmentContract_View {
 }
 
 public protocol VideoCollectionContract_Presenter: SegmentContract_Presenter {
-    
-    func set(view: VideoCollectionContract_View)
     
     func loadVideo(withFullScreenIndicator:Bool)
  
