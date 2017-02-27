@@ -53,7 +53,6 @@ class MainVC: UIViewController {
         let presenter = SegmentsPresenter(view: segmentedVC as SegmentedContract_View,
                                           playerPresenter: playerPresenter,
                                           segmentFactory: SegmentFactory())
-        segmentedVC.set(presenter: presenter)
         segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)
