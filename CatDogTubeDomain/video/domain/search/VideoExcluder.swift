@@ -63,7 +63,18 @@ class VideoExcluder: NSObject {
         "メガネ",
         "MAD",
         "やさぐれ",
-        "ミスキャンパス"
+        "ミスキャンパス",
+        "踏み潰す",
+        "日本橋",
+        "りゅりゅ",
+        "うんこ",
+        "リンゴの森",
+        "禁欲",
+        "やんちゃな",
+        "ペットショップ",
+        "きくちペット",
+        "歌ってみた",
+        "ショッキング"
         ]
     
     class func excludeInappropriateVideos(_ videos:[Video]?) -> [Video]? {
