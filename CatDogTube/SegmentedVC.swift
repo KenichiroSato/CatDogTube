@@ -28,8 +28,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         }
     }
     
-    var presenter: SegmentedContract_Presenter?
-
+    private var presenter: SegmentedContract_Presenter?
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var contentView: UIScrollView!
@@ -44,6 +43,10 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
     
     override func viewDidAppear(_ animated: Bool) {
         _ = self.__once
+    }
+    
+    func set(presenter: SegmentedContract_Presenter) {
+        self.presenter = presenter
     }
     
     func show(segments: [SegmentProtocol]) {

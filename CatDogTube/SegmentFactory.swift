@@ -35,9 +35,10 @@ class SegmentFactory: SegmentFactoryProtocol {
         let useCase = SearchVideoUseCase(content: contentType,
                                          repo:  SearchVideoRepository(dataSource: YouTubeDataSource()),
                                          wordProvider:SearchWordProvider())
-        let presenter = LoadVideoPresenter(
-            useCase: useCase, executor:ThreadExecutor(), playerPresenter:playerPresenter)
-        vc.presenter = presenter
+        let presenter = LoadVideoPresenter(view:vc,
+                                           useCase: useCase,
+                                           executor:ThreadExecutor(),
+                                           playerPresenter:playerPresenter)
         
         return SearchSegment(view: vc, contentType: contentType, presenter:presenter)
     }

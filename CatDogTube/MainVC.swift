@@ -53,7 +53,6 @@ class MainVC: UIViewController {
         let presenter = SegmentsPresenter(view: segmentedVC as SegmentedContract_View,
                                           playerPresenter: playerPresenter,
                                           segmentFactory: SegmentFactory())
-        segmentedVC.presenter = presenter
         segmentContainerView.addSubview(segmentedVC.view)
         self.addChildViewController(segmentedVC)
         segmentedVC.didMove(toParentViewController: self)
@@ -67,7 +66,6 @@ class MainVC: UIViewController {
     }
     
     private func showTeamSelectDialog() {
-
         let repo = TeamRepository(dataSource: UserDefaultsDataSource())
         let useCase = TeamUseCase(repo: repo, sender: TeamNotificationSender())
         let presenter = TeamSelectPresenter(useCase: useCase)

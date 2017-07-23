@@ -9,6 +9,9 @@
 import Foundation
 
 public protocol SegmentedContract_View {
+    
+    func set(presenter: SegmentedContract_Presenter)
+    
     func show(segments: [SegmentProtocol])
     
     func reorder(segments:[SegmentProtocol])

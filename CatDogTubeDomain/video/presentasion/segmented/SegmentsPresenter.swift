@@ -30,6 +30,7 @@ public class SegmentsPresenter: SegmentedContract_Presenter, TeamNotificationCon
         self.view = view
         self.playerPresenter = playerPresenter
         self.segmentFactory = segmentFactory
+        view.set(presenter: self)
     }
     
     //MARK: SegmentedContract_Presenter
