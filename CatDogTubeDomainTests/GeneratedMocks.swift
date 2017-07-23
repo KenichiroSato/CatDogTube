@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -26,6 +26,10 @@ public class MockVideoCollectionContract_View: VideoCollectionContract_View, Cuc
         return self
     }
     
+    public func set(presenter: VideoCollectionContract_Presenter) {
+        return manager.call("set(presenter: VideoCollectionContract_Presenter)", parameters: (presenter), original: observed.map { o in return { (presenter: VideoCollectionContract_Presenter) in o.set(presenter: presenter) } })
+    }
+    
     public func show(videos: [Video]) {
         return manager.call("show(videos: [Video])", parameters: (videos), original: observed.map { o in return { (videos: [Video]) in o.show(videos: videos) } })
     }
@@ -47,6 +51,11 @@ public class MockVideoCollectionContract_View: VideoCollectionContract_View, Cuc
         
         public init(manager: Cuckoo.MockManager) {
             self.manager = manager
+        }
+        
+        public func set<M1: Cuckoo.Matchable>(presenter: M1) -> Cuckoo.StubNoReturnFunction<(VideoCollectionContract_Presenter)> where M1.MatchedType == VideoCollectionContract_Presenter {
+            let matchers: [Cuckoo.ParameterMatcher<(VideoCollectionContract_Presenter)>] = [wrap(matchable: presenter) { $0 }]
+            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("set(presenter: VideoCollectionContract_Presenter)", parameterMatchers: matchers))
         }
         
         public func show<M1: Cuckoo.Matchable>(videos: M1) -> Cuckoo.StubNoReturnFunction<([Video])> where M1.MatchedType == [Video] {
@@ -79,6 +88,12 @@ public class MockVideoCollectionContract_View: VideoCollectionContract_View, Cuc
         }
         
         @discardableResult
+        public func set<M1: Cuckoo.Matchable>(presenter: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == VideoCollectionContract_Presenter {
+            let matchers: [Cuckoo.ParameterMatcher<(VideoCollectionContract_Presenter)>] = [wrap(matchable: presenter) { $0 }]
+            return manager.verify("set(presenter: VideoCollectionContract_Presenter)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
         public func show<M1: Cuckoo.Matchable>(videos: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == [Video] {
             let matchers: [Cuckoo.ParameterMatcher<([Video])>] = [wrap(matchable: videos) { $0 }]
             return manager.verify("show(videos: [Video])", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
@@ -102,6 +117,10 @@ public class MockVideoCollectionContract_View: VideoCollectionContract_View, Cuc
 }
 
 public class VideoCollectionContract_ViewStub: VideoCollectionContract_View {
+    
+    public func set(presenter: VideoCollectionContract_Presenter) {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
     
     public func show(videos: [Video]) {
         return DefaultValueRegistry.defaultValue(for: Void.self)
@@ -133,10 +152,6 @@ public class MockVideoCollectionContract_Presenter: VideoCollectionContract_Pres
         return self
     }
     
-    public func set(view: VideoCollectionContract_View) {
-        return manager.call("set(view: VideoCollectionContract_View)", parameters: (view), original: observed.map { o in return { (view: VideoCollectionContract_View) in o.set(view: view) } })
-    }
-    
     public func loadVideo(withFullScreenIndicator: Bool) {
         return manager.call("loadVideo(withFullScreenIndicator: Bool)", parameters: (withFullScreenIndicator), original: observed.map { o in return { (withFullScreenIndicator: Bool) in o.loadVideo(withFullScreenIndicator: withFullScreenIndicator) } })
     }
@@ -154,11 +169,6 @@ public class MockVideoCollectionContract_Presenter: VideoCollectionContract_Pres
         
         public init(manager: Cuckoo.MockManager) {
             self.manager = manager
-        }
-        
-        public func set<M1: Cuckoo.Matchable>(view: M1) -> Cuckoo.StubNoReturnFunction<(VideoCollectionContract_View)> where M1.MatchedType == VideoCollectionContract_View {
-            let matchers: [Cuckoo.ParameterMatcher<(VideoCollectionContract_View)>] = [wrap(matchable: view) { $0 }]
-            return Cuckoo.StubNoReturnFunction(stub: manager.createStub("set(view: VideoCollectionContract_View)", parameterMatchers: matchers))
         }
         
         public func loadVideo<M1: Cuckoo.Matchable>(withFullScreenIndicator: M1) -> Cuckoo.StubNoReturnFunction<(Bool)> where M1.MatchedType == Bool {
@@ -188,12 +198,6 @@ public class MockVideoCollectionContract_Presenter: VideoCollectionContract_Pres
         }
         
         @discardableResult
-        public func set<M1: Cuckoo.Matchable>(view: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == VideoCollectionContract_View {
-            let matchers: [Cuckoo.ParameterMatcher<(VideoCollectionContract_View)>] = [wrap(matchable: view) { $0 }]
-            return manager.verify("set(view: VideoCollectionContract_View)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-        }
-        
-        @discardableResult
         public func loadVideo<M1: Cuckoo.Matchable>(withFullScreenIndicator: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Bool {
             let matchers: [Cuckoo.ParameterMatcher<(Bool)>] = [wrap(matchable: withFullScreenIndicator) { $0 }]
             return manager.verify("loadVideo(withFullScreenIndicator: Bool)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
@@ -214,10 +218,6 @@ public class MockVideoCollectionContract_Presenter: VideoCollectionContract_Pres
 
 public class VideoCollectionContract_PresenterStub: VideoCollectionContract_Presenter {
     
-    public func set(view: VideoCollectionContract_View) {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
     public func loadVideo(withFullScreenIndicator: Bool) {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
@@ -231,7 +231,7 @@ public class VideoCollectionContract_PresenterStub: VideoCollectionContract_Pres
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  TeamRepository.swift
@@ -392,7 +392,7 @@ public class TeamRepositoryStub: TeamRepository {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  PlayContract.swift
@@ -608,7 +608,7 @@ public class PlayerContract_PresenterStub: PlayerContract_Presenter {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  Team.swift
@@ -694,7 +694,7 @@ public class TeamStub: Team {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  UseCase.swift
@@ -765,7 +765,7 @@ public class LoadVideoUseCaseStub: LoadVideoUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  TeamUseCase.swift
@@ -926,7 +926,7 @@ public class TeamUseCaseStub: TeamUseCase {
     }
 }
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2017-02-19 03:24:09 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2017-07-23 03:05:00 +0000
 
 //
 //  Video.swift
