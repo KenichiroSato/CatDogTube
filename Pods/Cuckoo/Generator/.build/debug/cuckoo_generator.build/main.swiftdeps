@@ -1,0 +1,173 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "registry"
+- "helpCommand"
+provides-nominal:
+provides-member:
+provides-dynamic-lookup:
+depends-top-level:
+- "+"
+- "CommandRegistry"
+- "CuckooGeneratorError"
+- "GenerateMocksCommand"
+- "HelpCommand"
+- "StringLiteralType"
+- "UnicodeScalarType"
+- "VersionCommand"
+- "fputs"
+- "helpCommand"
+- "registry"
+- "stderr"
+depends-member:
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "main"]
+- ["Ps9AnyObject", "register"]
+- ["P10Commandant16ArgumentProtocol", "init"]
+- ["Ps7CVarArg", "init"]
+- ["P10Commandant15CommandProtocol", "init"]
+- ["P10Commandant15CommandProtocol", "verb"]
+- ["C10Commandant15CommandRegistry", "init"]
+- ["C10Commandant15CommandRegistry", "main"]
+- ["C10Commandant15CommandRegistry", "register"]
+- ["Ps10Comparable", "init"]
+- ["O16cuckoo_generator20CuckooGeneratorError", "deinit"]
+- ["O16cuckoo_generator20CuckooGeneratorError", "description"]
+- ["O16cuckoo_generator20CuckooGeneratorError", "stderrUsed"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps9Equatable", "init"]
+- ["Ps5Error", "description"]
+- ["Ps5Error", "stderrUsed"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["V16cuckoo_generator20GenerateMocksCommand", "deinit"]
+- ["V16cuckoo_generator20GenerateMocksCommand", "init"]
+- ["Ps8Hashable", "init"]
+- ["V10Commandant11HelpCommand", "init"]
+- ["V10Commandant11HelpCommand", "verb"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps10MirrorPath", "init"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo19NSPasteboardReading", "init"]
+- ["PSo19NSPasteboardWriting", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "init"]
+- ["P7FileKit8Readable", "init"]
+- ["P4Yams19ScalarConstructible", "init"]
+- ["P21SourceKittenFramework22SourceKitRepresentable", "init"]
+- ["SS", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- ["V16cuckoo_generator14VersionCommand", "deinit"]
+- ["V16cuckoo_generator14VersionCommand", "init"]
+- ["P7FileKit8Writable", "init"]
+- ["P9SWXMLHash26XMLAttributeDeserializable", "init"]
+- ["P9SWXMLHash24XMLElementDeserializable", "init"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps9_Hashable", "init"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- "P10Commandant16ArgumentProtocol"
+- "Ps7CVarArg"
+- "P10Commandant15CommandProtocol"
+- "C10Commandant15CommandRegistry"
+- "Ps10Comparable"
+- "O16cuckoo_generator20CuckooGeneratorError"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps5Error"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "V16cuckoo_generator20GenerateMocksCommand"
+- "Ps8Hashable"
+- "V10Commandant11HelpCommand"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "PSo16NSObjectProtocol"
+- "PSo19NSPasteboardReading"
+- "PSo19NSPasteboardWriting"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "P7FileKit8Readable"
+- "P4Yams19ScalarConstructible"
+- "P21SourceKittenFramework22SourceKitRepresentable"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "V16cuckoo_generator14VersionCommand"
+- "P7FileKit8Writable"
+- "P9SWXMLHash26XMLAttributeDeserializable"
+- "P9SWXMLHash24XMLElementDeserializable"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Metal.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/SWXMLHash.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/SourceKittenFramework.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/CuckooGeneratorFramework.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/Stencil.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/Yams.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/FileKit.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/PathKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/Result.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/Commandant.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXErrorCode.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXCompilationDatabase.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXString.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Yams.git-8068124914099325722/Sources/CYaml/include/CYaml.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Yams.git-8068124914099325722/Sources/CYaml/include/yaml.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/BuildSystem.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Platform.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Documentation.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Index.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/module.modulemap"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKit.git-6033254968535974678/module.modulemap"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/CYaml.build/module.modulemap"
+interface-hash: "76de3b48907a0ccdba266e533fda7135"

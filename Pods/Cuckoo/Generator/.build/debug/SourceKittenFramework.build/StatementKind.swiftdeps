@@ -1,0 +1,244 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "StatementKind"
+provides-nominal:
+- "O21SourceKittenFramework13StatementKind"
+provides-member:
+- ["O21SourceKittenFramework13StatementKind", ""]
+- ["O21SourceKittenFramework13StatementKind", "Brace"]
+- ["O21SourceKittenFramework13StatementKind", "Case"]
+- ["O21SourceKittenFramework13StatementKind", "For"]
+- ["O21SourceKittenFramework13StatementKind", "ForEach"]
+- ["O21SourceKittenFramework13StatementKind", "Guard"]
+- ["O21SourceKittenFramework13StatementKind", "If"]
+- ["O21SourceKittenFramework13StatementKind", "RepeatWhile"]
+- ["O21SourceKittenFramework13StatementKind", "Switch"]
+- ["O21SourceKittenFramework13StatementKind", "While"]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- "StatementKind"
+- "String"
+- "StringLiteralType"
+- "SwiftLangSyntax"
+- !private "fatalError"
+- !private "~="
+depends-member:
+- ["Ps9AnyObject", "init"]
+- !private ["Ps17BitwiseOperations", "hashValue"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Ps7CVarArg", "hashValue"]
+- ["Ps7CVarArg", "init"]
+- !private ["Ps10Comparable", "hashValue"]
+- ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "hashValue"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "hashValue"]
+- ["Ps17CustomReflectable", "init"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "hashValue"]
+- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "_toAnyHashable"]
+- !private ["Ps9Equatable", "fatalError"]
+- ["Ps9Equatable", "hashValue"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "rawValue"]
+- ["Ps9Equatable", ""]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "hashValue"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "_toAnyHashable"]
+- !private ["Ps8Hashable", "fatalError"]
+- ["Ps8Hashable", "hashValue"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "rawValue"]
+- ["Ps8Hashable", ""]
+- !private ["Si", "hashValue"]
+- !private ["Ps7Integer", "hashValue"]
+- !private ["Ps17IntegerArithmetic", "hashValue"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "hashValue"]
+- ["Ps10MirrorPath", "init"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "init"]
+- !private ["P4Yams17NodeRepresentable", "_getBuiltinLogicValue"]
+- !private ["P4Yams17NodeRepresentable", "hashValue"]
+- ["Ps16RawRepresentable", "_toAnyHashable"]
+- !private ["Ps16RawRepresentable", "fatalError"]
+- ["Ps16RawRepresentable", "hashValue"]
+- ["Ps16RawRepresentable", "init"]
+- ["Ps16RawRepresentable", "rawValue"]
+- ["Ps16RawRepresentable", ""]
+- !private ["P4Yams19ScalarConstructible", "_getBuiltinLogicValue"]
+- !private ["P4Yams19ScalarConstructible", "hashValue"]
+- ["P4Yams19ScalarConstructible", "init"]
+- !private ["Ps13SignedInteger", "hashValue"]
+- !private ["Ps12SignedNumber", "hashValue"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "_getBuiltinLogicValue"]
+- ["P21SourceKittenFramework22SourceKitRepresentable", "init"]
+- ["O21SourceKittenFramework13StatementKind", "Brace"]
+- ["O21SourceKittenFramework13StatementKind", "Case"]
+- ["O21SourceKittenFramework13StatementKind", "For"]
+- ["O21SourceKittenFramework13StatementKind", "ForEach"]
+- ["O21SourceKittenFramework13StatementKind", "Guard"]
+- ["O21SourceKittenFramework13StatementKind", "If"]
+- ["O21SourceKittenFramework13StatementKind", "RawValue"]
+- ["O21SourceKittenFramework13StatementKind", "RepeatWhile"]
+- ["O21SourceKittenFramework13StatementKind", "StatementKind"]
+- ["O21SourceKittenFramework13StatementKind", "Switch"]
+- ["O21SourceKittenFramework13StatementKind", "While"]
+- ["O21SourceKittenFramework13StatementKind", "_toAnyHashable"]
+- ["O21SourceKittenFramework13StatementKind", "brace"]
+- ["O21SourceKittenFramework13StatementKind", "case"]
+- ["O21SourceKittenFramework13StatementKind", "deinit"]
+- !private ["O21SourceKittenFramework13StatementKind", "fatalError"]
+- ["O21SourceKittenFramework13StatementKind", "for"]
+- ["O21SourceKittenFramework13StatementKind", "forEach"]
+- ["O21SourceKittenFramework13StatementKind", "guard"]
+- ["O21SourceKittenFramework13StatementKind", "hashValue"]
+- ["O21SourceKittenFramework13StatementKind", "if"]
+- ["O21SourceKittenFramework13StatementKind", "init"]
+- ["O21SourceKittenFramework13StatementKind", "rawValue"]
+- ["O21SourceKittenFramework13StatementKind", "repeatWhile"]
+- ["O21SourceKittenFramework13StatementKind", "switch"]
+- ["O21SourceKittenFramework13StatementKind", "while"]
+- !private ["Vs12StaticString", "init"]
+- !private ["Ps10Strideable", "hashValue"]
+- ["SS", "init"]
+- ["P21SourceKittenFramework15SwiftLangSyntax", "_toAnyHashable"]
+- !private ["P21SourceKittenFramework15SwiftLangSyntax", "fatalError"]
+- ["P21SourceKittenFramework15SwiftLangSyntax", "hashValue"]
+- ["P21SourceKittenFramework15SwiftLangSyntax", "init"]
+- ["P21SourceKittenFramework15SwiftLangSyntax", "rawValue"]
+- ["P21SourceKittenFramework15SwiftLangSyntax", ""]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- !private ["P9SWXMLHash26XMLAttributeDeserializable", "_getBuiltinLogicValue"]
+- !private ["P9SWXMLHash26XMLAttributeDeserializable", "hashValue"]
+- ["P9SWXMLHash26XMLAttributeDeserializable", "init"]
+- !private ["P9SWXMLHash24XMLElementDeserializable", "_getBuiltinLogicValue"]
+- !private ["P9SWXMLHash24XMLElementDeserializable", "hashValue"]
+- ["P9SWXMLHash24XMLElementDeserializable", "init"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "hashValue"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- ["Ps9_Hashable", "_toAnyHashable"]
+- !private ["Ps9_Hashable", "fatalError"]
+- ["Ps9_Hashable", "hashValue"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "rawValue"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps14_Incrementable", "hashValue"]
+- !private ["Ps8_Integer", "hashValue"]
+- !private ["Ps18_IntegerArithmetic", "hashValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps14_SignedInteger", "hashValue"]
+- !private ["Ps11_Strideable", "hashValue"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps17BitwiseOperations"
+- !private "Sb"
+- "Ps7CVarArg"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps8Hashable"
+- !private "Si"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- !private "P4Yams17NodeRepresentable"
+- "Ps16RawRepresentable"
+- "P4Yams19ScalarConstructible"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
+- "P21SourceKittenFramework22SourceKitRepresentable"
+- "O21SourceKittenFramework13StatementKind"
+- !private "Vs12StaticString"
+- !private "Ps10Strideable"
+- "SS"
+- "P21SourceKittenFramework15SwiftLangSyntax"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "P9SWXMLHash26XMLAttributeDeserializable"
+- "P9SWXMLHash24XMLElementDeserializable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "Ps14_Incrementable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- "Ps21_ObjectiveCBridgeable"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/SWXMLHash.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/Yams.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXErrorCode.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXCompilationDatabase.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXString.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Yams.git-8068124914099325722/Sources/CYaml/include/CYaml.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Yams.git-8068124914099325722/Sources/CYaml/include/yaml.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/BuildSystem.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Platform.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Documentation.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Index.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/module.modulemap"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKit.git-6033254968535974678/module.modulemap"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/CYaml.build/module.modulemap"
+interface-hash: "a3775a61f4c00f20ae3b3e973fd0d18a"

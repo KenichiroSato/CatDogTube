@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "6ed1aa9bad230606e4474c2f8a082f44"
+build_time: [554097765, 377847000]
+inputs:
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Result.git-8684547452332391156/Result/Result.swift": [554097760, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Result.git-8684547452332391156/Result/ResultProtocol.swift": [554097760, 0]

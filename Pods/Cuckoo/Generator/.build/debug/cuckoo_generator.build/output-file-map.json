@@ -1,0 +1,29 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/master.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/CuckooGeneratorError.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/CuckooGeneratorError.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/CuckooGeneratorError.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/CuckooGeneratorError~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/CuckooGeneratorError.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/GenerateMocksCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/GenerateMocksCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/GenerateMocksCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/GenerateMocksCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/GenerateMocksCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/main.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/main.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/main.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/main.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/VersionCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/VersionCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/VersionCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/VersionCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/cuckoo_generator.build/VersionCommand.swiftdeps"
+  }
+}

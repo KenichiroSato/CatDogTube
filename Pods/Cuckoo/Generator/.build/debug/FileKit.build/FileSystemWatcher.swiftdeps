@@ -1,0 +1,431 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "FileSystemWatcher"
+provides-nominal:
+- "C7FileKit17FileSystemWatcher"
+provides-member:
+- ["C7FileKit17FileSystemWatcher", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "-"
+- "..<"
+- !private "=="
+- "Array"
+- "AssignmentPrecedence"
+- "BooleanLiteralType"
+- !private "CFArray"
+- "CFRunLoop"
+- "CFRunLoopGetMain"
+- "CFRunLoopMode"
+- "CFTimeInterval"
+- "CastingPrecedence"
+- "ConstFSEventStreamRef"
+- "DispatchQueue"
+- "FSEventStreamCallback"
+- !private "FSEventStreamContext"
+- !private "FSEventStreamCreate"
+- "FSEventStreamEventFlags"
+- "FSEventStreamEventId"
+- "FileSystemEvent"
+- "FileSystemEventFlags"
+- "FileSystemEventStream"
+- "FileSystemEventStreamCreateFlags"
+- "FileSystemWatcher"
+- "Int"
+- "NSArray"
+- "Path"
+- "String"
+- "StringLiteralType"
+- !private "UInt32"
+- !private "UnicodeScalarType"
+- !private "Unmanaged"
+- "UnsafeMutableRawPointer"
+- "UnsafePointer"
+- "Void"
+- !private "kCFAllocatorDefault"
+- "unsafeBitCast"
+depends-member:
+- ["Ps9AnyObject", "CFRunLoopGetMain"]
+- ["Ps9AnyObject", "CFRunLoopMode"]
+- !private ["Ps9AnyObject", "FSEventStreamContext"]
+- !private ["Ps9AnyObject", "FSEventStreamCreate"]
+- ["Ps9AnyObject", "FileSystemEvent"]
+- ["Ps9AnyObject", "FileSystemEventFlags"]
+- !private ["Ps9AnyObject", "FileSystemEventStream"]
+- ["Ps9AnyObject", "FileSystemWatcher"]
+- ["Ps9AnyObject", "Int"]
+- ["Ps9AnyObject", "NSArray"]
+- ["Ps9AnyObject", "Path"]
+- !private ["Ps9AnyObject", "UInt32"]
+- !private ["Ps9AnyObject", "Unmanaged"]
+- !private ["Ps9AnyObject", "_callback"]
+- !private ["Ps9AnyObject", "_eventCallback"]
+- ["Ps9AnyObject", "_processEvent"]
+- !private ["Ps9AnyObject", "_started"]
+- !private ["Ps9AnyObject", "_stream"]
+- !private ["Ps9AnyObject", "close"]
+- !private ["Ps9AnyObject", "flags"]
+- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "kCFAllocatorDefault"]
+- !private ["Ps9AnyObject", "lastEventId"]
+- !private ["Ps9AnyObject", "latency"]
+- ["Ps9AnyObject", "log"]
+- !private ["Ps9AnyObject", "paths"]
+- !private ["Ps9AnyObject", "queue"]
+- !private ["Ps9AnyObject", "runLoop"]
+- !private ["Ps9AnyObject", "runLoopMode"]
+- ["Ps9AnyObject", "unsafeBitCast"]
+- ["Ps9AnyObject", ""]
+- !private ["Sa", "map"]
+- ["Sa", "subscript"]
+- !private ["Ps23BidirectionalCollection", "map"]
+- ["Ps23BidirectionalCollection", "subscript"]
+- ["Ps17BitwiseOperations", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["VSC13CFRunLoopMode", "defaultMode"]
+- ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "map"]
+- ["Ps7CVarArg", "subscript"]
+- !private ["Ps10Collection", "map"]
+- ["Ps10Collection", "subscript"]
+- ["Ps10Comparable", "init"]
+- ["Ps10Comparable", "subscript"]
+- !private ["Ps28CustomDebugStringConvertible", "FileEvents"]
+- !private ["Ps28CustomDebugStringConvertible", "UseCFTypes"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "map"]
+- !private ["Ps28CustomDebugStringConvertible", "rawValue"]
+- ["Ps28CustomDebugStringConvertible", "subscript"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "subscript"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "map"]
+- ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps23CustomStringConvertible", "FileEvents"]
+- !private ["Ps23CustomStringConvertible", "UseCFTypes"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "map"]
+- !private ["Ps23CustomStringConvertible", "rawValue"]
+- ["Ps23CustomStringConvertible", "subscript"]
+- !private ["Ps9Equatable", "FileEvents"]
+- !private ["Ps9Equatable", "UseCFTypes"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "rawValue"]
+- ["Ps9Equatable", "subscript"]
+- !private ["Ps25ExpressibleByArrayLiteral", "FileEvents"]
+- !private ["Ps25ExpressibleByArrayLiteral", "UseCFTypes"]
+- ["Ps25ExpressibleByArrayLiteral", "init"]
+- !private ["Ps25ExpressibleByArrayLiteral", "map"]
+- !private ["Ps25ExpressibleByArrayLiteral", "rawValue"]
+- ["Ps25ExpressibleByArrayLiteral", "subscript"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "rawValue"]
+- ["Ps27ExpressibleByIntegerLiteral", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "rawValue"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "rawValue"]
+- !private ["VSC20FSEventStreamContext", "info"]
+- !private ["VSC20FSEventStreamContext", "init"]
+- !private ["V7FileKit15FileSystemEvent", "NowEventId"]
+- !private ["V7FileKit15FileSystemEvent", "flags"]
+- !private ["V7FileKit15FileSystemEvent", "id"]
+- ["V7FileKit15FileSystemEvent", "init"]
+- !private ["V7FileKit15FileSystemEvent", "path"]
+- ["V7FileKit20FileSystemEventFlags", "deinit"]
+- ["V7FileKit20FileSystemEventFlags", "init"]
+- !private ["V7FileKit21FileSystemEventStream", "deinit"]
+- !private ["V7FileKit21FileSystemEventStream", "flushAsync"]
+- !private ["V7FileKit21FileSystemEventStream", "flushSync"]
+- !private ["V7FileKit21FileSystemEventStream", "init"]
+- !private ["V7FileKit21FileSystemEventStream", "invalidate"]
+- !private ["V7FileKit21FileSystemEventStream", "release"]
+- !private ["V7FileKit21FileSystemEventStream", "scheduleWithRunLoop"]
+- !private ["V7FileKit21FileSystemEventStream", "setDispatchQueue"]
+- !private ["V7FileKit21FileSystemEventStream", "start"]
+- !private ["V7FileKit21FileSystemEventStream", "stop"]
+- !private ["V7FileKit32FileSystemEventStreamCreateFlags", "FileEvents"]
+- !private ["V7FileKit32FileSystemEventStreamCreateFlags", "UseCFTypes"]
+- !private ["V7FileKit32FileSystemEventStreamCreateFlags", "deinit"]
+- !private ["V7FileKit32FileSystemEventStreamCreateFlags", "rawValue"]
+- !private ["C7FileKit17FileSystemWatcher", "CFArray"]
+- ["C7FileKit17FileSystemWatcher", "CFRunLoop"]
+- ["C7FileKit17FileSystemWatcher", "CFRunLoopGetMain"]
+- ["C7FileKit17FileSystemWatcher", "CFRunLoopMode"]
+- ["C7FileKit17FileSystemWatcher", "CFTimeInterval"]
+- ["C7FileKit17FileSystemWatcher", "ConstFSEventStreamRef"]
+- ["C7FileKit17FileSystemWatcher", "DispatchQueue"]
+- ["C7FileKit17FileSystemWatcher", "FSEventStreamCallback"]
+- !private ["C7FileKit17FileSystemWatcher", "FSEventStreamContext"]
+- !private ["C7FileKit17FileSystemWatcher", "FSEventStreamCreate"]
+- ["C7FileKit17FileSystemWatcher", "FSEventStreamEventFlags"]
+- ["C7FileKit17FileSystemWatcher", "FSEventStreamEventId"]
+- ["C7FileKit17FileSystemWatcher", "FileSystemEvent"]
+- ["C7FileKit17FileSystemWatcher", "FileSystemEventFlags"]
+- ["C7FileKit17FileSystemWatcher", "FileSystemEventStream"]
+- ["C7FileKit17FileSystemWatcher", "FileSystemEventStreamCreateFlags"]
+- ["C7FileKit17FileSystemWatcher", "FileSystemWatcher"]
+- ["C7FileKit17FileSystemWatcher", "Int"]
+- ["C7FileKit17FileSystemWatcher", "NSArray"]
+- ["C7FileKit17FileSystemWatcher", "Path"]
+- ["C7FileKit17FileSystemWatcher", "String"]
+- !private ["C7FileKit17FileSystemWatcher", "UInt32"]
+- !private ["C7FileKit17FileSystemWatcher", "Unmanaged"]
+- ["C7FileKit17FileSystemWatcher", "UnsafeMutableRawPointer"]
+- ["C7FileKit17FileSystemWatcher", "UnsafePointer"]
+- ["C7FileKit17FileSystemWatcher", "Void"]
+- !private ["C7FileKit17FileSystemWatcher", "_callback"]
+- !private ["C7FileKit17FileSystemWatcher", "_eventCallback"]
+- ["C7FileKit17FileSystemWatcher", "_processEvent"]
+- !private ["C7FileKit17FileSystemWatcher", "_started"]
+- !private ["C7FileKit17FileSystemWatcher", "_stream"]
+- ["C7FileKit17FileSystemWatcher", "close"]
+- ["C7FileKit17FileSystemWatcher", "deinit"]
+- ["C7FileKit17FileSystemWatcher", "flags"]
+- ["C7FileKit17FileSystemWatcher", "flushAsync"]
+- ["C7FileKit17FileSystemWatcher", "flushSync"]
+- ["C7FileKit17FileSystemWatcher", "init"]
+- !private ["C7FileKit17FileSystemWatcher", "kCFAllocatorDefault"]
+- ["C7FileKit17FileSystemWatcher", "lastEventId"]
+- ["C7FileKit17FileSystemWatcher", "latency"]
+- ["C7FileKit17FileSystemWatcher", "log"]
+- ["C7FileKit17FileSystemWatcher", "paths"]
+- ["C7FileKit17FileSystemWatcher", "queue"]
+- ["C7FileKit17FileSystemWatcher", "runLoop"]
+- ["C7FileKit17FileSystemWatcher", "runLoopMode"]
+- ["C7FileKit17FileSystemWatcher", "unsafeBitCast"]
+- ["C7FileKit17FileSystemWatcher", "watch"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "rawValue"]
+- ["Ps8Hashable", "subscript"]
+- ["Si", "init"]
+- ["Ps7Integer", "init"]
+- ["Ps17IntegerArithmetic", "init"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps10MirrorPath", "init"]
+- !private ["Ps17MutableCollection", "map"]
+- ["Ps17MutableCollection", "subscript"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo19NSPasteboardReading", "init"]
+- ["PSo19NSPasteboardWriting", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "init"]
+- !private ["Ps9OptionSet", "FileEvents"]
+- !private ["Ps9OptionSet", "UseCFTypes"]
+- ["Ps9OptionSet", "init"]
+- !private ["Ps9OptionSet", "rawValue"]
+- ["V7FileKit4Path", "deinit"]
+- ["V7FileKit4Path", "init"]
+- !private ["V7FileKit4Path", "rawValue"]
+- !private ["Ps22RandomAccessCollection", "map"]
+- ["Ps22RandomAccessCollection", "subscript"]
+- !private ["Ps26RangeReplaceableCollection", "map"]
+- ["Ps26RangeReplaceableCollection", "subscript"]
+- !private ["Ps16RawRepresentable", "FileEvents"]
+- !private ["Ps16RawRepresentable", "UseCFTypes"]
+- ["Ps16RawRepresentable", "defaultMode"]
+- !private ["Ps16RawRepresentable", "flushAsync"]
+- !private ["Ps16RawRepresentable", "flushSync"]
+- ["Ps16RawRepresentable", "init"]
+- !private ["Ps16RawRepresentable", "invalidate"]
+- !private ["Ps16RawRepresentable", "rawValue"]
+- !private ["Ps16RawRepresentable", "release"]
+- !private ["Ps16RawRepresentable", "scheduleWithRunLoop"]
+- !private ["Ps16RawRepresentable", "setDispatchQueue"]
+- !private ["Ps16RawRepresentable", "start"]
+- !private ["Ps16RawRepresentable", "stop"]
+- ["P7FileKit8Readable", "init"]
+- !private ["P7FileKit8Readable", "map"]
+- ["P7FileKit8Readable", "subscript"]
+- ["Ps8Sequence", "init"]
+- !private ["Ps8Sequence", "map"]
+- !private ["Ps8Sequence", "rawValue"]
+- ["Ps8Sequence", "subscript"]
+- !private ["Ps10SetAlgebra", "FileEvents"]
+- !private ["Ps10SetAlgebra", "UseCFTypes"]
+- ["Ps10SetAlgebra", "init"]
+- !private ["Ps10SetAlgebra", "rawValue"]
+- ["Ps13SignedInteger", "init"]
+- ["Ps12SignedNumber", "init"]
+- ["Ps10Strideable", "init"]
+- ["Ps10Strideable", "subscript"]
+- !private ["SS", "deinit"]
+- ["SS", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- !private ["Vs6UInt32", "init"]
+- !private ["Vs9Unmanaged", "passUnretained"]
+- !private ["Vs9Unmanaged", "toOpaque"]
+- ["SP", "subscript"]
+- !private ["Ps15UnsignedInteger", "init"]
+- ["P7FileKit8Writable", "init"]
+- !private ["P7FileKit8Writable", "map"]
+- ["P7FileKit8Writable", "subscript"]
+- !private ["P7FileKit19WritableConvertible", "map"]
+- ["P7FileKit19WritableConvertible", "subscript"]
+- !private ["Ps14_ArrayProtocol", "map"]
+- ["Ps14_ArrayProtocol", "subscript"]
+- !private ["Ps23_BidirectionalIndexable", "map"]
+- ["Ps23_BidirectionalIndexable", "subscript"]
+- !private ["Ps24_DestructorSafeContainer", "map"]
+- ["Ps24_DestructorSafeContainer", "subscript"]
+- !private ["Ps28_DisallowMixedSignArithmetic", "init"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "rawValue"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "rawValue"]
+- ["Ps9_Hashable", "subscript"]
+- ["Ps14_Incrementable", "init"]
+- !private ["Ps10_Indexable", "map"]
+- ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "map"]
+- ["Ps14_IndexableBase", "subscript"]
+- ["Ps8_Integer", "init"]
+- ["Ps18_IntegerArithmetic", "init"]
+- !private ["Ps17_MutableIndexable", "map"]
+- ["Ps17_MutableIndexable", "subscript"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "map"]
+- ["Ps21_ObjectiveCBridgeable", "subscript"]
+- ["Ps8_Pointer", "subscript"]
+- !private ["Ps22_RandomAccessIndexable", "map"]
+- ["Ps22_RandomAccessIndexable", "subscript"]
+- !private ["Ps26_RangeReplaceableIndexable", "map"]
+- ["Ps26_RangeReplaceableIndexable", "subscript"]
+- ["Ps14_SignedInteger", "init"]
+- ["Ps11_Strideable", "init"]
+- ["Ps11_Strideable", "subscript"]
+- ["Ps20_SwiftNewtypeWrapper", "defaultMode"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sa"
+- "Ps23BidirectionalCollection"
+- "Ps17BitwiseOperations"
+- !private "Sb"
+- "VSC13CFRunLoopMode"
+- "Ps7CVarArg"
+- "Ps10Collection"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps27ExpressibleByIntegerLiteral"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "VSC20FSEventStreamContext"
+- "V7FileKit15FileSystemEvent"
+- "V7FileKit20FileSystemEventFlags"
+- !private "V7FileKit21FileSystemEventStream"
+- !private "V7FileKit32FileSystemEventStreamCreateFlags"
+- "C7FileKit17FileSystemWatcher"
+- "Ps8Hashable"
+- "Si"
+- "Ps7Integer"
+- "Ps17IntegerArithmetic"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "Ps17MutableCollection"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "PSo16NSObjectProtocol"
+- "PSo19NSPasteboardReading"
+- "PSo19NSPasteboardWriting"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "Ps9OptionSet"
+- "V7FileKit4Path"
+- "Ps22RandomAccessCollection"
+- "Ps26RangeReplaceableCollection"
+- "Ps16RawRepresentable"
+- "P7FileKit8Readable"
+- "Ps8Sequence"
+- "Ps10SetAlgebra"
+- "Ps13SignedInteger"
+- "Ps12SignedNumber"
+- "Ps10Strideable"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- !private "Vs6UInt32"
+- !private "Vs9Unmanaged"
+- "SP"
+- !private "Ps15UnsignedInteger"
+- "P7FileKit8Writable"
+- "P7FileKit19WritableConvertible"
+- "Ps14_ArrayProtocol"
+- "Ps23_BidirectionalIndexable"
+- "Ps24_DestructorSafeContainer"
+- !private "Ps28_DisallowMixedSignArithmetic"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- "Ps14_Incrementable"
+- "Ps10_Indexable"
+- "Ps14_IndexableBase"
+- "Ps8_Integer"
+- "Ps18_IntegerArithmetic"
+- "Ps17_MutableIndexable"
+- "Ps21_ObjectiveCBridgeable"
+- "Ps8_Pointer"
+- "Ps22_RandomAccessIndexable"
+- "Ps26_RangeReplaceableIndexable"
+- "Ps14_SignedInteger"
+- "Ps11_Strideable"
+- "Ps20_SwiftNewtypeWrapper"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Metal.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/CYaml.build/module.modulemap"
+interface-hash: "5c3ded9e803961d45e16220d9cafb24f"

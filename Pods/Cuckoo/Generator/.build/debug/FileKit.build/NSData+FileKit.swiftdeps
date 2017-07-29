@@ -1,0 +1,182 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+- "CSo6NSData"
+provides-member:
+- ["CSo6NSData", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "FileKitError"
+- "NSData"
+- "Path"
+- "ReadableWritable"
+- "WritableToFile"
+depends-member:
+- !private ["Ps9AnyObject", "FileKitError"]
+- ["Ps9AnyObject", "ReadingOptions"]
+- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "read"]
+- ["Ps9AnyObject", "write"]
+- !private ["Ps7CVarArg", "FileKitError"]
+- ["Ps7CVarArg", "ReadingOptions"]
+- !private ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "read"]
+- ["Ps7CVarArg", "write"]
+- !private ["Ps28CustomDebugStringConvertible", "FileKitError"]
+- ["Ps28CustomDebugStringConvertible", "ReadingOptions"]
+- !private ["Ps28CustomDebugStringConvertible", "_safeRawValue"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "read"]
+- ["Ps28CustomDebugStringConvertible", "write"]
+- !private ["Ps23CustomStringConvertible", "FileKitError"]
+- ["Ps23CustomStringConvertible", "ReadingOptions"]
+- !private ["Ps23CustomStringConvertible", "_safeRawValue"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "read"]
+- !private ["Ps23CustomStringConvertible", "readFromFileFail"]
+- ["Ps23CustomStringConvertible", "write"]
+- !private ["Ps9Equatable", "FileKitError"]
+- ["Ps9Equatable", "ReadingOptions"]
+- !private ["Ps9Equatable", "_safeRawValue"]
+- !private ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "read"]
+- ["Ps9Equatable", "write"]
+- !private ["Ps5Error", "readFromFileFail"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "_safeRawValue"]
+- !private ["Ps26ExpressibleByStringLiteral", "_safeRawValue"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "_safeRawValue"]
+- !private ["O7FileKit12FileKitError", "deinit"]
+- !private ["O7FileKit12FileKitError", "readFromFileFail"]
+- !private ["Ps8Hashable", "FileKitError"]
+- ["Ps8Hashable", "ReadingOptions"]
+- !private ["Ps8Hashable", "_safeRawValue"]
+- !private ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "read"]
+- ["Ps8Hashable", "write"]
+- !private ["PSo8NSCoding", "FileKitError"]
+- ["PSo8NSCoding", "ReadingOptions"]
+- !private ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "read"]
+- ["PSo8NSCoding", "write"]
+- !private ["PSo9NSCopying", "FileKitError"]
+- ["PSo9NSCopying", "ReadingOptions"]
+- !private ["PSo9NSCopying", "init"]
+- ["PSo9NSCopying", "read"]
+- ["PSo9NSCopying", "write"]
+- !private ["CSo6NSData", "FileKitError"]
+- ["CSo6NSData", "NSData"]
+- ["CSo6NSData", "Path"]
+- ["CSo6NSData", "ReadingOptions"]
+- ["CSo6NSData", "deinit"]
+- !private ["CSo6NSData", "init"]
+- ["CSo6NSData", "read"]
+- ["CSo6NSData", "write"]
+- !private ["PSo16NSMutableCopying", "FileKitError"]
+- ["PSo16NSMutableCopying", "ReadingOptions"]
+- !private ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSMutableCopying", "read"]
+- ["PSo16NSMutableCopying", "write"]
+- !private ["CSo8NSObject", "FileKitError"]
+- ["CSo8NSObject", "NSData"]
+- ["CSo8NSObject", "Path"]
+- ["CSo8NSObject", "ReadingOptions"]
+- !private ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "read"]
+- ["CSo8NSObject", "write"]
+- !private ["PSo16NSObjectProtocol", "FileKitError"]
+- ["PSo16NSObjectProtocol", "ReadingOptions"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "read"]
+- ["PSo16NSObjectProtocol", "write"]
+- !private ["PSo14NSSecureCoding", "FileKitError"]
+- ["PSo14NSSecureCoding", "ReadingOptions"]
+- !private ["PSo14NSSecureCoding", "init"]
+- ["PSo14NSSecureCoding", "read"]
+- ["PSo14NSSecureCoding", "write"]
+- !private ["V7FileKit4Path", "_safeRawValue"]
+- !private ["Ps16RawRepresentable", "_safeRawValue"]
+- !private ["P7FileKit8Readable", "FileKitError"]
+- ["P7FileKit8Readable", "ReadingOptions"]
+- !private ["P7FileKit8Readable", "init"]
+- ["P7FileKit8Readable", "read"]
+- ["P7FileKit8Readable", "write"]
+- ["P7FileKit8Readable", ""]
+- !private ["Ps8Sequence", "_safeRawValue"]
+- !private ["P7FileKit8Writable", "FileKitError"]
+- ["P7FileKit8Writable", "ReadingOptions"]
+- !private ["P7FileKit8Writable", "init"]
+- ["P7FileKit8Writable", "read"]
+- ["P7FileKit8Writable", "write"]
+- ["P7FileKit8Writable", ""]
+- !private ["P7FileKit14WritableToFile", "FileKitError"]
+- ["P7FileKit14WritableToFile", "ReadingOptions"]
+- !private ["P7FileKit14WritableToFile", "init"]
+- ["P7FileKit14WritableToFile", "read"]
+- ["P7FileKit14WritableToFile", "write"]
+- ["P7FileKit14WritableToFile", ""]
+- !private ["Ps33_ExpressibleByStringInterpolation", "_safeRawValue"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "FileKitError"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "ReadingOptions"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "read"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "write"]
+- !private ["Ps9_Hashable", "FileKitError"]
+- ["Ps9_Hashable", "ReadingOptions"]
+- !private ["Ps9_Hashable", "_safeRawValue"]
+- !private ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "read"]
+- ["Ps9_Hashable", "write"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps7CVarArg"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "Ps5Error"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "O7FileKit12FileKitError"
+- "Ps8Hashable"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "CSo6NSData"
+- "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- !private "V7FileKit4Path"
+- !private "Ps16RawRepresentable"
+- "P7FileKit8Readable"
+- !private "Ps8Sequence"
+- "P7FileKit8Writable"
+- "P7FileKit14WritableToFile"
+- !private "Ps33_ExpressibleByStringInterpolation"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Metal.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/CYaml.build/module.modulemap"
+interface-hash: "abc2975953ac4f96d8ec1d1074d28ae5"

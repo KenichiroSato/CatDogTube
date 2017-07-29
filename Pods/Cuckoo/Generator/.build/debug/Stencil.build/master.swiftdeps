@@ -1,0 +1,23 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "f90c2506e7e573b5eb41b7a9d1627624"
+build_time: [554097773, 309856000]
+inputs:
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Context.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Environment.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Errors.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Expression.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Extension.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Filters.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/FilterTag.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/ForTag.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/IfTag.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Include.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Inheritence.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Lexer.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Loader.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Node.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/NowTag.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Parser.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Template.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Tokenizer.swift": [554097761, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Stencil.git-7635584243355970173/Sources/Variable.swift": [554097761, 0]

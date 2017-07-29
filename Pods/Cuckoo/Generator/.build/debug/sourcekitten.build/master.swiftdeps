@@ -1,0 +1,14 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "b5b59dc1207b5715a8aaeb1e005bc295"
+build_time: [554097780, 238885000]
+inputs:
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/CompleteCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/DocCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/Errors.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/FormatCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/IndexCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/main.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/StructureCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/SyntaxCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/VersionCommand.swift": [554097724, 0]
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/YamlRequestCommand.swift": [554097724, 0]

@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/PathKit.build/master.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/PathKit.git--1865447967743163058/Sources/PathKit.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/PathKit.build/PathKit.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/PathKit.build/PathKit.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/PathKit.build/PathKit~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/PathKit.build/PathKit.swiftdeps"
+  }
+}

@@ -1,0 +1,452 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ClangTranslationUnit"
+provides-nominal:
+- "V21SourceKittenFramework20ClangTranslationUnit"
+provides-member:
+- ["V21SourceKittenFramework20ClangTranslationUnit", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- !private "??"
+- "Array"
+- "AssignmentPrecedence"
+- "CXTranslationUnit"
+- "CastingPrecedence"
+- !private "ClangIndex"
+- "ClangTranslationUnit"
+- "CustomStringConvertible"
+- "Dictionary"
+- !private "FileManager"
+- "Hashable"
+- !private "NSString"
+- "Sequence"
+- !private "Set"
+- "SourceDeclaration"
+- "String"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- !private "declarationsToJSON"
+- !private "fputs"
+- !private "insertMarks"
+- !private "parseCompilerArguments"
+- !private "runXcodeBuild"
+- !private "stderr"
+depends-member:
+- !private ["Ps9AnyObject", "currentDirectoryPath"]
+- !private ["Ps9AnyObject", "default"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "utf8String"]
+- !private ["Sa", "distinct"]
+- !private ["Sa", "flatMap"]
+- !private ["Sa", "grouped"]
+- !private ["Sa", "init"]
+- !private ["Sa", "map"]
+- !private ["Sa", "rejectEmptyDuplicateEnums"]
+- !private ["Sa", "sorted"]
+- !private ["Ps23BidirectionalCollection", "distinct"]
+- !private ["Ps23BidirectionalCollection", "flatMap"]
+- !private ["Ps23BidirectionalCollection", "grouped"]
+- !private ["Ps23BidirectionalCollection", "init"]
+- !private ["Ps23BidirectionalCollection", "map"]
+- !private ["Ps23BidirectionalCollection", "rejectEmptyDuplicateEnums"]
+- !private ["Ps23BidirectionalCollection", "sorted"]
+- !private ["Ps7CVarArg", "Key"]
+- !private ["Ps7CVarArg", "currentDirectoryPath"]
+- !private ["Ps7CVarArg", "cursor"]
+- !private ["Ps7CVarArg", "default"]
+- !private ["Ps7CVarArg", "distinct"]
+- !private ["Ps7CVarArg", "flatMap"]
+- !private ["Ps7CVarArg", "grouped"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "map"]
+- !private ["Ps7CVarArg", "rejectEmptyDuplicateEnums"]
+- !private ["Ps7CVarArg", "sorted"]
+- !private ["Ps7CVarArg", "subscript"]
+- !private ["Ps7CVarArg", "utf8String"]
+- !private ["VSC8CXCursor", "flatMap"]
+- !private ["V21SourceKittenFramework10ClangIndex", "init"]
+- !private ["V21SourceKittenFramework10ClangIndex", "open"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "CXTranslationUnit"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "ClangIndex"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "FileManager"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "NSString"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "SourceDeclaration"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "String"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "clangTranslationUnits"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "declarations"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "declarationsToJSON"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "deinit"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "description"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "fputs"]
+- ["V21SourceKittenFramework20ClangTranslationUnit", "init"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "insertMarks"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "parseCompilerArguments"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "runXcodeBuild"]
+- !private ["V21SourceKittenFramework20ClangTranslationUnit", "stderr"]
+- !private ["Ps10Collection", "Key"]
+- !private ["Ps10Collection", "distinct"]
+- !private ["Ps10Collection", "flatMap"]
+- !private ["Ps10Collection", "grouped"]
+- !private ["Ps10Collection", "init"]
+- !private ["Ps10Collection", "map"]
+- !private ["Ps10Collection", "rejectEmptyDuplicateEnums"]
+- !private ["Ps10Collection", "sorted"]
+- !private ["Ps10Collection", "subscript"]
+- !private ["Ps10Comparable", "file"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps10Comparable", "location"]
+- !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "currentDirectoryPath"]
+- !private ["Ps28CustomDebugStringConvertible", "cursor"]
+- !private ["Ps28CustomDebugStringConvertible", "default"]
+- !private ["Ps28CustomDebugStringConvertible", "distinct"]
+- !private ["Ps28CustomDebugStringConvertible", "flatMap"]
+- !private ["Ps28CustomDebugStringConvertible", "grouped"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "map"]
+- !private ["Ps28CustomDebugStringConvertible", "rejectEmptyDuplicateEnums"]
+- !private ["Ps28CustomDebugStringConvertible", "sorted"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
+- !private ["Ps28CustomDebugStringConvertible", "utf8String"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "utf8String"]
+- !private ["Ps17CustomReflectable", "Key"]
+- !private ["Ps17CustomReflectable", "distinct"]
+- !private ["Ps17CustomReflectable", "flatMap"]
+- !private ["Ps17CustomReflectable", "grouped"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "map"]
+- !private ["Ps17CustomReflectable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps17CustomReflectable", "sorted"]
+- !private ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps23CustomStringConvertible", "ClangIndex"]
+- !private ["Ps23CustomStringConvertible", "FileManager"]
+- !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "SourceDeclaration"]
+- !private ["Ps23CustomStringConvertible", "clangTranslationUnits"]
+- !private ["Ps23CustomStringConvertible", "currentDirectoryPath"]
+- !private ["Ps23CustomStringConvertible", "declarations"]
+- !private ["Ps23CustomStringConvertible", "declarationsToJSON"]
+- !private ["Ps23CustomStringConvertible", "default"]
+- ["Ps23CustomStringConvertible", "description"]
+- !private ["Ps23CustomStringConvertible", "distinct"]
+- !private ["Ps23CustomStringConvertible", "flatMap"]
+- !private ["Ps23CustomStringConvertible", "fputs"]
+- !private ["Ps23CustomStringConvertible", "grouped"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "insertMarks"]
+- !private ["Ps23CustomStringConvertible", "map"]
+- !private ["Ps23CustomStringConvertible", "parseCompilerArguments"]
+- !private ["Ps23CustomStringConvertible", "rejectEmptyDuplicateEnums"]
+- !private ["Ps23CustomStringConvertible", "runXcodeBuild"]
+- !private ["Ps23CustomStringConvertible", "sorted"]
+- !private ["Ps23CustomStringConvertible", "stderr"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
+- !private ["Ps23CustomStringConvertible", "utf8String"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Vs10Dictionary", "Element"]
+- !private ["Vs10Dictionary", "Key"]
+- !private ["Vs10Dictionary", "Value"]
+- !private ["Vs10Dictionary", "init"]
+- !private ["Vs10Dictionary", "map"]
+- !private ["Vs10Dictionary", "subscript"]
+- !private ["Ps9Equatable", "currentDirectoryPath"]
+- !private ["Ps9Equatable", "cursor"]
+- !private ["Ps9Equatable", "default"]
+- !private ["Ps9Equatable", "file"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "location"]
+- !private ["Ps9Equatable", "objc"]
+- !private ["Ps9Equatable", "utf8String"]
+- !private ["Ps25ExpressibleByArrayLiteral", "distinct"]
+- !private ["Ps25ExpressibleByArrayLiteral", "flatMap"]
+- !private ["Ps25ExpressibleByArrayLiteral", "grouped"]
+- !private ["Ps25ExpressibleByArrayLiteral", "init"]
+- !private ["Ps25ExpressibleByArrayLiteral", "map"]
+- !private ["Ps25ExpressibleByArrayLiteral", "rejectEmptyDuplicateEnums"]
+- !private ["Ps25ExpressibleByArrayLiteral", "sorted"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Key"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "init"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "map"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "utf8String"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "utf8String"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "utf8String"]
+- !private ["CSo11FileManager", "currentDirectoryPath"]
+- !private ["CSo11FileManager", "default"]
+- !private ["Ps8Hashable", "currentDirectoryPath"]
+- !private ["Ps8Hashable", "cursor"]
+- !private ["Ps8Hashable", "default"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "location"]
+- !private ["Ps8Hashable", "objc"]
+- !private ["Ps8Hashable", "utf8String"]
+- !private ["O21SourceKittenFramework8Language", "objc"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
+- !private ["Ps17MutableCollection", "distinct"]
+- !private ["Ps17MutableCollection", "flatMap"]
+- !private ["Ps17MutableCollection", "grouped"]
+- !private ["Ps17MutableCollection", "init"]
+- !private ["Ps17MutableCollection", "map"]
+- !private ["Ps17MutableCollection", "rejectEmptyDuplicateEnums"]
+- !private ["Ps17MutableCollection", "sorted"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "utf8String"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "utf8String"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "utf8String"]
+- !private ["CSo8NSObject", "currentDirectoryPath"]
+- !private ["CSo8NSObject", "default"]
+- !private ["CSo8NSObject", "utf8String"]
+- !private ["PSo16NSObjectProtocol", "currentDirectoryPath"]
+- !private ["PSo16NSObjectProtocol", "default"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "utf8String"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "utf8String"]
+- !private ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "utf8String"]
+- !private ["P4Yams17NodeRepresentable", "Key"]
+- !private ["P4Yams17NodeRepresentable", "distinct"]
+- !private ["P4Yams17NodeRepresentable", "flatMap"]
+- !private ["P4Yams17NodeRepresentable", "grouped"]
+- !private ["P4Yams17NodeRepresentable", "init"]
+- !private ["P4Yams17NodeRepresentable", "map"]
+- !private ["P4Yams17NodeRepresentable", "rejectEmptyDuplicateEnums"]
+- !private ["P4Yams17NodeRepresentable", "sorted"]
+- !private ["P4Yams17NodeRepresentable", "subscript"]
+- !private ["Vs13OpaquePointer", "cursor"]
+- !private ["Ps22RandomAccessCollection", "distinct"]
+- !private ["Ps22RandomAccessCollection", "flatMap"]
+- !private ["Ps22RandomAccessCollection", "grouped"]
+- !private ["Ps22RandomAccessCollection", "init"]
+- !private ["Ps22RandomAccessCollection", "map"]
+- !private ["Ps22RandomAccessCollection", "rejectEmptyDuplicateEnums"]
+- !private ["Ps22RandomAccessCollection", "sorted"]
+- !private ["Ps26RangeReplaceableCollection", "distinct"]
+- !private ["Ps26RangeReplaceableCollection", "flatMap"]
+- !private ["Ps26RangeReplaceableCollection", "grouped"]
+- !private ["Ps26RangeReplaceableCollection", "init"]
+- !private ["Ps26RangeReplaceableCollection", "map"]
+- !private ["Ps26RangeReplaceableCollection", "rejectEmptyDuplicateEnums"]
+- !private ["Ps26RangeReplaceableCollection", "sorted"]
+- !private ["P4Yams19ScalarConstructible", "init"]
+- !private ["Ps8Sequence", "Array"]
+- ["Ps8Sequence", "Hashable"]
+- ["Ps8Sequence", "Iterator"]
+- !private ["Ps8Sequence", "Key"]
+- !private ["Ps8Sequence", "Set"]
+- !private ["Ps8Sequence", "distinct"]
+- !private ["Ps8Sequence", "flatMap"]
+- !private ["Ps8Sequence", "grouped"]
+- !private ["Ps8Sequence", "init"]
+- !private ["Ps8Sequence", "map"]
+- !private ["Ps8Sequence", "reduce"]
+- !private ["Ps8Sequence", "rejectEmptyDuplicateEnums"]
+- !private ["Ps8Sequence", "sorted"]
+- !private ["Ps8Sequence", "subscript"]
+- !private ["Vs3Set", "init"]
+- !private ["Ps10SetAlgebra", "init"]
+- !private ["V21SourceKittenFramework17SourceDeclaration", "deinit"]
+- !private ["V21SourceKittenFramework17SourceDeclaration", "init"]
+- !private ["V21SourceKittenFramework17SourceDeclaration", "location"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "Key"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "distinct"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "flatMap"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "grouped"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "init"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "map"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "rejectEmptyDuplicateEnums"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "sorted"]
+- !private ["P21SourceKittenFramework22SourceKitRepresentable", "subscript"]
+- !private ["V21SourceKittenFramework14SourceLocation", "file"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["P9SWXMLHash26XMLAttributeDeserializable", "init"]
+- !private ["P9SWXMLHash24XMLElementDeserializable", "init"]
+- !private ["Ps14_ArrayProtocol", "distinct"]
+- !private ["Ps14_ArrayProtocol", "flatMap"]
+- !private ["Ps14_ArrayProtocol", "grouped"]
+- !private ["Ps14_ArrayProtocol", "init"]
+- !private ["Ps14_ArrayProtocol", "map"]
+- !private ["Ps14_ArrayProtocol", "rejectEmptyDuplicateEnums"]
+- !private ["Ps14_ArrayProtocol", "sorted"]
+- !private ["Ps23_BidirectionalIndexable", "distinct"]
+- !private ["Ps23_BidirectionalIndexable", "flatMap"]
+- !private ["Ps23_BidirectionalIndexable", "grouped"]
+- !private ["Ps23_BidirectionalIndexable", "init"]
+- !private ["Ps23_BidirectionalIndexable", "map"]
+- !private ["Ps23_BidirectionalIndexable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps23_BidirectionalIndexable", "sorted"]
+- !private ["Ps24_DestructorSafeContainer", "distinct"]
+- !private ["Ps24_DestructorSafeContainer", "flatMap"]
+- !private ["Ps24_DestructorSafeContainer", "grouped"]
+- !private ["Ps24_DestructorSafeContainer", "init"]
+- !private ["Ps24_DestructorSafeContainer", "map"]
+- !private ["Ps24_DestructorSafeContainer", "rejectEmptyDuplicateEnums"]
+- !private ["Ps24_DestructorSafeContainer", "sorted"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "utf8String"]
+- !private ["Ps9_Hashable", "currentDirectoryPath"]
+- !private ["Ps9_Hashable", "cursor"]
+- !private ["Ps9_Hashable", "default"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "location"]
+- !private ["Ps9_Hashable", "objc"]
+- !private ["Ps9_Hashable", "utf8String"]
+- !private ["Ps10_Indexable", "Key"]
+- !private ["Ps10_Indexable", "distinct"]
+- !private ["Ps10_Indexable", "flatMap"]
+- !private ["Ps10_Indexable", "grouped"]
+- !private ["Ps10_Indexable", "init"]
+- !private ["Ps10_Indexable", "map"]
+- !private ["Ps10_Indexable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps10_Indexable", "sorted"]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "Key"]
+- !private ["Ps14_IndexableBase", "distinct"]
+- !private ["Ps14_IndexableBase", "flatMap"]
+- !private ["Ps14_IndexableBase", "grouped"]
+- !private ["Ps14_IndexableBase", "init"]
+- !private ["Ps14_IndexableBase", "map"]
+- !private ["Ps14_IndexableBase", "rejectEmptyDuplicateEnums"]
+- !private ["Ps14_IndexableBase", "sorted"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps17_MutableIndexable", "distinct"]
+- !private ["Ps17_MutableIndexable", "flatMap"]
+- !private ["Ps17_MutableIndexable", "grouped"]
+- !private ["Ps17_MutableIndexable", "init"]
+- !private ["Ps17_MutableIndexable", "map"]
+- !private ["Ps17_MutableIndexable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps17_MutableIndexable", "sorted"]
+- !private ["Ps21_ObjectiveCBridgeable", "Key"]
+- !private ["Ps21_ObjectiveCBridgeable", "distinct"]
+- !private ["Ps21_ObjectiveCBridgeable", "flatMap"]
+- !private ["Ps21_ObjectiveCBridgeable", "grouped"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "map"]
+- !private ["Ps21_ObjectiveCBridgeable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps21_ObjectiveCBridgeable", "sorted"]
+- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- !private ["Ps22_RandomAccessIndexable", "distinct"]
+- !private ["Ps22_RandomAccessIndexable", "flatMap"]
+- !private ["Ps22_RandomAccessIndexable", "grouped"]
+- !private ["Ps22_RandomAccessIndexable", "init"]
+- !private ["Ps22_RandomAccessIndexable", "map"]
+- !private ["Ps22_RandomAccessIndexable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps22_RandomAccessIndexable", "sorted"]
+- !private ["Ps26_RangeReplaceableIndexable", "distinct"]
+- !private ["Ps26_RangeReplaceableIndexable", "flatMap"]
+- !private ["Ps26_RangeReplaceableIndexable", "grouped"]
+- !private ["Ps26_RangeReplaceableIndexable", "init"]
+- !private ["Ps26_RangeReplaceableIndexable", "map"]
+- !private ["Ps26_RangeReplaceableIndexable", "rejectEmptyDuplicateEnums"]
+- !private ["Ps26_RangeReplaceableIndexable", "sorted"]
+depends-nominal:
+- !private "Ps9AnyObject"
+- !private "Sa"
+- !private "Ps23BidirectionalCollection"
+- !private "Ps7CVarArg"
+- !private "VSC8CXCursor"
+- !private "V21SourceKittenFramework10ClangIndex"
+- "V21SourceKittenFramework20ClangTranslationUnit"
+- !private "Ps10Collection"
+- !private "Ps10Comparable"
+- !private "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- !private "Ps9Equatable"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "CSo11FileManager"
+- !private "Ps8Hashable"
+- !private "O21SourceKittenFramework8Language"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- !private "Ps17MutableCollection"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "P4Yams17NodeRepresentable"
+- !private "Vs13OpaquePointer"
+- !private "Ps22RandomAccessCollection"
+- !private "Ps26RangeReplaceableCollection"
+- !private "P4Yams19ScalarConstructible"
+- "Ps8Sequence"
+- !private "Vs3Set"
+- !private "Ps10SetAlgebra"
+- !private "V21SourceKittenFramework17SourceDeclaration"
+- !private "P21SourceKittenFramework22SourceKitRepresentable"
+- !private "V21SourceKittenFramework14SourceLocation"
+- !private "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- !private "P9SWXMLHash26XMLAttributeDeserializable"
+- !private "P9SWXMLHash24XMLElementDeserializable"
+- !private "Ps14_ArrayProtocol"
+- !private "Ps23_BidirectionalIndexable"
+- !private "Ps24_DestructorSafeContainer"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps33_ExpressibleByStringInterpolation"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- !private "Ps9_Hashable"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- !private "Ps17_MutableIndexable"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps22_RandomAccessIndexable"
+- !private "Ps26_RangeReplaceableIndexable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/SWXMLHash.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/Yams.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXErrorCode.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXCompilationDatabase.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/CXString.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Yams.git-8068124914099325722/Sources/CYaml/include/CYaml.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Yams.git-8068124914099325722/Sources/CYaml/include/yaml.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/BuildSystem.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Platform.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Documentation.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/Index.h"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/Clang_C.git-5715122005051714050/module.modulemap"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKit.git-6033254968535974678/module.modulemap"
+- "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/CYaml.build/module.modulemap"
+interface-hash: "3658cead6d3eb1a542bc948677d23b94"

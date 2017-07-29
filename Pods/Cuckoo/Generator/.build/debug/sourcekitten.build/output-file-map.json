@@ -1,0 +1,65 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/master.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/CompleteCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/CompleteCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/CompleteCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/CompleteCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/CompleteCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/DocCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/DocCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/DocCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/DocCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/DocCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/Errors.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/Errors.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/Errors.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/Errors~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/Errors.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/FormatCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/FormatCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/FormatCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/FormatCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/FormatCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/IndexCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/IndexCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/IndexCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/IndexCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/IndexCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/main.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/main.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/main.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/main.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/StructureCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/StructureCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/StructureCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/StructureCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/StructureCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/SyntaxCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/SyntaxCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/SyntaxCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/SyntaxCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/SyntaxCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/VersionCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/VersionCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/VersionCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/VersionCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/VersionCommand.swiftdeps"
+  },
+  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SourceKitten.git-6484296299232452758/Source/sourcekitten/YamlRequestCommand.swift": {
+    "dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/YamlRequestCommand.d",
+    "object": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/YamlRequestCommand.swift.o",
+    "swiftmodule": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/YamlRequestCommand~partial.swiftmodule",
+    "swift-dependencies": "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/debug/sourcekitten.build/YamlRequestCommand.swiftdeps"
+  }
+}
