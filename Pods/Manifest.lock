@@ -8,7 +8,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SwiftyJSON (3.0.0)
+  - SwiftyJSON (3.1.4)
   - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
@@ -18,7 +18,7 @@ DEPENDENCIES:
   - HMSegmentedControl (= 1.5.4)
   - PopupDialog (~> 0.5)
   - SDWebImage (~> 3.7)
-  - SwiftyJSON (= 3.0.0)
+  - SwiftyJSON (= 3.1.4)
   - youtube-ios-player-helper (= 0.1.6)
 
 SPEC CHECKSUMS:
@@ -28,9 +28,9 @@ SPEC CHECKSUMS:
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 1e66e7e31b2b7828b77f47157208f3e6026c23fe
+PODFILE CHECKSUM: 657253e029ece0ea31b07f9653c721d925f51a88
 
 COCOAPODS: 1.1.1
