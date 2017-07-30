@@ -1,8 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "3dbf36b7b9e4aeeabc6b77dfb216cde9"
-build_time: [554097786, 325254000]
-inputs:
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/CuckooGeneratorError.swift": [554097328, 0]
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/GenerateMocksCommand.swift": [554097328, 0]
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/main.swift": [554097328, 0]
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/cuckoo_generator/VersionCommand.swift": [554097328, 0]

@@ -1,6 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "f6248eb02f44e945c23b53323cb7721f"
-build_time: [554097765, 261015000]
-inputs:
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SWXMLHash.git-5776748636326364470/Source/SWXMLHash+TypeConversion.swift": [554097761, 0]
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/SWXMLHash.git-5776748636326364470/Source/SWXMLHash.swift": [554097761, 0]

@@ -1,5 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "d6ce6961dd197306a04f9ff561c4d894"
-build_time: [554097782, 860427000]
-inputs:
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/Source/TemplateEncoder/main.swift": [554097328, 0]

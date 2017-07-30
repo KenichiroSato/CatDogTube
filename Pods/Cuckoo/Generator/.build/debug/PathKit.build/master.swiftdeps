@@ -1,5 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "4554bd7872ba75d73e00dd84e454812f"
-build_time: [554097771, 799797000]
-inputs:
-  "/Users/ken/workspace/iosApp/CatDogTube/Pods/Cuckoo/Generator/.build/checkouts/PathKit.git--1865447967743163058/Sources/PathKit.swift": [554097761, 0]
