@@ -16,4 +16,7 @@ xcuserdata
 DerivedData
 *.xcuserstate
 
+### Cuckoo ###
+Pods/Cuckoo/Generator/.build/
+
 out/

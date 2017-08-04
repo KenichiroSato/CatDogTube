@@ -7,11 +7,11 @@ target 'CatDogTube' do
   use_frameworks!
 
   # Pods for CatDogTube
-  pod 'HMSegmentedControl'
+  pod 'HMSegmentedControl', '1.5.4'
   pod 'SDWebImage', '~>3.7'
-  pod 'SwiftyJSON', '3.0.0'
+  pod 'SwiftyJSON', '3.1.4'
   pod 'youtube-ios-player-helper', '0.1.6'
-  pod 'PopupDialog', :git => 'https://github.com/Orderella/PopupDialog.git', :branch => 'Swift3'
+  pod 'PopupDialog', '~> 0.5'
   pod 'Fabric'
   pod 'Crashlytics'
 

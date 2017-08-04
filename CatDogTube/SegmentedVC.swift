@@ -58,14 +58,14 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         setupShadowView()
         
         segmentedControl.sectionImages = segmentedItems.map({self.iconImage($0.iconName())})
-        segmentedControl.type = HMSegmentedControlTypeImages
+        segmentedControl.type = HMSegmentedControlType.images
         segmentedControl.backgroundColor = UIColor.red
         segmentedControl.frame = CGRect(x: 0, y: 0, width: contentView.width(),
             height: self.headerView.frame.size.height)
-        segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
+        segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocation.down
         segmentedControl.selectionIndicatorColor = UIColor.white
         segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white];
-        segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+        segmentedControl.selectionStyle = HMSegmentedControlSelectionStyle.fullWidthStripe
         segmentedControl.indexChangeBlock = {
             [unowned self] (index: Int) in
             self.contentView.move(to:index)

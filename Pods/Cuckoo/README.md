@@ -6,13 +6,13 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Cuckoo.svg?style=flat)](http://cocoapods.org/pods/Cuckoo)
 [![Platform](https://img.shields.io/cocoapods/p/Cuckoo.svg?style=flat)](http://cocoapods.org/pods/Cuckoo)
-[![Slack Status](http://swiftkit.tmspark.com/badge.svg)](http://swiftkit.tmspark.com)
+[![Slack Status](http://swiftkit.brightify.org/badge.svg)](http://swiftkit.brightify.org)
 
 ## Introduction
 
 Cuckoo was created due to lack of a proper Swift mocking framework. We built the DSL to be very similar to [Mockito](http://mockito.org/), so anyone using it in Java/Android can immediately pick it up and use it.
 
-To have a chat, [join our Slack team](http://swiftkit.tmspark.com)!
+To have a chat, [join our Slack team](http://swiftkit.brightify.org)!
 
 ## How does it work
 
@@ -28,9 +28,11 @@ List of all changes and new features can be found [here](CHANGELOG.md).
 
 ## TODO
 
-We are still missing support for some important features like:
-* inheritance (grandparent methods)
-* generics
+We are still missing support for some important features like:  
+
+* <del>inheritance (grandparent methods)</del>
+* generics  
+* type inference for instance variables (you need to write it explicitly, otherwise it will be replaced with "__UnknownType")  
 
 ## What will not be supported
 
@@ -65,26 +67,29 @@ pod "Cuckoo"
 And add the following `Run script` build phase to your test target's `Build Phases`:
 
 ```Bash
-# Define output file; change "${PROJECT_NAME}Tests" to your test's root source folder, if it's not the default name
-OUTPUT_FILE="./${PROJECT_NAME}Tests/GeneratedMocks.swift"
-echo "Generated Mocks File = ${OUTPUT_FILE}"
+# Define output file. Change "$PROJECT_DIR/Tests" to your test's root source folder, if it's not the default name.
+OUTPUT_FILE="$PROJECT_DIR/Tests/GeneratedMocks.swift"
+echo "Generated Mocks File = $OUTPUT_FILE"
 
-# Define input directory; change "${PROJECT_NAME}" to your project's root source folder, if it's not the default name
-INPUT_DIR="./${PROJECT_NAME}"
-echo "Mocks Input Directory = ${INPUT_DIR}"
+# Define input directory. Change "$PROJECT_DIR" to your project's root source folder, if it's not the default name.
+INPUT_DIR="$PROJECT_DIR"
+echo "Mocks Input Directory = $INPUT_DIR"
 
-# Generate mock files; include as many input files as you'd like to create mocks for
-${PODS_ROOT}/Cuckoo/run generate --testable "${PROJECT_NAME}" \
+# Generate mock files, include as many input files as you'd like to create mocks for.
+${PODS_ROOT}/Cuckoo/run generate --testable "$PROJECT_NAME" \
 --output "${OUTPUT_FILE}" \
-"${INPUT_DIR}/FileName1.swift" \
-"${INPUT_DIR}/FileName2.swift" \
-"${INPUT_DIR}/FileName3.swift"
+"$INPUT_DIR/FileName1.swift" \
+"$INPUT_DIR/FileName2.swift" \
+"$INPUT_DIR/FileName3.swift"
 # ... and so forth
 
-# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group
+# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.
 ```
 
-Input files can be also specified directly in `Run script` in `Input Files` form.
+Input files can be also specified directly in `Run script` in `Input Files` form. To force run script to rebuild generator even if it already exists, use `--clean` as first argument.
+
+Notes: All paths in the Run script must be absolute. Variable `PROJECT_DIR` automatically points to your project directory.  
+Also include paths to inherited Classes and Protocols for mocking/stubbing parent and grandparents.  
 
 #### Carthage
 To use Cuckoo with [Carthage](https://github.com/Carthage/Carthage) add in your Cartfile this line:
@@ -354,10 +359,6 @@ Method `DefaultValueRegistry.reset()` can be used to delete all value registered
 
 For normal use you can skip this because [run script](run) in Cuckoo downloads and builds correct version of the generator automatically.
 
-#### Homebrew
-
-Simply run `brew install cuckoo` and you are ready to go.
-
 #### Custom
 
 This is more complicated path. You need to clone this repository and build it yourself. You can look in the [run script](run) for more inspiration.
@@ -390,6 +391,10 @@ Default value is `GeneratedMocks.swift`.
 
 A comma separated list of frameworks that should be imported as @testable in the mock files.
 
+##### `--exclude` (string)
+
+A comma separated list of classes and protocols that should be skipped during mock generation.  
+
 ##### `--no-header`
 
 Do not generate file headers.
@@ -397,6 +402,10 @@ Do not generate file headers.
 ##### `--no-timestamp`
 
 Do not generate timestamp.
+
+##### `--no-inheritance`
+
+Do not mock/stub parents and grandparents.
 
 ##### `--file-prefix`
 
@@ -420,6 +429,7 @@ After the `help` you can write name of another command for displaying a command-
 
 * Tadeas Kriz, [tadeas@brightify.org](mailto:tadeas@brightify.org)
 * Filip Dolník, [filip@brightify.org](mailto:filip@brightify.org)
+* Adriaan (Arjan) Duijzer [arjan@nxtstep.nl](mailto:arjan@nxtstep.nl)
 
 ## Inspiration
 
