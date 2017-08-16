@@ -17,7 +17,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
     private let SEARCH_PERIOD_DAYS: UInt = 30
     
     private let initialSearchParams = [
-        "key" : "AIzaSyC1jZ8NyoZ_td6agdjK8kZRuAU5wjTSET0",
+        "key" : "replace key",
         "part" : "snippet",
         "type" : "video",
         "videoDuration" : "short",
