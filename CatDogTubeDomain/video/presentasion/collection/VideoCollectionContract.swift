@@ -26,8 +26,5 @@ public protocol VideoCollectionContract_Presenter: SegmentContract_Presenter {
     
     func loadVideo(withFullScreenIndicator:Bool)
  
-    //func onSegmentChanged(isForeground:Bool)
-    func markAsPrimal()
-    
     func onVideoTapped(_ video: Video)
 }
