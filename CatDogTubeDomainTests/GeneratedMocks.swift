@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -237,18 +237,6 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         
     }
     
-    public func markAsPrimal()  {
-        
-        return cuckoo_manager.call("markAsPrimal()",
-            parameters: (),
-            original: observed.map { o in
-                return { () in
-                    o.markAsPrimal()
-                }
-            })
-        
-    }
-    
     public func onVideoTapped(_ video: Video)  {
         
         return cuckoo_manager.call("onVideoTapped(_: Video)",
@@ -256,6 +244,18 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
             original: observed.map { o in
                 return { (video: Video) in
                     o.onVideoTapped(video)
+                }
+            })
+        
+    }
+    
+    public func markAsPrimal()  {
+        
+        return cuckoo_manager.call("markAsPrimal()",
+            parameters: (),
+            original: observed.map { o in
+                return { () in
+                    o.markAsPrimal()
                 }
             })
         
@@ -275,14 +275,14 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
             return .init(stub: cuckoo_manager.createStub("loadVideo(withFullScreenIndicator: Bool)", parameterMatchers: matchers))
         }
         
-        func markAsPrimal() -> Cuckoo.StubNoReturnFunction<()> {
-            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-            return .init(stub: cuckoo_manager.createStub("markAsPrimal()", parameterMatchers: matchers))
-        }
-        
         func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.StubNoReturnFunction<(Video)> where M1.MatchedType == Video {
             let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
             return .init(stub: cuckoo_manager.createStub("onVideoTapped(_: Video)", parameterMatchers: matchers))
+        }
+        
+        func markAsPrimal() -> Cuckoo.StubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub("markAsPrimal()", parameterMatchers: matchers))
         }
         
     }
@@ -309,15 +309,15 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         }
         
         @discardableResult
-        func markAsPrimal() -> Cuckoo.__DoNotUse<Void> {
-            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-            return cuckoo_manager.verify("markAsPrimal()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-        }
-        
-        @discardableResult
         func onVideoTapped<M1: Cuckoo.Matchable>(_ video: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Video {
             let matchers: [Cuckoo.ParameterMatcher<(Video)>] = [wrap(matchable: video) { $0 }]
             return cuckoo_manager.verify("onVideoTapped(_: Video)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        @discardableResult
+        func markAsPrimal() -> Cuckoo.__DoNotUse<Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify("markAsPrimal()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
     }
@@ -335,11 +335,11 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-    public func markAsPrimal()  {
+    public func onVideoTapped(_ video: Video)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
-    public func onVideoTapped(_ video: Video)  {
+    public func markAsPrimal()  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
@@ -348,7 +348,7 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  TeamRepository.swift
@@ -590,7 +590,7 @@ class MockTeamRepository: TeamRepository, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  PlayContract.swift
@@ -913,7 +913,7 @@ class MockPlayerContract_Presenter: PlayerContract_Presenter, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  Team.swift
@@ -1042,7 +1042,7 @@ class MockTeam: Team, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  UseCase.swift
@@ -1144,7 +1144,168 @@ class MockLoadVideoUseCase: LoadVideoUseCase, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/segmented/SegmentContract.swift at 2017-08-17 02:06:14 +0000
+
+//
+//  SegmentContract.swift
+//  CatDogTube
+//
+//  Created by ken on 2016/12/18.
+//  Copyright © 2016 Kenichiro Sato. All rights reserved.
+//
+
+import Cuckoo
+@testable import CatDogTubeDomain
+
+import Foundation
+
+class MockSegmentContract_View: SegmentContract_View, Cuckoo.Mock {
+    typealias MocksType = SegmentContract_View
+    typealias Stubbing = __StubbingProxy_SegmentContract_View
+    typealias Verification = __VerificationProxy_SegmentContract_View
+    let cuckoo_manager = Cuckoo.MockManager()
+
+    private var observed: SegmentContract_View?
+
+    func spy(on victim: SegmentContract_View) -> Self {
+        observed = victim
+        return self
+    }
+
+    
+
+    
+
+    
+
+    struct __StubbingProxy_SegmentContract_View: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+
+        init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+    }
+
+
+    struct __VerificationProxy_SegmentContract_View: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+
+        init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+
+        
+
+        
+    }
+
+
+}
+
+ class SegmentContract_ViewStub: SegmentContract_View {
+    
+
+    
+
+    
+}
+
+
+
+class MockSegmentContract_Presenter: SegmentContract_Presenter, Cuckoo.Mock {
+    typealias MocksType = SegmentContract_Presenter
+    typealias Stubbing = __StubbingProxy_SegmentContract_Presenter
+    typealias Verification = __VerificationProxy_SegmentContract_Presenter
+    let cuckoo_manager = Cuckoo.MockManager()
+
+    private var observed: SegmentContract_Presenter?
+
+    func spy(on victim: SegmentContract_Presenter) -> Self {
+        observed = victim
+        return self
+    }
+
+    
+
+    
+
+    
+    public func markAsPrimal()  {
+        
+        return cuckoo_manager.call("markAsPrimal()",
+            parameters: (),
+            original: observed.map { o in
+                return { () in
+                    o.markAsPrimal()
+                }
+            })
+        
+    }
+    
+
+    struct __StubbingProxy_SegmentContract_Presenter: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+
+        init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        func markAsPrimal() -> Cuckoo.StubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub("markAsPrimal()", parameterMatchers: matchers))
+        }
+        
+    }
+
+
+    struct __VerificationProxy_SegmentContract_Presenter: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+
+        init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+
+        
+
+        
+        @discardableResult
+        func markAsPrimal() -> Cuckoo.__DoNotUse<Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify("markAsPrimal()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+    }
+
+
+}
+
+ class SegmentContract_PresenterStub: SegmentContract_Presenter {
+    
+
+    
+
+    
+    public func markAsPrimal()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+
+
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  TeamUseCase.swift
@@ -1386,7 +1547,7 @@ class MockTeamUseCase: TeamUseCase, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2017-07-30 02:33:39 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2017-08-17 02:06:14 +0000
 
 //
 //  Video.swift
