@@ -10,6 +10,7 @@ import Foundation
 
 public protocol LoadVideoUseCase {
     
-    func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void)
+    func loadVideos(token: String?,
+                    completionHandler: @escaping (_ videos:[Video]?, _ token:String?) -> Void)
     
 }

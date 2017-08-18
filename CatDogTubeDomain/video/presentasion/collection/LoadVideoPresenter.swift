@@ -21,6 +21,15 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private let executor: ThreadExecutorProtocol
     
+    //Trigger the additional data load when RecyclerView scroll position is near to bottom
+    private let LOAD_TRIGGER = 20
+    
+    private var pageToken: String?
+    
+    private var isLoading = false
+    
+    private var videoList: [Video] = []
+    
     // If true, top contents of this presenter' view will played when app is launched.
     private var isPrimal = false
     
@@ -41,35 +50,54 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             if (self.isPrimal) {
                 self.playerPresenter.onVideoLoaded(videos)
             }
-            self.view.show(videos: videos)
+            self.videoList += videos
+            self.view.show(videos: self.videoList)
             self.view.hideErrorUI()
+            self.isLoading = false
         }
     }
-    
+
     private func onLoadFail() {
         executor.runOnMain {
             self.view.show(videos: [])
             self.view.showErrorUI()
+            self.clearVideos()
+            self.isLoading = false
         }
     }
     
+    private func clearVideos() {
+        videoList.removeAll()
+        pageToken = nil
+    }
+    
     // MARK: VideoCollectionContract_Presenter
-    public func loadVideo(withFullScreenIndicator:Bool) {
-        if (withFullScreenIndicator) {
-            view.showLoadingIndicator()
+    public func loadVideo() {
+        executor.runOnMain {
+            if (self.isLoading) { return }
+            self.isLoading = true
+            if (self.videoList.count == 0) {
+                self.view.showLoadingIndicator()
+            }
         }
-        
         executor.runOnBackground {
-            self.useCase.loadVideos() { videos in
+            self.useCase.loadVideos(token: self.pageToken) { videos, token in
                 guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
                     self.onLoadFail()
                     return
                 }
+                self.pageToken = token
                 self.onLoadSuccess(videos: nonNilVideos)
             }
         }
     }
     
+    public func refreshVideos() {
+        clearVideos()
+        loadVideo()
+    }
+    
+
     public func markAsPrimal() {
         isPrimal = true
     }
@@ -77,4 +105,11 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     public func onVideoTapped(_ video: Video) {
         playerPresenter.onVideoTapped(video)
     }
+    
+    public func onScrolled(visiblePosition: Int) {
+        if (visiblePosition > videoList.count - LOAD_TRIGGER) {
+            loadVideo()
+        }
+    }
+
 }

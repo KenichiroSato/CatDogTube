@@ -61,16 +61,18 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         return (publishedBefore.RFC3339String(), publishedAfter.RFC3339String())
     }
 
-    public func searchVideos(_ searchWord: String, completionHandler: @escaping ([YouTubeVideo]?) -> Void) {
+    public func searchVideos(_ searchWord: String,
+                             token: String?,
+                             completionHandler: @escaping ([YouTubeVideo]?, String?) -> Void) {
 
         guard !searchWord.isEmpty else {
-            completionHandler(nil)
+            completionHandler(nil, nil)
             return
         }
         
         let searchParams = generateParams(with:searchWord)
         guard let requestUrl = Http.generateRequestURL(baseUrl, queries: searchParams) else {
-            completionHandler(nil)
+            completionHandler(nil, nil)
             return
         }
         
@@ -78,11 +80,12 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
             guard let code = (response as? HTTPURLResponse)?.statusCode
                 , code == Http.StatusCode.ok.rawValue,
                 let nonNilData = data else {
-                    completionHandler(nil)
+                    completionHandler(nil, nil)
                     return
             }
             let videos = YouTubeDataParser.parseResponse(nonNilData)
-            completionHandler(videos)
+            let token = YouTubeDataParser.parsePageToken(nonNilData)
+            completionHandler(videos, token)
         })
     }
     

@@ -48,7 +48,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     }
     
     func loadVideo(withFullScreenIndicator:Bool) {
-        presenter?.loadVideo(withFullScreenIndicator: withFullScreenIndicator)
+        presenter?.loadVideo()
     }
 
     func pullToRefresh() {
