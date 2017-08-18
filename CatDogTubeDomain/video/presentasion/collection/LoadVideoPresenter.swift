@@ -22,7 +22,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     private let executor: ThreadExecutorProtocol
     
     //Trigger the additional data load when RecyclerView scroll position is near to bottom
-    private let LOAD_TRIGGER = 20
+    private let LOAD_TRIGGER = 8
     
     private var pageToken: String?
     
@@ -79,15 +79,16 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             if (self.videoList.count == 0) {
                 self.view.showLoadingIndicator()
             }
-        }
-        executor.runOnBackground {
-            self.useCase.loadVideos(token: self.pageToken) { videos, token in
-                guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
-                    self.onLoadFail()
-                    return
+            
+            self.executor.runOnBackground {
+                self.useCase.loadVideos(token: self.pageToken) { videos, token in
+                    guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
+                        self.onLoadFail()
+                        return
+                    }
+                    self.pageToken = token
+                    self.onLoadSuccess(videos: nonNilVideos)
                 }
-                self.pageToken = token
-                self.onLoadSuccess(videos: nonNilVideos)
             }
         }
     }

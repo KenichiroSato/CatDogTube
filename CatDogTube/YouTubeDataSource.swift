@@ -25,9 +25,15 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
         "order" : "viewCount"
     ]
     
-    private func generateParams(with searchWord:String) -> [String:String]{
+    private func generateParams(with searchWord:String, token:String?) -> [String:String]{
         var params = initialSearchParams
         params["q"] = searchWord
+        
+        if let nonNilToken = token {
+            if !nonNilToken.isEmpty {
+                params["pageToken"] = nonNilToken
+            }
+        }
         
         let publishedDate = generatePublishedParam()
         if let before = publishedDate.before,
@@ -70,7 +76,7 @@ class YouTubeDataSource: NSObject, SearchVideoDataSourceProtocol {
             return
         }
         
-        let searchParams = generateParams(with:searchWord)
+        let searchParams = generateParams(with:searchWord, token: token)
         guard let requestUrl = Http.generateRequestURL(baseUrl, queries: searchParams) else {
             completionHandler(nil, nil)
             return

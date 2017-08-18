@@ -75,7 +75,9 @@ class VideoExcluder: NSObject {
         "きくちペット",
         "歌ってみた",
         "ショッキング",
-        "オナクラ"
+        "オナクラ",
+        "あんスタ",
+        "欅坂"
         ]
     
     class func excludeInappropriateVideos(_ videos:[Video]?) -> [Video]? {
