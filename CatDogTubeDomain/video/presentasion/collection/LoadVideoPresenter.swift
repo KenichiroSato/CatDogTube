@@ -28,8 +28,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private var isLoading = false
     
-    // If pagination is finished or not
-    private var isLoadCompleted = false
+    private var isPaginationFinished = false
     
     private var videoList: [Video] = []
     
@@ -53,8 +52,8 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             if (self.isPrimal) {
                 self.playerPresenter.onVideoLoaded(videos)
             }
-            if (videos.isEmpty) { //pagination finished
-                self.isLoadCompleted = true
+            if (videos.isEmpty) {
+                self.isPaginationFinished = true
             } else {
                 self.videoList += videos
                 self.view.show(videos: self.videoList)
@@ -117,7 +116,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
 
     public func refreshVideos() {
         clearVideos()
-        isLoadCompleted = false
+        isPaginationFinished = false
         loadVideo(withIndicator: false)
     }
 
@@ -130,7 +129,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     }
     
     public func onScrolled(visiblePosition: Int) {
-        if (isLoadCompleted) { return }
+        if (isPaginationFinished) { return }
         if (visiblePosition > videoList.count - LOAD_TRIGGER) {
             loadVideo(withIndicator: false)
         }
