@@ -72,9 +72,9 @@ class VideoCollectionVC: UIViewController,
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width = self.view.frame.width
-            let height = width * VideoCell.aspectRatio
-            return CGSize(width: width, height: height)
+        let width = self.view.frame.width
+        let height = width * VideoCell.aspectRatio
+        return CGSize(width: width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView,
