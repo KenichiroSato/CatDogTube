@@ -88,12 +88,11 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
         return true
     }
     
-    // MARK: VideoCollectionContract_Presenter
-    public func loadVideo() {
+    private func loadVideo(withIndicator:Bool) {
         executor.runOnMain {
             if (self.isLoading) { return }
             self.isLoading = true
-            if (self.videoList.count == 0) {
+            if (withIndicator) {
                 self.view.showLoadingIndicator()
             }
             
@@ -109,13 +108,18 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             }
         }
     }
-    
+
+    // MARK: VideoCollectionContract_Presenter
+    public func loadVideo() {
+        let needIndicator = videoList.count == 0
+        loadVideo(withIndicator: needIndicator)
+    }
+
     public func refreshVideos() {
         clearVideos()
         isLoadCompleted = false
-        loadVideo()
+        loadVideo(withIndicator: false)
     }
-    
 
     public func markAsPrimal() {
         isPrimal = true
@@ -128,7 +132,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     public func onScrolled(visiblePosition: Int) {
         if (isLoadCompleted) { return }
         if (visiblePosition > videoList.count - LOAD_TRIGGER) {
-            loadVideo()
+            loadVideo(withIndicator: false)
         }
     }
 
