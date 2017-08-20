@@ -44,19 +44,19 @@ class VideoCollectionVC: UIViewController,
 
         tryReloadView.reloadDelegate = self
         
-        loadVideo(withFullScreenIndicator: true)
+        loadVideo()
     }
     
     func invalidateLayout() {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func loadVideo(withFullScreenIndicator:Bool) {
+    func loadVideo() {
         presenter?.loadVideo()
     }
 
     func pullToRefresh() {
-        loadVideo(withFullScreenIndicator: false)
+        presenter?.refreshVideos()
     }
     
     private func showErrorDialog() {
@@ -116,7 +116,7 @@ class VideoCollectionVC: UIViewController,
     
     // MARK: TryReloadDelegate
     func onTryReload() {
-        loadVideo(withFullScreenIndicator: true)
+        loadVideo()
     }
     
 }

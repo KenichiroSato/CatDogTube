@@ -28,6 +28,9 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     private var isLoading = false
     
+    // If pagination is finished or not
+    private var isLoadCompleted = false
+    
     private var videoList: [Video] = []
     
     // If true, top contents of this presenter' view will played when app is launched.
@@ -50,8 +53,12 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             if (self.isPrimal) {
                 self.playerPresenter.onVideoLoaded(videos)
             }
-            self.videoList += videos
-            self.view.show(videos: self.videoList)
+            if (videos.isEmpty) { //pagination finished
+                self.isLoadCompleted = true
+            } else {
+                self.videoList += videos
+                self.view.show(videos: self.videoList)
+            }
             self.view.hideErrorUI()
             self.isLoading = false
         }
@@ -71,6 +78,16 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
         pageToken = nil
     }
     
+    private func isLoadSuccess(opVideos: [Video]?) -> Bool {
+        guard let videos = opVideos else {
+            return false
+        }
+        if (videos.isEmpty && pageToken == nil) {
+            return false
+        }
+        return true
+    }
+    
     // MARK: VideoCollectionContract_Presenter
     public func loadVideo() {
         executor.runOnMain {
@@ -82,12 +99,12 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
             
             self.executor.runOnBackground {
                 self.useCase.loadVideos(token: self.pageToken) { videos, token in
-                    guard let nonNilVideos = videos , !nonNilVideos.isEmpty else {
+                    if (!self.isLoadSuccess(opVideos: videos)) {
                         self.onLoadFail()
                         return
                     }
                     self.pageToken = token
-                    self.onLoadSuccess(videos: nonNilVideos)
+                    self.onLoadSuccess(videos: videos!) // videos is not nil 
                 }
             }
         }
@@ -95,6 +112,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     
     public func refreshVideos() {
         clearVideos()
+        isLoadCompleted = false
         loadVideo()
     }
     
@@ -108,6 +126,7 @@ public class LoadVideoPresenter: NSObject, VideoCollectionContract_Presenter {
     }
     
     public func onScrolled(visiblePosition: Int) {
+        if (isLoadCompleted) { return }
         if (visiblePosition > videoList.count - LOAD_TRIGGER) {
             loadVideo()
         }
