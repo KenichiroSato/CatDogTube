@@ -9,7 +9,10 @@
 import Foundation
 
 public protocol SearchVideoRepositoryProtocol {
-    func searchVideos(_ keyword:String, contentType: ContentType, completionHandler: @escaping (_ videos:[Video]?) -> Void)
+    func searchVideos(_ keyword:String,
+                      contentType: ContentType,
+                      token: String?,
+                      completionHandler: @escaping (_ videos:[Video]?, _ token: String?) -> Void)
 }
 
 public class SearchVideoUseCase: NSObject, LoadVideoUseCase {
@@ -30,11 +33,12 @@ public class SearchVideoUseCase: NSObject, LoadVideoUseCase {
     }
     
     // MARK: - LoadVideoUseCase
-    public func loadVideos(_ completionHandler: @escaping (_ videos:[Video]?) -> Void) {
+    public func loadVideos(token: String?,
+                           completionHandler: @escaping (_ videos:[Video]?, _ token: String?) -> Void) {
         repository.searchVideos(searchWordProvider.searchWord(for: contentType),
-                                contentType: contentType) { videos in
+                                contentType: contentType, token: token) { (videos, token) in
             let okVideos = VideoExcluder.excludeInappropriateVideos(videos)
-            completionHandler(okVideos)
+            completionHandler(okVideos, token)
         }
     }
 }

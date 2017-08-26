@@ -29,4 +29,9 @@ class YouTubeDataParser: NSObject {
         }
         return videos
     }
+    
+    static func parsePageToken(_ data: Data) -> String? {
+        let json = JSON(data: data)
+        return json["nextPageToken"].string
+    }
 }

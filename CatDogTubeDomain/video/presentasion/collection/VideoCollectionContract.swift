@@ -24,7 +24,12 @@ public protocol VideoCollectionContract_View: SegmentContract_View {
 
 public protocol VideoCollectionContract_Presenter: SegmentContract_Presenter {
     
-    func loadVideo(withFullScreenIndicator:Bool)
- 
+    func loadVideo()
+    
     func onVideoTapped(_ video: Video)
+    
+    func refreshVideos()
+    
+    func onScrolled(visiblePosition: Int)
+    
 }

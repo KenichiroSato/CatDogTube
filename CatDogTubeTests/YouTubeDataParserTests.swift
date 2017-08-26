@@ -45,5 +45,10 @@ class YouTubeDataParserTests: XCTestCase {
         
         XCTAssertEqual(videos.count, 10)
     }
+    
+    func testToken() {
+        let token = YouTubeDataParser.parsePageToken(testData)
+        XCTAssertEqual(token, "CAoQAA")
+    }
 
 }

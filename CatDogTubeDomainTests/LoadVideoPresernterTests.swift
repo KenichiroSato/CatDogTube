@@ -19,6 +19,8 @@ class LoadVideoPresernterTests: XCTestCase {
         Video(id: "4", title: "ok video2", url: URL(string: "yahoo")!, type: ContentType.cat)
     ]
 
+    private let pageToken = "CAoQAA"
+    
     private var mockView: MockVideoCollectionContract_View!
     
     private var mockPlayerPresenter: MockPlayerContract_Presenter!
@@ -50,43 +52,32 @@ class LoadVideoPresernterTests: XCTestCase {
     
     func testIndicator() {
         stub(mockUsecase) { mock in
-            when(mock.loadVideos(anyClosure())).thenDoNothing()
+            when(mock.loadVideos(token:equal(to:nil),
+                                 completionHandler:anyClosure())).thenDoNothing()
         }
         let presenter = LoadVideoPresenter(view: mockView,
                                            useCase: mockUsecase,
                                            executor:DummyThreadExecutor(),
                                            playerPresenter: mockPlayerPresenter)
-        presenter.loadVideo(withFullScreenIndicator: true)
+        presenter.loadVideo()
         
         verify(mockView).showLoadingIndicator()
     }
     
-    func testIndicatorFalse() {
-        stub(mockUsecase) { mock in
-            when(mock.loadVideos(anyClosure())).thenDoNothing()
-        }
-        let presenter = LoadVideoPresenter(view: mockView,
-                                           useCase: mockUsecase,
-                                           executor:DummyThreadExecutor(),
-                                           playerPresenter: mockPlayerPresenter)
-        presenter.loadVideo(withFullScreenIndicator: false)
-        
-        verify(mockView, times(0)).showLoadingIndicator()
-    }
-    
     func testLoadSuccess() {
         stub(mockUsecase) { mock in
-            when(mock.loadVideos(anyClosure())).then { closure in
-                closure(self.videos)
+            when(mock.loadVideos(token:equal(to:nil),
+                                 completionHandler:anyClosure())).then { text, closure in
+                closure(self.videos, self.pageToken)
             }
         }
         let presenter = LoadVideoPresenter(view: mockView,
                                            useCase: mockUsecase,
                                            executor:DummyThreadExecutor(),
                                            playerPresenter: mockPlayerPresenter)
-        presenter.loadVideo(withFullScreenIndicator: true)
+        presenter.loadVideo()
         
-        verify(self.mockUsecase).loadVideos(anyClosure())
+        verify(self.mockUsecase).loadVideos(token: equal(to:nil), completionHandler:anyClosure())
         verify(self.mockView, times(0)).showErrorUI()
         verify(self.mockView, times(1)).hideErrorUI()
         verify(self.mockView).show(videos:any())
@@ -95,8 +86,9 @@ class LoadVideoPresernterTests: XCTestCase {
     
     func testLoadSuccessWithPrimal() {
         stub(mockUsecase) { mock in
-            when(mock.loadVideos(anyClosure())).then { closure in
-                closure(self.videos)
+            when(mock.loadVideos(token:equal(to:nil),
+                                 completionHandler:anyClosure())).then { token, closure in
+                closure(self.videos, self.pageToken)
             }
         }
         let presenter = LoadVideoPresenter(view: mockView,
@@ -104,15 +96,16 @@ class LoadVideoPresernterTests: XCTestCase {
                                            executor:DummyThreadExecutor(),
                                            playerPresenter: mockPlayerPresenter)
         presenter.markAsPrimal()
-        presenter.loadVideo(withFullScreenIndicator: true)
+        presenter.loadVideo()
         
         verify(self.mockPlayerPresenter, times(1)).onVideoLoaded(any())
     }
     
     func testLoadFail() {
         stub(mockUsecase) { mock in
-            when(mock.loadVideos(anyClosure())).then { closure in
-                closure([])
+            when(mock.loadVideos(token:equal(to:nil),
+                                 completionHandler:anyClosure())).then { token, closure in
+                closure([], nil)
             }
         }
         
@@ -120,9 +113,9 @@ class LoadVideoPresernterTests: XCTestCase {
                                            useCase: mockUsecase,
                                            executor:DummyThreadExecutor(),
                                            playerPresenter: mockPlayerPresenter)
-        presenter.loadVideo(withFullScreenIndicator: true)
+        presenter.loadVideo()
 
-        verify(self.mockUsecase).loadVideos(anyClosure())
+        verify(self.mockUsecase).loadVideos(token: equal(to:nil), completionHandler:anyClosure())
         verify(self.mockView, times(1)).showErrorUI()
         verify(self.mockView, times(0)).hideErrorUI()
         verify(self.mockView).show(videos:any())

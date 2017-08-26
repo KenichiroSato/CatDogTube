@@ -9,7 +9,11 @@
 import UIKit
 import CatDogTubeDomain
 
-class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, VideoCollectionContract_View, TryReloadDelegate {
+class VideoCollectionVC: UIViewController,
+                         UICollectionViewDelegate,
+                         UICollectionViewDelegateFlowLayout,
+                         VideoCollectionContract_View,
+                         TryReloadDelegate {
     
     static let ID = "VideoCollectionVC"
     
@@ -40,41 +44,50 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
 
         tryReloadView.reloadDelegate = self
         
-        loadVideo(withFullScreenIndicator: true)
+        loadVideo()
     }
     
     func invalidateLayout() {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func loadVideo(withFullScreenIndicator:Bool) {
-        presenter?.loadVideo(withFullScreenIndicator: withFullScreenIndicator)
+    func loadVideo() {
+        presenter?.loadVideo()
     }
 
     func pullToRefresh() {
-        loadVideo(withFullScreenIndicator: false)
+        presenter?.refreshVideos()
     }
     
     private func showErrorDialog() {
         let alertController = UIAlertController(title: Text.MSG_FAILED_TO_LOAD,
-                                                message: nil, preferredStyle: .alert)
+                                                message: nil,
+                                                preferredStyle: .alert)
         let okAction = UIAlertAction(title: Text.OK, style: .default, handler:nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
     
     // MARK - UICollectionViewDelegateFlowLayout
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width = self.view.frame.width
-            let height = width * VideoCell.aspectRatio
-            return CGSize(width: width, height: height)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width
+        let height = width * VideoCell.aspectRatio
+        return CGSize(width: width, height: height)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         if let video = dataSource.video((indexPath as NSIndexPath).row) {
             presenter?.onVideoTapped(video)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        presenter?.onScrolled(visiblePosition: indexPath.item)
     }
     
     // MARK: VideoCollectionContract_View
@@ -103,7 +116,7 @@ class VideoCollectionVC: UIViewController, UICollectionViewDelegate,  UICollecti
     
     // MARK: TryReloadDelegate
     func onTryReload() {
-        loadVideo(withFullScreenIndicator: true)
+        loadVideo()
     }
     
 }
