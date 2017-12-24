@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="255" width="375" height="557"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDa-4o-TDN" userLabel="SegmentedView">
-                                        <rect key="frame" x="0.0" y="0.66666666666662877" width="375" height="557"/>
+                                        <rect key="frame" x="0.0" y="0.33333333333331439" width="375" height="557.33333333333348"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-cb-yEu">
@@ -180,8 +180,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7f-Bg-wYY">
                                 <rect key="frame" x="0.0" y="89" width="375" height="723"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQB-9t-wd7" userLabel="shadowView">
-                                <rect key="frame" x="0.0" y="65" width="600" height="10"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQB-9t-wd7" userLabel="shadowView">
+                                <rect key="frame" x="0.0" y="89" width="375" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="QtC-1e-lm8"/>
                                 </constraints>
@@ -200,6 +200,7 @@
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="width" secondItem="VtE-5W-9Qs" secondAttribute="width" id="BJa-6r-8QD"/>
                             <constraint firstItem="F7f-Bg-wYY" firstAttribute="top" secondItem="CYP-WH-ano" secondAttribute="bottom" id="CxN-vo-xKY"/>
                             <constraint firstAttribute="trailing" secondItem="CYP-WH-ano" secondAttribute="trailing" id="J3n-aW-f8C"/>
+                            <constraint firstAttribute="trailing" secondItem="lQB-9t-wd7" secondAttribute="trailing" id="JHv-AE-4Fq"/>
                             <constraint firstItem="lQB-9t-wd7" firstAttribute="top" secondItem="F7f-Bg-wYY" secondAttribute="top" id="SgA-fg-6cX"/>
                             <constraint firstItem="lQB-9t-wd7" firstAttribute="trailing" secondItem="F7f-Bg-wYY" secondAttribute="trailing" id="Y9K-G2-Q8h"/>
                             <constraint firstItem="CYP-WH-ano" firstAttribute="leading" secondItem="WpW-8O-3Hf" secondAttribute="leading" id="Zx5-5F-kFI"/>
