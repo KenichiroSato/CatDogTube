@@ -46,7 +46,21 @@ public struct Generator {
             guard let parameters = value as? [MethodParameter] else { return value }
             return self.parameterMatchers(for: parameters)
         }
-
+        
+        ext.registerFilter("openNestedClosure") { (value: Any?, arguments: [Any?]) in
+            guard let parameters = value as? [MethodParameter] else { return value }
+            
+            let s = self.openNestedClosure(for: parameters, throwing: arguments.first as? Bool)            
+            return s
+        }
+        
+        ext.registerFilter("closeNestedClosure") { (value: Any?) in
+            guard let parameters = value as? [MethodParameter] else { return value }
+            let s = self.closeNestedClosure(for: parameters)
+            print(s)
+            return s
+        }
+        
         let environment = Environment(loader: InternalLoader(), extensions: [ext])
 
         let containers = declarations.flatMap { $0 as? ContainerToken }
@@ -86,5 +100,28 @@ public struct Generator {
 
     private func genericSafeType(from type: String) -> String {
         return type.replacingOccurrences(of: "!", with: "?")
+    }
+    
+    private func openNestedClosure(for parameters: [MethodParameter], throwing: Bool? = false) -> String {
+        var fullString = ""
+        for (index, parameter) in parameters.enumerated() {
+            if parameter.isClosure && !parameter.isEscaping {
+                let indents = String.init(repeating: "\t", count: index + 1)
+                let tries = (throwing ?? false) ? " try " : " "
+                fullString += "\(indents)return\(tries)withoutActuallyEscaping(\(parameter.name), do: { (\(parameter.name)) in\n"
+            }
+        }
+        return fullString
+    }
+    
+    private func closeNestedClosure(for parameters: [MethodParameter]) -> String {
+        var fullString = ""
+        for (index, parameter) in parameters.enumerated() {
+            if parameter.isClosure && !parameter.isEscaping {
+                let indents = String.init(repeating: "\t", count: index + 1)
+                fullString += "\(indents)})\n"
+            }
+        }
+        return fullString
     }
 }
