@@ -27,6 +27,7 @@ class Mock{{ container.name }}: {{ container.name }}, Cuckoo.Mock {
     {% endfor %}
 
     {% for initializer in container.initializers %}
+    // {{initializer}}
     {{ initializer.accessibility }}{% if container.@type == "ClassDeclaration" %} override{% endif %}{% if initializer.@type == "ProtocolMethod" %} required{%endif%} init({{initializer.parameterSignature}}) {
         {% if container.@type == "ClassDeclaration" %}
         super.init({{initializer.call}})
@@ -35,24 +36,18 @@ class Mock{{ container.name }}: {{ container.name }}, Cuckoo.Mock {
     {% endfor %}
 
     {% for method in container.methods %}
+    // {{method}}
     {{ method.accessibility }}{% if container.@type == "ClassDeclaration" %} override{% endif %} func {{ method.name }}({{ method.parameterSignature }}) {{ method.returnSignature }} {
-        {% if method.isThrowing %}
-        return try cuckoo_manager.callThrows("{{method.fullyQualifiedName}}",
-            parameters: ({{method.parameterNames}}),
-            original: observed.map { o in
-                return { ({{ method.parameterSignatureWithoutNames }}){{method.returnSignature}} in
-                    try o.{{method.name}}{%if method.isOptional %}?{%endif%}({{method.call}})
-                }
-            })
-        {% else %}
-        return cuckoo_manager.call("{{method.fullyQualifiedName}}",
-            parameters: ({{method.parameterNames}}),
-            original: observed.map { o in
-                return { ({{ method.parameterSignatureWithoutNames }}){{method.returnSignature}} in
-                    o.{{method.name}}{%if method.isOptional %}?{%endif%}({{method.call}})
-                }
-            })
-        {% endif %}
+        {{ method.parameters|openNestedClosure:method.isThrowing }}
+            return{% if method.isThrowing %} try{% endif %} cuckoo_manager.call{% if method.isThrowing %}Throws{% endif %}("{{method.fullyQualifiedName}}",
+                parameters: ({{method.parameterNames}}),
+                original: observed.map { o in
+                    return { (args){{method.returnSignature}} in
+                        let ({{ method.parameterNames }}) = args
+                        {% if method.returnType != "Void" %}return{% endif %}{% if method.isThrowing %} try{% endif %} o.{{method.name}}{%if method.isOptional %}?{%endif%}({{method.call}})
+                    }
+                })
+        {{ method.parameters|closeNestedClosure }}
     }
     {% endfor %}
 
