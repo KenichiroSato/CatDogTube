@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 import youtube_ios_player_helper
 
 class VideoCell: UICollectionViewCell {
@@ -20,9 +21,22 @@ class VideoCell: UICollectionViewCell {
             if (UIDevice.isPad()) {
                 return 9 / 16
             } else {
-                return 8 / 16
+                return 5 / 16
             }
         }
+    }
+    
+    func setThumbnail(with imageUrl: URL)  {
+        imageView.sd_setImage(with: imageUrl,
+                              placeholderImage: nil,
+                              options: SDWebImageOptions.retryFailed,
+                              completed: {_,_, cacheType,_ in
+            self.imageView.addGradientLayer(UIColor.white)
+        })
+    }
+    
+    func set(title: String) {
+        self.title.text = title
     }
     
     func setTitileWithShadow(_ title:String) {
