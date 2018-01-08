@@ -12,8 +12,6 @@ import CatDogTubeDomain
 
 class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
 
-    private let REUSE_IDENTIFIER = "VideoCell"
-
     var videos: [Video] = []
   
     func video(_ index:Int) -> Video? {
@@ -32,9 +30,8 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
-                as! VideoCell
-            
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoViewCell.reuseIdintifier,
+                                                      for: indexPath) as! VideoViewCell
         let video = videos[(indexPath as NSIndexPath).row]
         cell.set(title: video.title)
         cell.setThumbnail(with: video.imageUrl)

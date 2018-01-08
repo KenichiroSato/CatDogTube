@@ -37,7 +37,7 @@ class YouTubeDataParserTests: XCTestCase {
         
         XCTAssertEqual(video.title, "Three Little Kittens")
         XCTAssertEqual(video.videoId, "k6X2wJ6L0SY")
-        XCTAssertEqual(video.imageUrl, "https://i.ytimg.com/vi/k6X2wJ6L0SY/hqdefault.jpg")
+        XCTAssertEqual(video.imageUrl, "https://i.ytimg.com/vi/k6X2wJ6L0SY/mqdefault.jpg")
     }
     
     func testCount() {
