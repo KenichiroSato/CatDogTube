@@ -234,51 +234,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="E3x-V9-oo5">
-                                    <size key="itemSize" width="572" height="268"/>
+                                    <size key="itemSize" width="399.66666666666669" height="192"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCell" id="Xkh-Mb-8Y7" customClass="VideoCell" customModule="CatDogTube" customModuleProvider="target">
-                                        <rect key="frame" x="-98.666666666666671" y="0.0" width="572" height="268"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="572" height="268"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWD-VY-qia">
-                                                    <rect key="frame" x="0.0" y="0.0" width="572" height="268"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="UFH-F3-UpB">
-                                                    <rect key="frame" x="8" y="210" width="556" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="aHI-et-ZgN"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                    <color key="textColor" red="1" green="0.90270417157934424" blue="0.86609940582378986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" red="0.24049084595959591" green="0.18213890549925238" blue="0.033619060360411269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="1" green="0.91338512646914516" blue="0.94633682069865344" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="sWD-VY-qia" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leading" id="8zQ-IL-gur"/>
-                                            <constraint firstAttribute="trailing" secondItem="sWD-VY-qia" secondAttribute="trailing" id="KsJ-c2-NIG"/>
-                                            <constraint firstItem="sWD-VY-qia" firstAttribute="top" secondItem="Xkh-Mb-8Y7" secondAttribute="top" id="Oli-xG-Z5Y"/>
-                                            <constraint firstAttribute="bottom" secondItem="sWD-VY-qia" secondAttribute="bottom" id="efZ-ZC-ZZa"/>
-                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="leading" secondItem="Xkh-Mb-8Y7" secondAttribute="leadingMargin" id="tpS-65-3YD"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="UFH-F3-UpB" secondAttribute="bottom" id="ugp-k0-hlk"/>
-                                            <constraint firstItem="UFH-F3-UpB" firstAttribute="trailing" secondItem="Xkh-Mb-8Y7" secondAttribute="trailingMargin" id="vkq-Qw-NYh"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageView" destination="sWD-VY-qia" id="JUj-nO-fIG"/>
-                                            <outlet property="title" destination="UFH-F3-UpB" id="WxH-Rp-JPs"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jw-aV-ri6" customClass="TryReloadView" customModule="CatDogTube" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
@@ -304,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mab-Be-U6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-325"/>
+            <point key="canvasLocation" x="1080.8" y="-325.1231527093596"/>
         </scene>
         <!--PlayerVC-->
         <scene sceneID="fIx-zX-kRM">

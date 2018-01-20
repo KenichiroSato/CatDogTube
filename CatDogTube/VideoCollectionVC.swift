@@ -36,7 +36,9 @@ class VideoCollectionVC: UIViewController,
         super.viewDidLoad()
         collectionView.dataSource = dataSource
         collectionView.delegate = self
-
+        collectionView.register(UINib.init(nibName: VideoViewCell.nibName, bundle: nil),
+                                forCellWithReuseIdentifier: VideoViewCell.reuseIdintifier)
+        
         refreshControl.addTarget(self, action: #selector(VideoCollectionVC.pullToRefresh),
             for: UIControlEvents.valueChanged)
         refreshControl.tintColor = UIColor.black
@@ -73,7 +75,7 @@ class VideoCollectionVC: UIViewController,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width
-        let height = width * VideoCell.aspectRatio
+        let height = width * VideoViewCell.aspectRatio
         return CGSize(width: width, height: height)
     }
 

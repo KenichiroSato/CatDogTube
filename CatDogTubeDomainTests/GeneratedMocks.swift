@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/segmented/SegmentContract.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/segmented/SegmentContract.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  SegmentContract.swift
@@ -161,7 +161,7 @@ class MockSegmentContract_Presenter: SegmentContract_Presenter, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/presentasion/collection/VideoCollectionContract.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  VideoCollectionContract.swift
@@ -585,7 +585,7 @@ class MockVideoCollectionContract_Presenter: VideoCollectionContract_Presenter, 
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/model/Video.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  Video.swift
@@ -683,7 +683,7 @@ class MockVideo: Video, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/video/domain/LoadVideoUseCase.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  UseCase.swift
@@ -787,7 +787,7 @@ class MockLoadVideoUseCase: LoadVideoUseCase, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamUseCase.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  TeamUseCase.swift
@@ -1037,7 +1037,7 @@ class MockTeamUseCase: TeamUseCase, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/TeamRepository.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  TeamRepository.swift
@@ -1287,7 +1287,7 @@ class MockTeamRepository: TeamRepository, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/setting/domain/Team.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  Team.swift
@@ -1420,7 +1420,7 @@ class MockTeam: Team, Cuckoo.Mock {
 
 
 
-// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2018-01-06 13:49:35 +0000
+// MARK: - Mocks generated from file: CatDogTubeDomain/player/presentation/PlayerContract.swift at 2018-01-08 12:46:14 +0000
 
 //
 //  PlayContract.swift

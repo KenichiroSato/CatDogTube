@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import SDWebImage
 import youtube_ios_player_helper
 import CatDogTubeDomain
 
 class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
-
-    private let REUSE_IDENTIFIER = "VideoCell"
 
     var videos: [Video] = []
   
@@ -33,14 +30,11 @@ class VideoCollectionDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath)
-                as! VideoCell
-            
-            let video = videos[(indexPath as NSIndexPath).row]
-            cell.setTitileWithShadow(video.title)
-            cell.imageView.sd_setImage(with: video.imageUrl, placeholderImage: nil, options: SDWebImageOptions.retryFailed, completed: {_,_, cacheType,_ in
-                cell.imageView.addGradientLayer(UIColor.white)
-            })
-            return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoViewCell.reuseIdintifier,
+                                                      for: indexPath) as! VideoViewCell
+        let video = videos[(indexPath as NSIndexPath).row]
+        cell.set(title: video.title)
+        cell.setThumbnail(with: video.imageUrl)
+        return cell
     }
 }

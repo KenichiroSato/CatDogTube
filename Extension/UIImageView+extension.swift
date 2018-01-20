@@ -47,7 +47,7 @@ enum ViewSide {
 
 extension UIImageView {
     
-    static fileprivate let GRADIENT_SIZE: CGFloat = 15.0
+    static fileprivate let GRADIENT_SIZE: CGFloat = 5.0
     
     public func addGradientLayer(_ baseColor:UIColor) {
         for side in ViewSide.allValues {

@@ -22,7 +22,7 @@ class YouTubeDataParser: NSObject {
             
             if let videoId = subJson["id"]["videoId"].string,
                 let title = snippet["title"].string,
-                let url = snippet["thumbnails"]["high"]["url"].string{
+                let url = snippet["thumbnails"]["medium"]["url"].string{
                     let video = YouTubeVideo(id: videoId, title: title, url: url)
                     videos.append(video)
             }
