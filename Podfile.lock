@@ -1,8 +1,8 @@
 PODS:
-  - Crashlytics (3.8.5):
-    - Fabric (~> 1.6.3)
-  - Cuckoo (0.10.2)
-  - Fabric (1.6.12)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Cuckoo (0.12.0)
+  - Fabric (1.9.0)
   - HMSegmentedControl (1.5.4)
   - PopupDialog (0.5.4)
   - SDWebImage (3.8.2):
@@ -16,21 +16,21 @@ DEPENDENCIES:
   - Cuckoo
   - Fabric
   - HMSegmentedControl (= 1.5.4)
-  - PopupDialog (~> 0.5)
+  - PopupDialog (= 0.5.4)
   - SDWebImage (~> 3.7)
   - SwiftyJSON (= 3.1.4)
   - youtube-ios-player-helper (= 0.1.6)
 
 SPEC CHECKSUMS:
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  Cuckoo: e53c52f97edfea8142da66a95400ca5897e22c8b
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Cuckoo: d30b6c149e52ffbcfe6b4a9543e4627d08947274
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 657253e029ece0ea31b07f9653c721d925f51a88
+PODFILE CHECKSUM: 404174882310de1cf6ee89bd2c1efca063e2df13
 
 COCOAPODS: 1.3.1

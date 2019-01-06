@@ -18,7 +18,7 @@ public struct Generator {
         declarations = file.declarations
     }
 
-    public func generate() -> String {
+    public func generate(debug: Bool = false) throws -> String {
         code.clear()
 
         let ext = Extension()
@@ -46,28 +46,26 @@ public struct Generator {
             guard let parameters = value as? [MethodParameter] else { return value }
             return self.parameterMatchers(for: parameters)
         }
-        
+
         ext.registerFilter("openNestedClosure") { (value: Any?, arguments: [Any?]) in
             guard let parameters = value as? [MethodParameter] else { return value }
-            
-            let s = self.openNestedClosure(for: parameters, throwing: arguments.first as? Bool)            
+
+            let s = self.openNestedClosure(for: parameters, throwing: arguments.first as? Bool)
             return s
         }
-        
+
         ext.registerFilter("closeNestedClosure") { (value: Any?) in
             guard let parameters = value as? [MethodParameter] else { return value }
-            let s = self.closeNestedClosure(for: parameters)
-            print(s)
-            return s
+            return self.closeNestedClosure(for: parameters)
         }
-        
-        let environment = Environment(loader: InternalLoader(), extensions: [ext])
 
-        let containers = declarations.flatMap { $0 as? ContainerToken }
+        let environment = Environment(extensions: [ext])
+
+        let containers = declarations.compactMap { $0 as? ContainerToken }
             .filter { $0.accessibility.isAccessible }
             .map { $0.serializeWithType() }
 
-        return try! environment.renderTemplate(name: "Mock.swift.stencil", context: ["containers": containers])
+        return try environment.renderTemplate(string: Templates.mock, context: ["containers": containers, "debug": debug])
     }
 
     private func matchableGenerics(with parameters: [MethodParameter]) -> String {
@@ -101,7 +99,7 @@ public struct Generator {
     private func genericSafeType(from type: String) -> String {
         return type.replacingOccurrences(of: "!", with: "?")
     }
-    
+
     private func openNestedClosure(for parameters: [MethodParameter], throwing: Bool? = false) -> String {
         var fullString = ""
         for (index, parameter) in parameters.enumerated() {
@@ -113,7 +111,7 @@ public struct Generator {
         }
         return fullString
     }
-    
+
     private func closeNestedClosure(for parameters: [MethodParameter]) -> String {
         var fullString = ""
         for (index, parameter) in parameters.enumerated() {

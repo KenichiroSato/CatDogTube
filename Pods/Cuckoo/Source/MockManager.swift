@@ -8,27 +8,39 @@
 
 import XCTest
 
+#if !swift(>=4.1)
+private extension Array {
+    func compactMap<O>(_ transform: (Element) -> O?) -> [O] {
+        return self.flatMap(transform)
+    }
+}
+#endif
+
 public class MockManager {
-    static var fail: ((message: String, sourceLocation: SourceLocation)) -> () = { (arg) in let (message, sourceLocation) = arg; XCTFail(message, file: sourceLocation.file, line: sourceLocation.line) }
-    
+    public static var fail: ((message: String, sourceLocation: SourceLocation)) -> () = { (arg) in let (message, sourceLocation) = arg; XCTFail(message, file: sourceLocation.file, line: sourceLocation.line) }
     private var stubs: [Stub] = []
     private var stubCalls: [StubCall] = []
     private var unverifiedStubCallsIndexes: [Int] = []
+    // TODO Add either enum or OptionSet for these behavior modifiers and add proper validation
+    private var isSuperclassSpyEnabled = false
+    private var isDefaultImplementationEnabled = false
     
-    public init() {
-        
+    private let hasParent: Bool
+
+    public init(hasParent: Bool) {
+        self.hasParent = hasParent
     }
 
-    fileprivate func callInternal<IN, OUT>(_ method: String, parameters: IN, original: ((IN) -> OUT)? = nil) -> OUT {
-        return try! callThrowsInternal(method, parameters: parameters, original: original)
+    private func callInternal<IN, OUT>(_ method: String, parameters: IN, escapingParameters: IN, superclassCall: () -> OUT, defaultCall: () -> OUT) -> OUT {
+        return try! callThrowsInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }
     
-    fileprivate func callThrowsInternal<IN, OUT>(_ method: String, parameters: IN, original: ((IN) throws -> OUT)? = nil) throws -> OUT {
-        let stubCall = ConcreteStubCall(method: method, parameters: parameters)
+    private func callThrowsInternal<IN, OUT>(_ method: String, parameters: IN, escapingParameters: IN, superclassCall: () throws -> OUT, defaultCall: () throws -> OUT) throws -> OUT {
+        let stubCall = ConcreteStubCall(method: method, parameters: escapingParameters)
         stubCalls.append(stubCall)
         unverifiedStubCallsIndexes.append(stubCalls.count - 1)
         
-        if let stub = (stubs.filter { $0.method == method }.flatMap { $0 as? ConcreteStub<IN, OUT> }.filter { $0.parameterMatchers.reduce(true) { $0 && $1.matches(parameters) } }.first) {
+        if let stub = (stubs.filter { $0.method == method }.compactMap { $0 as? ConcreteStub<IN, OUT> }.filter { $0.parameterMatchers.reduce(true) { $0 && $1.matches(parameters) } }.first) {
             if let action = stub.actions.first {
                 if stub.actions.count > 1 {
                     // Bug in Swift, this expression resolves as uncalled function
@@ -41,24 +53,30 @@ public class MockManager {
                     return value
                 case .throwError(let error):
                     throw error
-                case .callRealImplementation:
-                    if let original = original {
-                        return try original(parameters)
-                    } else {
-                        failAndCrash("No real implementation found for method `\(method)`. This may happend because stubbed object is mock or spy of protocol.")
-                    }
+                case .callRealImplementation where hasParent:
+                    return try superclassCall()
+                default:
+                    failAndCrash("No real implementation found for method `\(method)`. This is probably caused  by stubbed object being a mock of a protocol.")
                 }
             } else {
                 failAndCrash("Stubbing of method `\(method)` using parameters \(parameters) wasn't finished (missing thenReturn()).")
             }
-        } else if let original = original {
-            return try original(parameters)
+        } else if isSuperclassSpyEnabled {
+            return try superclassCall()
+        } else if isDefaultImplementationEnabled {
+            return try defaultCall()
         } else {
-            failAndCrash("No stub for method `\(method)` using parameters \(parameters) and no original implementation was provided.")
+            failAndCrash("No stub for method `\(method)` using parameters \(parameters).")
         }
     }
     
-    public func createStub<IN, OUT>(_ method: String, parameterMatchers: [ParameterMatcher<IN>]) -> ConcreteStub<IN, OUT> {
+    public func createStub<MOCK: ClassMock, IN, OUT>(for _: MOCK.Type, method: String, parameterMatchers: [ParameterMatcher<IN>]) -> ClassConcreteStub<IN, OUT> {
+        let stub = ClassConcreteStub<IN, OUT>(method: method, parameterMatchers: parameterMatchers)
+        stubs.insert(stub, at: 0)
+        return stub
+    }
+
+    public func createStub<MOCK: ProtocolMock, IN, OUT>(for _: MOCK.Type, method: String, parameterMatchers: [ParameterMatcher<IN>]) -> ConcreteStub<IN, OUT> {
         let stub = ConcreteStub<IN, OUT>(method: method, parameterMatchers: parameterMatchers)
         stubs.insert(stub, at: 0)
         return stub
@@ -80,6 +98,28 @@ public class MockManager {
             MockManager.fail((message, sourceLocation))
         }
         return __DoNotUse()
+    }
+
+    public func enableSuperclassSpy() {
+        guard stubCalls.isEmpty else {
+            failAndCrash("Enabling superclass spy is not allowed after stubbing! Please do that right after creating the mock.")
+        }
+        guard !isDefaultImplementationEnabled else {
+            failAndCrash("Enabling superclass spy is not allowed with the default stub implementation enabled.")
+        }
+
+        isSuperclassSpyEnabled = true
+    }
+
+    public func enableDefaultStubImplementation() {
+        guard stubCalls.isEmpty else {
+            failAndCrash("Enabling default stub implementation is not allowed after stubbing! Please do that right after creating the mock.")
+        }
+        guard !isSuperclassSpyEnabled else {
+            failAndCrash("Enabling default stub implementation is not allowed with superclass spy enabled.")
+        }
+
+        isDefaultImplementationEnabled = true
     }
     
     func reset() {
@@ -114,8 +154,7 @@ public class MockManager {
             MockManager.fail((message + unverifiedCalls, sourceLocation))
         }
     }
-    
-    
+
     private func failAndCrash(_ message: String, file: StaticString = #file, line: UInt = #line) -> Never  {
         MockManager.fail((message, (file, line)))
 
@@ -128,146 +167,34 @@ public class MockManager {
 }
 
 extension MockManager {
-    public func getter<T>(_ property: String, original: (() -> T)? = nil) -> T {
-        return call(getterName(property), parameters: Void(), original: original.map { $0 } as ((()) -> T)?)
+    public static func callOrCrash<T, OUT>(_ value: T?, call: (T) throws -> OUT) rethrows -> OUT {
+        guard let value = value else { return crashOnProtocolSuperclassCall() }
+        return try call(value)
     }
 
-    public func setter<T>(_ property: String, value: T, original: ((T) -> Void)? = nil) {
-        return call(setterName(property), parameters: value, original: original)
-    }
-
-}
-
-// DSL helpers workarounding Swift 3's removal of parameter splat
-// All the casting below is to not require extra parenthesses, introduced in Swift 4
-extension MockManager {
-    public func call<IN, OUT>(_ method: String, parameters: IN, original: ((IN) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original)
-    }
-
-    public func call<IN1, IN2, OUT>(_ method: String, parameters: (IN1, IN2), original: ((IN1, IN2) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, OUT>(_ method: String, parameters: (IN1, IN2, IN3), original: ((IN1, IN2, IN3) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4), original: ((IN1, IN2, IN3, IN4) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5), original: ((IN1, IN2, IN3, IN4, IN5) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6), original: ((IN1, IN2, IN3, IN4, IN5, IN6) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15)) -> OUT)?)
-    }
-
-    public func call<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16) -> OUT)? = nil) -> OUT {
-        return callInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16)) -> OUT)?)
+    public static func crashOnProtocolSuperclassCall<OUT>() -> OUT {
+        fatalError("This should never get called. If it does, please report an issue to Cuckoo repository.")
     }
 }
 
 extension MockManager {
-    public func callThrows<IN, OUT>(_ method: String, parameters: IN, original: ((IN) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original)
+    public func getter<T>(_ property: String, superclassCall: @autoclosure () -> T, defaultCall: @autoclosure () -> T) -> T {
+        return call(getterName(property), parameters: Void(), escapingParameters: Void(), superclassCall: superclassCall, defaultCall: defaultCall())
     }
 
-    public func callThrows<IN1, IN2, OUT>(_ method: String, parameters: (IN1, IN2), original: ((IN1, IN2) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2)) throws -> OUT)?)
+    public func setter<T>(_ property: String, value: T, superclassCall: @autoclosure () -> Void, defaultCall: @autoclosure () -> Void) {
+        return call(setterName(property), parameters: value, escapingParameters: value, superclassCall: superclassCall, defaultCall: defaultCall())
     }
+}
 
-    public func callThrows<IN1, IN2, IN3, OUT>(_ method: String, parameters: (IN1, IN2, IN3), original: ((IN1, IN2, IN3) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3)) throws -> OUT)?)
+extension MockManager {
+    public func call<IN, OUT>(_ method: String, parameters: IN, escapingParameters: IN, superclassCall: @autoclosure () -> OUT, defaultCall: @autoclosure () -> OUT) -> OUT {
+        return callInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }
+}
 
-    public func callThrows<IN1, IN2, IN3, IN4, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4), original: ((IN1, IN2, IN3, IN4) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5), original: ((IN1, IN2, IN3, IN4, IN5) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6), original: ((IN1, IN2, IN3, IN4, IN5, IN6) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15)) throws -> OUT)?)
-    }
-
-    public func callThrows<IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16, OUT>(_ method: String, parameters: (IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16), original: ((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16) throws -> OUT)? = nil) throws -> OUT {
-        return try callThrowsInternal(method, parameters: parameters, original: original as (((IN1, IN2, IN3, IN4, IN5, IN6, IN7, IN8, IN9, IN10, IN11, IN12, IN13, IN14, IN15, IN16)) throws -> OUT)?)
+extension MockManager {
+    public func callThrows<IN, OUT>(_ method: String, parameters: IN, escapingParameters: IN, superclassCall: @autoclosure () throws -> OUT, defaultCall: @autoclosure () throws -> OUT) throws -> OUT {
+        return try callThrowsInternal(method, parameters: parameters, escapingParameters: escapingParameters, superclassCall: superclassCall, defaultCall: defaultCall)
     }
 }
