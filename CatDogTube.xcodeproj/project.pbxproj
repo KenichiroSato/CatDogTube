@@ -1188,7 +1188,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		59A88AE91C4B2F9A00D40B23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1717,7 +1717,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.catdogtube.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4a3f7f4f-7bf0-426d-ba3d-110c186e262e";
-				PROVISIONING_PROFILE_SPECIFIER = 20170826develop;
+				PROVISIONING_PROFILE_SPECIFIER = 20190106develop;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1789,7 +1789,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
-				PROVISIONING_PROFILE_SPECIFIER = 20160903_provisioning;
+				PROVISIONING_PROFILE_SPECIFIER = 20190106develop;
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;

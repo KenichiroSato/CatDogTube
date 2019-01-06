@@ -14,6 +14,7 @@ public protocol Method: Token {
     var nameRange: CountableRange<Int> { get }
     var parameters: [MethodParameter] { get }
     var isOptional: Bool { get }
+    var isOverriding: Bool { get }
     var hasClosureParams: Bool { get }
 }
 
@@ -46,9 +47,9 @@ public extension Method {
     
     var returnType: String {
         if let range = returnSignature.range(of: "->") {
-            var type = returnSignature.substring(from: range.upperBound).trimmed
+            var type = String(returnSignature[range.upperBound...]).trimmed
             while type.hasSuffix("?") {
-                type = "Optional<\(type.substring(to: type.index(before: type.endIndex)))>"
+                type = "Optional<\(type[..<type.index(before: type.endIndex)])>"
             }
             return type
         } else {
@@ -62,7 +63,7 @@ public extension Method {
 
     public func isEqual(to other: Token) -> Bool {
         guard let other = other as? Method else { return false }
-        return self.name == other.name
+        return self.name == other.name && self.parameters == other.parameters
     }
 
     public func serialize() -> [String : Any] {
@@ -74,20 +75,29 @@ public extension Method {
             }
         }.joined(separator: ", ")
 
+        let stubFunctionPrefix = isOverriding ? "Class" : "Protocol"
         let stubFunction: String
         if isThrowing {
             if returnType == "Void" {
-                stubFunction = "Cuckoo.StubNoReturnThrowingFunction"
+                stubFunction = "Cuckoo.\(stubFunctionPrefix)StubNoReturnThrowingFunction"
             } else {
-                stubFunction = "Cuckoo.StubThrowingFunction"
+                stubFunction = "Cuckoo.\(stubFunctionPrefix)StubThrowingFunction"
             }
         } else {
             if returnType == "Void" {
-                stubFunction = "Cuckoo.StubNoReturnFunction"
+                stubFunction = "Cuckoo.\(stubFunctionPrefix)StubNoReturnFunction"
             } else {
-                stubFunction = "Cuckoo.StubFunction"
+                stubFunction = "Cuckoo.\(stubFunctionPrefix)StubFunction"
             }
         }
+
+        let escapingParameterNames = parameters.map { parameter in
+            if parameter.isClosure && !parameter.isEscaping {
+                return "escapingStub(for: \(parameter.name))"
+            } else {
+                return parameter.name
+            }
+        }.joined(separator: ", ")
 
         return [
             "name": rawName,
@@ -95,11 +105,13 @@ public extension Method {
             "returnSignature": returnSignature,
             "parameters": parameters,
             "parameterNames": parameters.map { $0.name }.joined(separator: ", "),
+            "escapingParameterNames": escapingParameterNames,
             "isInit": isInit,
             "returnType": returnType,
             "isThrowing": isThrowing,
             "fullyQualifiedName": fullyQualifiedName,
             "call": call,
+            "isOverriding": isOverriding,
             "parameterSignature": parameters.map { "\($0.labelAndName): \($0.type)" }.joined(separator: ", "),
             "parameterSignatureWithoutNames": parameters.map { "\($0.name): \($0.type)" }.joined(separator: ", "),
             "stubFunction": stubFunction,

@@ -11,7 +11,7 @@ target 'CatDogTube' do
   pod 'SDWebImage', '~>3.7'
   pod 'SwiftyJSON', '3.1.4'
   pod 'youtube-ios-player-helper', '0.1.6'
-  pod 'PopupDialog', '~> 0.5'
+  pod 'PopupDialog', '0.5.4'
   pod 'Fabric'
   pod 'Crashlytics'
 
