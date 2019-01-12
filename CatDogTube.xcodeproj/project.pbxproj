@@ -1004,7 +1004,7 @@
 					59A88AB51C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 					};
 					59A88AC91C4B1BAD00D40B23 = {
@@ -1718,8 +1718,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4a3f7f4f-7bf0-426d-ba3d-110c186e262e";
 				PROVISIONING_PROFILE_SPECIFIER = 20190106develop;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1740,8 +1741,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4a3f7f4f-7bf0-426d-ba3d-110c186e262e";
 				PROVISIONING_PROFILE_SPECIFIER = 20170826develop;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

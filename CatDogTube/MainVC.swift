@@ -44,8 +44,8 @@ class MainVC: UIViewController {
         let playerVC = UIStoryboard.instantiateVcWithId(PlayerVC.ID) as! PlayerVC
         playerVC.view.frame = playerView.bounds
         playerView.addSubview(playerVC.view)
-        self.addChildViewController(playerVC)
-        playerVC.didMove(toParentViewController: self)
+        self.addChild(playerVC)
+        playerVC.didMove(toParent: self)
         let playerPresenter = PlayVideoPresenter(view: playerVC)
         
         let segmentedVC = UIStoryboard.instantiateVcWithId(SegmentedVC.ID) as! SegmentedVC
@@ -54,8 +54,8 @@ class MainVC: UIViewController {
                                           playerPresenter: playerPresenter,
                                           segmentFactory: SegmentFactory())
         segmentContainerView.addSubview(segmentedVC.view)
-        self.addChildViewController(segmentedVC)
-        segmentedVC.didMove(toParentViewController: self)
+        self.addChild(segmentedVC)
+        segmentedVC.didMove(toParent: self)
         
         let teamNotificationReceiveAdaptor = TeamNotificationReceiveAdaptor(receiver: presenter)
         presenter.set(adopter: teamNotificationReceiveAdaptor)
