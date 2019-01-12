@@ -1010,14 +1010,14 @@
 					59A88AC91C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
 					59A88AD41C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
@@ -1761,7 +1761,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Debug;
@@ -1778,7 +1779,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Release;
@@ -1794,7 +1796,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
 				PROVISIONING_PROFILE_SPECIFIER = 20190106develop;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;
 			};
@@ -1812,7 +1815,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
 				PROVISIONING_PROFILE_SPECIFIER = 20160903_provisioning;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;
 			};
