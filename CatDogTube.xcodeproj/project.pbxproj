@@ -1010,38 +1010,35 @@
 					59A88AC91C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
 					59A88AD41C4B1BAD00D40B23 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
 					BEB4CC4B1E042ADB00317410 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					BEB4CC531E042ADB00317410 = {
 						CreatedOnToolsVersion = 8.2;
-						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
 					BED52E261E05008300241F4E = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = H2W9ZJ8C83;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					BED52E2E1E05008300241F4E = {
 						CreatedOnToolsVersion = 8.2;
-						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 59A88AB51C4B1BAD00D40B23;
 					};
@@ -1762,8 +1759,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Debug;
@@ -1780,8 +1776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Release;
@@ -1797,8 +1792,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
 				PROVISIONING_PROFILE_SPECIFIER = 20190106develop;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;
 			};
@@ -1816,8 +1810,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3f895e2-d55a-4a06-8a94-a2760f143afc";
 				PROVISIONING_PROFILE_SPECIFIER = 20160903_provisioning;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CatDogTube;
 				USES_XCTRUNNER = YES;
 			};
@@ -1843,8 +1836,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1869,8 +1861,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1888,8 +1879,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.ExtensionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Debug;
@@ -1905,8 +1895,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.ExtensionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Release;
@@ -1933,8 +1922,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1960,8 +1948,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1980,8 +1967,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Debug;
@@ -1998,8 +1984,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capken.CatDogTubeDomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatDogTube.app/CatDogTube";
 			};
 			name = Release;
