@@ -8,7 +8,7 @@ target 'CatDogTube' do
 
   # Pods for CatDogTube
   pod 'HMSegmentedControl', '1.5.4'
-  pod 'SDWebImage', '~>3.7'
+  pod 'SDWebImage', '4.4.3'
   pod 'SwiftyJSON', '3.1.4'
   pod 'youtube-ios-player-helper', '0.1.6'
   pod 'PopupDialog', '0.5.4'
