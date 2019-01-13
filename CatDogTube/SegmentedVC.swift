@@ -64,7 +64,7 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
             height: self.headerView.frame.size.height)
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocation.down
         segmentedControl.selectionIndicatorColor = UIColor.white
-        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white];
+        segmentedControl.titleTextAttributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white];
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyle.fullWidthStripe
         segmentedControl.indexChangeBlock = {
             [unowned self] (index: Int) in
@@ -89,8 +89,8 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
             guard let vc = item.view() as? UIViewController else {
                 continue
             }
-            self.addChildViewController(vc)
-            vc.didMove(toParentViewController: self)
+            self.addChild(vc)
+            vc.didMove(toParent: self)
             vc.view.frame = CGRect(x: CGFloat(index) * contentView.width(), y: 0,
                 width: contentView.width(), height: contentView.height())
             if let view = vc.view {
@@ -133,4 +133,9 @@ class SegmentedVC: UIViewController, UIScrollViewDelegate, SegmentedContract_Vie
         let opposite = (currentIndex == 0) ? 1 : 0
         return opposite
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

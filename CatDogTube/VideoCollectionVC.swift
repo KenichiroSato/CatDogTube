@@ -40,7 +40,7 @@ class VideoCollectionVC: UIViewController,
                                 forCellWithReuseIdentifier: VideoViewCell.reuseIdintifier)
         
         refreshControl.addTarget(self, action: #selector(VideoCollectionVC.pullToRefresh),
-            for: UIControlEvents.valueChanged)
+            for: UIControl.Event.valueChanged)
         refreshControl.tintColor = UIColor.black
         collectionView.addSubview(refreshControl)
 
@@ -57,7 +57,7 @@ class VideoCollectionVC: UIViewController,
         presenter?.loadVideo()
     }
 
-    func pullToRefresh() {
+    @objc func pullToRefresh() {
         presenter?.refreshVideos()
     }
     
